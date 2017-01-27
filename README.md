@@ -115,9 +115,9 @@ gem install sass
 ---
 
 
-##Installation
+## Installation
 
-###Before you install
+### Before you install
 
 If you want to add any of the additional packages you will have to edit ```package.js```, ```bower.json``` and ```Gruntfile.js``` and uncomment the relevant lines of code for your module **before** you run the installation
 
@@ -137,7 +137,7 @@ Installation intructions for all these additonal features are listed in the `ind
 
 ---
 
-##Beginning the installation
+## Beginning the installation
 
 Once in the correct folder and with the files edited if needs be and in place run the following command in the commandline:
 
@@ -154,7 +154,7 @@ You should now have all the modules you need installed and you’re nearly ready
 
 We have our setup ready to go, but we haven’t automated anything yet. You might have noticed a file called `Gruntfile.js` in the project folder. This file controls how Grunt works and what it does. This file has been written for you already and should do everything we need, so it’s not recommended to edit this file unless you need a separate specific task to be run on your project.
 
-###File Layout
+### File Layout
 
 This template is set up to work with two main folders, 'development' and 'www-root'
 
@@ -171,7 +171,7 @@ This means when you want to reference a stylesheet from your HTML file, you must
 The `www-root` folder is where all the files will be served from when Grunt is run (Don't forget, Grunt runs a temporary web server that will serve files)
 
 
-#Getting Started
+# Getting Started
 There is an index.html file in `development/terminalfour/html/src` that you can begin to edit and change to start creating your project
 
 You can also create a directory structure under the `src` directory to mimic what Site Manager will publish. The structure will be replicated when the files are compiled.
