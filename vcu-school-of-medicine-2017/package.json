@@ -2,17 +2,19 @@
   "clientName": "VCU School of Medicine",
   "projectName": "VCU School of Medicine Site Redesign 2017-2018",
   "description": "VCU School of Medicine Site Redesign, Information Architecture, Content Modellling and Build",
-  "developer": "Michael",
+  "developer": "Michael Mason",
   "version": "0.1.0",
   "repository": "git@git.terminalfour.com:PS/vcu-medicine.git",
   "devDependencies": {
     "bulma": "^0.6.1",
     "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-express": "latest",
-    "grunt-include-replace": "latest"
+    "grunt-include-replace": "latest",
+    "grunt-svgstore": "^1.0.0"
   }
 }

@@ -7,6 +7,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-parallel');
+  grunt.loadNpmTasks('grunt-svgstore');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
 
   //Uncommment the line below to add JSHint into the project (Ctrl+f to find all regions needed to be uncommented in order to add in JSHint)
@@ -102,7 +104,37 @@ module.exports = function(grunt) {
         ]
       }//main
     },//copy
-
+    
+    svgstore: {
+        options: {
+            includeTitleElement: true,
+            cleanup: ['fill', 'stroke', 'style'],
+            svg: {
+                viewBox : '0 0 100 100',
+                xmlns: 'http://www.w3.org/2000/svg'
+            }
+        },
+        default: {
+            files: {
+                'development/terminalfour/src/media/svg-icons/som-icons.svg' : ['development/terminalfour/src/media/icons/*.svg']
+            }
+        }
+    },
+    concat: {
+        options: {
+            banner: '<%= pkg.warning %>/**\n * Client: <%= pkg.clientName %>\n * Project: <%= pkg.projectName %>\n * Version: <%= pkg.version %>\n * Description: <%= pkg.description %>\n * Custom scripts and js libraries\n * Created by <%= pkg.developer %>\n * on behalf of TERMINALFOUR\n * www.terminalfour.com\n */\n',
+            footer: '/* End of <%= pkg.projectName %> build scripts T4 */',
+            stripBanners: true, 
+            separator: ';\n'
+        },
+        dist: {
+         
+              src: ['development/lib/**/*.js', 'development/terminalfour/src/js/*.js'],
+              dest: 'www-root/style-assets/js/t4-scripts.js'
+                  
+        }
+    },
+      
     watch: {
       options: { livereload: true },
       sass: {
@@ -124,14 +156,18 @@ module.exports = function(grunt) {
         files: ['development/terminalfour/src/js/*.js'],
         //Uncomment the line below and delete the other "tasks:['uglify:build'] to add JSHint into the project"
         //tasks: ['jshint','uglify:build']
-        tasks: ['uglify:build']
+        tasks: ['concat']
       },//scripts
 
       htmlcompile: {
         files: ['development/terminalfour/src/html/**/*.html'],
         tasks: ['includereplace', 'copy']
-      }//htmlcompile
-
+      },//htmlcompile
+      svgstore: {
+         files: {
+            'development/terminalfour/src/media/svg-icons/som-icons.svg' : ['development/terminalfour/src/media/icons/*.svg']
+        }          
+      }
     }//watch
     
   });
@@ -142,6 +178,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', [
     'express',
     'copy',
+    'svgstore',
     'watch',
     'express-keepalive'
   ]);
