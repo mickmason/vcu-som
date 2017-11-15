@@ -63,7 +63,7 @@ module.exports = function(grunt) {
         },//options
         files: {
           'www-root/style-assets/css/framework.css': 'development/terminalfour/src/sass/framework.scss',
-          'www-root/style-assets/css/style-local.css': 'development/terminalfour/src/sass/style.scss'
+          'www-root/style-assets/css/style.css': 'development/terminalfour/src/sass/style.scss'
         }//files
       }//dist
     },//sass
@@ -97,7 +97,8 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, cwd: 'development/lib/', src: ['./**'], dest: 'www-root/style-assets/lib/', filter: 'isFile'}
+          {expand: true, cwd: 'development/lib/', src: ['./**'], dest: 'www-root/style-assets/lib/', filter: 'isFile'},
+          {expand: true, cwd: 'development/terminalfour/src', src: ['./media/**'], dest: 'www-root/style-assets/', filter: 'isFile'}
         ]
       }//main
     },//copy
@@ -109,9 +110,15 @@ module.exports = function(grunt) {
         
         //Uncomment the line below and delete the other tasks line to add csslint into the project
         //tasks: ['sass:dist','csslint:strict']
-        tasks: ['sass:dist']
+        tasks: ['sass:dist', 'copy']
 
       },//sass
+      media: {
+        files: ['development/terminalfour/src/media/**'],
+        //Uncomment the line below and delete the other tasks line to add csslint into the project
+        //tasks: ['sass:dist','csslint:strict']
+        tasks: ['copy']
+      },
 
       scripts: {
         files: ['development/terminalfour/src/js/*.js'],
@@ -122,7 +129,7 @@ module.exports = function(grunt) {
 
       htmlcompile: {
         files: ['development/terminalfour/src/html/**/*.html'],
-        tasks: ['includereplace']
+        tasks: ['includereplace', 'copy']
       }//htmlcompile
 
     }//watch
@@ -131,13 +138,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['server']);
-  
-  /*grunt.registerTask('replace-pre', function() {
-    var cssReplacements = grunt.file.readJSON('replacements.json');
-    grunt.config('replace.css.replacements', cssReplacements);
-    grunt.task.run('replace');
-  });
-  */
+
   grunt.registerTask('server', [
     'express',
     'copy',

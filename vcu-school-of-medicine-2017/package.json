@@ -1,12 +1,12 @@
 {
-  "warning": "/* >>> IMPORTANT: PLEASE UPDATE THE PACKAGE.JSON FILE AND DELETE THIS WARNING <<< */\n",
-  "clientName": "",
-  "projectName": "",
-  "description": "",
-  "developer": "",
+  "clientName": "VCU School of Medicine",
+  "projectName": "VCU School of Medicine Site Redesign 2017-2018",
+  "description": "VCU School of Medicine Site Redesign, Information Architecture, Content Modellling and Build",
+  "developer": "Michael",
   "version": "0.1.0",
   "repository": "git@git.terminalfour.com:PS/vcu-medicine.git",
   "devDependencies": {
+    "bulma": "^0.6.1",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-sass": "latest",
