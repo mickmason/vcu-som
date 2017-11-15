@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
   // Load the various tasks required
-  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -9,9 +8,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-parallel');
 
-  //Uncomment the line below to add HTML Validation to the project
-  //  grunt.loadNpmTasks('grunt-html-validation');
-
 
   //Uncommment the line below to add JSHint into the project (Ctrl+f to find all regions needed to be uncommented in order to add in JSHint)
   //grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -19,9 +15,7 @@ module.exports = function(grunt) {
   //Uncomment the line below to add csslint to the project (Ctrl+f to find all regions needed to be uncommented in order to add in csslint)
   //grunt.loadNpmTasks('grunt-contrib-csslint');
 
-  //Uncomment the line below to add text replace to the project
-  //grunt.loadNpmTasks('grunt-text-replace');
-  
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -37,16 +31,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
-    bower: {
-      install: {
-         options: {
-           targetDir: 'development/lib',
-           layout: 'byComponent',
-           cleanup: true
-         }//options
-      }//install
-    },//bower
+  
     
     //Uncomment this region to add in JSHint to the project.
     /*jshint: {
@@ -97,30 +82,6 @@ module.exports = function(grunt) {
       }
     },//csslint
     */
-    
-    //Uncomment the block below to add text replace to the project
-    /*
-    replace: {
-      css: {
-        src: ['www-root/style-assets/css/style.css'],
-        overwrite: true,
-        replacements: []
-      }//css
-    },//replace
-    
-    */
-
-    //Uncomment the region below to add HTML Validation into the project
-    /*
-    validation: {
-      options: {
-        reset: true,
-        path: 'report/validation-status.json',
-        reportpath: 'report/validation-report.json'
-      },//options
-      files: ['*.html']
-    },//validation
-    */
 
     includereplace: {
       dist: {
@@ -148,10 +109,6 @@ module.exports = function(grunt) {
         
         //Uncomment the line below and delete the other tasks line to add csslint into the project
         //tasks: ['sass:dist','csslint:strict']
-        
-        //Uncomment the line below to add in text replace
-        //tasks: ['sass:dist','replace-pre']
-
         tasks: ['sass:dist']
 
       },//sass
@@ -167,12 +124,6 @@ module.exports = function(grunt) {
         files: ['development/terminalfour/src/html/**/*.html'],
         tasks: ['includereplace']
       }//htmlcompile
-      
-      //Uncomment the region below to add HTML Validation into the project (Dont forget to add a comment on the line above after the HTML compile curly braces right before the comment)
-      // html: {
-      //   files: ['www-root/**/*.html'],
-      //   tasks: ['validation']
-      // }
 
     }//watch
     

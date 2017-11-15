@@ -1,0 +1,18 @@
+{
+  "warning": "/* >>> IMPORTANT: PLEASE UPDATE THE PACKAGE.JSON FILE AND DELETE THIS WARNING <<< */\n",
+  "clientName": "",
+  "projectName": "",
+  "description": "",
+  "developer": "",
+  "version": "0.1.0",
+  "repository": "git@git.terminalfour.com:PS/vcu-medicine.git",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-express": "latest",
+    "grunt-include-replace": "latest"
+  }
+}
