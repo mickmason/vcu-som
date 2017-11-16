@@ -1,0 +1,29 @@
+//colours
+$som-green: #006c68;
+$som-grana: #8E0021; 
+
+$blacker: #101010;
+$black: #202020;
+
+$gray-3: #303030;
+$gray-32: #323232;
+$gray-4: #404040;
+$gray-6: #606060;
+$gray-8: #808080;
+$gray-a: #a0a0a0;
+
+$light-10: #efefef;
+$light-8: #dfdfdf;
+
+$grey-darker:  $gray-3;
+$grey-dark:    $gray-32;
+$grey:         $gray-6;
+$grey-light:   $gray-8;
+$grey-lighter: $gray-a;
+
+//Add transparent as a colour
+@import "../../../../../node_modules/bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "transparent":(rgba(#000, 0), $white) 
+);
+$colors: map-merge($colors, $addColors);

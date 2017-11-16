@@ -64,7 +64,6 @@ module.exports = function(grunt) {
           //compass: true,
         },//options
         files: {
-          'www-root/style-assets/css/framework.css': 'development/terminalfour/src/sass/framework.scss',
           'www-root/style-assets/css/style.css': 'development/terminalfour/src/sass/style.scss'
         }//files
       }//dist
@@ -138,11 +137,11 @@ module.exports = function(grunt) {
     watch: {
       options: { livereload: true },
       sass: {
-        files: ['development/**/**/**/*.scss'],
+        files: ['development/**/**/**/*.scss', 'node_modules/bulma/sass/**/*.sass'],
         
         //Uncomment the line below and delete the other tasks line to add csslint into the project
         //tasks: ['sass:dist','csslint:strict']
-        tasks: ['sass:dist', 'copy']
+        tasks: ['sass:dist']
 
       },//sass
       media: {
