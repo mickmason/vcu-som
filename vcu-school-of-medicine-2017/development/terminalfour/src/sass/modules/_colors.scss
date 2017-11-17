@@ -1,11 +1,30 @@
 //colours
 $som-green: #006c68;
+$som-green-invert: findColorInvert($som-green);
 $som-grana: #8E0021; 
+$som-grana-invert: findColorInvert($som-grana);
+
+$primary: $som-green;
+$primary-invert: $som-green-invert;
+
+$orange:      #d43900;
+$orange-invert: findColorInvert($orange);
+$green:       #008A00;
+$green-invert: findColorInvert($green);
+$blue:        #007EB5; 
+$blue-invert: findColorInvert($blue);
+$purple:      #011d9a;
+$purple: findColorInvert($purple);
+$red:         #b50000;
+$red-invert: $white; 
+//new
+$wine:        #80225f; 
+$wine-invert: findColorInvert($wine);
 
 $blacker: #101010;
 $black: #202020;
 
-$gray-3: #303030;
+$gray-3: #303030; 
 $gray-32: #323232;
 $gray-4: #404040;
 $gray-6: #606060;
@@ -16,7 +35,7 @@ $light-10: #efefef;
 $light-8: #dfdfdf;
 
 $grey-darker:  $gray-3;
-$grey-dark:    $gray-32;
+$grey-dark:    $gray-32; 
 $grey:         $gray-6;
 $grey-light:   $gray-8;
 $grey-lighter: $gray-a;
@@ -24,6 +43,14 @@ $grey-lighter: $gray-a;
 //Add transparent as a colour
 @import "../../../../../node_modules/bulma/sass/utilities/derived-variables.sass";
 $addColors: (
-  "transparent":(rgba(#000, 0), $white) 
+  "transparent":(rgba(#000, 0), $white), 
+  "som-green": ($som-green, $som-green-invert),
+  "som-grana": ($som-grana, $som-grana-invert),
+  "orange": ($orange, $orange-invert),
+  "green": ($green, $green-invert),
+  "blue": ($blue, $blue-invert),
+  "purple": ($purple, $purple-invert),
+  "red": ($red, $white),
+  "wine": ($wine, $wine-invert)
 );
 $colors: map-merge($colors, $addColors);
