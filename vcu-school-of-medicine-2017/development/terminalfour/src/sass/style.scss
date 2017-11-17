@@ -1,6 +1,6 @@
 //Bulma imports
-@import "../../../../node_modules/bulma/sass/utilities/initial-variables";
-@import "../../../../node_modules/bulma/sass/utilities/functions";
+@import "../../../lib/bulma/sass/utilities/initial-variables";
+@import "../../../lib/bulma/sass/utilities/functions";
 
 //Project modules - overrides for Bulma initial variables
 @import 'modules/fonts'; 
@@ -9,15 +9,15 @@
 @import 'modules/functions-mixins';
 
 //Bulma imports
-@import "../../../../node_modules/bulma/sass/utilities/_all";
-@import "../../../../node_modules/bulma/sass/base/_all";
-@import "../../../../node_modules/bulma/sass/layout/_all";
-@import "../../../../node_modules/bulma/sass/grid/_all";
-@import "../../../../node_modules/bulma/sass/elements/_all";
-@import "../../../../node_modules/bulma/sass/components/_all";
+@import "../../../lib/bulma/sass/utilities/_all";
+@import "../../../lib/bulma/sass/base/_all";
+@import "../../../lib/bulma/sass/layout/_all";
+@import "../../../lib/bulma/sass/grid/_all";
+@import "../../../lib/bulma/sass/elements/_all";
+@import "../../../lib/bulma/sass/components/_all";
 
 * {
-      box-sizing: border-box;
+      box-sizing: border-box; 
   }
   html {
       font-size: 14px;
