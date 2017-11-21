@@ -1,0 +1,18 @@
+//Extend .image class
+.image {
+    &.is-4by5 {
+        img {
+          @include overlay;
+          width: 100%;
+        }
+        padding-top: 125%;
+    }    
+    &.is-12by17 {
+        img {
+          @include overlay;
+          width: 100%;
+        }
+        padding-top: 142%;
+    }
+    overflow: hidden;
+}

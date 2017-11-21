@@ -127,8 +127,9 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         dist: {
-         
-              src: ['development/lib/**/*.js', 'development/terminalfour/src/js/*.js'],
+              src: [
+                  'development/lib/slick/slick/slick.min.js', 
+                  'development/terminalfour/src/js/*.js'],
               dest: 'www-root/style-assets/js/t4-scripts.js'
                   
         }
@@ -137,7 +138,7 @@ module.exports = function(grunt) {
     watch: {
       options: { livereload: true },
       sass: {
-        files: ['development/**/**/**/*.scss', 'node_modules/bulma/sass/**/*.sass'],
+        files: ['development/**/**/**/*.scss', 'development/lib/bulma/sass/**/*.sass'],
         
         //Uncomment the line below and delete the other tasks line to add csslint into the project
         //tasks: ['sass:dist','csslint:strict']

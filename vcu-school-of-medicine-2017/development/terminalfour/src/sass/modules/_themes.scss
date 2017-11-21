@@ -1,8 +1,14 @@
-//Themeing
+/** Site themeing **/
+/* Green theme */
 .theme-green {
   .site-gateway-card {
     .card-content {
           border-bottom-color: $green;
     }
-  }    
+  } 
+  featured-programs-card {
+    .card-content {
+         background-color: $green;
+    }
+  }
 }

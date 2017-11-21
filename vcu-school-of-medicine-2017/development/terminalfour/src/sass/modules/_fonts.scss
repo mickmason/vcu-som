@@ -1,5 +1,8 @@
 //fonts
 $garamond-prem: "garamond-premier-pro-display", Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 $azo-sans: "azo-sans-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, sans-serif;
-$feature-font-sans: $azo-sans;
+
 $family-primary: $azo-sans;
+$family-serif: $garamond-prem;
+$feature-font: $family-primary;
+$feature-font-serif: $family-serif; 

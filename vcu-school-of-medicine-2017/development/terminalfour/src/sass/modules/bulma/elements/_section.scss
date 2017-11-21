@@ -1,0 +1,9 @@
+//Section extensions
+.section {
+    &.has-overlay {
+        .container {
+            position: relative;
+            z-index: 20;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +20,12 @@
     </head>
     <body>
        <!-- ** Hero image big ** -->
-       <section class=" hero is-fullheight hero-image" style="background-image: url('style-assets/media/img/egyptian-building-at-night.jpg')" aria-label="Welcome to VCU School of Medicine">
+       <section class=" hero is-fullheight hero-image" style="background-image: url('style-assets/media/img/egyptian-building-at-night.jpg')" aria-islabelledby="hero-image-lrg-title">
            <div class="hero-body">
               <div class="container">
                  <div class="content-wrap">
-                     <h1 class="hero-title feature-font">VCU School of Medicine</h1>
-                     <p class="hero-subtext feature-font">Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center</p>
+                     <h1 id="hero-image-lrg-title" class="hero-title section__title is-feature-font--serif">VCU School of Medicine</h1> 
+                     <p class="hero-subtext is-feature-font">Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center</p>
                      <a href="javascript:void(0)" title="Read more" class="button is-transparent">Read more</a>
                  </div>
               </div>
@@ -44,18 +44,22 @@
        </section>
        <!-- // ** Site main gateways ** -->
        <!--** Site main gateways ** -->
-       <section class="section site-gateways" aria-label="Start your SoM journey">
-           <div class="container section__title--featured">
-                <span class="section__label">Education</span>
+       <section class="section site-gateways" aria-islablledby="site-gateways-section-heading">
+           <div class="container section__label__container"><span class="section__label">Education</span></div>
+           <div class="section__title__outer-wrap">
+               <div class="container section__title--featured">
                 <div class="section__title--featured__wrap">
-                    <h1 class="section__title feature-font"><span>Start your journey</span></h1>           
+                    <h1 id="site-gateways-section-heading" class="section__title is-feature-font--serif"><span>Start your journey</span></h1>  
+                    <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p>         
                 </div>  
-           </div><!-- // .container.is-fluid -->
+               </div><!-- // .container.section__title--featured-->
+           </div>
            <div class="container">
                <div class="columns site-gateways__intro">
                    <div class="column ">
-                       <p>Begin your learning journey at VCU School of Medicine.</p>
+                       <p class="section__intro feature-font is-touch-only">Begin your learning journey at VCU School of Medicine.</p>
                    </div><!-- // .site-gateways__intro -->    
+                   
                </div><!-- // .columns -->
                <div class="columns site-gateways__cards">
                    <div class="column">
@@ -70,7 +74,7 @@
                            <div class="card-content"> 
                              <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                <h2 class="card-heading">Education</h2>
-                               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
                                </a>
                            </div>
                        </div>
@@ -82,12 +86,14 @@
                                    <figure class="image is-2by1">
                                        <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
                                    </figure>
+                                    <div class="image-overlay "></div>
                                </a>
+                               
                            </div>
                            <div class="card-content"> 
                              <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                <h2 class="card-heading">Admissions</h2>
-                               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
                                </a>
                            </div>
                        </div>
@@ -99,12 +105,13 @@
                                    <figure class="image is-2by1">
                                        <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
                                    </figure>
+                                   <div class="image-overlay "></div>
                                </a>
                            </div>
                            <div class="card-content"> 
                              <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                <h2 class="card-heading">Research</h2>
-                               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
                              </a>
                            </div>
                        </div>
@@ -115,53 +122,139 @@
        </section>
        <!-- // ** Site main gateways ** -->
        <!--** Featured programs cards **-->
-       <section class="section is-fluid featured-programs-cards" aria-label="SoM Featured programs">
+       <section class="section featured-programs" aria-islablledby="featured-programs-section-heading">
            <div class="container">
-               <div class="columns">
-                   <div class="column">
+               <div class="columns featured-programs__outer-columns "> 
+                   <div class="column featured-programs__intro--column featured-programs__column">
                        <div class="featured-programs-cards__intro">
-                           <h1>Featured programs</h1>
-                           <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni </p>    
+                           <h1 id="featured-programs-section-heading" class="section__title is-feature-font--serif">Featured programs</h1>
+                           <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
+                           <a href="javascript:void(0)" title="Read more" class="button is-som-green is-inverted">Find more study options</a> 
                        </div><!-- // .featured-programs-cards__intro -->
                    </div>
-                   <div class="column featured-programs-cards__programs">
-                       <div class="card--flat site-gateway__card">
-                           <div class="card-image">
-                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                   <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
-                                   </figure>
-                               </a>
-                           </div>
-                           <div class="card-content"> 
-                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                               <h2 class="card-heading">Education</h2>
-                               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                               </a>
-                           </div>
-                       </div>
-                       <div class="card--flat site-gateway__card">
-                           <div class="card-image">
-                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                   <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
-                                   </figure>
-                               </a>
-                           </div>
-                           <div class="card-content"> 
-                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                               <h2 class="card-heading">Education</h2>
-                               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                               </a>
-                           </div>
-                       </div>
-                   </div>
+                   <div class="column featured-programs-cards featured-programs__column">
+                      <div class="columns">
+                         <div class="column ">
+                              <div class="card--flat featured-programs-card">
+                               <div class="card-image">
+                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                       <figure class="image">
+                                           <img alt="Placehoder image" src="style-assets/media/img/white-coats-two-guys-12x17.jpg" />
+                                       </figure>
+                                   </a>
+                               </div>
+                               <div class="card-content"> 
+                                 <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <h2 class="card-heading is-feature-font--serif">MD Program</h2>
+                                   <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                                   <p class="card-content__read-more"><strong>More</strong>
+                                       <span class="icon is-inline-icon has-icon-white">
+                                           <svg>
+                                               <use xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow" />
+                                           </svg>
+                                       </span>
+                                    </p>
+                                 </a> 
+                               </div>
+                                <div class="image-overlay "></div>
+                           </div><!-- // .card-flat -->
+                       </div><!-- // . column -->
+                       <div class="column">
+                           <div class="card--flat featured-programs-card">
+                               <div class="card-image">
+                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                       <figure class="image is-12by17">
+                                           <img alt="Placehoder image" src="style-assets/media/img/convocation-1-12x17.jpg" />
+                                       </figure>
+                                   </a>
+                               </div>
+                               <div class="card-content"> 
+                                 <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <h2 class="card-heading is-feature-font--serif">Graduate Medical Education</h2>
+                                   <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                                   <p class="card-content__read-more"><strong>More</strong>
+                                       <span class="icon is-inline-icon has-icon-white">
+                                           <svg>
+                                               <use xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow" />
+                                           </svg>
+                                       </span>
+                                    </p>
+                                  </a>
+                               </div>
+                                <div class="image-overlay "></div>
+                           </div><!-- // .card-flat -->
+                          </div><!-- // .column -->
+                      </div><!-- // .cards-coloumns -->
+                       
+                   </div><!-- // cards outer column -->
                </div><!-- // .columns-->
            </div><!-- // .container -->
        </section>
        <!--** Featured programs cards **-->
-       
-       
-       
+       <!-- ** Diversity feature ** -->
+       <section class="section diversity-feature has-overlay" aria-islablledby="diversity-section-heading">
+           <div class="container">
+               <div class="columns centralized-columns">
+                   <div class="column diversity-feature__column centralized-column">
+                        <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
+                        <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
+                        <a href="javascript:void(0)" title="Read more" class="button is-som-grana is-inverted">Find out more about diversity</a> 
+                   </div>
+                   
+               </div>
+           </div><!-- // .container -->
+           <div class="angle-overlay is-som-grana is-half"></div>
+       </section>
+       <!-- ** // Diversity feature ** -->
+       <!-- ** News and media ** -->
+       <section class="section news-and-media">
+           <div class="container section__label__container"><span class="section__label">Discover</span></div>
+           <div class="section__title__outer-wrap">
+               <div class="container section__title--featured">
+                <div class="section__title--featured__wrap">
+                    <h1 id="site-gateways-section-heading" class="section__title is-feature-font--serif"><span>News and Events</span></h1>  
+                    <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p>         
+                </div>  
+               </div><!-- // .container.section__title--featured-->
+           </div>
+           <div class="container is-fluid news-slider">
+              <!--** Featured news slick -->
+              <div class="columns news-slider__columns">
+                  <div class="column news-slider__slide">
+                      <figure class="image news-slider__image is-16by9">
+                          <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                      </figure>
+                      <div class="news-slider__story">
+                          <span class="news-label">Biomedical Sciences</span>
+                          <h2 class="news-slider__story__title">VCU Health experts agree new moms should have depression screenings</h2>
+                          <span class="news-date">October 20, 2017</span>
+                      </div><!-- // .news-slider__story -->
+                  </div><!-- // .news-slider__slide -->
+                  <div class="column news-slider__slide">
+                      <figure class="image news-slider__image is-16by9">
+                          <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                      </figure>
+                      <div class="news-slider__story">
+                          <span class="news-label">Biomedical Sciences</span>
+                          <h2 class="news-slider__story__title">#2 VCU Health experts agree new moms should have depression screenings</h2>
+                          <span class="news-date">October 22, 2017</span>
+                      </div><!-- // .news-slider__story -->
+                  </div><!-- // .news-slider__slide -->
+                     <div class="column news-slider__slide">
+                      <figure class="image news-slider__image is-16by9">
+                          <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                      </figure>
+                      <div class="news-slider__story">
+                          <span class="news-label">Biomedical Sciences</span>
+                          <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
+                          <span class="news-date">October 22, 2017</span>
+                      </div><!-- // .news-slider__story -->
+                  </div><!-- // .news-slider__slide -->
+              </div>
+           </div><!-- // .news-main-container.is-fluid -->
+           <div class="container news-listing-container">
+               
+           </div><!-- // .container.news-listing-container -->
+       </section>
     </body>
 </html>

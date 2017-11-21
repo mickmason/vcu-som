@@ -1,0 +1,110 @@
+//Project functions & mixins
+//Borrowed without shame from https://codepen.io/corysimmons/pen/mVLVbo
+//Parses number from a string like parseInt()
+@function number($value) {
+  @if type-of($value) == 'number' {
+    @return $value;
+  } @else if type-of($value) != 'string' {
+    $_: log('Value for `to-number` should be a number or a string.');
+  }
+  
+  $result: 0;
+  $digits: 0;
+  $minus: str-slice($value, 1, 1) == '-';
+  $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
+  
+  @for $i from if($minus, 2, 1) through str-length($value) {
+    $character: str-slice($value, $i, $i);
+    
+    @if not (index(map-keys($numbers), $character) or $character == '.') {
+      @return to-length(if($minus, -$result, $result), str-slice($value, $i))
+    }
+    
+    @if $character == '.' {
+      $digits: 1; 
+    } @else if $digits == 0 {
+      $result: $result * 10 + map-get($numbers, $character);  
+    } @else {
+      $digits: $digits * 10;
+      $result: $result + map-get($numbers, $character) / $digits;
+    }
+  }
+  
+  @return if($minus, -$result, $result);;
+}
+
+//Flattens top of feature headings to accommodate line heights and keep even v rhythm
+@function flat-margin($font-size, $lh) {
+    $font-size: number($font-size);
+    @return ($font-size - ($font-size * $lh)) / 2 ; 
+}
+
+//Project mixins:
+@mixin feature-font($family: $garamond-prem, $weight: 300) {
+    font-family: $family;
+    font-weight: $weight;
+}
+@mixin make-flexbox($direction: column, $justify: center, $align: start ) {
+    display: -ms-flexbox;
+    display: flex; 
+    -ms-flex-direction:     $direction;
+    flex-direction:         $direction;
+    -ms-flex-pack:          $justify;
+    justify-content:        $justify;
+    -ms-flex-align:         $align;
+    align-items:            $align;
+}
+@mixin make-gl-col($width: $gl-med) {
+     flex: none;
+     width: $width;
+}
+@mixin make-image-container($padding-top: 50%) {
+    padding-top: $padding-top;
+    overflow: hidden;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Gradient fills */
+@mixin boxShadow($color: $black, $options...) {
+    $box-shadows: ();
+    @each $option in $options {
+            @if $option == insetBottom {  
+                $box-shadows: append($box-shadows, inset 0px -52px 40px -46px rgba($color, 0.36), comma); 
+            } @else if $option == insetTop {
+                $box-shadows: append($box-shadows, inset 0px 52px 40px -46px rgba($color,0.36), comma); 
+            } @else if $option == insetTopThin {
+                $box-shadows: append($box-shadows, inset 0px 30px 58px -58px rgba($color,1), comma); 
+            } @else if $option == insetBottomThin {
+                $box-shadows: append($box-shadows, inset 0px -30px 58px -58px rgba($color,1), comma); 
+            } @else if $option == insetleft {
+                $box-shadows: append($box-shadows, inset 52px 0px 40px -46px rgba($color,0.36), comma);  
+            } @else if $option == insetRight {
+                $box-shadows: append($box-shadows, inset -52px 0px 40px -46px rgba($color,0.36), comma); 
+            } @else if $option == bottom {
+                $box-shadows: append($box-shadows, 0px 12px 24px -8px rgba($color,0.36), comma); 
+            } @else if $option == top {
+                $box-shadows: append($box-shadows, 0px -12px 24px -8px rgba($color,0.36), comma);
+            } @else if $option == left {
+                $box-shadows: append($box-shadows, -12px 0px 24px -8px rgba($color,0.36), comma);
+            } @else if $option == right {
+                $box-shadows: append($box-shadows, 12px 0px 24px -8px rgba($color,0.36), comma); 
+            }  @else if $option == fullPaper {
+                $box-shadows: append($box-shadows, (0 18px 38px rgba($color, 0.30), 0 16px 12px rgba($color,0.22)), comma);
+            } 
+    }
+    @debug $box-shadow;
+    -webkit-box-shadow:  $box-shadows;
+    -moz-box-shadow:     $box-shadows;
+    box-shadow:          $box-shadows;          
+}
+@mixin makeBoxShadow($color: $black, $options...) {
+    -webkit-box-shadow: $options rgba($color, 0.36);
+    -moz-box-shadow:    $options rgba($color, 0.36); 
+    box-shadow:         $options rgba($color, 0.36);
+}
