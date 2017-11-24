@@ -16,6 +16,8 @@
 @import "../../../lib/bulma/sass/elements/_all";
 @import "../../../lib/bulma/sass/components/_all";
 
+//Slick SCSS
+@import "../../../lib/slick/slick/slick";
 
 @import 'modules/som-functions-mixins';
 //Bulma override and extensions imports
@@ -29,38 +31,13 @@
 * {
       box-sizing: border-box; 
   }
-  html {
-      font-size: 14px;
-  }
-  body {
-      margin: 0;
-      padding: 0;
-      font-size: 100%;
-      font-color: $gray-32;
-      line-height: 1.5;
-  }
-  
-  @media screen and (min-width: $tablet) {
-      html {
-          font-size: 16px;
-      }   
-  }
-  @media screen and (min-width: $desktop) {
-      html {
-          font-size: 18px;
-      }   
-  }            
-  @media screen and (min-width: $fullhd) {
-      html {
-          font-size: 20px;
-      }   
-  }
+
   h1, h2, h3, h4, h5 {
     font-family: $family-primary;
     font-weight: 500;
     line-height: 1.3;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: $space-4;
 }
 
 .is-feature-font, .is-feature-font--serif { 
@@ -77,18 +54,24 @@ p, li {
 }
 p {
     font-size: 1rem;
-    margin-bottom: $space-3;
+    margin-bottom: $space-4;
 }
 h1 {
     font-family: $family-primary;
-    font-size: 2.369rem;
+    font-size: $size-1;
     margin-bottom: $space-3;
 }
 h2 {
-    font-size: 1.777rem;
+    font-size: $size-2;
 }
 h3 {
-    font-size: 1.333rem;
+    font-size: $size-3;
+}
+h4 {
+    font-size: $size-4;
+}
+h5 {
+    font-size: $size-5;
 }
 .is-feature-font--serif {
     font-family: $feature-font-serif;
@@ -176,6 +159,23 @@ h3 {
         }
     }
 }
+.som-content-label {
+    color: $grey-light;
+    
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    &.is-light {
+        font-weight: 300;    
+    }
+}
+.read-more-link {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+/* Vision graphic angle */
 .vcu-angle {
     width:  0; 
     height: 0; 
@@ -237,10 +237,14 @@ h3 {
    @include desktop {
        transform: skewX(-19.5deg);
     }    
-    &.is-som-grana {
-        background-color: rgba($som-grana, 0.7);
-        
+    @each $name, $pair in $colors {
+         $color: nth($pair, 1);
+         &.is-#{$name} {
+            background-color: rgba($color, 0.7);    
+         }
     }
+        
+
     @include desktop {
         &.is-half {
             max-width: 57%;
@@ -453,16 +457,37 @@ h3 {
     }
     .card-content {
         color: $white;
-         padding-top:     $space-2;
+        
          padding-bottom:  $space-2;
+         padding-right: $gutter-width/1.25;
+         padding-left: $gutter-width/1.25;
+         padding-top: $gutter-width/1.25;
          background-color: transparent;
          position: absolute;
-         bottom: -5.5rem;
+         bottom: -8.6rem;
          left: 0;
         z-index: 20;
         width: 100%;
+        .card-content__top-bar {
+            @include make-flexbox($direction: column, $align: flex-end);
+            @include make-fullwidth-box($gutter-width/1.25) ;
+            margin-bottom: $space-1;
+            background-color: rgba($white, 0.1);
+            border-top: 1px solid $white;
+//            border-bottom: 1px solid $white;
+            height: $space-2;
+            .icon.icon--svg {
+                height: $space-1;
+                width:  $space-1;
+            }
+            transition: background-color 160ms ease-out;
+            &:hover {
+                background-color: rgba($white, 0.2);
+            }
+        }
         .card-heading {
             font-family: $garamond-prem;
+            font-size: $size-3;
             margin-bottom: $size-9;
         }
         p {
@@ -474,14 +499,15 @@ h3 {
             margin-bottom: 0;
         }
         transition: background-color 160ms ease-out, bottom 160ms ease-out;
+        
         @include desktop {
-            bottom: -7rem;
+            bottom: -11.5rem;
         }
         @include widescreen {
-            bottom: -5.57rem; 
+            bottom: -10rem; 
         }
     }
-    transition: transform 120ms ease-out 20ms;
+    transition: transform 120ms ease-out 40ms;
     &:hover, &:active, &:focus {
         transform: scale(1.1);
 //        box-shadow: 0 24px 65px 0 rgba(16,16,17,.29);
@@ -491,8 +517,14 @@ h3 {
         overflow: visible;
         z-index: 30;
         .card-content {
-            bottom: -2rem;
+            bottom: 0rem;
             background-color: $som-green;
+            .card-content__top-bar {
+                  background-color: rgba($white, 0.2);
+                .icon.icon--svg {
+                    transform: rotate(180deg);
+                }
+            }
         }
     }
     
@@ -513,9 +545,6 @@ h3 {
             transform: skewX(-19.5deg);
             width: 68%;
             margin-left: -8%;
-  /*          -webkit-box-shadow: inset -38px 0px 86px -46px rgba(255,255,255,1);
-            -moz-box-shadow: inset -38px 0px 86px -46px rgba(255,255,255,1);
-            box-shadow: inset -38px 0px 86px -46px rgba(255,255,255,1);*/
         }
     }
 
@@ -530,8 +559,10 @@ h3 {
     flex-direction: column;
 }
 /* Override Bulma class to style svgs */
-.icon {
-    &.is-inline-icon {
+.icon.icon--svg {
+    width: 100%;
+    height: 100%;
+    &.is-inline-icon, &.is-inline-icon--large-text, &.is-inline-icon {
         position: relative;
         height: 1rem;
         width: 1rem;
@@ -540,24 +571,124 @@ h3 {
     svg {
         height: 100%;
         width: 100%;
+        text {
+            display: none; 
+        } 
+            
     }
     @each $name, $pair in $colors {
       $color: nth($pair, 1);
       &.has-icon-#{$name} {
         svg {
-            fill: $color;
+            fill: $color; 
         }
       }
     }
 }
 
 /** News and events features **/
+.news-and-events-feature { 
+    @include boxShadow($black, insetTop);
+}
+.news-slider {
+    margin-bottom: 3rem;
+    .news-slider__slick {
+        padding-bottom: $space-4;
+    }
+    .news-slider__controls {
+        position: absolute;
+        margin-right: $gutter-width;
+        right: 0;
+        bottom: 2rem;
+    }
+    .news-slider__control {
+        width:  $space-5;
+        height: $space-5;
+        border: none;
+        background-color: $grey-light;
+        
+        &:hover, &:active, &:focus {
+            background-color: $grey-lighter;
+        }
+    }
+    .slick-list {
+     
+    }
+    .slick-dots {
+        background-color: $black;
+        color: $white;
+        position: absolute;
+        width: calc(100% - (0.768rem*2));
+        padding-top: $space-1;
+        padding-bottom: $space-1;
+        left: 0.768rem;
+        bottom: -$space-4;
+        text-align: center;
+        @include make-flexbox($direction: row, $align: center) ;
+        > li {
+            padding-right: $space-1/2;
+            padding-left: $space-1/2;
+            min-height: 25px;
+            min-width: 25px;
+            @include make-flexbox();
+        }
+        button {
+            font-size: 0;
+            padding: $space-1;
+            border: none;
+            background-color: $light-8;
+            color: $light-8;
+            border-radius: 50%;
+            &:hover, &:active, &:focus {
+                background-color: darken($light-8, 10%);
+                color: darken($light-8, 10%);
+            }
+        }
+        .slick-active {
+            button {
+                background-color: $white;
+                color: $white;
+            }
+        }
+    }
+}
+.news-slider__slide {
+    widt: 100%;
+    width: 100vw;
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    /*@include widescreen {
+        max-width: 1152px;
+    }
+    @include fullhd {
+        max-width: 1344px;
+    }*/
+}
 .news-slider__image {
     height: auto;
 }
+
+.news-listing--featured {
+    .read-more-link {
+        color: $som-grana;
+    }
+}
+
+.slick-dots-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include tablet {
+        @include make-flexbox($direction: row);
+        .slick-dots {
+            
+        }
+    }
+}
 .news-slider__story {
+    position: relative;
     padding: $gutter-width $gutter-width /2;
-    background-color: $grey-darker;
     color: $white;
     .news-label, .news-date {
         text-transform: uppercase;
@@ -566,55 +697,298 @@ h3 {
         font-size: $size-7;
     }
     .news-label {
-        margin-bottom: $space-1;
+        margin-bottom: $space-2;
         
     }
     .news-slider__story__title {
         font-size: $size-5;
-        margin-bottom: $space-1;
+        margin-bottom: $space-2;
+    }
+    
+    //Background fill
+    &::before {
+        content: " ";
+        background-color: $grey-darker;
+        display: block;
+        width: 100%;
+        height: 100%;        
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
     }
 }
-.banner-text-before, .banner-text-after {
-    position: absolute;
+@include tablet {
+    .news-slider__story {
+        justify-content: flex-end; 
+        position: absolute;
+        right: 0 + (0.768rem); 
+        top: 0;
+        height: 100%;
+        width: 50%;        
+        @include make-flexbox($align: flex-end) ; 
+        text-align: right;
+        z-index: 10;
+        overflow: hidden;
+        padding-right: $gl-xsmall/4;
+        padding-left:  $gl-xsmall;
+        .news-slider__story__text {
+//            width: $gl-xlarge;
+        }
+        &::before {
+            width: 120%;
+            left: 19.5%;
+            transform: skewX(19.5deg); 
+        }
+    }
 }
-.banner-text-before {
-    z-index: -5;
-    top: 0;
-    left: -72%;
-    width: 100%;
-    height: 50vh;
-    transform: skewX(-19.5deg);
+@include desktop {
+    .news-slider__story {
+        height: auto; 
+        top: 50%;
+        @include vertical-align($shiftX: 0);
+        padding-left: $gl-xsmall/2;
+        &::before {
+            width: 100%;
+            left: (19.5%/2);
+            transform: skewX(19.5deg); 
+        }
+    }
 }
-.banner-text-before::before {
-    content: " ";
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    opacity: 0.84;
+@include widescreen {
+   .news-slider__story {
+        width: $gl-med+(19.5%/2); 
+        padding-top: $gl-xsmall/4;
+        padding-bottom: $gl-xsmall/4;
+        height: auto; 
+        top: 50%;
+        @include vertical-align($shiftX: 0); 
+    }
 }
-.banner-text-after {
-    top: 50%;
-    right: -19.5%;
-    width: 100%;
-    height: 40vh;
-    transform: translateY(-50%);
-    padding-left: 16%;
-    padding-top: 4.959rem;
-    padding-bottom: 4.959rem;
+@include fullhd {
+
 }
-.banner-text-after::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: skewX(19.5deg);
+/** News and events feature listing **/
+.news-events--listing {
+    > .columns {
+        @include widescreen {
+            -ms-display: flex;
+            display: flex;
+        }
+    }
+    .column {
+        padding-top: 0;
+        padding-bottom: 0;
+//        border-top: 1px solid $black;
+        @include widescreen {
+            @include make-flexbox($direction: column, $justify: space-between, $align: stretch);
+        }
+    }
+    .news-listing-column, .events-listing-column {
+        margin-bottom: $space-2;
+        @include widescreen { 
+            margin-bottom: 0
+        }
+    }
+    @include widescreen {
+        .news-listing-column {
+            flex: none;
+            width: $gl-xlarge;
+        }
+    }
+
+    .news-events--listing__heading {
+        width: 100%;
+        font-size: $size-4;
+        font-weight: 400;
+        padding-top: $space-1;
+        padding-bottom: $space-1;
+        margin-bottom: $space-2;
+        border-top: 1px solid $black;
+        border-bottom: 1px solid $black;
+        
+    }
+    .news-listing__items {
+        @include tablet {
+            column-count: 2;    
+        }
+    }
+    .news-listing__items, .events-items {
+        flex-grow: 2;    
+    }    
+    .news-listing__item, .events-listing__item {
+        padding-top: $space-11;
+        @include make-fullwidth-box;
+        margin-bottom: $space-1;
+        transition: background-color 120ms ease-out;
+        &:hover {
+            background-color: $light-8;
+        }
+        p {
+             margin-bottom: $space-11;
+        }
+    }
+    .news-listing__title, .events-listing__title {
+        font-size: $size-6;
+        margin-bottom: $space-11;
+        > a {
+            color: $som-grana;
+        }
+    }
+    .events-items {
+        @include tablet {
+            column-count: 2;  
+        }
+        @include widescreen {
+            column-count: 1;  
+        }
+    }
+    .events-listing__item {
+        @include make-flexbox($direction: row, $justify: flex-start);
+    }
+    .events-listing__date {
+        flex: none;
+        width: $gl-small;
+        @include tablet-only {
+            width: $gl-xsmall;
+        }
+    }
+    .event-day, .event-month {
+        text-align: center;
+        display: block;
+    }
+    .event-day {
+        font-size: $size-4;
+        font-weight: 500;
+        text-align: center;
+        padding-top:   $space-1;
+        padding-bottom:$space-1;
+        background-color: rgba($som-grana, 0.84);
+        color: $som-grana-invert;
+        
+    }
+    .event-month {
+        background-color: $light-10;
+        padding-left: $space-11;
+        padding-right: $space-11;
+        
+    }
+    .event-details {
+        padding-left: $gutter-width;
+    }
+    hr {
+        background-color: $grey-dark;
+        margin: 0;
+        margin-top: 0;
+        @include widescreen {
+            @include make-fullwidth-box();    
+        }
+        
+    }
+    .read-more-block {
+        @include makeBoxShadow($black,  0px -12px 36px -16px);
+        margin-top: $space-4;
+        background-color: $light-10;
+        padding-bottom: $space-11;
+        transition: background-color 120ms ease-out;
+        &:hover {
+             background-color: $light-8;
+        }
+        @include widescreen {
+            @include make-fullwidth-box();    
+        }
+    }
+    .read-more-link {
+        color: $som-grana;
+        font-weight: 500;
+    }
+}
+.deans-message-feature {
     background-color: $som-green;
-    opacity: 0.84;
-     z-index: -10;
+    color: $som-green-invert;
+    .read-more-link {
+        font-size: 1rem;
+        text-transform: none;
+        font-weight: 500;
+        color: inherit;
+    }
+    .deans-message__content {
+        @include tablet {
+            @include make-flexbox($direction: row, $justify: flex-start, $align: stretch); 
+            .deans-image {
+                flex: none;
+                width: $gl-small;
+                img {
+                    width: 100%;
+                }
+            }
+            .deans-meassage {
+                padding-left: $gutter-width*2;
+                @include make-flexbox($direction: column);
+            }
+        }
+    }
+    .deans-meassage {
+        background-color: $white;
+        color: $black;
+    }
+    
 }
-            
+
+/** 
+    A-Z links
+**/
+.a-z-navigation {
+    @include make-flexbox($direction:row, $justify: start, $align: start, $wrap: wrap);
+    a {
+        text-transform: uppercase;
+        color: inherit;
+        border-colour: inherit;
+        background-colour: inherit;
+        width: 18%;
+        padding-top:     $space-11;
+        padding-bottom:  $space-11;
+        margin-bottom:  $space-11;
+        border-width: 1px;
+        border-style: solid;
+        
+        -ms-flex: 0;
+        flex-grow: 0;
+        display: inline-flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        
+        transition: background-color 100ms ease-out;
+    }
+    
+}
+/*** 
+ *   Site footer 
+***/
+.vcu-som-footer {
+    background-color: $grey-dark;
+    color: $white;
+    .footer__heading {
+        font-size: $size-4;
+    }
+    .footer__school-name {
+        font-family: $feature-font-serif;
+        font-size: $size-3;
+    }
+    .footer__a-z__links {
+        a {
+            border-color: $white;
+             width: 18%;
+            margin-right: 1%;
+            &:hover, &:active, &:focus {
+                background-color: lighten($grey-dark, 10%);
+            }
+        }
+    }
+    a {
+        color: $white;
+        font-weight: 500;
+    }
+}

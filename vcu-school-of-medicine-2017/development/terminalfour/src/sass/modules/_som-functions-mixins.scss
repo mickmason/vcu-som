@@ -44,9 +44,11 @@
     font-family: $family;
     font-weight: $weight;
 }
-@mixin make-flexbox($direction: column, $justify: center, $align: start ) {
+@mixin make-flexbox($direction: column, $wrap: nowrap, $justify: center, $align: start ) {
     display: -ms-flexbox;
     display: flex; 
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
     -ms-flex-direction:     $direction;
     flex-direction:         $direction;
     -ms-flex-pack:          $justify;
@@ -69,6 +71,12 @@
         height: auto;
     }
 }
+@mixin make-fullwidth-box($gutter: $gutter-width) {
+    padding-left:  $gutter;
+    padding-right: $gutter;
+    margin-left:  -$gutter;
+    margin-right: -$gutter;
+}
 
 /* Gradient fills */
 @mixin boxShadow($color: $black, $options...) {
@@ -82,7 +90,7 @@
                 $box-shadows: append($box-shadows, inset 0px 30px 58px -58px rgba($color,1), comma); 
             } @else if $option == insetBottomThin {
                 $box-shadows: append($box-shadows, inset 0px -30px 58px -58px rgba($color,1), comma); 
-            } @else if $option == insetleft {
+            } @else if $option == insetLeft { 
                 $box-shadows: append($box-shadows, inset 52px 0px 40px -46px rgba($color,0.36), comma);  
             } @else if $option == insetRight {
                 $box-shadows: append($box-shadows, inset -52px 0px 40px -46px rgba($color,0.36), comma); 
@@ -108,3 +116,7 @@
     -moz-box-shadow:    $options rgba($color, 0.36); 
     box-shadow:         $options rgba($color, 0.36);
 }
+@mixin vertical-align($shiftX: -50%, $shiftY: -50%) {
+    transform: translate($shiftX, $shiftY);
+}
+    

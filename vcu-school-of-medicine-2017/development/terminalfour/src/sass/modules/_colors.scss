@@ -23,6 +23,7 @@ $wine-invert: findColorInvert($wine);
 
 $blacker: #101010;
 $black: #202020;
+$black-invert: findColorInvert($black);
 
 $gray-3: #303030; 
 $gray-32: #323232;
@@ -51,6 +52,7 @@ $addColors: (
   "blue": ($blue, $blue-invert),
   "purple": ($purple, $purple-invert),
   "red": ($red, $white),
-  "wine": ($wine, $wine-invert)
+  "wine": ($wine, $wine-invert),
+  "black": ($black, $black-invert),
 );
 $colors: map-merge($colors, $addColors);

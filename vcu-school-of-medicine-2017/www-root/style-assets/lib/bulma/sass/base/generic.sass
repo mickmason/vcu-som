@@ -1,5 +1,5 @@
 $body-background-color: $white !default
-$body-size: 16px !default
+$body-size: 14px !default
 $body-rendering: optimizeLegibility !default
 $body-family: $family-primary !default
 $body-color: $text !default
@@ -28,6 +28,12 @@ html
   overflow-y: scroll
   text-rendering: $body-rendering
   text-size-adjust: 100%
+  +tablet 
+    font-size: 16px
+  +desktop
+    font-size: 18px
+  +widescreen
+    font-size: 20px
 
 article,
 aside,

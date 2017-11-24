@@ -166,7 +166,8 @@ module.exports = function(grunt) {
       svgstore: {
          files: {
             'development/terminalfour/src/media/svg-icons/som-icons.svg' : ['development/terminalfour/src/media/icons/*.svg']
-        }          
+         },
+         tasks: ['svgstore:default', 'copy']
       }
     }//watch
     

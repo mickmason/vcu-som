@@ -50,8 +50,37 @@
         }
     }
 }
-
 //Extended columns
+.columns {
+    &:before {
+        content: ''
+    }
+    &.is-widescreen {
+        display: inherit;
+    }
+    @include tablet {
+          &:not(.is-widescreen) {
+              display: -ms-flexbox;
+              display: flex;
+          }
+    }
+    @include desktop {
+        // Modifiers
+        &.is-desktop {
+          display: -ms-flexbox;
+          display: flex;
+        }
+    }
+    @include widescreen {
+        &.is-widescreen {
+          display: -ms-flexbox;
+          display: flex;
+        }
+    }
+  
+}
+  
+  
 .centralized-columns {
     display: block;
     @include desktop {
