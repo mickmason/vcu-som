@@ -3,6 +3,8 @@ $som-green: #006c68;
 $som-green-invert: findColorInvert($som-green);
 $som-grana: #8E0021; 
 $som-grana-invert: findColorInvert($som-grana);
+$som-yellow: #ffba00;
+$som-yellow-invert: findColorInvert($som-yellow);
 
 $primary: $som-green;
 $primary-invert: $som-green-invert;
@@ -47,6 +49,7 @@ $addColors: (
   "transparent":(rgba(#000, 0), $white), 
   "som-green": ($som-green, $som-green-invert),
   "som-grana": ($som-grana, $som-grana-invert),
+  "som-yellow": ($som-yellow, $som-yellow-invert),
   "orange": ($orange, $orange-invert),
   "green": ($green, $green-invert),
   "blue": ($blue, $blue-invert),

@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-parallel');
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-postcss');
 
 
   //Uncommment the line below to add JSHint into the project (Ctrl+f to find all regions needed to be uncommented in order to add in JSHint)
@@ -128,13 +129,26 @@ module.exports = function(grunt) {
         },
         dist: {
               src: [
+                  'development/lib/flexibility/flexibility.js', 
                   'development/lib/slick/slick/slick.min.js', 
-                  'development/terminalfour/src/js/*.js'],
+                  'development/terminalfour/src/js/*.js'
+                  ],
               dest: 'www-root/style-assets/js/t4-scripts.js'
                   
         }
     },
-      
+    
+    postcss: {
+      options: {
+        map: true, // inline sourcemaps
+        processors: [
+          require('postcss-flexibility')(), // add IE 10 flexbox support
+        ]
+      },
+      dist: {
+        src: 'www-root/style-assets/css/style.css'
+      }
+    },
     watch: {
       options: { livereload: true },
       sass: {
@@ -142,7 +156,7 @@ module.exports = function(grunt) {
         
         //Uncomment the line below and delete the other tasks line to add csslint into the project
         //tasks: ['sass:dist','csslint:strict']
-        tasks: ['sass:dist']
+        tasks: ['sass:dist', 'postcss']
 
       },//sass
       media: {
@@ -181,6 +195,7 @@ module.exports = function(grunt) {
     'copy',
     'svgstore',
     'watch',
+    'postcss',
     'express-keepalive'
   ]);
 
