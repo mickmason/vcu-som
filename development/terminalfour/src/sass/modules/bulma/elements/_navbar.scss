@@ -1,0 +1,56 @@
+@import '../../som-functions-mixins';
+@include touch {
+    .navbar-menu {
+        box-shadow: none;
+    }
+}
+.navbar-item img {
+    max-height: none;
+}
+.navbar-dropdown {
+    font-size: 0.8rem;
+    border-radius: 0;
+    min-width: 0;
+}
+.navbar-link {
+    padding-right: 0;
+    
+}
+@include until(widescreen) {
+    .navbar-brand .navbar-item, .navbar-tabs .navbar-item {
+        
+    }
+}
+@include desktop {
+    .navbar-brand, .navbar-tabs {
+        @include make-flexbox($direction: row, $align: stretch);
+        -ms-flex-negative: 0;
+    }
+    .navbar-item, .navbar-link {
+        @include make-flexbox($direction: row, $align: center);
+    }
+    .navbar, .navbar-menu, .navbar-start, .navbar-end {
+        @include make-flexbox($direction: row, $align: stretch, $justify: space-between);
+    }
+    .navbar-menu {
+        -ms-flex: 1 0 auto;
+    }
+    .navbar-link {
+        &::after {
+            content: "";
+            border: none;
+        }
+
+    }   
+    .navbar-item.has-dropdown {
+        -ms-flex-align: stretch;
+    }
+    .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
+        background-color: transparent;
+    }
+    .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
+        background-color: inherit;
+    }
+}
+
+    

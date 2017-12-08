@@ -1,0 +1,4 @@
+//icons extensions
+.icon {
+    @include make-flexbox($display: inline-flex, $align: center, $justify: center);
+}

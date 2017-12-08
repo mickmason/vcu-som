@@ -1,0 +1,15 @@
+@import 'som-functions-mixins';
+
+.button {
+    &.is-secondary { 
+        background-color: $som-grana;
+        border-color: $white;
+        color: $white;
+        @include active-link {
+            background-color: darken($som-grana, 5%);
+            border-color: $white;
+            color: $white;    
+        }
+    }
+    
+}

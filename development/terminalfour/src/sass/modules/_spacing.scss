@@ -1,0 +1,65 @@
+//Custom spacing
+$space-11: 0.307rem;
+$space-1: 0.614rem;
+$space-2: 0.96rem; 
+$space-3: 1.2rem; 
+$space-4: 1.5rem;
+$space-4a: 1.875rem;
+$space-5: 2.344rem; 
+$space-6: 3.662rem; 
+$space-7: 4.578rem; 
+$space-8: 5.722rem; 
+
+//sizing:
+$size-0: 3.815rem ;
+$size-1: 3.052rem ; 
+$size-2: 2.441rem ;  
+$size-3: 1.953rem ;
+$size-4: 1.563rem ; 
+$size-5: 1.25rem ;
+$size-5a: 1.125rem ; 
+
+$size-6: 1rem ;
+$size-7a: 0.9rem ; 
+
+$size-7: 0.8rem ;
+$size-8: 0.75rem ;
+$size-9: 0.64rem ; 
+
+$tablet: 768px;
+
+// Golden ratio for layout
+$golden:	1.618;
+$base:	    100%;
+$gld-10:	$base / $golden;
+$gld-9:	    $base - $gld-10;
+$gld-8:	    $gld-9 / $golden;
+$gld-7:	    $gld-9 - $gld-8;
+$gld-6:	    $gld-7 / $golden; 
+$gld-5:	    $gld-7 - $gld-6;
+$gld-4:	    $gld-5 / $golden;
+$gld-3:	    $gld-5 - $gld-4;
+$gld-2:	    $gld-3 / $golden; 
+$gld-1:	    $gld-3 - $gld-2;
+
+@debug "$golden"    $golden;
+@debug "$base"      $base;  
+@debug "$gld-10"    $gld-10;
+@debug "$gld-9"     $gld-9;	  
+@debug "$gld-8"     $gld-8;	  
+@debug "$gld-7"     $gld-7;	  
+@debug "$gld-6"     $gld-6;	  
+@debug "$gld-5"     $gld-5;	  
+@debug "$gld-4"     $gld-4;	   
+@debug "$gld-3"     $gld-3;	  
+@debug "$gld-2"     $gld-2;	  
+@debug "$gld-1"     $gld-1;	  
+$gl-large:	    $gld-10;
+$gl-xlarge:	    $base - ($gld-7 + $gld-7);
+$gl-med:        $gld-9;
+$gl-small:	    $gld-8;
+$gl-xsmall:	    $gld-7; 
+
+$gutter-width: $golden * 1rem;
+@debug '$gutter'    $gutter-width;
+$separator: ($gutter-width /2);

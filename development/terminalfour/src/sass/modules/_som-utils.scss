@@ -1,0 +1,14 @@
+//SoM Utilities
+@each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    $border-col: if($name == 'transparent', transparent, $color-invert);
+    $border-col: if($name == 'som-green', $color, $color-invert);
+    $border-col: if($name == 'som-grana', $color, $color-invert);
+    
+    .has-#{$name}-background {
+        background-color:   $color;
+        color: $color-invert;
+    }
+}
+    

@@ -1,0 +1,305 @@
+//Cards
+/** flat cards - base styling for cards **/
+.card--flat {
+    .card__anchor {
+        display: block  ;
+        color: inherit;
+        &:hover, &:focus, &:active {
+            text-decoration: none;
+        }
+    }
+    .card-header {
+        box-shadow: none ;  
+    }
+    .card-heading {
+        color: inherit;
+        font-size: $size-5;
+        margin-top: flat-margin($size-4);
+        margin-bottom: $space-1; 
+    }
+    .card-content {
+        padding: $space-3 $gutter-width/2;
+        transition: background-color 160ms ease-out;
+    }
+    .card-content__text {
+        color: inherit;
+        margin-bottom: 0;
+    }
+    p {
+        margin-bottom: $space-1;
+    }
+    a {
+        color: inherit;
+    }
+    .card-content__read-more {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: inherit;
+        margin-top: $space-1;
+        margin-bottom: 0;
+
+    }
+    img {
+        transition: transform 160ms ease-in        
+    }
+    .image-overlay {
+        background-color: rgba($black, 0.12);
+    }
+
+    &:hover, &:focus, &:active {
+        cursor: pointer;           
+        .card-image {
+            img {
+                transform: scale(1.05);
+            }
+        }
+        .image-overlay {
+            background-color: rgba($black, 0.32);
+        }
+        .card-content__text {
+            text-decoration: underline;
+        }
+        .card-content__read-more {
+            font-weight: 700;
+        }
+    }
+}
+.card--dark {
+    color: $white;
+    .card-content {
+        background-color: $gray-32; 
+    }
+    .icon {
+        svg {
+            fill: $white;
+            stroke: $white;
+        }
+    }
+}
+/** Site gateway cards **/
+.site-gateways {
+    padding-top:     $space-5*1;
+    padding-bottom:  $space-5*2;
+}
+.site-gateway__card {
+    border: 1px solid $light-8;
+    .card-heading {
+        font-size: $size-5;
+        margin-bottom: $space-1;
+    }
+    .card-content {
+        text-align: center;
+        p {
+            margin-bottom: 0;
+        }
+        border-bottom: 3px solid $som-green;
+    }
+    .card__anchor {
+        color: transparent;
+        * {
+            color: $text;        
+        }
+    }
+    &:hover, &:focus, &:active {
+        background-color: darken($card-background-color, 2.5%)
+    }
+}
+
+/** Featured programs cards **/
+.featured-programs {
+    background-color: $light-10;
+    padding-top:     $space-5*1.5;
+    padding-bottom:  $space-5*2;
+    @media screen and (min-width: 700px) {
+        padding-top:     $space-6;
+        padding-bottom:  $space-6*1.8;
+    }
+    @include desktop {
+        padding-top:     $space-6*1.6;
+    }
+    
+    @include boxShadow($black, top, insetBottom) ; 
+
+    .featured-programs__outer-columns {
+        display: block;
+        @include desktop { 
+            @include make-flexbox($direction:row, $align: stretch);
+        }        
+    }
+
+    .featured-programs__column {
+        padding-left:  $gld-7; 
+        padding-right: $gld-7; 
+        @media screen and (min-width:  540px) {
+            padding-left:  $gld-6; 
+            padding-right: $gld-6; 
+        }
+        @include desktop {
+           padding:  ($space-2 / 2) $column-gap; 
+        }
+        &.featured-programs-cards {
+            .column {
+                padding: 0;
+               
+            }
+            @media screen and (min-width:  540px) {
+ 
+                > .columns {
+                    display: flex;
+                }        
+            }
+            @include desktop {
+                padding-left:  $gld-5; 
+                padding-right: $gld-5; 
+            }
+
+        }
+        &.featured-programs__intro--column {
+            @include desktop {
+                @include make-gl-col();
+                padding-left:  $gl-xsmall/3; 
+                padding-right: $gl-xsmall/3; 
+                .featured-programs-cards__intro {
+                    height: 100%;
+                    @include  make-flexbox;
+                    
+                }
+            }
+        }
+    }
+}
+.featured-programs-cards__intro {
+    margin-bottom: $space-6;            
+    @include desktop {
+        margin-bottom: auto;            
+    }
+
+}
+.featured-programs-card {
+    text-align: right;
+    position: relative;
+    overflow: hidden; 
+    
+    .card-image {
+        figure {
+            @include make-image-container(120%);
+            @include desktop{
+                padding-top: 142%;
+            }
+        }
+    }
+    .card-content {
+        color: $white;
+        
+         padding-bottom:  $space-2;
+         padding-right: $gutter-width/1.25;
+         padding-left: $gutter-width/1.25;
+         padding-top: $gutter-width/1.25;
+         background-color: transparent;
+         position: absolute;
+         bottom: -8.6rem;
+         left: 0;
+        z-index: 20;
+        width: 100%;
+        .card-heading {
+            font-family: $garamond-prem;
+            font-size: $size-3;
+            margin-bottom: $size-9;
+        }
+        p {
+            margin-bottom: $space-11;
+        }
+        .card-content__read-more {
+            
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: inherit;
+            margin-bottom: 0;
+            .icon {
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+        transition: background-color 260ms ease-out, bottom 280ms ease-out;
+        
+        @include desktop {
+            bottom: -11.5rem;
+        }
+        @include widescreen {
+            bottom: -10rem; 
+        }
+    }
+    transition: transform 240ms ease-out 40ms;
+    &:hover, &:active, &:focus {
+        transform: scale(1.1);
+        -webkit-box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 16px    -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 16px         -2px rgba(0,0,0,0.75);
+        overflow: visible;
+        z-index: 30;
+        .card-content {
+            bottom: 0rem;
+            background-color: $som-green;
+        }
+    }
+}
+.program-card {
+    position: relative;
+    .card-heading {
+        margin-bottom: $space-2;
+    }
+    .card-content__read-more {
+        margin-top: 0;
+        padding-right:  $gutter-width/4;
+        font-size: 1rem;
+        text-transform: none;
+        @include active-link {
+            font-weight: 400;
+            text-decoration: underline;
+        }
+    }
+    .program-card__intro {
+        margin-bottom: $space-3; 
+    }
+    .program-card__ctas {
+        
+        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+    }
+    @include active-link {
+         .card-content__read-more {
+            font-weight: 400;
+        }
+    }
+}
+.program-card__content {
+    background-color: $som-green;
+    color: $white;
+}
+
+.grad-overlay-card {
+    color: $white;
+    position: relative;
+    .card-heading {
+        margin-bottom: $space-11;
+    }
+    
+    p {
+        margin-bottom: 0;
+    }
+    .card-content {
+        position: absolute; 
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    a { 
+        @include active-link {
+            p {
+                text-decoration: underline;    
+            }
+        }
+    }
+}
