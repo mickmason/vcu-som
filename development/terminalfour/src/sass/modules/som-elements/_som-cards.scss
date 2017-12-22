@@ -1,6 +1,8 @@
 //Cards
 /** flat cards - base styling for cards **/
 .card--flat {
+     border: 1px solid $light-8;
+     overflow: hidden;
     .card__anchor {
         display: block  ;
         color: inherit;
@@ -31,6 +33,17 @@
     a {
         color: inherit;
     }
+    img {
+        transition: transform 160ms ease-in        
+    }
+    .image-overlay {
+        background-color: rgba($black, 0.12);
+    }
+    &:not(.program-card) {
+        .button {
+            margin-top: $space-2;
+        }
+    }
     .card-content__read-more {
         display: block;
         text-transform: uppercase;
@@ -38,15 +51,44 @@
         color: inherit;
         margin-top: $space-1;
         margin-bottom: 0;
-
     }
-    img {
-        transition: transform 160ms ease-in        
+    .card__arrow {
+        text-align: right;
+        @include make-flexbox($direction: row, $justify: flex-end, $align: center);
+        .icon {
+            width: $gl-xsmall; 
+            max-height: $space-4;
+            @include vision-angle($bg-color: $gray-32, $pull: right);
+            &::before {
+               height: 102%;
+               width: 130%;
+               right: -30%;
+            }
+            svg {
+                height: 110%;
+                fill: $white; 
+            }
+        }
     }
-    .image-overlay {
-        background-color: rgba($black, 0.12);
+    @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.has-border-#{$name} {
+            border-bottom: 3px solid $color;
+            .card__arrow {
+                span {
+                    &::before {
+                        background-color: $color;
+                    }
+                    .icon {
+                        svg {
+                            fill: $color-invert;
+                        }
+                    }
+                }
+            }    
+        }
     }
-
     &:hover, &:focus, &:active {
         cursor: pointer;           
         .card-image {
@@ -65,6 +107,31 @@
         }
     }
 }
+.heading-only-card {
+    border: none;
+    .heading-only-card__content {
+        border-left: 1px solid $light-10;
+        @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
+        .card-heading {
+            font-size: $size-6;
+            margin-bottom: 0;
+        }
+        .card__arrow {
+            max-width: $gl-small;
+            .icon {
+                height: 100%;
+                width: 100%;
+                max-height: none;
+            }
+            .heading-only-card__icon-wrap {
+                max-height: $space-5;
+                svg {
+                    height: $space-5;
+                }
+            }
+        }
+    }
+}
 .card--dark {
     color: $white;
     .card-content {
@@ -80,12 +147,12 @@
 /** Site gateway cards **/
 .site-gateways {
     padding-top:     $space-5*1;
-    padding-bottom:  $space-5*2;
+    padding-bottom:  $space-5;
 }
 .site-gateway__card {
     border: 1px solid $light-8;
     .card-heading {
-        font-size: $size-5;
+        font-size: $size-6;
         margin-bottom: $space-1;
     }
     .card-content {
@@ -93,7 +160,6 @@
         p {
             margin-bottom: 0;
         }
-        border-bottom: 3px solid $som-green;
     }
     .card__anchor {
         color: transparent;
@@ -103,9 +169,8 @@
     }
     &:hover, &:focus, &:active {
         background-color: darken($card-background-color, 2.5%)
-    }
+    }   
 }
-
 /** Featured programs cards **/
 .featured-programs {
     background-color: $light-10;
@@ -144,7 +209,6 @@
                
             }
             @media screen and (min-width:  540px) {
- 
                 > .columns {
                     display: flex;
                 }        
@@ -277,7 +341,127 @@
     background-color: $som-green;
     color: $white;
 }
+/** Video slider - has a caption and play icon **/
+.video-slider-card {
+    .card-content {
+        padding: 0;
+    }
+    .card-content__controls {
+        @include make-flexbox($direction: row, $justify: flex-start, $align: stretch);
+    }
+    .video-slider__play, .video-slider__caption {
+        padding-top:     $space-2;
+        padding-bottom:  $space-2;
+    }  
+    .video-slider__play {
+        width: $gld-7;
+        border-right: 1px solid $black;
+        @include make-flexbox($direction: row, $justify: center, $align: center);
+        span {
+            width:  $size-1;
+            height: $size-1;
+        }
+        transition: background-color 160ms ease-in;
+        @include active-link {
+            background-color: $light-10; 
 
+        }
+    }
+    .video-slider__caption {
+         @include make-flexbox($direction: column, $justify: center);
+        width: 100%;
+        padding-left: $gutter-width/2;
+        padding-right: $gutter-width/2;
+        font-size: $size-5;
+    }
+    @include tablet {
+        .video-slider__play {
+            span {
+                width:  $size-0;
+                height: $size-0;
+            }
+        }
+    }
+}
+/** Featured discovery card - card-content has a date and discovery title, 
+    card image has a category label **/
+.featured-discovery-card {
+    .card-image {
+        position: relative;
+    }
+    .card-label {
+        right: 0;
+        top: $gld-6;
+        padding-top:    $space-11*0.75;
+        padding-bottom: $space-11*0.75;
+        padding-left:  $gutter-width/2;
+        padding-right: $gutter-width/2;
+        @include vision-angle($bg-color: $white, $pull: right);
+        position: absolute;
+    }
+    .card-content {
+        @include make-flexbox($direction: column, $justify: flex-start, $align: stretch);
+        &.is-featured {
+            background-color: $black;
+            color: $white;
+            .card__title {
+                font-size: $size-5;
+            }
+        }
+    }
+    .card__date {
+        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+        background-color: $light-10;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: auto;
+        .card__date__day, .card__date__month {
+            padding-top:     $space-11;
+            padding-bottom:  $space-11;    
+        }
+        .card__date__day {
+            font-weight: 500;
+            font-size: $size-5a;    
+            line-height: 1;
+            color: $white;
+            padding-left:     $gutter-width/2;
+            padding-right:    $gutter-width/2;
+            border-right: 1px solid $black;
+            background-color: $som-grana;
+        }
+        .card__date__month {
+            @include boxShadow($black, insetLeftThin);
+            display: inline-block;
+            width: 100%; 
+            line-height: 1;
+            font-size: $size-7a; 
+            padding-left:     $gutter-width/2;
+            padding-right:    $gutter-width/2;
+        }
+    }
+    .card__date--plain {
+        font-size: $size-7;
+        margin-bottom: 0;
+        margin-top: $space-1;
+        color: $gray-6
+    }
+    .card__title {
+        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+        width: 100%;
+        margin-bottom: 0;
+        font-size: $size-6;
+        font-weight: 500;
+    }
+    @include desktop {
+        .card-label {
+            font-size: $size-9; 
+        }
+        
+    }
+
+}
 .grad-overlay-card {
     color: $white;
     position: relative;
@@ -302,4 +486,47 @@
             }
         }
     }
+}
+.by-the-numbers-card {
+    .by-the-numbers__number {
+        font-family: $family-serif;
+        font-size: $size-0*1.25;
+        line-height: 1;
+        margin-bottom: $space-3;
+        @include mobile {
+            margin-bottom: 0;
+        }
+    }
+    .by-the-numbers__sub-text {
+        font-size: $size-3;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .by-the-numbers__text {
+        font-size: $size-5a; 
+    }
+}
+.card--plain-text {
+    
+}
+.sidebar-card {
+    background-color: $white; 
+    padding-top: $space-2;
+    padding-left: $gutter-width/3;
+    padding-right: $gutter-width/3;
+    .card-title {
+        font-weight: 700;
+        margin-bottom: $space-2;
+    }
+    
+    //News listings
+    .news-events--listing {
+        .news-listing__title, .news-listing__date {
+            font-size: $size-7a; 
+        }
+        .news-listing__label {
+            font-size: $size-8;
+        }    
+    }
+
 }

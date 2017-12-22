@@ -1,11 +1,7 @@
-//Header scss includes main, secondary navs, site search, Bulma overrides and extensions
-.main-site-header {
-    &.section {
-        padding-top:     0;
-        padding-bottom: 0;
-    }
-}
-//General styling
+/* 
+    SoM Navigation schemes
+*/
+/* Main navigation */
 .main-navigation {
     .navbar-brand {
         -ms-flex-pack: justify;
@@ -154,8 +150,6 @@
             -ms-flex-direction: column;
             flex-direction: column;
         }
-
- 
     }
 }
 .navbar-link {
@@ -168,8 +162,7 @@
         }
     }    
 }  
-
-//Secondary nav menu - mobile 
+/* Secondary navigation - mobile */
 .secondary-nav--mobile__menu {
     display: block;
     position: absolute;
@@ -276,17 +269,13 @@
             &:hover, &:active, &:focus, &.is-active {
                 background-color: lighten($gray-32, 15%);
                 color: $white;
-
-            }  
-            
+            } 
         }
         &:hover, &:active, &:focus, &.is-active {
                 background-color: lighten($gray-32, 15%);
                 color: $white;
-
         }  
         transition: background-color 120ms ease-out;  
-        
     }
     .navbar-item {
         &.has-dropdown {
@@ -339,7 +328,6 @@
             z-index: -10;
         }
     }
-    
     @include desktop {
         @include make-flexbox($direction: row, $justify: flex-end, $align: center);
         .navbar-item {
@@ -357,7 +345,7 @@
         }
     }
 }
-//Main nav 
+/* Main navigation */
 .main-navigation__menu {
     @include touch {
         display: block;
@@ -395,7 +383,10 @@
             width: 100%;
         }
         .main-nav-toggle {
-            display: none;
+            &.icon {
+                display: none;    
+            }
+            
         }
     }
     padding:    $space-2 0;
@@ -442,21 +433,17 @@
     }
     //Top level links
     .navbar-link--main {
-        
         font-weight: 700;
         display: inline-block;
         -ms-flex: 1 0 auto;
         flex-grow: 1;
         padding: $space-3 $gutter-width;
-        
          @include touch {
             border-bottom: 1px solid $som-green;   
             border-top: 1px solid $som-green; 
             margin-top: -1px;
             width: 100%;
-             
         }
-        
         @include make-flexbox($direction: row, $justify: space-between);
         &.is-active {
             background-color: transparent;
@@ -477,20 +464,15 @@
                     stroke: $white;
                 }
             }
-            
         }
-
     }
-
     //Nav dropdown body areas 
     .navbar-dropdown__links {
         @include touch {
             @include boxShadow($black, insetBottomThin, insetTopThin);    
         }
     }
-        
     //Sublinks
-    
     .navbar-dropdown__link { 
         font-size: 1rem;
         padding: $space-2 $gutter-width;
@@ -519,10 +501,7 @@
             -ms-flex: 1 0 auto;
             flex-grow: 1;
             flex-shrink: 0;
-            
-            
         }
-
         .navbar-dropdown {
             border-top: none;
             width: 100%;
@@ -553,11 +532,8 @@
                     &:last-child {
                         padding-left: $gutter-width/2;    
                     }
-                    
-                    
                 } 
             }
-            
         }
         .navbar-dropdown__header {
             width: 100%;
@@ -603,7 +579,6 @@
             padding-top: calc($space-2 + $space-1);
             padding-left:  $gutter-width; 
         }
-
     }
     @include widescreen {
          .main-navigation__item {
@@ -707,123 +682,317 @@
        }   
     }
 }
-@include widescreen {
-    
-}
 
-//Search form
-.site-search-form {
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 86.615px;
-    width: calc(100% + $gutter-width); 
-    margin-left:   -$gutter-width/2;
-    margin-right:  -$gutter-width/2;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 100;
-    transition: visibility 160ms ease-out, opacity 160ms; 
-    
-              //triangle
-   
-    &::after {
-        position: absolute;
-        top:       -5%;
-        bottom:   -110%;
-        left:     -5%;
-        right:    -5%;
-        height:    110%;
-        width:     110%;
-        content: " ";
-        z-index: -10;
+/** Audience navigation **/
+.landing-page-navigation {
+    @include boxShadow($black, bottom);
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: 4px solid $black; 
+    a {
+      color: inherit;
     }
-    
-    
+    //Toggle nav body 
+    .icon {
+        -ms-flex:  0;
+        flex-grow: 0;
+        height: $size-4;
+        width:  $size-4;
+    }
     &.is-active {
-        visibility: visible;
-        opacity: 1;
+        .landing-page-nav__body-wrap {
+            display: block;
+        }
     }
-    
-    padding: $space-5 $gutter-width;
-    
+}
+.landing-page-nav__top-wrap {
+    color: $white;
+}
+.landing-page-nav__top-wrap, .landing-page-nav__body-wrap {
+    margin-left: -$gutter-width/2;
+    margin-right: -$gutter-width/2;
+}
+.landing-page-nav__top-wrap {
+    background-color: $gray-32;
+    padding-top:     $space-1;
+    padding-bottom:  $space-1;
+}
+.landing-page-nav__body-wrap {
     background-color: $light-10;
-    color: $black;
-    
-    .site-search-form__inputs {
-        @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
+    display: none;
+}
+.landing-page-nav__heading {
+    padding-left: $gutter-width/2;
+    padding-right: $gutter-width/2;
+    .landing-page-nav__heading-text { 
+        font-size: $size-5;
+        font-weight: 400;
+        margin-bottom: 0;
     }
-    #searchquery {
-        background-color: transparent;
-        color: $gray-32;
-        
-        font-size: 1rem;
-        padding: $space-1 $space-1;
-        margin-right: $gld-4; 
-        
-        border: none;
-        border-bottom: 1px solid $black;
-        
-        -ms-flex: 1;
-        flex-grow: 1; 
-        
-        transition: background-color 160ms ease-out;
-        
-        &:active, &:focus {
-            outline: unset;
+   .landing-page-nav__toggle {
+        max-height: $size-3;
+        max-width:  $size-3;
+        min-width: 100%;
+        @include make-flexbox($direction: row, $justify: space-between, $align: center);
+    } 
+}
+.landing-page-navigation__body {
+    padding-top:    $space-4;
+    padding-bottom: $space-5;
+    padding-left: $gutter-width/2;
+    padding-right: $gutter-width/2;
+    .column {
+        padding: 0;
+    }
+    .landing-page-navigation__link {
+        display: block;
+        padding: $space-11 $column-gap;
+        margin-bottom: $space-11;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        transition: background-color 120px ease-in;
+        @include active-link {
             background-color: $white;
         }
     }
-    #search_go {
-        background-color: transparent;
-        border: none; 
-        @include make-flexbox($direction: column, $justify: flex-end, $align: center);
-    }
-    p {
-        margin-top:     $space-5;
-        margin-bottom:  $space-1;
-    }
-    fieldset {
-        border: none;
-        legend { display: none; }
-    }
-    .site-search-form__filters {
-        border: none;
-        .site-search-form__filter {
-            -ms-flex:     0;
-            flex-grow:    0;
+    @include tablet {
+        .column {
+            @include make-flexbox($direction: row, $justify: space-around, $wrap: wrap); 
         }
-        .site-search-form__filter_label {
-            -ms-flex:  0;
-            flex-grow: 0;
-            padding-left:  $space-1;
-            margin-right: $gld-6;
-        }
-        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+        .landing-page-navigation__link {
+            -ms-flex: 1 1 50%;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 50%;
+        } 
     }
-    border-bottom: 4px solid $som-green;
+    @include tablet {
+        .column {
+            
+        }
+        .landing-page-navigation__link {
+            -ms-flex: 1 1 20%;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 20%;
+        } 
+    }
+}
+.audience-navigation {
+    border-bottom-color: $som-yellow; 
+}
+.audience-navigation__top-wrap {
+    background-color: $black; 
+}
+.audience-navigation__body-wrap {
+    background-color: $gray-32;
+}
+.audience-navigation__body {
+    color: $white;
+    padding-top:    $space-5;
+    .column {
+        padding: 0 $column-gap;   
+    }
+    li {
+        margin-bottom: $space-3; 
+    }   
+    @include tablet {
+        .column {
+             display: block; 
+        }
+
+    }
+}
+/** Inner page navigation schemes **/
+//Sidebar nav
+.sidebar-nav-wrap {
     @include desktop {
-        position: absolute;
-        left: auto;
-        top:   28px;
-        right: 11.0%;
-        width: $gl-large;
-        @include boxShadow($black, fullPaper);
-         &::before {
-            position: absolute;
-            top:     16px;
-            right:  -8px;
-            content: " ";
-            width: 0; 
-            height: 0; 
-            border-top:     8px solid transparent;
-            border-bottom:  8px solid transparent;
-            border-left:    8px solid $light-10 ;
+        margin-left: -$gutter-width/2; 
+        margin-right: -($gutter-width/2);
+    }
+}
+.sidebar-nav-toggle {
+    background-color: $gray-32;
+    color: $white;
+    overflow: hidden;
+    > a {
+        color: inherit;
+        @include make-flexbox($direction: row, $align: center, $justify: space-between);
+        h3 { 
+            padding: $space-1 $gutter-width/2;
+            font-size: $size-7a;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+        @include active-link {
+            .sidebar-nav-toggle__icons {
+                &::before {
+                    background-color: darken($gray-8,  5.57224%);
+                }
+            }
         }
     }
-    @include widescreen {
-        top: 42px;
-        right: 8.0%;
+    @include desktop {
+        .sidebar-nav-toggle__icons {
+            display: none;
+        }
+    }
+    @include touch {
+        & + .sidebar-nav {
+            display: none;
+        } 
+    }
+}
+.sidebar-nav {
+    margin: 0;
+    padding: 0;
+    ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .show-more-icon {
+                display: inherit;
+            }
+            .show-less-icon {
+                display: none;
+            }
+    .is-active {
+        > .sidebar-nav-toggle__icons {
+            .show-more-icon {
+                display: none;
+            }
+            .show-less-icon {
+                display: inherit;
+            }
+        }
+    }
+    li {
+        &.has-dropdown {
+            > a {
+                &:not(.sidebar-nav-toggle__icons) {
+                    -ms-flex: none;
+                    flex: none;
+                    width: (100%-$gld-7);    
+                }
+                
+            }
+            > ul {
+                display: none;
+            }
+        }
+        list-style: none;
+        @include make-flexbox($direction: row, $justify: stretch, $align: center, $wrap: wrap);
+        a {
+            &:not(.sidebar-nav-toggle__icons) {
+                @include make-flexitem(1, 1, auto);
+                padding: $space-1 $gutter-width/2;
+            }
+            
+            background-color: $white;
+            color: $black;    
+            align-self: stretch;
+            
+            @include active-link {
+                background-color: darken($white, 5.57224%);
+            }
+            transition: background-color 120ms ease-in; 
+        }
+        border-bottom: 1px solid $light-10;
+        &.is-active {
+            > a {
+                border-bottom: 1px solid darken($white, 5.57224%);
+            }
+        }
+    }
+    &:last-child {
+        boder-bottom: none;
+    }
+    > li {
+        > a {
+            font-size: $size-7a;
+            &.sidebar-nav-toggle__icons {
+                @include active-link {
+                    background-color: darken($white, 5.57224%);
+                }
+            }
+        }
+        > ul {
+            li {
+                > a {
+                    background-color: $light-10;
+                    font-size: $size-7;
+                    &:not(.sidebar-nav-toggle__icons ) {
+                        padding-left: $gutter-width;
+                    }
+                    @include active-link {
+                        background-color: darken($light-10, 5.57224%);
+                    }
+                    &.sidebar-nav-toggle__icons {
+                        background-color: $light-10;
+                        @include active-link {
+                            background-color: darken($light-10, 5.57224%);
+                        }
+                    }
+                }
+                > ul {
+                    li {
+                        > a {
+                            font-size: $size-8;
+                            &:not(.sidebar-nav-toggle__icons ) { 
+                                padding-left: $gutter-width*2;
+                            }
+                            background-color: $light-8;
+                            color: $black;
+                            @include active-link {
+                                background-color: darken($light-8, 5.57224%);
+                            }
+                            &.sidebar-nav-toggle__icons {
+                                background-color: $light-8, 5.57224%;
+                                @include active-link {
+                                    background-color: darken($light-8, 5.57224%);
+                                }
+                            }
+                        }
+                        border-bottom: none;
+                    }
+                }
+                border-bottom: 1px solid darken($light-8, 5.57224%);
+            }
+        }
+    } 
+}
+.sidebar-nav-toggle__icons {
+    height: auto;
+    width: $gld-7;
+    &.is-mobile-toggle { 
+        height: $size-0;
+        background-color: transparent;
+        @include vision-angle($bg-color: $gray-8, $pull: right);
+        .show-more-icon, .show-less-icon {
+                width:  $size-5;
+                height: $size-3;
+                fill:   $white;
+                stroke: $white;
+        }
+        &::before {
+            transition: background-color 120ms ease-in;    
+        }
+    }
+    @include make-flexitem(0, 0, auto);
+    &:not(.is-mobile-toggle) { 
+        border-left: 1px solid darken($white, 9.01657%);
+        transition: background-color 120ms ease-in; 
+        background-color: $white;
+    }
+    &.icon {
+        svg {
+            width:  $size-6;
+            height: $size-6;
+            fill:   $gray-4; 
+            stroke: $gray-4;
+        }     
     }
 }

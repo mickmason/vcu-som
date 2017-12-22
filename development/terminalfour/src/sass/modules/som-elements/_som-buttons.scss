@@ -1,5 +1,4 @@
-@import 'som-functions-mixins';
-
+@import '../som-functions-mixins';
 .button {
     &.is-secondary { 
         background-color: $som-grana;

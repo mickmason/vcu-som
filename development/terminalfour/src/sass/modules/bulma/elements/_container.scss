@@ -1,0 +1,12 @@
+//Container extensions
+.container {
+    width: 100%;
+    &.is-fullwidth {
+        max-width: none;
+        width: auto;
+        > .columns {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

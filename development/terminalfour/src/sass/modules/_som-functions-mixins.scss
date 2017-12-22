@@ -1,7 +1,7 @@
 //Project functions & mixins
 //Borrowed without shame from https://codepen.io/corysimmons/pen/mVLVbo
 //Parses number from a string like parseInt()
-@import 'colors';
+@import 'generic/colors';
 @function number($value) {
   @if type-of($value) == 'number' {
     @return $value;
@@ -60,7 +60,6 @@
     flex-wrap: $wrap;
     -ms-flex-direction:     $direction;
     flex-direction:         $direction;
-    
     @if ($justify == space-between or $justify == space-around or $justify == space-evenly )  {
     -ms-flex-pack: justify;
     } @else if ($justify == flex-start) {
@@ -74,7 +73,17 @@
     -ms-flex-align:         $align;
     align-items:            $align;
 }
+@mixin make-flexitem($grow: 1, $shrink: 1, $basis: auto, $none: 0) {
+    @if $none == none {
+        -ms-flex: none;
+        flex: none;    
+    } @else {
+         -ms-flex: $grow $shrink $basis;
+        flex: $grow $shrink $basis;       
+    }
+}
 @mixin make-gl-col($width: $gl-med) {
+     -ms-flex: none;
      flex: none;
      width: $width;
 }
@@ -128,6 +137,10 @@
                 $box-shadows: append($box-shadows, -8px 0px 8px -4px rgba($color,0.24), comma);
             } @else if $option == right {
                 $box-shadows: append($box-shadows, 8px 0px 8px -4px rgba($color,0.24), comma); 
+            } @else if $option == leftThin {
+                $box-shadows: append($box-shadows, -4px 0px 4px -2px rgba($color,0.24), comma);
+            } @else if $option == rightThin {
+                $box-shadows: append($box-shadows, 4px 0px 4px -2px rgba($color,0.24), comma); 
             }  @else if $option == fullPaper {
                 $box-shadows: append($box-shadows, (0 18px 38px rgba($color, 0.12), 0 16px 12px rgba($color,0.22)), comma);
             } 
@@ -146,7 +159,7 @@
 }
 @mixin vision-angle($bg-color: $light-8, $pull: left) {
     position: relative;
-    z-index: 3;
+    z-index: 3; 
     &:before {
         content: " ";
         display: block;
@@ -176,9 +189,13 @@
     }
 }
 @mixin do-gradient($direction: to top, $start-col: $black, $end-col: transparent, $end-stop: 72%) {
-   
     background-image: -webkit-linear-gradient($direction, $start-col, $end-col $end-stop);
     background-image: -o-linear-gradient($direction, $start-col, $end-col $end-stop);
     background-image: linear-gradient($direction, $start-col, $end-col $end-stop);    
+}
+@mixin has-background-image($size: cover) {
+    background-repeat: no-repeat;
+        background-position: center; 
+        background-size: $size;
 }
     

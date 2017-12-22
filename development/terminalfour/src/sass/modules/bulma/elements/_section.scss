@@ -1,9 +1,24 @@
 //Section extensions
-.section {
+.section, section {
+    &.has-reverse-fill {
+        color: $white;
+        a {
+          color: $light-10;
+          &:hover, &:focus, &:active { 
+              color: $white;
+          }
+        }   
+    } 
     &.has-overlay {
         .container {
             position: relative;
             z-index: 20;
         }
     }
+    &.is-fullwith {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
 }

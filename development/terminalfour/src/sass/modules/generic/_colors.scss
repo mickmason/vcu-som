@@ -47,7 +47,7 @@ $grey-light:   $gray-8;
 $grey-lighter: $gray-a;
 
 //Add transparent as a colour
-@import "../../../../lib/bulma/sass/utilities/derived-variables.sass";
+@import "../../../../../lib/bulma/sass/utilities/derived-variables.sass";
 $addColors: (
   "secondary": ($som-grana, $som-grana-invert),
   "transparent":(rgba(#000, 0), $white),

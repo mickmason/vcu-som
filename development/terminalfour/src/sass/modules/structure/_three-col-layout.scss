@@ -1,0 +1,42 @@
+/** Three column layout **/
+.is-3col {
+    .left-sidebar {
+        background-color: $light-10; 
+    }
+    .right-sidebar {
+        background-color: $light-10; 
+    }
+    .content-area-wrap {
+        @include mobile {
+            @include boxShadow($black, insetTopThin);
+        }   
+    }
+    .main-content {
+        padding-top: 0;
+        > .section {
+            &:first-child {
+                padding-top: $space-4;
+            }
+        }
+    }
+    @include desktop {
+
+        .left-sidebar {
+            @include boxShadow($black, insetRightThin); 
+        }
+        .main-content {
+            min-width: $gl-xlarge; 
+            .section {
+                padding-left: 0; 
+                padding-right: 0;
+                &.feature-section--vision-graphic {
+                    margin-left:  -$gutter-width/2;
+                    margin-right: -$gutter-width/2;
+                }
+            }
+        }
+        .right-sidebar {
+            @include boxShadow($black, insetLeftThin);  
+        }
+    }
+}

@@ -1,0 +1,68 @@
+/*** 
+ *   Site footer 
+***/
+.vcu-som-footer {
+    background-color: $grey-dark;
+    color: $white;
+    .footer__columns {
+        @include tablet-only {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            .column {
+                margin-bottom: $space-3; 
+            }
+        }
+    }
+    .footer__heading {
+        font-size: $size-4;
+    }
+    .footer__school-name {
+        font-family: $feature-font-serif;
+        font-size: $size-3;
+    }
+    .footer__a-z__links {
+        a {
+            border-color: $white;
+             width: 18%;
+            &:hover, &:active, &:focus {
+                background-color: lighten($som-green, 10%);
+                color: $white;
+            }
+        }
+    }
+    .footer__social-icons {
+        @include make-flexbox($direction: row, $justify: flex-start) ;
+        .icon {
+            height: $size-2;
+            width:  $size-2;
+            border-radius: 50%;
+            background-color: $white;
+            padding: $space-11;
+            transition: background-color 160ms ease-out;
+            svg { 
+                
+                fill: $gray-32;
+            }
+        }
+        > a {
+            margin-right: $space-2;
+            &:hover, &:active, &:focus { 
+                .icon {
+                    background-color: $som-green;
+                    svg {fill: $white;}
+                }
+            }
+        }
+    }
+    a {
+        color: $white;
+        font-weight: 500;
+         &:hover, &:active, &:focus {
+             color: lighten($som-green, 10%);
+        }
+        &:focus {
+            outline: 1px dashed $light-8;
+        }
+        
+    }
+}

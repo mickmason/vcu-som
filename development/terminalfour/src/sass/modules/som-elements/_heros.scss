@@ -1,0 +1,400 @@
+/* Hero block */ 
+.hero {
+    &:not([class*='-background']) {
+        background-color:   $grey;
+        background-image:   linear-gradient(19.5deg, lighten($grey, 5.57%), darken($grey, 5.57%)); 
+        color: $white;        
+    }
+
+    a:not(.button) {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+        @include active-link {
+            text-decoration: underline; 
+        }
+    }
+    .section__label {
+        font-weight: 200;
+    }
+    .button {
+        margin-bottom: $space-3;
+    }
+    &.hero--narrow {
+        padding-top: $space-6; 
+        padding-bottom: $space-6; 
+    }
+
+    
+}
+.hero-body, .hero-quicklinks {
+    padding: 0 $gutter-width/2;
+}
+.hero-title {
+    @include feature-font($garamond-prem, 500);
+    font-size: $size-1;
+    font-weight: 200;
+    margin-bottom: $space-4;
+    margin: 0;
+    line-height: 1;
+    transition: visibility 250ms ease-out;
+    margin-top: flat-margin($size-0, 1.1);
+    margin-bottom: $space-3;
+    &.is-sans-serif {
+        @include feature-font($azo-sans, 500);
+    }
+}
+.hero-subtext {
+    font-size: $size-5a;
+    font-weight: $weight-light;
+    margin-bottom: $space-3;
+    color: $white;
+}
+
+.hero-image {
+    position: relative; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    .hero-body {
+        position: relative;
+        color: $white;
+        z-index: 20;
+    }
+    .hero-foot {
+        position: relative;
+        bottom: 0;
+        color: $white;
+        font-size: $size-7;
+        text-transform: uppercase;
+        font-weight: 200;
+        padding-top: $space-1;
+        padding-bottom: $space-1;
+        background-color: rgba($black, 0.40);
+        z-index: 20;
+        text-align: center;
+        .svg-icon--scroll {
+            max-height: 3.815rem;
+            span {
+                margin-bottom: $space-11;
+            }
+            svg {
+                max-height: 1.953rem;
+                fill: $white;
+            }
+        }
+    }
+    .section__label {
+        color: $white;
+        margin-bottom: $space-2;
+    }
+}
+.hero-quicklinks {
+    padding-bottom: $space-11;
+    z-index: 20;
+    .section__label {
+        color: $white;
+    }
+    .columns {
+        margin-bottom: 0;
+    }
+    .column {
+        padding-bottom: 0;
+    }
+    .hero-quicklinks__text {
+        padding-bottom: $space-11;
+        color: $white;
+        font-weight: 200;
+    }
+    .hero-quicklinks__wrap {
+        @include make-flexbox($direction: column);
+        @include tablet {
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }  
+    }
+    @include touch {
+        .button {
+            margin-bottom: $space-11;
+        }
+    }
+}
+@media screen and (min-width: $tablet) {
+    .hero-title {
+        font-size: $size-1;
+    }
+}
+@media screen and (min-width: $desktop) {
+    .hero {
+        &.is-fullheight, &.hero--narrow {
+            .container {
+                .hero-text-wrap {
+                    max-width: $gl-xlarge;       
+                }
+            }
+        }   
+  
+    } 
+    .hero-content-wrap {
+        @include make-flexbox($direction: row, $justify: space-between, $align: flex-end);
+    }
+}
+/** Triple hero **/
+.hero {
+    &.hero--triple { 
+        color: $white;
+        .hero-body {
+            position: relative;
+            @include make-flexbox($direction: column, $justify: center, $align: center);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .hero-body__text {
+            z-index: 20;
+            position: relative;
+            max-width: 82%;
+            > h1 {
+                font-size: $size-2;
+            }
+        }
+        @include tablet {
+            -ms-flex-direction: row;
+            flex-direction: row;
+            .hero-body {
+                width: 33%;
+            }
+        }
+    }
+    &.hero--news-heading {
+        height: 50vh;
+        .columns {
+            margin-bottom: 0;
+        }
+        .hero-body {
+                @include make-flexbox($direction: column, $justify: flex-end, $align: start);
+            
+        }
+        .hero-title {
+            font-size: $size-2;
+            line-height: 1.3;
+            &.is-sans-serif {
+                @include feature-font($azo-sans, 500);
+            }
+        }
+        .hero-subtext {
+            font-size: $size-5;
+        }
+        .hero-content-wrap {
+            max-width: 850px; 
+        }
+        .hero-footer {
+            padding-left: $gutter-width/2;
+            padding-right: $gutter-width/2;
+            .content-author-date {
+                background-color:$gray-4;    
+            }
+            .content-author-date__date, .content-share__label {
+                margin-bottom: $space-1;
+            }
+            .content-share {
+                background-color: $grey-darker;    
+                .content-label {
+                    color: $white;
+                }
+            }
+            .content-share__icons {
+                @include make-flexbox($direction: row, $align: center, $justify: flex-start);
+                .icon {
+                    height: $size-4;
+                    width:  $size-4;
+                    margin-right: $gutter-width/4;
+                    @include active-link {
+                        svg {
+                            fill: $som-green;
+                        }
+                    }
+                }
+            }
+            .hero-content-wrap {
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+            .icon.icon--svg {
+                svg {
+                    fill: $white;
+                    stroke: $white;
+                }
+            }
+        }
+        @include widescreen {
+            height: 61.8vh;
+        }
+    }
+}
+/** Hero slider **/
+.hero-slider {
+    .hero-slider__slide {
+        width: 100%; 
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+    }
+    .hero-body {
+        width: 100%; 
+        padding: 0;
+    }
+    
+    .slick-list {
+        padding-left:  0 !important;
+        padding-right: 0 !important;
+    }
+    .container {
+        max-width: none;
+    }
+    .hero-content-wrap {
+        padding-left: $gutter-width;
+        padding-left: $gutter-width;
+        @include make-flexbox($direction: row, $justify: flex-end, $align: center);
+    }
+    .hero-slider__image {
+        padding-top: 50%;
+        overflow: hidden;
+        img {    
+            
+        }
+    }
+    .news-slider__story {
+        right: 0;    
+    }
+    .hero-slider__controls {
+        /*-ms-flex-pack: justify; 
+        justify-content: space-between;*/
+        padding-left: $gutter-width/2;
+        padding-right: $gutter-width/2;
+        
+    }
+    .hero-quicklinks {
+        background-color: $som-green; 
+        padding-bottom: $space-1;
+    }
+    @include tablet {
+        .hero-slider__controls {
+            
+            -ms-flex-pack: center; 
+            justify-content: center;
+            .hero-slider__controls__next {
+                margin-left: $gutter-width/2
+            }
+            .hero-slider__controls__prev {
+                margin-right: $gutter-width/2
+            }
+        }
+    }
+    @include desktop {
+        .hero-quicklinks {
+            position: absolute;
+            background-color: rgba($black, 0.42); 
+            width: 100%;
+            bottom: 8%;
+            left: 0;
+            right: 0;
+        }
+    }
+    @media screen and (min-width: 1120px) {
+        .hero-quicklinks {
+            bottom: 7.2%;
+        }
+    }
+    @include widescreen {
+        .hero-slider__image {
+            padding-top: 43.75%;
+            img {
+                @include vertical-align($shiftX: -0%, $shiftY: -(43.75%/3));    
+            }
+        }
+        .hero-quicklinks {
+           right: auto;
+           width: auto;
+           bottom: 54%; 
+           @include vertical-align($shiftX: -0%, $shiftY: 50%);
+            .hero-quicklinks__wrap {
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+            .button {
+                margin-bottom: $space-1;
+            }
+        }
+    }
+}
+/** Golden ratio mosaic hero **/
+.hero {
+    &.gr-mosaic {
+        .hero-body {
+            padding: $gutter-width 0; 
+        }
+        .gr-mosaic__top-row__left-col {
+             -ms-flex: none;
+            flex: none;
+            padding: 0;
+            @include boxShadow($black, insetRight);
+            img {
+                opacity: 0.618;
+                position: absolute;
+                right: auto;
+                top: 50%;
+                left: 50%;
+                max-height: none;
+                max-width: none;
+                transform: translate(-50%, -50%);
+            }
+            display: none;
+        }
+        .gr-mosaic__top-row__mid-col {
+            -ms-flex: none;
+            flex: none;
+            width: 100%;
+        }
+        
+        .gr-mosaic__top-row__right-col {
+             -ms-flex: none;
+            flex: none;
+            @include boxShadow($black, insetLeft);
+            display: none;
+        }
+        @include tablet {
+            
+            .gr-mosaic__top-row__left-col { 
+                
+                width: $gl-med;
+                display: block;
+            }
+            .gr-mosaic__top-row__mid-col {
+                width: $gl-large;
+                padding: $gutter-width; 
+                @include make-flexbox($direction: column, $align: flex-start, $justify: center);
+            }
+        }
+        @include desktop {
+            .gr-mosaic__top-row__left-col { 
+                width: $gl-small;
+            }
+            .gr-mosaic__top-row__mid-col {
+                width: $gl-large;
+            }
+            .gr-mosaic__top-row__right-col {
+                width: $gl-xsmall;
+                @include make-flexbox($direction: column, $justify: center, $align: center);
+            }
+        }
+        @include widescreen {
+            
+        }
+    }
+}

@@ -76,9 +76,8 @@
     }
   
 }
-//Modifier classes extended to work in IE10
+//Modifier classes extended to work in IE10 and add golden ratio widths
 .column {
-
     -ms-flex: 1 1 auto;
     &.is-narrow-mobile, &.is-full-mobile, &.is-three-quarters-mobile, &.is-two-thirds-mobile, &.is-half-mobile, &.is-one-third-mobile, &.is-one-quarter-mobile, &.is-one-fifth-mobile, &.is-two-fifths-mobile, &.is-three-fifths-mobile,&.is-four-fifths-mobile {
         -ms-flex: none;
@@ -183,8 +182,6 @@
          -ms-flex: none;
           flex: none; }
     }
-
-
     &.is-narrow-desktop{
        -ms-flex: none;
       flex: none;}
@@ -224,8 +221,6 @@
         width: ($i / 12) * 100%;
       }
     }
-
-
     &.is-narrow-widescreen {
       -ms-flex: none;
       flex: none ;
@@ -276,19 +271,43 @@
         flex: none;
       }
     }
-
-
     &.is-narrow-fullhd, &.is-full-fullhd, &.is-three-quarters-fullhd, &.is-two-thirds-fullhd, &.is-half-fullhd, &.is-one-third-fullhd, &.is-one-quarter-fullhd, &.is-one-fifth-fullhd, &.is-two-fifths-fullhd, &.is-three-fifths-fullhd, &.is-four-fifths-fullhd {
        -ms-flex: none;
       flex: none;
     }
- 
     @for $i from 1 through 12 {
           &.is-#{$i}-fullhd {
             -ms-flex: none;
             flex: none;
           }
      }
+     //Golden ratio widths
+    @include tablet {
+        &.is-gl-xlarge,
+        &.is-gl-xlarge-tablet {
+            -ms-flex: none;
+            flex: none;
+            width: $gl-xlarge;
+        }
+        &.is-gl-large,
+        &.is-gl-large-tablet {
+            -ms-flex: none;
+            flex: none;
+            width: $gl-large;
+        }
+        &.is-gl-med,
+        &.is-gl-med-tablet {
+            -ms-flex: none;
+            flex: none;
+            width: $gl-med;
+        }
+        &.is-gl-small,
+        &.is-gl-small-tablet {
+            -ms-flex: none;
+            flex: none;
+            width: $gl-small;
+        }
+    }
 }
 .centralized-columns {
     display: block;

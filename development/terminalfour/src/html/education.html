@@ -18,24 +18,28 @@
         </script>
         
     </head> 
-    <body>
+    <body class="has-lightbox-active">
        @@include('structure/header.html')  
        @@include('components/hero-large.html')
        @@include('components/landing-page-navigation.html') 
        <!-- ** Two col text feature ** -->
-       <section class="section feature-section feature-section--two-col-text has-secondary-background" style="background-image: url(style-assets/media/img/diversity-2.jpg)"> 
+       <section class="section feature-section feature-section--two-col-text has-secondary-background" > 
           <div class=" container">
-               <div class="columns is-feature-font ">
-                   <div class="two-col-feature__text-wrap">
-                       <div class="column two-col-feature__heading-col">  
-                           <h1 id="about-education-feature--header" class="section__title is-feature-font--serif">Study at VCU School of Medicine</h1>
-                       </div>
-                       <div class="column two-col-feature__body-col"> 
-                          <p>The VCU School of Medicine is committed to training the clinicians, scientists and scholars of tomorrow. More than 1000 students from around the world come to the VCU School of Medicine to pursue medical and graduate degrees as well as specialized certificate training. </p>
-                          <p>The VCU School of Medicine is committed to training the clinicians, scientists and scholars of tomorrow. More than 1000 students from around the world come to the VCU School of Medicine to pursue medical and graduate degrees as well as specialized certificate training. </p>
-                       </div>    
-                   </div><!-- // .two-col-feature__text-wrap -->
-               </div>
+             <div class="columns">
+                  <div class="column two-col-feature__text">
+                       <div class="columns is-feature-font ">
+                            <div class="column two-col-feature__heading-col">  
+                                <h1 id="about-education-feature--header" class="section__title is-feature-font--serif">Study at VCU School of Medicine</h1>
+                            </div>
+                            <div class="column two-col-feature__body-col"> 
+                               <p>The VCU School of Medicine is committed to training the clinicians, scientists and scholars of tomorrow. More than 1000 students from around the world come to the VCU School of Medicine to pursue medical and graduate degrees as well as specialized certificate training. </p>
+                               <p>The VCU School of Medicine is committed to training the clinicians, scientists and scholars of tomorrow. More than 1000 students from around the world come to the VCU School of Medicine to pursue medical and graduate degrees as well as specialized certificate training. </p>
+                            </div>    
+                       </div><!-- // .columns -->
+                   </div><!-- // .two-col-feature__text -->
+                   <div class="column two-col-feature__image" style="background-image: url(style-assets/media/img/diversity-2-1by1.jpg)">
+                   </div><!-- // .two-col-feature__image -->
+               </div><!-- // .columns -->
            </div>
        </section>
        <!-- ** // Two col text feature ** -->
@@ -88,7 +92,7 @@
                                        </figure>
                                    </a>
                                </div>
-                               <div class="card-content program-card__content has-secondary-bg"> 
+                               <div class="card-content program-card__content has-primary-background"> 
                                    <h2 class="card-heading ">Graduate Medical Education</h2>
                                    <p class="program-card__intro">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
                                    <div class="program-card__ctas">
@@ -99,7 +103,7 @@
                                                </svg>
                                            </span>
                                         </a>
-                                        <a href="javascript:void(0)" class="button is-secondary">Apply now</a>
+                                        <a href="javascript:void(0)" class="button">Apply now</a>
                                    </div>
                                </div>
                            </div><!-- // .card-flat -->
@@ -189,7 +193,7 @@
        <section class="section feature-section feature-section--vision-graphic" id="institutes and centers" aria-labelledby="diversity-section-heading" style="background-image: url('style-assets/media/img/som-campus.jpg')">
            <div class="container">
                <div class="columns pull-right">
-                   <div class="column feature__column has-background-secondary"> 
+                   <div class="column feature__column  has-secondary-background-transp has-vision-graphic"> 
                         <h1 id="diversity-section-heading" class="section__title is-feature-font">Institutes and Centers</h1>
                         <p class="section__intro">Medical and graduate trainees can become associated with a range of centers institutes devoted to clinical and research training.</p>   
                         <p>These include:</p>
@@ -199,7 +203,7 @@
                             <li><a href="javascript:void(0)">Institute for Drug and Alcohol Studies</a></li>
                             <li><a href="javascript:void(0)">Institute for Structural Biology and Drug Design</a></li>
                         </ul>   
-                        <a href="javascript:void(0)" title="Read more" class="button is-secondary">Find out more</a> 
+                        <a href="javascript:void(0)" title="Read more" class="button">Find out more</a> 
                    </div>
                    
                </div>
@@ -216,7 +220,11 @@
                        <a class="button is-transparent">Call to action</a>
                    </div>
                    <div class="column video-slider-feature__slider">
-                       <div class="card--flat video-slider-card">
+                       <div class="card--flat video-slider-card som-lb-item" 
+                          data-lightbox-title="Diversity 1"
+                          data-lightbox-caption="A day in the life of a medical student"
+                          data-lightbox-media-type="youtube-video" 
+                          data-lightbox-youttubeid="5G99Yl95hUo">  
                            <div class="card-image">
                                <figure class="image is-2by1">
                                    <img alt="A day in the life of a Medical Student" src="style-assets/media/img/diversity-1-4by3.jpg" class="" />
@@ -227,14 +235,13 @@
                                    <a class="video-slider__play" href="javascript:void(0)">
                                        <span class="icon icon--svg has-icon-black">
                                          <svg>
-                                             <use xlink:href="style-assets/media/svg-icons/som-icons.svg#play_icon" /> 
+                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#play_icon"></use> 
                                          </svg>
                                     </span>  
                                    </a>
                                    <div class="video-slider__caption">A day in the life of a Medical Student</div>
                                </div>
-                               
-                           </div>
+                           </div> 
                        </div><!-- // .video-slider-card -->
                    </div>
                </div>
@@ -264,6 +271,25 @@
        </section>
        <!-- ** // Student resources feature ** -->
     @@include('structure/footer.html')
+    <section class="som-lightbox" aria-label="School of Medicine Media viewer">
+        <div class="som-lightbox-container">
+           <div class="som-lightbox-column">
+                <a href="javascript:void(0)" class="som-lightbox__close">
+                    <span class="icon icon--svg icon--svg--has-text has-icon-white ">
+                        <svg>
+                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#x-icon" />
+                        </svg>
+                         <span class="icon-text">Close</span> 
+                    </span>
+                </a>
+                <div class="som-lightbox__player">
+                   
+                    
+                </div>
+            </div><!-- // .som-lightbox-gallery -->
+        </div><!-- // .som-lightbox-container -->
+    </section>
+    <!-- ** // .som-lightbox -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="style-assets/js/t4-scripts.js"></script>
     </body>

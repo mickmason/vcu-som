@@ -21,7 +21,7 @@
     <body>
        @@include('structure/header.html')  
        @@include('components/hero-large.html') 
-       @@include('components/audience-navigation.html') 
+       @@include('components/audience-navigation.html')  
        <!--** Site main gateways ** -->
        <section class="section feature-section site-gateways" aria-labelledby="site-gateways-section-heading">
            <div class="container section__label__container"><span class="section__label">Education</span></div>
@@ -41,7 +41,7 @@
                </div><!-- // .columns -->
                <div class="columns site-gateways__cards">
                    <div class="column">
-                       <div class="card--flat site-gateway__card">
+                       <div class="card--flat site-gateway__card has-border-primary ">
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
@@ -58,7 +58,7 @@
                        </div>
                    </div><!-- //.column -->
                    <div class="column">
-                       <div class="card--flat site-gateway__card">
+                       <div class="card--flat site-gateway__card has-border-primary">
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
@@ -77,7 +77,7 @@
                        </div>
                    </div><!-- //.column -->
                    <div class="column">
-                       <div class="card--flat site-gateway__card">
+                       <div class="card--flat site-gateway__card has-border-primary">
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
@@ -178,8 +178,8 @@
        <!-- ** Diversity feature ** -->
        <section class="section feature-section feature-section--vision-graphic" aria-labelledby="diversity-section-heading" style="background-image: url('style-assets/media/img/diversity-2.jpg')">
            <div class="container">
-               <div class="columns">
-                   <div class="column feature__column has-background-primary-transp"> 
+               <div class="columns"> 
+                   <div class="column feature__column has-primary-background-transp has-vision-graphic">  
                         <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
                         <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
                         <a href="javascript:void(0)" title="Read more" class="button is-transparent">Find out more about diversity</a> 
@@ -189,68 +189,110 @@
            </div><!-- // .container -->
        </section>
        <!-- ** // Diversity feature ** -->
-       <!-- ** News and media ** -->
-       <section class="section news-and-events-feature" aria-labelledby="news-and-events-section-heading"> 
+       <div class=" news-slider">
            <div class="container section__label__container"><span class="section__label">Discover</span></div>
            <div class="section__title__outer-wrap">
                <div class="container section__title--featured ">
                 <div class="section__title--featured__wrap">
-
                         <h1 id="news-and-events-section-heading" class="section__title is-feature-font--serif"><span>News and Events</span></h1>  
                         <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p>         
-
                 </div>  
                </div><!-- // .container.section__title--featured-->
-           </div>
-           <div class="container news-slider">
+           </div>     
               <!--** Featured news slick -->
-              <div class="columns news-slider__columns news-slider__slick">
-                  <div class="column news-slider__slide">
-                      <figure class="image news-slider__image is-16by9">
-                          <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
-                      </figure>
-                      <div class="news-slider__story is-feature-font">
-                          <div class="news-slider__story__text">
-                              <span class="news-label">Biomedical Sciences</span>
-                              <h2 class="news-slider__story__title">VCU Health experts agree new moms should have depression screenings</h2>
-                              <span class="news-date">October 20, 2017</span>
-                          </div>
-                      </div><!-- // .news-slider__story -->
-                  </div><!-- // .news-slider__slide -->
-                  <div class="column news-slider__slide">
-                      <figure class="image news-slider__image is-16by9">
-                          <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
-                      </figure>
-                      <div class="news-slider__story is-feature-font">
-                          <div class="news-slider__story__text">
-                              <span class="news-label">Biomedical Sciences</span>
-                              <h2 class="news-slider__story__title">#2 VCU Health experts agree new moms should have depression screenings</h2>
-                              <span class="news-date">October 22, 2017</span>
-                          </div>
-                      </div><!-- // .news-slider__story -->
-                  </div><!-- // .news-slider__slide -->
-                  <div class="column news-slider__slide">
-                      <figure class="image news-slider__image is-16by9">
-                          <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
-                      </figure>
-                      <div class="news-slider__story is-feature-font">
-                          <div class="news-slider__story__text">
-                              <span class="news-label">Biomedical Sciences</span>
-                              <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
-                              <span class="news-date">October 22, 2017</span>
-                          </div>
-                          
-                      </div><!-- // .news-slider__story -->
-                  </div><!-- // .news-slider__slide -->
-                  <div class="news-slider__controls">
-                      <button class="news-slider__control news-slider__controls__prev">
+           <div class=" news-slider__columns news-slider__slick">
+               <div class=" news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 20, 2017</span>
+                           <a class="" href="javascript:void(0)">Read more
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+               <div class="column news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">#2 VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 22, 2017</span>
+                           <a class="" href="javascript:void(0)">Read more
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+               <div class="column news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 22, 2017</span>
+                           <a class="" href="javascript:void(0)">Read more
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                       
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+             <div class="column news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 22, 2017</span>
+                           <a class="" href="javascript:void(0)">Read more
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                       
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+              </div><!-- // .news-slider__slick -->
+              <div class="slider__controls-wrap">
+                   <div class="news-slider__controls slider__controls has-black-background">
+                      <button class="slider-control slider-control__prev news-slider__controls__prev">
                         <span class="icon icon--svg has-icon-white">
                             <svg class="svg-icon">
                                 <use xlink:href="style-assets/media/svg-icons/som-icons.svg#prev_arrow"></use>
                              </svg>
                         </span>
                       </button>
-                      <button class="news-slider__control news-slider__controls__next">
+                      <div class="slick-dots-container">
+                      
+                      </div>
+                      <button class="slider-control slider-control__prev news-slider__controls__next">
                          <span class="icon icon--svg has-icon-white">
                               <svg class="svg-icon">
                                   <use xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use> 
@@ -258,15 +300,11 @@
                          </span>
                        </button>
                   </div>
-                  
-              </div><!-- // .news-slider__slick -->
-              <div class="slick-dots-container columns">
-                      
-              </div>
+            </div>
            </div><!-- // .news-main-container.is-fluid -->
-
+       <!-- ** News and media ** -->
+       <section class="section news-and-events-feature" aria-labelledby="news-and-events-section-heading">
            <div class="container news-events--listing"> 
-
                <div class="columns is-widescreen"> 
                    <div class="column  news-listing-column is-feature-font">
                       
@@ -316,7 +354,6 @@
                                <p class="news-listing__date">November 23, 2017</p>
                            </div><!-- // .news-listing__item -->
                        </div>
-                       
                        <div class="read-more-block">
                           <hr /> 
                            <a href="javascript:void(0)" class="read-more-link">Read more news</a>
@@ -326,8 +363,6 @@
                               </svg>
                           </span>    
                        </div>
-                       
-                       
                    </div><!-- // .news-lising-column -->
                    <div class="column is-tablet events-listing-column">
                        <h2  class="news-events--listing__heading is-feature-font">Events</h2>
@@ -387,26 +422,29 @@
                           </span>    
                        </div>
                    </div><!-- // .news-lising-column -->
-                   
-                   
                </div><!-- // .news-listing columns -->
            </div><!-- // .container.news-listing-container -->
        </section>
-       <section class="section deans-message-feature" aria-labelledby="deans-message-section-heading"> 
+       <section class="section deans-message-feature" aria-labelledby="deans-message-section-heading" style="background-image: url(style-assets/media/img/commonwealth-medical-01.jpg)">  
           <div class="container">
                <div class="columns">
-                   <div class="column">
-                       <h1 id="deans-message-section-heading" class="is-feature-font section__title">Meassage from the Dean</h1> 
-                       <div class="deans-message__content">
-                          <div class="deans-image"><img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" /></div>
-                          <div class="deans-meassage">
-                              <p>
-                                   <em>“As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.”</em>
-                                   <br />–John Fitzgerald Kennedy
-                               </p>
+                   <div class="column deans-column">
+                       <div class="deans-message__content has-primary-background">
+                          <div class="deans-image">
+                             <figure class="image">
+                                <img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" />       
+                             </figure>
+                          </div>
+                          <div class="deans-meassage"> 
+                               <h2 id="deans-message-section-heading" class="is-feature-font section__title">Meassage from the Dean</h2>  
+                               <div class="message-text">
+                                   <p class="deans-messsage__text">“As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.”</p>
+                                   <p>–John Fitzgerald Kennedy</p>    
+                               </div>
+                              
                                <p>
                                    <a href="javascript:void(0)" class="read-more-link">Happy Thanksgiving</a>
-                                   <span class="icon icon--svg is-inline-icon has-icon-black">
+                                   <span class="icon icon--svg is-inline-icon has-icon-white">
                                        <svg>
                                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow" />
                                        </svg>
@@ -417,8 +455,53 @@
                    </div>
                </div>
            </div><!-- // .container -->
+           <div class="image-overlay has-white-background"></div>
        </section>
+    <!-- ** Diversity fixed feature ** -->  
+       <section class="section feature-section feature-section--fixed has-secondary-background" aria-labelledby="diversity-section-heading" >
+           <div class="container">
+               <div class="columns is-desktop is-widescreen">
+                   <div class="tab-column tab-column__mobile column is-active">
+                      <a href="javascript:void(0)" class="feature-section--fixed__toggle">
+                         <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
+                         <span class="icon icon--svg has-icon-white">
+                                <svg class="show-more-icon">
+                                    <use xlink:href="style-assets/media/svg-icons/som-icons.svg#plus_icon" />
+                                </svg>
+                                <svg class=" show-less-icon">
+                                    <use xlink:href="style-assets/media/svg-icons/som-icons.svg#minus_icon" />
+                                </svg>
+                         </span>    
+                      </a>
+                   </div><!-- // .tab-column column -->
+                   
+                   <div class="column feature-section--fixed__content " style="background-image: url('style-assets/media/img/diversity-2.jpg')">
+                        <div class="feature-section--fixed__text-container"> 
+                            <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
+                            <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
+                            <a href="javascript:void(0)" title="Read more" class="button">Find out more about diversity</a>     
+                            
+                            <div class="tab-column tab-column__desktop">
+                              <a href="javascript:void(0)" class="feature-section--fixed__toggle">
+                                 <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
+                                 <span class="icon icon--svg has-icon-white">
+                                        <svg class="show-more-icon">
+                                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#plus_icon" />
+                                        </svg>
+                                        <svg class=" show-less-icon">
+                                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#minus_icon" />
+                                        </svg>
+                                 </span>    
+                              </a>
+                           </div><!-- // .tab-column column -->   
+                        </div><!-- // .feature-section--fixedtext-container -->
+                   </div>
+               </div>
+           </div><!-- // .container -->
+       </section>
+       <!-- ** // Diversity fixed feature ** -->
     @@include('structure/footer.html')
+    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="style-assets/js/t4-scripts.js"></script>
     </body>

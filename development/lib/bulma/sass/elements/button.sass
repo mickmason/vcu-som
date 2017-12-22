@@ -44,8 +44,6 @@ $button-static-border-color: $grey-lighter !default
   cursor: pointer
   justify-content: center
   height: auto
-  padding-top:     $space-11
-  padding-bottom:  $space-11
   padding-left: $space-3
   padding-right: $space-3
   text-align: center
@@ -119,19 +117,19 @@ $button-static-border-color: $grey-lighter !default
       &:hover,
       &.is-hovered
         @if $name == 'transparent'
-          color: findColorInvert($color-invert)
-          background-color: rgba($color-invert, 0.95)
+          background-color: rgba($black, 0.382)
+          background-color: rgba($black, 0.382)
         @else
           color: $color-invert
-          background-color: darken($color, 7.5%)
+          background-color: darken($color, 6.18%)
         border-color: $border-col
       &:focus,
       &.is-focused
         @if $name == 'transparent'
-          color: findColorInvert($color-invert)
-          background-color: rgba($color-invert, 0.95)
+          color: $white
+          background-color: rgba($black, 0.382)
           &:not(:active)
-            box-shadow: $button-focus-box-shadow-size rgba($color, 0.25)
+            box-shadow: $button-focus-box-shadow-size rgba($color, 0.28)
         @else
           color: $color-invert
           background-color: darken($color, 7.5%)
@@ -142,8 +140,8 @@ $button-static-border-color: $grey-lighter !default
       &:active,
       &.is-active
         @if $name == 'transparent'
-          color: findColorInvert($color-invert)
-          background-color: rgba($color-invert, 0.95)
+          color: $white
+          background-color: rgba($black, 0.382)
         @else
           color: $color-invert
           background-color: darken($color, 5%)
@@ -170,7 +168,7 @@ $button-static-border-color: $grey-lighter !default
           border-color: $border-col $border-col $color-invert $color-invert !important
       &.is-outlined
         @if $name == 'transparent' 
-          color: findColorInvert($color-invert)
+          color: $white
           background-color: rgba($color-invert, 0.95)
         @else
           color: $color
