@@ -24,8 +24,18 @@
         padding-top: $space-6; 
         padding-bottom: $space-6; 
     }
-
-    
+    &.hero--video {
+        .hero-video {
+            -ms-flex: none;
+            flex: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            max-width: none;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 .hero-body, .hero-quicklinks {
     padding: 0 $gutter-width/2;
@@ -169,13 +179,12 @@
         }
     }
     &.hero--news-heading {
-        height: 50vh;
+        min-height: 50vh;
         .columns {
             margin-bottom: 0;
         }
         .hero-body {
                 @include make-flexbox($direction: column, $justify: flex-end, $align: start);
-            
         }
         .hero-title {
             font-size: $size-2;
@@ -232,7 +241,7 @@
             }
         }
         @include widescreen {
-            height: 61.8vh;
+            min-height: 61.8vh;
         }
     }
 }
@@ -330,71 +339,6 @@
             .button {
                 margin-bottom: $space-1;
             }
-        }
-    }
-}
-/** Golden ratio mosaic hero **/
-.hero {
-    &.gr-mosaic {
-        .hero-body {
-            padding: $gutter-width 0; 
-        }
-        .gr-mosaic__top-row__left-col {
-             -ms-flex: none;
-            flex: none;
-            padding: 0;
-            @include boxShadow($black, insetRight);
-            img {
-                opacity: 0.618;
-                position: absolute;
-                right: auto;
-                top: 50%;
-                left: 50%;
-                max-height: none;
-                max-width: none;
-                transform: translate(-50%, -50%);
-            }
-            display: none;
-        }
-        .gr-mosaic__top-row__mid-col {
-            -ms-flex: none;
-            flex: none;
-            width: 100%;
-        }
-        
-        .gr-mosaic__top-row__right-col {
-             -ms-flex: none;
-            flex: none;
-            @include boxShadow($black, insetLeft);
-            display: none;
-        }
-        @include tablet {
-            
-            .gr-mosaic__top-row__left-col { 
-                
-                width: $gl-med;
-                display: block;
-            }
-            .gr-mosaic__top-row__mid-col {
-                width: $gl-large;
-                padding: $gutter-width; 
-                @include make-flexbox($direction: column, $align: flex-start, $justify: center);
-            }
-        }
-        @include desktop {
-            .gr-mosaic__top-row__left-col { 
-                width: $gl-small;
-            }
-            .gr-mosaic__top-row__mid-col {
-                width: $gl-large;
-            }
-            .gr-mosaic__top-row__right-col {
-                width: $gl-xsmall;
-                @include make-flexbox($direction: column, $justify: center, $align: center);
-            }
-        }
-        @include widescreen {
-            
         }
     }
 }

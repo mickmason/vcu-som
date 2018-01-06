@@ -18,9 +18,9 @@
         </script>
         
     </head> 
-    <body>
+    <body class="som-homepage"> 
        @@include('structure/header.html')  
-       @@include('components/hero-large.html') 
+       @@include('components/hero-large--video.html') 
        @@include('components/audience-navigation.html')  
        <!--** Site main gateways ** -->
        <section class="section feature-section site-gateways" aria-labelledby="site-gateways-section-heading">
@@ -500,9 +500,20 @@
            </div><!-- // .container -->
        </section>
        <!-- ** // Diversity fixed feature ** -->
+    <div class="t4-exit-survey">
+        <div class="t4-exit-survey__body">
+            <h2 class="t4-exit-survey__heading">We value your thoughts...</h2>
+            <p>We're redesigning our website at the moment and we would love to know what you found good, bad or just plain ugly about your experience on the site now.</p>
+            <p>Help us out?</p>
+            <button class="t4-exit-survey__no">No thanks</button>
+            <button class="t4-exit-survey__yes">Sure thing</button>
+        </div>
+    </div>
     @@include('structure/footer.html')
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    
     <script src="style-assets/js/t4-scripts.js"></script>
+    <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8XZaozAEcqR4419ZbF1w1LEvrBPJzsbN4J2WHX3WbX0.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
     </body>
 </html>

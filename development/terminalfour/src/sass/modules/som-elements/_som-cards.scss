@@ -107,6 +107,50 @@
         }
     }
 }
+/** Card date - inset in card image **/
+.card__date--inset { 
+        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+        background-color: $light-10;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: auto;
+        .card__date__day, .card__date__month {
+            padding-top:     $space-11;
+            padding-bottom:  $space-11;    
+        }
+        .card__date__day {
+            font-weight: 500;
+            font-size: $size-5a;    
+            line-height: 1;
+            color: $white;
+            padding-left:     $gutter-width/2;
+            padding-right:    $gutter-width/2;
+            border-right: 1px solid $black;
+            background-color: $som-grana;
+        }
+        .card__date__month {
+            @include boxShadow($black, insetLeftThin);
+            display: inline-block;
+            width: 100%; 
+            line-height: 1;
+            font-size: $size-7a; 
+            padding-left:     $gutter-width/2;
+            padding-right:    $gutter-width/2;
+        }
+    }
+/** Card image - inset in image **/
+.card-label--inset {
+        right: 0;
+        top: $gld-6;
+        padding-top:    $space-11*0.75;
+        padding-bottom: $space-11*0.75;
+        padding-left:  $gutter-width/2;
+        padding-right: $gutter-width/2;
+        @include vision-angle($bg-color: $white, $pull: right);
+        position: absolute;
+}
 .heading-only-card {
     border: none;
     .heading-only-card__content {
@@ -372,13 +416,38 @@
         width: 100%;
         padding-left: $gutter-width/2;
         padding-right: $gutter-width/2;
-        font-size: $size-5;
+        font-size: $size-5a;
+    }
+    .video-slider__date {
+        margin-top: $space-11;
+        font-size: $size-7a;
+    }
+    &.is-related-video {
+        .video-slider__caption, .video-slider__play {
+            background-color: $black;
+            color: $white;
+        }
+        .video-slider__play {
+            width: $gld-8;
+            border-right-color: $white;
+             @include active-link {
+                background-color: $gray-32;  
+            }
+        }
     }
     @include tablet {
         .video-slider__play {
             span {
                 width:  $size-0;
                 height: $size-0;
+            }
+        }
+        &.is-related-video { 
+            .video-slider__play {
+                span {
+                    width:  $size-2;
+                    height: $size-2;
+                }
             }
         }
     }
@@ -389,58 +458,18 @@
     .card-image {
         position: relative;
     }
-    .card-label {
-        right: 0;
-        top: $gld-6;
-        padding-top:    $space-11*0.75;
-        padding-bottom: $space-11*0.75;
-        padding-left:  $gutter-width/2;
-        padding-right: $gutter-width/2;
-        @include vision-angle($bg-color: $white, $pull: right);
-        position: absolute;
-    }
+    
     .card-content {
         @include make-flexbox($direction: column, $justify: flex-start, $align: stretch);
         &.is-featured {
             background-color: $black;
             color: $white;
             .card__title {
-                font-size: $size-5;
+                font-size: $size-5a;
             }
         }
     }
-    .card__date {
-        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
-        background-color: $light-10;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        width: auto;
-        .card__date__day, .card__date__month {
-            padding-top:     $space-11;
-            padding-bottom:  $space-11;    
-        }
-        .card__date__day {
-            font-weight: 500;
-            font-size: $size-5a;    
-            line-height: 1;
-            color: $white;
-            padding-left:     $gutter-width/2;
-            padding-right:    $gutter-width/2;
-            border-right: 1px solid $black;
-            background-color: $som-grana;
-        }
-        .card__date__month {
-            @include boxShadow($black, insetLeftThin);
-            display: inline-block;
-            width: 100%; 
-            line-height: 1;
-            font-size: $size-7a; 
-            padding-left:     $gutter-width/2;
-            padding-right:    $gutter-width/2;
-        }
-    }
+    
     .card__date--plain {
         font-size: $size-7;
         margin-bottom: 0;
@@ -454,13 +483,6 @@
         font-size: $size-6;
         font-weight: 500;
     }
-    @include desktop {
-        .card-label {
-            font-size: $size-9; 
-        }
-        
-    }
-
 }
 .grad-overlay-card {
     color: $white;

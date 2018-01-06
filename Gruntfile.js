@@ -22,7 +22,6 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
     express: {
       all: {
         options: {
@@ -34,8 +33,6 @@ module.exports = function(grunt) {
         }
       }
     },
-  
-    
     //Uncomment this region to add in JSHint to the project.
     /*jshint: {
       options: {
@@ -129,7 +126,7 @@ module.exports = function(grunt) {
         },
         dist: {
               src: [
-                  'development/lib/flexibility/flexibility.js', 
+                  'development/lib/js-cookie/js.cookie.js', 
                   'development/lib/slick/slick/slick.min.js', 
                   'development/terminalfour/src/js/*.js'
                   ],

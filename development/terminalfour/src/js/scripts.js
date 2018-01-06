@@ -167,7 +167,6 @@
     /** 
      ** SoM Custom lightbox - Michael Mason 
     **/
-    
     if ($('.som-lb-item').length > 0) {
         $('.som-lb-item').on('click', showSoMLightbox);
         $('.som-lightbox__close').on('click', function (event) {
@@ -229,10 +228,28 @@
                 $lightBox.find('.som-lightbox__player').empty().append($lightBoxItem);
                 $('body').addClass('has-lightbox-active');
                 $lightBox.addClass('is-visible');
-                
-                
             }
     }
+    /* Hero video resizer */
+    function heroVideo() {
+      $('.hero-video').each(function() {
+        var ratio = 16/9;
+        var heroContainer = $(this).closest('.hero--video');
+        var video = $(this);
+        video.css('width', '');
+        var heroHeight = heroContainer.outerHeight();
+        var videoHeight = video.outerHeight();
+        if ( videoHeight < heroHeight ) {
+          var newWidth = heroHeight * ratio;
+          video.css({width: newWidth + 'px'});
+        }
+      });
+    }
+    heroVideo();
+    $(window).on('resize', function() {
+      heroVideo();
+    });
+    
     //Toggle landing page navigation
     var $landingNav      = $('.landing-page-navigation');
     var $landingNavToggle= $('.landing-page-nav__toggle');
@@ -309,20 +326,17 @@
      $(window).on('resize', addMainNavClickHandlers);
     
      /* Show/hide inner nav in smaller resolutions max-width 991px */
-    function toggleSidebarNav(e) {
-                e.preventDefault();
-                var $thisHeading = $(this).parent('.sidebar-nav-toggle') ;
-                if (!$thisHeading.hasClass('is-active')) {
-                    $thisHeading.siblings('.sidebar-nav').slideDown(200, function() {
-                        $thisHeading.addClass('is-active');
-                    });    
-                } else {
-                    $thisHeading.siblings('.sidebar-nav').slideUp(200, function() {
-                        $thisHeading.removeClass('is-active');
-                    });    
-                }
-
-       
+    function toggleSidebarNav() {
+        var $thisHeading = $(this).parent('.sidebar-nav-toggle') ;
+        if (!$thisHeading.hasClass('is-active')) {
+            $thisHeading.siblings('.sidebar-nav').slideDown(200, function() {
+                $thisHeading.addClass('is-active');
+            });    
+        } else {
+            $thisHeading.siblings('.sidebar-nav').slideUp(200, function() {
+                $thisHeading.removeClass('is-active');
+            });    
+        }
     }
     if ($(window).outerWidth() <= 1024) {
         toggleSidebarNav();
@@ -330,16 +344,12 @@
     
     $(window).on('resize', function() {
         if ($(window).outerWidth() > 1024) {
-            console.log('Greater than: '+$(window).outerWidth());
             $('.sidebar-nav:hidden').fadeIn(180);
             $('.sidebar-nav-toggle > a').off('click', toggleSidebarNav);
         } else {
-            console.log('Less than: '+$(window).outerWidth());
             $('.sidebar-nav-toggle > a').on('click', toggleSidebarNav);
         }
     });
-    
-    
     $('.sidebar-nav li.has-dropdown > .sidebar-nav-toggle__icons').on('click', function(event) {
         event.preventDefault();
         $this = $(this);
@@ -353,7 +363,6 @@
                 $thisLi.addClass('is-active');
             });    
         }
-        
     });
     
      /** By the numbers count up **/
@@ -364,7 +373,6 @@
             var targetNumber = Number.parseInt($thisCountUp.data('count-up-to'));
             console.log(targetNumber); 
             var numb = Number.parseInt($thisCountUp.html());
-            
             function incrementNumber() {
                 numb++;
                 if (numb < targetNumber) {
@@ -380,14 +388,47 @@
             incrementNumber();
          });
      }
-    
-    
-     
     //Diversity .active class toggle 
     $('.feature-section.feature-section--fixed').find('.tab-column > a').on('click, focus', function(event) {
         event.preventDefault();
         console.log('click '+$(this).closest('.feature-section.feature-section--fixed').attr('class'));
         $(this).closest('.feature-section.feature-section--fixed').toggleClass('is-active');
     });
-        
+    
+    /** Site exit survey **/
+    $(document).on('click', '.t4-exit-survey__no', function(e) {
+        e.preventDefault();
+        Cookies.set('t4WillTakeSurvey', false, {expires: 3});
+        $('.t4-exit-survey').removeClass('is-visible');
+    });
+    $(document).on('click', '.t4-exit-survey__yes', function(e) {
+        e.preventDefault();
+        Cookies.set('t4WillTakeSurvey', false, {expires: 3});
+        $('.t4-exit-survey').removeClass('is-visible');
+        window.location.href = 'https://www.surveymonkey.com/r/PXXG239';
+    });
+    if (Cookies.get('t4WillTakeSurvey') === undefined) {
+        Cookies.set('t4WillTakeSurvey', true, {expires: 3});
+        var timeOut = new Date();
+        timeOut.setMinutes(timeOut.getMinutes() + 4);
+        Cookies.set('t4TakeSurveyTimeout', timeOut, {expires: 3});
+        setTimeout(checkTime, 1000);
+    } else {
+        if (Cookies.get('t4WillTakeSurvey') === 'true') {
+            setTimeout(checkTime, 1000);    
+        }
+    }
+    function checkTime() {
+        if (Cookies.get('t4WillTakeSurvey') === 'true') {
+            if (new Date() >= new Date(Cookies.get('t4TakeSurveyTimeout'))) {
+                console.log('**Show pop-up**');
+                return;
+            } else {
+                setTimeout(checkTime, 1000);
+            }
+        } else {
+            console.log(Cookies.get('t4WillTakeSurvey'));
+            return;
+        }
+    }
 }());
