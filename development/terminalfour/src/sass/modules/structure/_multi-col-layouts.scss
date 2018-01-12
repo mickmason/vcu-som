@@ -108,7 +108,26 @@
         padding-right: $gutter-width/2;
     }
     .sidebar-nav-wrap, .sidebar-card {
+        
         margin-bottom: $space-4;
+    }
+    @include touch {
+        .sidebar-nav-wrap {
+            margin-bottom: 0;
+        }
+    }
+    .sidebar-card {
+        &.sidebar-card--desktop {
+            @include touch {
+                display: none;
+            }
+        }
+        &.sidebar-card--mobile {
+            display: none;
+            @include touch {
+                display: block;
+            }
+        }
     }
     @include desktop {
         .left-sidebar {

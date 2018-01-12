@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>VCU School of Medicine: Homepage</title>
-        <link rel="stylesheet" href="style-assets/css/style.css" /> 
+        <link rel="stylesheet" href="../style-assets/css/style.css" /> 
         <script>
           (function(d) {
             var config = {
@@ -38,14 +38,14 @@
           </div>
            <div class="image-overlay has-black-background is-darker-overlay"></div>
        </section>
-       <!-- // ** Hero image fullsize ** -->
+       <!-- // ** Hero image fullsize ** --> 
        <!-- *** Content area wrap *** -->
        <div class="content-area-wrap">
            <div class="columns is-desktop is-widescreen"> 
                <!-- **  Left sidebar ** -->
                <div class="column left-sidebar" >
-                   @@include('structure/inner-navigation.html')
-                   <div class="card--flat sidebar-card">
+                   @@include('structure/inner-navigation--l2.html')
+                   <div class="card--flat sidebar-card sidebar-card--desktop ">  
                        <h3 class="card-title">Other news</h3>
                        <div class="news-events--listing">
                            <div class="news-listing__item">
@@ -67,7 +67,6 @@
                            
                        </div>
                    </div><!-- // .news-events--listing -->
-               </div><!-- // .card--flat sidebar-card -->
                <!-- ** // Left sidebar ** -->
                <!-- ** Main content ** -->
                <main class="column main-content" >
@@ -87,7 +86,7 @@
                                         <div class="card-image">
                                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                                 <figure class="image is-2by1">
-                                                    <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                                    <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                                 </figure>
                                                  <div class="image-overlay "></div>
                                             </a>
@@ -102,7 +101,7 @@
                                                  <span class="icon icon--svg"> 
                                                      <span class="heading-only-card__icon-wrap">
                                                          <svg class="">
-                                                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
+                                                            <use xlink:href="../style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
                                                          </svg>
                                                      </span>
                                                  </span>
@@ -116,7 +115,7 @@
                                     <div class="card-image">
                                         <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                             <figure class="image is-2by1">
-                                                <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                                <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                             </figure>
                                             <div class="image-overlay "></div>
                                         </a>
@@ -131,7 +130,7 @@
                                             <span class="icon icon--svg"> 
                                                 <span class="heading-only-card__icon-wrap">
                                                     <svg class="">
-                                                       <use xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
+                                                       <use xlink:href="../style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
                                                     </svg>
                                                 </span>
                                             </span>
@@ -144,7 +143,7 @@
                                    <div class="card-image">
                                        <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                            <figure class="image is-2by1">
-                                               <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                               <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                            </figure>
                                             <div class="image-overlay "></div>
                                        </a>
@@ -160,7 +159,7 @@
                                             <span class="icon icon--svg"> 
                                                 <span class="heading-only-card__icon-wrap">
                                                     <svg class="">
-                                                       <use xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
+                                                       <use xlink:href="../style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
                                                     </svg>
                                                 </span>
                                             </span>
@@ -173,7 +172,7 @@
                                    <div class="card-image">
                                        <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                            <figure class="image is-2by1">
-                                               <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                               <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                            </figure>
                                             <div class="image-overlay "></div>
                                        </a>
@@ -189,7 +188,7 @@
                                             <span class="icon icon--svg"> 
                                                 <span class="heading-only-card__icon-wrap">
                                                     <svg class="">
-                                                       <use xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
+                                                       <use xlink:href="../style-assets/media/svg-icons/som-icons.svg#arrow-dots--right" />
                                                     </svg>
                                                 </span>
                                             </span>
@@ -214,52 +213,71 @@
                    </div><!-- // .container -->
                </section>
                <!-- ** Video slider feature ** -->
-       <section class="section feature-section video-slider-feature" aria-islabelledby="video-slider-header" style=""> 
-           <div class="container">
-               <div class="columns has-black-background">
-                   <div class="column video-slider-feature__text is-feature-font"> 
-                       <h1 id="video-slider-header" class="section__title">Why VCU SoM?</h1>
-                       <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences</p>
-                       <a class="button is-transparent">Call to action</a>
-                   </div>
-                   <div class="column video-slider-feature__slider">
-                       <div class="card--flat video-slider-card som-lb-item" 
-                          data-lightbox-title="Diversity 1"
-                          data-lightbox-caption="A day in the life of a medical student"
-                          data-lightbox-media-type="youtube-video" 
-                          data-lightbox-youttubeid="5G99Yl95hUo">  
-                           <div class="card-image">
-                               <figure class="image is-2by1">
-                                   <img alt="A day in the life of a Medical Student" src="style-assets/media/img/diversity-1-4by3.jpg" class="" />
-                               </figure>
+               <section class="section feature-section video-slider-feature" aria-islabelledby="video-slider-header" style=""> 
+                   <div class="container">
+                       <div class="columns has-black-background">
+                           <div class="column video-slider-feature__text is-feature-font"> 
+                               <h1 id="video-slider-header" class="section__title">Why VCU SoM?</h1>
+                               <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences</p>
+                               <a class="button is-transparent">Call to action</a>
                            </div>
-                           <div class="card-content">
-                               <div class="card-content__controls">
-                                   <a class="video-slider__play" href="javascript:void(0)">
-                                       <span class="icon icon--svg has-icon-black">
-                                         <svg>
-                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#play_icon"></use> 
-                                         </svg>
-                                    </span>  
-                                   </a>
-                                   <div class="video-slider__caption">A day in the life of a Medical Student</div>
-                               </div>
-                           </div> 
-                       </div><!-- // .video-slider-card -->
+                           <div class="column video-slider-feature__slider">
+                               <div class="card--flat video-slider-card som-lb-item" 
+                                  data-lightbox-title="Diversity 1"
+                                  data-lightbox-caption="A day in the life of a medical student"
+                                  data-lightbox-media-type="youtube-video" 
+                                  data-lightbox-youttubeid="5G99Yl95hUo">  
+                                   <div class="card-image">
+                                       <figure class="image is-2by1">
+                                           <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/diversity-1-4by3.jpg" class="" />
+                                       </figure>
+                                   </div>
+                                   <div class="card-content">
+                                       <div class="card-content__controls">
+                                           <a class="video-slider__play" href="javascript:void(0)">
+                                               <span class="icon icon--svg has-icon-black">
+                                                 <svg>
+                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../style-assets/media/svg-icons/som-icons.svg#play_icon"></use> 
+                                                 </svg>
+                                            </span>  
+                                           </a>
+                                           <div class="video-slider__caption">A day in the life of a Medical Student</div>
+                                       </div>
+                                   </div> 
+                               </div><!-- // .video-slider-card -->
+                           </div>
+                       </div>
                    </div>
-               </div>
-           </div>
-       </section>
-       <!-- ** // Video slider feature ** -->
-               </main>
-               <!-- ** //  Main content .column ** -->
+               </section>
+               <!-- ** // Video slider feature ** -->
+               <div class="card--flat sidebar-card sidebar-card--desktop ">  
+                       <h3 class="card-title">Other news</h3>
+                       <div class="news-events--listing">
+                           <div class="news-listing__item">
+                                   <h4 class="news-listing__title"><a href="javascript:void(0)">Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h4>    
+                                   <p class="news-listing__label som-content-label">Alumni achievements</p>
+                                   <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">VCU team heads to Puerto Rico</a></h3>
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Through your eyes</a></h3>    
+                               <p class="news-listing__label som-content-label">12th &amp; Marshall</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           
+                       </div>
+                </div><!-- // .news-events--listing -->
+               </main><!-- ** //  Main content .column ** -->
           </div><!-- // content area wrap .columns -->
        </div>
-       <!-- // content area wrap -->   
-       
-       
+       <!-- // content area wrap -->
     @@include('structure/footer.html')
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="style-assets/js/t4-scripts.js"></script>
+    <script src="../style-assets/js/t4-scripts.js"></script>
     </body>
 </html>

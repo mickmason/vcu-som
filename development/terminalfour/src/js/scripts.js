@@ -338,8 +338,10 @@
             });    
         }
     }
-    if ($(window).outerWidth() <= 1024) {
-        toggleSidebarNav();
+    if ($(window).outerWidth() > 1024) {
+         $('.sidebar-nav-toggle > a').off('click', toggleSidebarNav);
+    } else {
+        $('.sidebar-nav-toggle > a').on('click', toggleSidebarNav);
     }
     
     $(window).on('resize', function() {
@@ -404,30 +406,34 @@
     $(document).on('click', '.t4-exit-survey__yes', function(e) {
         e.preventDefault();
         Cookies.set('t4WillTakeSurvey', false, {expires: 3});
-        $('.t4-exit-survey').removeClass('is-visible');
         window.location.href = 'https://www.surveymonkey.com/r/PXXG239';
     });
+    
     if (Cookies.get('t4WillTakeSurvey') === undefined) {
+        console.log(Cookies.get('t4WillTakeSurvey'));
         Cookies.set('t4WillTakeSurvey', true, {expires: 3});
         var timeOut = new Date();
-        timeOut.setMinutes(timeOut.getMinutes() + 4);
-        Cookies.set('t4TakeSurveyTimeout', timeOut, {expires: 3});
-        setTimeout(checkTime, 1000);
-    } else {
-        if (Cookies.get('t4WillTakeSurvey') === 'true') {
-            setTimeout(checkTime, 1000);    
-        }
-    }
-    function checkTime() {
-        if (Cookies.get('t4WillTakeSurvey') === 'true') {
-            if (new Date() >= new Date(Cookies.get('t4TakeSurveyTimeout'))) {
-                console.log('**Show pop-up**');
-                return;
-            } else {
-                setTimeout(checkTime, 1000);
-            }
+        timeOut.setUTCMinutes(timeOut.getUTCMinutes()+2);
+        console.log(timeOut);
+        Cookies.set('t4SurveyTimeOut', timeOut, {expires: 3});
+        setTimeout(showSurvey, 1000*60*2);
+    } else if (Cookies.get('t4WillTakeSurvey') === 'true') {
+        
+        
+        if (Number.parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes()) <= 0) {
+            console.log('show survey');
+            showSurvey();
         } else {
-            console.log(Cookies.get('t4WillTakeSurvey'));
+            console.log('show survey set time out '+Number.parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);
+            setTimeout(showSurvey, Number.parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);          
+        }
+        
+    } else {
+      console.log(Cookies.get('t4WillTakeSurvey'));
+    }
+    function showSurvey() {
+        if (Cookies.get('t4WillTakeSurvey') === 'true') {
+            $('.t4-exit-survey').addClass('is-visible');
             return;
         }
     }

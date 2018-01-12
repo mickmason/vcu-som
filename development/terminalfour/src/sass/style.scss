@@ -541,3 +541,82 @@
         }   
     }
 }
+
+
+/** Exit survey styling **/
+.t4-exit-survey {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 50000;
+    background-color: rgba($black, 0.21);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 160ms ease-out, opacity 160ms ease-out;
+    &.is-visible {
+        @include make-flexbox($direction: row, $justify: center, $align: center);
+        visibility: visible;
+        opacity: 1;
+    }
+    &__body {
+        padding: $space-4a $gutter-width;
+        max-width: $gl-large;
+        background-color: $light-10;
+        @include make-flexbox($direction: column, $justify: center, $align: left);
+    }
+    &__heading, p {
+        margin-bottom: $space-4;
+    }
+    &__buttons {
+        width: 100%;
+        padding-top: $space-11;
+        @include make-flexbox($direction: row, $justify: center, $align:  flex-start);
+    }
+    &__button {
+        border-radius: 4px;
+        font-size: 1rem;
+        padding: $space-4/2 $gutter-width;
+        transition: background-color 120ms ease-out;
+        @include active-link {
+             cursor: pointer;
+        }
+        &.t4-exit-survey__yes {
+            color: $primary-invert;
+            background-color: $primary;
+            @include active-link {
+                background-color: darken($primary, 10%);
+            }
+        }
+        &.t4-exit-survey__no {
+            background-color: $gray-a;
+            @include active-link {
+                background-color: darken($gray-a, 10%);
+            }
+        }
+    }
+    &__no-wrap, &__yes-wrap {
+        width: 50%
+    }
+    &__no-wrap {
+        @include make-flexbox($direction: column, $justify: center, $align: flex-end);
+        padding-right: $gutter-width/2;
+        span {
+            font-size: $size-9;
+        }
+    }
+    &__yes-wrap {
+        @include make-flexbox($direction: column, $justify: center, $align: flex-start);
+        padding-left: $gutter-width/2;
+        span {
+            font-size: $size-9;
+        }
+    }
+    @include widescreen {
+        &__body {
+            max-width: $gl-med;
+        }
+    }
+}

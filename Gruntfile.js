@@ -125,8 +125,7 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         dist: {
-              src: [
-                  'development/lib/js-cookie/js.cookie.js', 
+              src: [ 
                   'development/lib/slick/slick/slick.min.js', 
                   'development/terminalfour/src/js/*.js'
                   ],
