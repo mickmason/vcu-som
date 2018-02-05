@@ -371,16 +371,20 @@
     .program-card__intro {
         margin-bottom: $space-3; 
     }
-    .program-card__ctas {
-        
-        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
-    }
+   
     @include active-link {
          .card-content__read-more {
             font-weight: 400;
         }
     }
 }
+ .program-card__ctas {
+        
+        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+     p, .button {
+         margin-right: $gutter-width/2;
+     }
+ }
 .program-card__content {
     background-color: $som-green;
     color: $white;

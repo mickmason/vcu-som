@@ -35,7 +35,9 @@
 @import 'modules/som-elements/heros';  
 @import 'modules/som-elements/som-lightbox';  
 @import 'modules/som-elements/sliders';  
-@import 'modules/som-elements/news-and-events';     
+@import 'modules/som-elements/news-and-events';   
+@import 'modules/som-elements/programs-cards';  
+@import 'modules/som-elements/som-accordion';  
 @import 'modules/structure/footer';  
 
 /** Diversity feature **/
@@ -618,5 +620,10 @@
         &__body {
             max-width: $gl-med;
         }
+    }
+}
+.text-feature {
+    &.has-section-nav {
+        padding-bottom: 0;
     }
 }

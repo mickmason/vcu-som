@@ -1,5 +1,6 @@
 //Section extensions
 .section, section {
+    padding-top: $space-5;
     &.has-reverse-fill {
         color: $white;
         a {

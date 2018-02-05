@@ -537,11 +537,12 @@
        </section>
        <!-- // ** Hero image fullsize ** -->
        <!-- *** Content area wrap *** -->
-       <div class="content-area-wrap">
-           <div class="columns is-desktop is-widescreen"> 
-               <!-- **  Left sidebar ** -->
-               <div class="column left-sidebar" >
-                                      <!-- ** Inner navigation ** -->
+       <section class="section content-area-wrap">
+        <div class="container">
+               <div class="columns is-desktop is-widescreen"> 
+                   <!-- **  Left sidebar ** -->
+                   <div class="column left-sidebar" >
+                                          <!-- ** Inner navigation ** -->
                    <nav class="sidebar-nav-wrap">
                        <div class="sidebar-nav-toggle">
                            <a href="javascript:void(0)">
@@ -679,138 +680,301 @@
                        </ul>
                    </nav>
                    <!-- ** // Inner navigation ** -->
-                   <div class="card--flat sidebar-card sidebar-card--desktop ">  
-                       <h3 class="card-title">Other news</h3>
-                       <div class="news-events--listing">
-                           <div class="news-listing__item">
-                                   <h4 class="news-listing__title"><a href="javascript:void(0)">Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h4>    
-                                   <p class="news-listing__label som-content-label">Alumni achievements</p>
+                       <div class="card--flat sidebar-card sidebar-card--desktop ">  
+                           <h3 class="card-title">Other news</h3>
+                           <div class="news-events--listing">
+                               <div class="news-listing__item">
+                                       <h4 class="news-listing__title"><a href="javascript:void(0)">Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h4>    
+                                       <p class="news-listing__label som-content-label">Alumni achievements</p>
+                                       <p class="news-listing__date">November 23, 2017</p>
+                               </div><!-- // .news-listing__item -->
+                               <div class="news-listing__item">
+                                   <h3 class="news-listing__title"><a href="javascript:void(0)">VCU team heads to Puerto Rico</a></h3>
+                                   <p class="news-listing__label som-content-label">Biomedical advances</p>
                                    <p class="news-listing__date">November 23, 2017</p>
-                           </div><!-- // .news-listing__item -->
-                           <div class="news-listing__item">
-                               <h3 class="news-listing__title"><a href="javascript:void(0)">VCU team heads to Puerto Rico</a></h3>
-                               <p class="news-listing__label som-content-label">Biomedical advances</p>
-                               <p class="news-listing__date">November 23, 2017</p>
 
-                           </div><!-- // .news-listing__item -->
-                           <div class="news-listing__item">
-                               <h3 class="news-listing__title"><a href="javascript:void(0)">Through your eyes</a></h3>    
-                               <p class="news-listing__label som-content-label">12th &amp; Marshall</p>
-                               <p class="news-listing__date">November 23, 2017</p>
-                           </div><!-- // .news-listing__item -->
-                           
-                       </div>
-                   </div><!-- // .news-events--listing -->
-               </div><!-- // .card--flat sidebar-card -->
-               <!-- ** // Left sidebar ** -->
-               <!-- ** Main content ** -->
-               <main class="column main-content" >
-                    <!--** VCU Hesalth gateways ** -->
-                    <section class="section feature-section text-feature" aria-labelledby="site-gateways-section-heading"> 
-                        <div class="container">
-                            <div class="columns">
-                                 <div class="column">
-                                     <h1 id="site-gateways-section-heading" class="section__title is-feature-font">Overview</h1>  
-                                     <p class="is-feature-font">Find out about Master&apos;s programs at VCU School of Medicine.</p>   
-                                     <p>The VCU School of Medicine offers a wide range of Master's degree programs in research-based and applied biomedical sciences, public health and other areas.</p> 
-                                     <p>As a Master's student you will have the opportunity to train under the guidance of faculty mentors and perform research or clinical work while taking advanced courses in a particular degree program.</p> 
-                                     <p>Most Master's students complete their degrees in 2 years. As a graduate of our Master's programs you will be competitive for further academic training (i.e. Ph.D. or M.D. Programs), or you may pursue laboratory research positions in academia or industry as well as more clinically-oriented careers such as Genetic Counseling and Medical Physics, and job opportunities in education as well as other fields.
-    </p>      
-                                 </div>  
-                            </div>
+                               </div><!-- // .news-listing__item -->
+                               <div class="news-listing__item">
+                                   <h3 class="news-listing__title"><a href="javascript:void(0)">Through your eyes</a></h3>    
+                                   <p class="news-listing__label som-content-label">12th &amp; Marshall</p>
+                                   <p class="news-listing__date">November 23, 2017</p>
+                               </div><!-- // .news-listing__item -->
 
-                            <div class="columns">
-                                <div class="column">
-                                    <nav class="inner-page-nav">
-                                        <ul>
-                                            <li class="inner-page-nav__item"><a href="#masters-programs">Masters Programs</a></li>
-                                            <li class="inner-page-nav__item"><a href="#masters-programs">Financial Support, Tuition &apm; Fees</a></li>
-                                            <li class="inner-page-nav__item"><a href="#masters-programs">Masters Programs</a></li>
-                                            <li class="inner-page-nav__item"><a href="#masters-programs">Masters Programs</a></li>
-                                            
-                                        </ul>
-                                    </nav>
+                           </div>
+                       </div><!-- // .news-events--listing -->
+                   </div><!-- // .card--flat sidebar-card -->
+                   <!-- ** // Left sidebar ** -->
+                   <!-- ** Main content ** -->
+                   <main class="column main-content" >
+                        <!--** Section intro text ** -->
+                        <section class="section feature-section text-feature has-section-nav" aria-labelledby="site-gateways-section-heading"> 
+                            <div class="container">
+                                <div class="columns">
+                                     <div class="column general-content">
+                                         <h1 id="site-gateways-section-heading" class="section__title is-feature-font">Overview</h1>  
+                                         <p class="is-feature-font">Find out about Master&apos;s programs at VCU School of Medicine.</p>   
+                                         <p>The VCU School of Medicine offers a wide range of Master's degree programs in research-based and applied biomedical sciences, public health and other areas.</p> 
+                                         <p>As a Master's student you will have the opportunity to train under the guidance of faculty mentors and perform research or clinical work while taking advanced courses in a particular degree program.</p> 
+                                         <p>Most Master's students complete their degrees in 2 years. As a graduate of our Master's programs you will be competitive for further academic training (i.e. Ph.D. or M.D. Programs), or you may pursue laboratory research positions in academia or industry as well as more clinically-oriented careers such as Genetic Counseling and Medical Physics, and job opportunities in education as well as other fields.
+        </p>      
+                                     </div>  
                                 </div>
-                            </div><!-- // .vch-health-gatways -->
-                   </div><!-- // .container -->
-               </section>
-                    <!-- // ** Research gateways ** -->
-               <section class="section feature-section feature-section--vision-graphic is-narrow" aria-labelledby="diversity-section-heading" style="background-image: url('../style-assets/media/img/diversity-2.jpg')">
-                   <div class="container">
-                       <div class="columns"> 
-                           <div class="column feature__column has-primary-background has-vision-graphic">  
-                                <h1 id="diversity-section-heading" class="section__title is-feature-font">Get started</h1>
-                                <p class="section__intro">Start your journey</p>   
-                                <a href="javascript:void(0)" title="Read more" class="button is-transparent">Find out about Master&apos;s Programs Admissions</a> 
-                           </div>
 
-                       </div>
-                   </div><!-- // .container -->
-               </section>
-               <!-- ** Video slider feature ** -->
-                   <section class="section feature-section video-slider-feature" aria-islabelledby="video-slider-header" style=""> 
-                       <div class="container">
-                           <div class="columns has-black-background">
-                               <div class="column video-slider-feature__text is-feature-font"> 
-                                   <h1 id="video-slider-header" class="section__title">Why VCU SoM?</h1>
-                                   <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences</p>
-                                   <a class="button is-transparent">Call to action</a>
-                               </div>
-                               <div class="column video-slider-feature__slider">
-                                   <div class="card--flat video-slider-card som-lb-item" 
-                                      data-lightbox-title="Diversity 1"
-                                      data-lightbox-caption="A day in the life of a medical student"
-                                      data-lightbox-media-type="youtube-video" 
-                                      data-lightbox-youttubeid="5G99Yl95hUo">  
-                                       <div class="card-image">
-                                           <figure class="image is-2by1">
-                                               <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/diversity-1-4by3.jpg" class="" />
-                                           </figure>
-                                       </div>
-                                       <div class="card-content">
-                                           <div class="card-content__controls">
-                                               <a class="video-slider__play" href="javascript:void(0)">
-                                                   <span class="icon icon--svg has-icon-black">
-                                                     <svg>
-                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../style-assets/media/svg-icons/som-icons.svg#play_icon"></use> 
-                                                     </svg>
-                                                </span>  
-                                               </a>
-                                               <div class="video-slider__caption">A day in the life of a Medical Student</div>
-                                           </div>
-                                       </div> 
-                                   </div><!-- // .video-slider-card -->
-                               </div>
-                           </div>
-                       </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <nav class="inner-page-nav">
+                                            <p class="section__label">Find out about:</p>
+                                            <ul>
+                                                <li class="inner-page-nav__item"><a href="#masters-programs">Masters Programs</a></li>
+                                                <li class="inner-page-nav__item"><a href="#masters-programs">Financial Support, Tuition &amp; Fees</a></li>
+                                                <li class="inner-page-nav__item"><a href="#masters-programs">Masters Programs</a></li>
+                                                <li class="inner-page-nav__item"><a href="#masters-programs">Masters Programs</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div><!-- // .vch-health-gatways -->
+                       </div><!-- // .container -->
                    </section>
-                   <!-- ** // Video slider feature ** -->
-                   <div class="card--flat sidebar-card sidebar-card--mobile ">  
-                       <h3 class="card-title">Other news</h3>
-                       <div class="news-events--listing">
-                           <div class="news-listing__item">
-                                   <h4 class="news-listing__title"><a href="javascript:void(0)">Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h4>    
-                                   <p class="news-listing__label som-content-label">Alumni achievements</p>
-                                   <p class="news-listing__date">November 23, 2017</p>
-                           </div><!-- // .news-listing__item -->
-                           <div class="news-listing__item">
-                               <h3 class="news-listing__title"><a href="javascript:void(0)">VCU team heads to Puerto Rico</a></h3>
-                               <p class="news-listing__label som-content-label">Biomedical advances</p>
-                               <p class="news-listing__date">November 23, 2017</p>
+                        <!-- // ** Section intro text ** -->
+                   <section class="section feature-section feature-section--vision-graphic is-narrow" aria-labelledby="diversity-section-heading" style="background-image: url('../style-assets/media/img/diversity-2.jpg')">
+                       <div class="container">
+                           <div class="columns"> 
+                               <div class="column feature__column has-primary-background has-vision-graphic">  
+                                    <h1 id="diversity-section-heading" class="section__title is-feature-font">Get started</h1>
+                                    <p class="section__intro">Start your journey</p>   
+                                    <a href="javascript:void(0)" title="Read more" class="button is-transparent">Find out about Master&apos;s Programs Admissions</a> 
+                               </div>
 
-                           </div><!-- // .news-listing__item -->
-                           <div class="news-listing__item">
-                               <h3 class="news-listing__title"><a href="javascript:void(0)">Through your eyes</a></h3>    
-                               <p class="news-listing__label som-content-label">12th &amp; Marshall</p>
-                               <p class="news-listing__date">November 23, 2017</p>
-                           </div><!-- // .news-listing__item -->
-                           
-                       </div>
-                   </div><!-- // .news-events--listing -->
-               </main>
-               <!-- ** //  Main content .column ** -->
-          </div><!-- // content area wrap .columns -->
-       </div>
+                           </div>
+                       </div><!-- // .container -->
+                   </section>
+                   <!-- Narrow CTA -->
+                   <section class="programs-block section feature-section has-light-background">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h2>Progams</h2>
+                <p>Paragraph or two</p> 
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Addiction studies</span> 
+                    <span class="program-info-card__deptartment">International Programme in Addiction Studies</span>
+                </a>
+                <div class="columns program-info-card__card">
+                    <div class="column">
+                        <h2>Addiction studies</h2>
+                        <p>The International Programme in Addiction Studies (IPAS) is a unique collaboration of three of the world's leading research universities in the field of Addiction Science: King's College London, the University of Adelaide, and Virginia Commonwealth University.</p>
+                        <p>You will be introduced to the latest information on topics ranging from the biological basis of addiction to addiction treatment, prevention and policy through lectures produced exclusively for IPAS by an international Who's Who of experts in the field.</p>
+                        <p><strong>Department:</strong> The International Programme in Addiction Studies (IPAS)</p>
+                        
+                        <p><strong>Contact:</strong><br />
+                        Mary Loos, Ph.D.<br />
+                        Program Director<br />
+                        804-828-8019<br />
+                        E-mail: <a href="mailto:meloos@vcu.edu">meloos@vcu.edu</a></p>
+                        <p>
+                        <div class="program-card__ctas">
+                              <a href="javascript:void(0)" class="button is-primary-reversed">Find out more</a>
+                              <p class="card-content__read-more"><a href="javascript:void(0)">Find out about applications</a>
+                                <span class="icon icon--svg is-inline-icon has-icon-black">
+                                    <svg>
+                                        <use xlink:href="../style-assets/media/svg-icons/som-icons.svg#next_arrow" />
+                                    </svg>
+                                </span>
+                             </p>
+                        </div>
+                    </div>
+                </div><!-- // .program-info-card__card -->
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Medical Physics</span>
+                    <span class="program-info-card__deptartment">Department of Medical Physics</span>
+                </a>
+                
+                <div class="columns program-info-card__card">
+                    <div class="column">
+                        <h2>Medical Physics</h2>
+                        <p>The CAMPEP-accredited Master of Science in Medical Physics at VCU will provide you withthe foundational knowledge necessary to practice as a future clinical medical physicists, and will provide you with hands-on clinical training so you can learn what the profession entails.</p>
+
+                        <p><strong>Contact:</strong><br />
+                        William Song, Ph.D.<br />
+                        Program Director<br />
+                        804-628-3457<br />
+                        E-mail: <a href="mailto:william.song@vcuhealth.org">william.song@vcuhealth.org</a></p>
+                        <p>
+                        <div class="program-card__ctas">
+                              <a href="javascript:void(0)" class="button is-primary-reversed">Find out more</a>
+                              <p class="card-content__read-more"><a href="javascript:void(0)">Find out about applications</a>
+                                <span class="icon icon--svg is-inline-icon has-icon-black">
+                                    <svg>
+                                        <use xlink:href="../style-assets/media/svg-icons/som-icons.svg#next_arrow" />
+                                    </svg>
+                                </span>
+                             </p>
+                        </div>
+                    </div>
+                </div><!-- // .program-info-card__card -->
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Anatomy and Neurobiology</span>
+                    <span class="program-info-card__deptartment">Department of Anatomy and Neurobiology</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Molecular Biology and Genetics </span>
+                    <span class="program-info-card__deptartment">Department of Molecular Biology and Genetics </span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Biolochemistry</span>
+                    <span class="program-info-card__deptartment">Department of Molecular Biology and Genetics </span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Microbiology and Immunity</span>
+                    <span class="program-info-card__deptartment">Department of Microbiology and Immunity</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Microbiology and Immunity</span>
+                    <span class="program-info-card__deptartment">Department of Microbiology and Immunity</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Biostatistics</span>
+                    <span class="program-info-card__deptartment">Department of Biostatistics</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Biostatistics</span>
+                    <span class="program-info-card__deptartment">Department of Biostatistics</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Pharmacology and Toxicology</span>
+                    <span class="program-info-card__deptartment">Department of Pharmacology and Toxicology</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Genetic Counseling</span>
+                    <span class="program-info-card__deptartment">Department of Human and Molecular Genetics</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Physiology and Biophysics</span>
+                    <span class="program-info-card__deptartment">Department of Human and Molecular Genetics</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Human Genetics</span>
+                    <span class="program-info-card__deptartment">Department of Human Genetics</span>
+                </a>
+            </div><!-- // .program-info-card -->
+            <div class="column program-info-card">
+                <a href="javascript:void(0)" data-info-card="path-to-program-card.html" class="button is-primary-reversed program-info-card__button">
+                    <span>Master of Public Health Program</span>
+                    <span class="program-info-card__deptartment">Department of Family Medicine and Population Health</span>
+                </a>
+            </div><!-- // .program-info-card -->
+        </div>
+    </div>
+</section><!-- // . programs-block -->
+                   <!--** Section intro text ** -->
+                   <section class="section feature-section text-feature" aria-labelledby="site-gateways-section-heading"> 
+                            <div class="container">
+                                <div class="columns">
+                                     <div class="column general-content">
+                                         <h1 id="site-gateways-section-heading" class="section__title is-feature-font">Financial support, tuition, fees</h1>  
+                                         <p class="is-feature-font">Find out about Master&apos;s programs at VCU School of Medicine.</p>   
+                                         <p>The VCU School of Medicine offers a wide range of Master's degree programs in research-based and applied biomedical sciences, public health and other areas.</p> 
+                                         <p>As a Master's student you will have the opportunity to train under the guidance of faculty mentors and perform research or clinical work while taking advanced courses in a particular degree program.</p> 
+                                         <p>Most Master's students complete their degrees in 2 years. As a graduate of our Master's programs you will be competitive for further academic training (i.e. Ph.D. or M.D. Programs), or you may pursue laboratory research positions in academia or industry as well as more clinically-oriented careers such as Genetic Counseling and Medical Physics, and job opportunities in education as well as other fields.</p>
+                                     </div>  
+                                </div>
+                       </div><!-- // .container -->
+                   </section>
+                   <!-- // ** Section intro text ** -->
+                   <!-- ** Video slider feature ** -->
+                    <section class="section feature-section video-slider-feature" aria-islabelledby="video-slider-header" style=""> 
+                           <div class="container">
+                               <div class="columns has-black-background">
+                                   <div class="column video-slider-feature__text is-feature-font"> 
+                                       <h1 id="video-slider-header" class="section__title">Why VCU SoM?</h1>
+                                       <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences</p>
+                                       <a class="button is-transparent">Call to action</a>
+                                   </div>
+                                   <div class="column video-slider-feature__slider">
+                                       <div class="card--flat video-slider-card som-lb-item" 
+                                          data-lightbox-title="Diversity 1"
+                                          data-lightbox-caption="A day in the life of a medical student"
+                                          data-lightbox-media-type="youtube-video" 
+                                          data-lightbox-youttubeid="5G99Yl95hUo">  
+                                           <div class="card-image">
+                                               <figure class="image is-2by1">
+                                                   <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/diversity-1-4by3.jpg" class="" />
+                                               </figure>
+                                           </div>
+                                           <div class="card-content">
+                                               <div class="card-content__controls">
+                                                   <a class="video-slider__play" href="javascript:void(0)">
+                                                       <span class="icon icon--svg has-icon-black">
+                                                         <svg>
+                                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../style-assets/media/svg-icons/som-icons.svg#play_icon"></use> 
+                                                         </svg>
+                                                    </span>  
+                                                   </a>
+                                                   <div class="video-slider__caption">A day in the life of a Medical Student</div>
+                                               </div>
+                                           </div> 
+                                       </div><!-- // .video-slider-card -->
+                                   </div>
+                               </div>
+                           </div>
+                       </section>
+                       <!-- ** // Video slider feature ** -->
+                       <div class="card--flat sidebar-card sidebar-card--mobile ">  
+                           <h3 class="card-title">Other news</h3>
+                           <div class="news-events--listing">
+                               <div class="news-listing__item">
+                                       <h4 class="news-listing__title"><a href="javascript:void(0)">Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h4>    
+                                       <p class="news-listing__label som-content-label">Alumni achievements</p>
+                                       <p class="news-listing__date">November 23, 2017</p>
+                               </div><!-- // .news-listing__item -->
+                               <div class="news-listing__item">
+                                   <h3 class="news-listing__title"><a href="javascript:void(0)">VCU team heads to Puerto Rico</a></h3>
+                                   <p class="news-listing__label som-content-label">Biomedical advances</p>
+                                   <p class="news-listing__date">November 23, 2017</p>
+
+                               </div><!-- // .news-listing__item -->
+                               <div class="news-listing__item">
+                                   <h3 class="news-listing__title"><a href="javascript:void(0)">Through your eyes</a></h3>    
+                                   <p class="news-listing__label som-content-label">12th &amp; Marshall</p>
+                                   <p class="news-listing__date">November 23, 2017</p>
+                               </div><!-- // .news-listing__item -->
+
+                           </div>
+                       </div><!-- // .news-events--listing -->
+                   </main>
+                   <!-- ** //  Main content .column ** -->
+              </div><!-- // content area wrap .columns -->
+           </div><!-- .container -->
+       </section>
        <!-- // content area wrap -->   
        
        
@@ -913,25 +1077,9 @@
         </div><!-- // footer .container -->
     </footer><!-- // footer -->
     <!-- ** // Diversity fixed feature ** -->
-    <div class="t4-exit-survey">
-        <div class="t4-exit-survey__body">
-            <h2 class="t4-exit-survey__heading">We value your thoughts...</h2>
-            <p>We're redesigning VCU School of Medicine website and we would value your feedback about the good and bad of your experience here.</p>
-            <p>Help us out?</p>
-            <div class="t4-exit-survey__buttons">
-                <div class="t4-exit-survey__no-wrap"> 
-                    <button class="t4-exit-survey__button t4-exit-survey__no">No thanks</button>
-                </div>
-                <div class="t4-exit-survey__yes-wrap">
-                    <button class="t4-exit-survey__button t4-exit-survey__yes">Yes, I will help</button> 
-                    <span>You will be redirected to Survey Monkey</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="style-assets/js/t4-scripts.js"></script>
+    <script src="../style-assets/js/t4-scripts.js"></script>
     <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8XZaozAEcqR4419ZbF1w1LEvrBPJzsbN4J2WHX3WbX0.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
     </body>
 </html>

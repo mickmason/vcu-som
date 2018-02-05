@@ -205,15 +205,41 @@
     }
 }
 /** Discovery slider **/
+.discovery-slider-wrapper {
+    margin-bottom: $space-3;
+}
+.discovery-slider__title {
+    margin-bottom: 0;    
+    h3 {
+        margin-bottom: $space-2;
+    }
+}
 .discovery-slider {
     .discovery-slider__controls {
+        bottom: 0;
+            
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        padding-right: $gutter-width/2;
         @include make-flexbox($direction: row, $align: center, $justify: flex-end);
     }
     .discovery-slider__control { 
         background-color: $black;
+        
         &:hover, &:active, &:focus {
             background-color: lighten($black, 12%);
         }
+    }
+    .discovery-slider__slider {
+        
+        display: block;
+        .slick-list {
+            padding-bottom: 4rem;
+        }
+    }
+    .discovery-slider__slide {
+        width: 100%;
     }
 }
 /** Discovery feature with slider **/

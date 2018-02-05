@@ -119,11 +119,44 @@
                 }
             }
         ]
-    }).on('beforeChange');
+    }); 
+    $('.discovery-slider__slider').each(function(idx, el) {
+        var $this = $(el);
+        $this.slick({
+            mobileFirst: true,
+            slidesToShow: 1,
+            slide: '.discovery-slider__slide',
+            appendArrows: $this.find('.discovery-slider__controls'),
+            prevArrow: '<button class="slider-control slider-control__prev discovery-slider__control discovery-slider__controls__prev "><span class="icon icon--svg has-icon-white"><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#prev_arrow"></use></svg></span></button>',
+            nextArrow: '<button class="slider-control slider-control__next discovery-slider__control discovery-slider__controls__next " ><span class="icon icon--svg has-icon-white"><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use</svg></span></button>',
+            responsive: [
+                {
+                    breakpoint: 787,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                }
+            ]
+        });
+    });
+       
+    
     $('.video-slider-card.slick-slide').not('.slick-current').on('click', function(event) {
         event.preventDefault();
         console.log('click '+$(this).data('slick-index'));        
-        $('.gallery-feature__slider').slick('slickGoTo', Number.parseInt($(this).data('slick-index')));
+        $('.gallery-feature__slider').slick('slickGoTo', parseInt($(this).data('slick-index')));
     });
     $('.som-lightbox__slider').slick({
         mobileFirst: true,
@@ -371,10 +404,8 @@
      if ($('.by-the-numbers__number').length > 0) {
          $('.by-the-numbers__number').each(function() {
             var $thisCountUp = $(this).find('.by-the-numbers__count-up');
-            console.log($thisCountUp.html());
-            var targetNumber = Number.parseInt($thisCountUp.data('count-up-to'));
-            console.log(targetNumber); 
-            var numb = Number.parseInt($thisCountUp.html());
+            var targetNumber = parseInt($thisCountUp.data('count-up-to'));
+            var numb = parseInt($thisCountUp.html());
             function incrementNumber() {
                 numb++;
                 if (numb < targetNumber) {
@@ -397,8 +428,52 @@
         $(this).closest('.feature-section.feature-section--fixed').toggleClass('is-active');
     });
     
+    /* Program info cards */
+
+    var $programInfoCards = $('.program-info-card__card');
+    if ($(window).outerWidth() > 768) {
+        $('.program-info-card').each(function(idx, el) {
+            if (idx%2 !== 0) {
+              $(el).addClass('is-right');   
+            }
+        });
+    }
+    $(window).on('resize', function() {
+        if ($(window).outerWidth() > 768) {
+            $('.program-info-card').each(function(idx, el) {
+                if (idx%2 !== 0) {
+                  $(el).addClass('is-right');   
+                }
+            });
+        }
+    });
+    $('.program-info-card__button').on('click', function(e) {
+        e.preventDefault(); 
+        var $thisInfoCard = $(this).siblings('.columns');
+        if ($thisInfoCard.hasClass('is-visible')) { 
+             $thisInfoCard.removeClass('is-visible').outerWidth( parseInt($(this).css('width')));  
+        } else { 
+            $programInfoCards.removeClass('is-visible');
+            $thisInfoCard.addClass('is-visible').outerWidth( $(this).closest('.columns').outerWidth()-parseInt($(this).closest('.column').css('paddingLeft'))*2);  
+        }
+        
+    });
+    /** 
+      * VCU Plugin Accordion panel
+      * http://katmai.staging.vcu.edu/plugins/accordion-panel/
+    **/
+    $('.plugin-accordion-heading').on('click', function(event) {
+        event.preventDefault();
+        var $thisPanel = $(this).closest('.plugin-accordion-panel ');
+        if ($thisPanel.hasClass('expand')) {
+            $thisPanel.removeClass('expand');
+        } else {
+            $('.plugin-accordion-panel.expand').removeClass('expand');
+            $thisPanel.addClass('expand');
+        }
+    });
     /** Site exit survey **/
-    $(document).on('click', '.t4-exit-survey__no', function(e) {
+   /* $(document).on('click', '.t4-exit-survey__no', function(e) {
         e.preventDefault();
         Cookies.set('t4WillTakeSurvey', false, {expires: 3});
         $('.t4-exit-survey').removeClass('is-visible');
@@ -407,9 +482,9 @@
         e.preventDefault();
         Cookies.set('t4WillTakeSurvey', false, {expires: 3});
         window.location.href = 'https://www.surveymonkey.com/r/PXXG239';
-    });
+    });*/
     
-    if (Cookies.get('t4WillTakeSurvey') === undefined) {
+    /*if (Cookies.get('t4WillTakeSurvey') === undefined) {
         console.log(Cookies.get('t4WillTakeSurvey'));
         Cookies.set('t4WillTakeSurvey', true, {expires: 3});
         var timeOut = new Date();
@@ -420,12 +495,12 @@
     } else if (Cookies.get('t4WillTakeSurvey') === 'true') {
         
         
-        if (Number.parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes()) <= 0) {
+        if (parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes()) <= 0) {
             console.log('show survey');
             showSurvey();
         } else {
-            console.log('show survey set time out '+Number.parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);
-            setTimeout(showSurvey, Number.parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);          
+            console.log('show survey set time out '+parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);
+            setTimeout(showSurvey, parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);          
         }
         
     } else {
@@ -436,5 +511,5 @@
             $('.t4-exit-survey').addClass('is-visible');
             return;
         }
-    }
+    }*/
 }());
