@@ -316,23 +316,27 @@
 }
 .section__title--featured {   
     .section__title {
+        -ms-flex: none;
         flex-grow: 0;
         display: inline;
         margin-bottom: 0;
         margin-right: $space-5/2;
+        
+        font-size: 2.25rem;
         > span {
             display: inline-block;
+            
             padding-left:     $gutter-width*1.5;
             padding-right:    $space-5;
             padding-top:      $space-1;
             padding-bottom:   $space-1;
-             margin-left: -$gutter-width;
+            margin-left: -$gutter-width;
         
-            background-color: $white;
+            background-color: $primary;
+            color: $white;
+            
             @include boxShadow($light-10, insetRight, insetLeft);
             border-radius: ($space-1 * 2)+ ($size-1 * 1.1) / 2;
-            @include desktop {
-            }
         }
     }
 }

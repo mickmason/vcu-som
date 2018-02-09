@@ -18,6 +18,7 @@
         </script>
         
     </head> 
+    
     <body class="som-homepage"> 
        @@include('structure/header.html')  
        @@include('components/hero-large--video.html') 
@@ -41,7 +42,7 @@
                </div><!-- // .columns -->
                <div class="columns site-gateways__cards">
                    <div class="column">
-                       <div class="card--flat site-gateway__card has-border-primary ">
+                       <div class="card--flat site-gateway__card has-border-primary">
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
@@ -54,6 +55,13 @@
                                <h2 class="card-heading">Education</h2>
                                <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
                                </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
                            </div>
                        </div>
                    </div><!-- //.column -->
@@ -74,6 +82,13 @@
                                <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
                                </a>
                            </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
                        </div>
                    </div><!-- //.column -->
                    <div class="column">
@@ -91,6 +106,13 @@
                                <h2 class="card-heading">Research</h2>
                                <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
                              </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
                            </div>
                        </div>
                    </div><!-- //.column -->
@@ -179,7 +201,7 @@
        <section class="section feature-section feature-section--vision-graphic" aria-labelledby="diversity-section-heading" style="background-image: url('style-assets/media/img/diversity-2.jpg')">
            <div class="container">
                <div class="columns"> 
-                   <div class="column feature__column has-primary-background-transp has-vision-graphic">  
+                   <div class="column feature__column has-secondary-background-transp has-vision-graphic">   
                         <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
                         <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
                         <a href="javascript:void(0)" title="Read more" class="button is-transparent">Find out more about diversity</a> 
@@ -229,7 +251,7 @@
                            <span class="news-label">Biomedical Sciences</span>
                            <h2 class="news-slider__story__title">#2 VCU Health experts agree new moms should have depression screenings</h2>
                            <span class="news-date">October 22, 2017</span>
-                           <a class="" href="javascript:void(0)">Read more
+                           <a class="" href="javascript:void(0)">Read all about it
                                <span class="icon icon--svg is-inline-icon has-icon-white">
                                    <svg>
                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
@@ -248,7 +270,7 @@
                            <span class="news-label">Biomedical Sciences</span>
                            <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
                            <span class="news-date">October 22, 2017</span>
-                           <a class="" href="javascript:void(0)">Read more
+                           <a class="" href="javascript:void(0)">Read about screenings 
                                <span class="icon icon--svg is-inline-icon has-icon-white">
                                    <svg>
                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
@@ -268,7 +290,7 @@
                            <span class="news-label">Biomedical Sciences</span>
                            <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
                            <span class="news-date">October 22, 2017</span>
-                           <a class="" href="javascript:void(0)">Read more
+                           <a class="" href="javascript:void(0)">Read about this story
                                <span class="icon icon--svg is-inline-icon has-icon-white">
                                    <svg>
                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use>
@@ -429,14 +451,15 @@
           <div class="container">
                <div class="columns">
                    <div class="column deans-column">
-                       <div class="deans-message__content has-primary-background">
+                       <div class="deans-message__content">
                           <div class="deans-image">
                              <figure class="image">
                                 <img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" />       
                              </figure>
+                             <div class="vcu-vision-angle"></div> 
                           </div>
                           <div class="deans-meassage"> 
-                               <h2 id="deans-message-section-heading" class="is-feature-font section__title">Meassage from the Dean</h2>  
+                               <h2 id="deans-message-section-heading" class="is-feature-font--serif section__title">Meassage from the Dean</h2>  
                                <div class="message-text">
                                    <p class="deans-messsage__text">“As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.”</p>
                                    <p>–John Fitzgerald Kennedy</p>    
@@ -458,10 +481,10 @@
            <div class="image-overlay has-white-background"></div>
        </section>
     <!-- ** Diversity fixed feature ** -->  
-       <section class="section feature-section feature-section--fixed has-secondary-background" aria-labelledby="diversity-section-heading" >
+       <section class="section feature-section feature-section--fixed has-secondary-background" aria-labelledby="diversity-flyout-section-heading" >
            <div class="container">
                <div class="columns is-desktop is-widescreen">
-                   <div class="tab-column tab-column__mobile column is-active">
+                   <div class="tab-column tab-column__mobile has-secondary-background column is-active">
                       <a href="javascript:void(0)" class="feature-section--fixed__toggle">
                          <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
                          <span class="icon icon--svg has-icon-white">
@@ -474,23 +497,32 @@
                          </span>    
                       </a>
                    </div><!-- // .tab-column column -->
-                   
                    <div class="column feature-section--fixed__content " style="background-image: url('style-assets/media/img/diversity-2.jpg')">
-                        <div class="feature-section--fixed__text-container"> 
-                            <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
+                        <div class="feature-section--fixed__text-container has-secondary-background"> 
+                            <h1 id="diversity-flyout-section-heading" class="section__title is-feature-font--serif">Our Committment to diversity</h1>
                             <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
                             <a href="javascript:void(0)" title="Read more" class="button">Find out more about diversity</a> 
-                            <div class="tab-column tab-column__desktop">
+                            <div class="tab-column tab-column__desktop"> 
+                              <a class="feature-section--fixed__hide">Close me
+                                     <span class="icon icon--svg is-inline-icon">
+                                            <svg class=" show-less-icon">
+                                                <use xlink:href="style-assets/media/svg-icons/som-icons.svg#x-icon" /> 
+                                            </svg>
+                                     </span> 
+                              </a>
                               <a href="javascript:void(0)" class="feature-section--fixed__toggle">
-                                 <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
-                                 <span class="icon icon--svg has-icon-white">
-                                        <svg class="show-more-icon">
-                                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#plus_icon" />
-                                        </svg>
-                                        <svg class=" show-less-icon">
-                                            <use xlink:href="style-assets/media/svg-icons/som-icons.svg#minus_icon" />
-                                        </svg>
-                                 </span>    
+                                 <div class="tab-column__text">
+                                     <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
+                                     <span class="icon icon--svg has-icon-white is-inline-icon">
+                                            <svg class="show-more-icon">
+                                                <use xlink:href="style-assets/media/svg-icons/som-icons.svg#plus_icon" />
+                                            </svg>
+                                            <svg class=" show-less-icon">
+                                                <use xlink:href="style-assets/media/svg-icons/som-icons.svg#minus_icon" />
+                                            </svg>
+                                     </span>    
+                                 </div>
+                                 
                               </a>
                            </div><!-- // .tab-column column -->   
                         </div><!-- // .feature-section--fixedtext-container -->

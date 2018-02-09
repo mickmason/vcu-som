@@ -13,12 +13,13 @@
     }
 }
 .main-content {
-    padding-top: 0;
+    padding-top: $space-4;
     > .section {
+        
         @include touch {
             padding-top: $space-5;    
         }
-        padding-top: $space-4;
+        
         padding-bottom: $space-4a;
         
         &.text-feature {
@@ -31,6 +32,7 @@
         margin-right: -$gutter-width/2;
         
         &:first-child {
+            padding-top: 0;
             >.container > .columns > .column {
                 padding-top: 0;
                 padding-bottom: 0;
@@ -113,7 +115,7 @@
             border-bottom:  1px solid $black;
         }
         @include superhd {
-            max-width: 1024px;
+            max-width: 49.9599rem;
         }
     }
     
@@ -126,6 +128,7 @@
     }
     
     @include fullhd {
+        padding-top: $space-5a;
         .general-content {
             figure {
                 &.is-pulled-right {
@@ -146,6 +149,9 @@
             padding-top: $space-5;    
         }
         padding-top: $space-4;
+        @include fullhd  {
+            padding-top: $space-5a;    
+        }
     }
     .sidebar-nav-wrap, .sidebar-card {
         

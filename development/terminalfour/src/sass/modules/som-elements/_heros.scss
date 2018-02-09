@@ -23,6 +23,10 @@
     &.hero--narrow {
         padding-top: $space-6; 
         padding-bottom: $space-6; 
+        @include fullhd {
+            padding-top:     $space-7; 
+            padding-bottom:  $space-7; 
+        }
     }
     &.hero--video {
         .hero-video {
@@ -36,7 +40,6 @@
             transform: translate(-50%, -50%);
         }
     }
-    
     &.has-quicklinks {
         @include widescreen {
             -ms-flex-direction: row;
@@ -73,6 +76,7 @@
     &.is-sans-serif {
         @include feature-font($azo-sans, 500);
     }
+ 
 }
 .hero-subtext {
     font-size: $size-5a;
@@ -159,7 +163,7 @@
     
     
 }
-@media screen and (min-width: $tablet) {
+@include tablet {
     .hero-title {
         font-size: $size-1;
     }
@@ -177,6 +181,11 @@
     } 
     .hero-content-wrap {
         @include make-flexbox($direction: row, $justify: space-between, $align: flex-end);
+    }
+} 
+@include superhd { 
+    .hero-title {
+        font-size: $size-0lrg;
     }
 }
 /** Triple hero **/

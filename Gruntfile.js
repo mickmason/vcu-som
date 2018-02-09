@@ -125,15 +125,15 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         dist: {
-              src: [ 
-                  'development/lib/slick/slick/slick.min.js', 
-                  'development/terminalfour/src/js/*.js'
-                  ],
-              dest: 'www-root/style-assets/js/t4-scripts.js'
-                  
+            src: [ 
+                
+                'development/lib/jquery-match-height/jquery.matchHeight.js',  
+                'development/lib/slick/slick/slick.min.js', 
+                'development/terminalfour/src/js/*.js'
+                ],
+            dest: 'www-root/style-assets/js/t4-scripts.js'
         }
     },
-    
     postcss: {
       options: {
         map: true, // inline sourcemaps

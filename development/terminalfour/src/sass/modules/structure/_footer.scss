@@ -19,6 +19,10 @@
     .footer__school-name {
         font-family: $feature-font-serif;
         font-size: $size-3;
+        line-height: 1.1;
+        @include desktop {
+            font-size: $size-4;
+        }
     }
     .footer__a-z__links {
         a {
@@ -64,5 +68,11 @@
             outline: 1px dashed $light-8;
         }
         
+    }
+    .footer__meta-links {
+        a {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
     }
 }
