@@ -422,7 +422,7 @@
          });
      }
     //Diversity .active class toggle 
-    $('.feature-section.feature-section--fixed').find('.tab-column > a').on('click, focus', function(event) {
+    $('.feature-section.feature-section--fixed').find('.tab-column > a').on('click', function(event) {
         event.preventDefault();
         console.log('click '+$(this).closest('.feature-section.feature-section--fixed').attr('class'));
         $(this).closest('.feature-section.feature-section--fixed').toggleClass('is-active');
