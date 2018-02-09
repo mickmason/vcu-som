@@ -25,7 +25,7 @@ li {
 }
 a {
     &:focus {
-        outline: 1px dashed $gray-32;
+        outline: 1px solid $secondary;
     }
 }
 h1 {

@@ -94,7 +94,7 @@
         ]
     }); 
     //Video gallery 
-    
+    //Video gallery 
     $('.gallery-feature__slider').slick({
         mobileFirst: true,
         slidesToShow: 1,
@@ -194,6 +194,33 @@
         appendArrows: '.slider__controls',
         appendDots: '.slick-dots-container' 
     });
+    
+     /*! 
+     * jQuery Match Height https://github.com/liabru/jquery-match-height
+     */
+     var matchHeightArray = 
+         [
+             '.discovery-slider .discovery-slider__slide',
+             '.card--flat'
+         ];
+    
+     if ($(window).outerWidth() > 768) {
+         matchHeightArray.forEach(function($this, idx, arr) { 
+             $($this).matchHeight({byRow: true});    
+         });    
+     }
+     $(window).on('resize', function() {
+         if ($(window).outerWidth() >=767) {
+             matchHeightArray.forEach(function($this, idx, arr) { 
+                 $($this).matchHeight();    
+             });
+         } else {
+             matchHeightArray.forEach(function($this, idx, arr) { 
+                 $($this).css('height', 'auto');    
+             });                         
+         }
+     });
+    
     /** 
       ** Custom Scripts 
     **/
@@ -401,9 +428,27 @@
     });
     
      /** By the numbers count up **/
-     if ($('.by-the-numbers__number').length > 0) {
-         $('.by-the-numbers__number').each(function() {
-            var $thisCountUp = $(this).find('.by-the-numbers__count-up');
+    var countUpIsDone = false;
+    if ($('.by-the-numbers-feature').length > 0) {
+        $('.by-the-numbers-feature').each(function(idx, el) {
+            var $thisFeature = $(el);
+            $(window).on('scroll', function() {
+                if ($(el).attr('counted-up') !== 'true') {
+                    var $byTheNumbersCols = $thisFeature.find('.by-the-numbers__columns');
+                    var byTheNumbersTop = $byTheNumbersCols.offset().top;
+                    var byTheNumbersBottom = byTheNumbersTop + $byTheNumbersCols.outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+                    if (byTheNumbersBottom > viewportTop && byTheNumbersTop < viewportBottom) {
+                        byTheNumbersCountUp($byTheNumbersCols);   
+                    } 
+                }
+            });                
+        });
+    }
+    function byTheNumbersCountUp($numbersCols) {
+        $numbersCols.find('.by-the-numbers-card').each(function(idx, el) {
+            var $thisCountUp = $(el).find('.by-the-numbers__count-up');
             var targetNumber = parseInt($thisCountUp.data('count-up-to'));
             var numb = parseInt($thisCountUp.html());
             function incrementNumber() {
@@ -413,20 +458,35 @@
                     setTimeout(function() {
                         $thisCountUp.text(numb);
                         incrementNumber();
-                    }, 2000/targetNumber);    
+                    }, 3000/targetNumber);    
                 } else {
+                    $(this).closest('.by-the-numbers-feature').attr('counted-up', 'true');
                     return;
                 }
             }
-            incrementNumber();
-         });
-     }
+            setTimeout(function() {
+                incrementNumber();        
+            }, 500);
+        }) ;
+        
+        
+    } 
+
     //Diversity .active class toggle 
-    $('.feature-section.feature-section--fixed').find('.tab-column > a').on('click, focus', function(event) {
+    $('.feature-section.feature-section--fixed').find('.feature-section--fixed__toggle').on('click', function(event) {
         event.preventDefault();
-        console.log('click '+$(this).closest('.feature-section.feature-section--fixed').attr('class'));
         $(this).closest('.feature-section.feature-section--fixed').toggleClass('is-active');
     });
+    $('.feature-section.feature-section--fixed').find('.feature-section--fixed__hide').on('click', function(event) {
+        console.log('click');
+        event.preventDefault();
+        if ($(this).closest('.feature-section.feature-section--fixed').hasClass('is-hidden') === false) {
+           $(this).closest('.feature-section.feature-section--fixed').fadeOut(300, function() {
+            $(this).addClass('is-hidden');
+           });
+        }
+    });
+    
     
     /* Program info cards */
 

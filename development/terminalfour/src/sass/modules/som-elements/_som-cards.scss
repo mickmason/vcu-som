@@ -27,6 +27,16 @@
         color: inherit;
         margin-bottom: 0;
     }
+    .button {
+        background-color: $primary;
+        color: $primary-invert;
+        border-color: $primary-invert;
+        @include active-link {
+            background-color: $primary-invert;
+            color: $primary;
+            border-color: $primary;
+        }
+    }
     p {
         margin-bottom: $space-1;
     }
@@ -54,6 +64,7 @@
     }
     .card__arrow {
         text-align: right;
+        margin-top: -$space-2/2;
         @include make-flexbox($direction: row, $justify: flex-end, $align: center);
         .icon {
             width: $gl-xsmall; 
@@ -65,8 +76,9 @@
                right: -30%;
             }
             svg {
-                height: 110%;
+                height: 80%;
                 fill: $white; 
+                transition: height 180ms ease-out;
             }
         }
     }
@@ -79,6 +91,7 @@
                 span {
                     &::before {
                         background-color: $color;
+                        transition: background-color 180ms ease-out;
                     }
                     .icon {
                         svg {
@@ -86,8 +99,54 @@
                         }
                     }
                 }
-            }    
+            }
+            transition: background-color 180ms ease-out;
+            
+            @include active-link { 
+                &.site-gateway__card {
+                    .card__anchor {
+                        * {
+                            color: $color-invert;
+                        }
+                        outline-color: $color-invert;
+                    }
+                        background-color: $color;
+                        color: $color-invert;
+                    }
+                
+            }
         }
+        &.has-#{$name}-background {
+            .card-content {
+                background-color: $color;
+                color: $color-invert;
+            }  
+            .button {
+                background-color: $color;
+                color: $color-invert;
+                border-color: $color-invert;
+                @include active-link {
+                    background-color: $color-invert;
+                    color: $color;
+                    border-color: $color;
+                }
+            }
+            .icon.icon--svg svg {
+                fill: $color-invert;
+            }
+            .card__arrow {
+                > .icon.icon--svg {
+                    &::before {
+                        background-color: $color-invert;
+                        @include boxShadow($light-8, insetLeftThin, insetTopThin);
+                    }
+                    svg {
+                       fill: $color;
+                    }
+                }
+            }
+        }
+
     }
     &:hover, &:focus, &:active {
         cursor: pointer;           
@@ -104,6 +163,13 @@
         }
         .card-content__read-more {
             font-weight: 700;
+        }
+        .card__arrow {
+            .icon {
+                svg {
+                    height: 100%;
+                }
+            }
         }
     }
 }
@@ -288,7 +354,7 @@
     text-align: right;
     position: relative;
     overflow: hidden; 
-    
+    border: none;
     .card-image {
         figure {
             @include make-image-container(120%);
@@ -349,7 +415,7 @@
         z-index: 30;
         .card-content {
             bottom: 0rem;
-            background-color: $som-green;
+            background-color: rgba($som-green, 0.7);  
         }
     }
 }
@@ -373,10 +439,24 @@
     }
    
     @include active-link {
+         cursor: auto;
          .card-content__read-more {
             font-weight: 400;
         }
     }
+    .card__arrow {
+        margin-top: -$space-4;
+    }
+    
+    .card__arrow {
+        .icon {
+            svg {
+                height: 90%; 
+            }    
+        }
+        
+   }
+    
 }
  .program-card__ctas {
         
@@ -385,10 +465,6 @@
          margin-right: $gutter-width/2;
      }
  }
-.program-card__content {
-    background-color: $som-green;
-    color: $white;
-}
 /** Video slider - has a caption and play icon **/
 .video-slider-card {
     .card-content {

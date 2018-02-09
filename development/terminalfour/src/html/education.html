@@ -19,6 +19,7 @@
         
     </head> 
     <body class="has-lightbox-active">
+       @@include('structure/vcu-branding-bar.html')
        @@include('structure/header.html')  
        @@include('components/hero-large.html')
        @@include('components/landing-page-navigation.html') 
@@ -50,54 +51,64 @@
            <div class="container section__label__container">
                  <span class="section__label">Education</span>
            </div>
-           <div class="container">
-                 <h1 id="featured-programs-2-section-heading" class="section__title is-feature-font--serif"><span>Featured programs</span></h1>          
-                <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p> 
+           <div class="section__title__outer-wrap">
+               <div class="container section__title--featured">
+                <div class="section__title--featured__wrap">
+                    <h1 id="site-gateways-section-heading" class="section__title is-feature-font--serif"><span>Featured Programs</span></h1>  
+                    <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p>         
+                </div>  
+               </div><!-- // section title container -->
            </div>
            <div class="container">
                <div class="columns "> 
                          <div class="column ">
-                              <div class="card--flat program-card">
+                            <div class="card--flat program-card has-primary-background">
                                <div class="card-image">
-                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   
                                        <figure class="image is-2by1"> 
                                            <img alt="Placehoder image" src="style-assets/media/img/white-coats-two-guys.jpg" />
                                        </figure>
-                                   </a>
+                                   
                                </div>
-                               <div class="card-content program-card__content has-primary-bg">      
+                               <div class="card-content program-card__content ">      
                                    <h2 class="card-heading is-feature-font">MD Program</h2>
                                    <p class="program-card__intro">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
                                    <div class="program-card__ctas">
-                                       <p class="card-content__read-more">More
-                                           <span class="icon icon--svg is-inline-icon has-icon-white">
+                                       <a class="card-content__read-more">More
+                                           <span class="icon icon--svg is-inline-icon">
                                                <svg>
                                                    <use xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow" />
                                                </svg>
                                            </span>
-                                        </p>
-                                         <a href="javascript:void(0)" class="button is-primary">Apply now</a>
+                                        </a>
+                                         <a href="javascript:void(0)" class="button">Apply now</a>
                                    </div>
                                </div>    
-                               
+                               <div class="card__arrow">
+                                    <span class="icon icon--svg">
+                                           <svg class="">
+                                               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-solid--thin"></use>
+                                           </svg>
+                                       </span>
+                               </div>
                                
                            </div><!-- // .card-flat -->
                        </div><!-- // . column -->
                        <div class="column">
-                           <div class="card--flat program-card">
+                           <div class="card--flat program-card has-border-primary">
                                <div class="card-image">
-                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   
                                        <figure class="image is-2by1">
                                            <img alt="Placehoder image" src="style-assets/media/img/convocation-1.jpg" />
                                        </figure>
-                                   </a>
+                                   
                                </div>
-                               <div class="card-content program-card__content has-primary-background"> 
+                               <div class="card-content program-card__content"> 
                                    <h2 class="card-heading ">Graduate Medical Education</h2>
                                    <p class="program-card__intro">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
                                    <div class="program-card__ctas">
                                        <a class="card-content__read-more">More
-                                           <span class="icon icon--svg is-inline-icon has-icon-white">
+                                           <span class="icon icon--svg is-inline-icon">
                                                <svg>
                                                    <use xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow" />
                                                </svg>
@@ -105,6 +116,13 @@
                                         </a>
                                         <a href="javascript:void(0)" class="button">Apply now</a>
                                    </div>
+                               </div>
+                               <div class="card__arrow">
+                                    <span class="icon icon--svg">
+                                           <svg class="">
+                                               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-solid--thin"></use>
+                                           </svg>
+                                       </span>
                                </div>
                            </div><!-- // .card-flat -->
                           </div><!-- // .column -->
@@ -114,7 +132,6 @@
        <!--** Featured programs cards **-->
        <section id="graduate-study-section" id="graduate-study-options" class="section feature-section graduate-study-section" is-labelledby="graduate-study-heading">
             <div class="container">
-               <hr />
                <div class="columns graudate-study-header-columns">
                      <div class="column graudate-study-header-column">
                          <h2 id="graduate-study-heading" class="is-feature-font">Graduate Study Options</h2>          
@@ -123,17 +140,23 @@
                </div><!-- // .graudate-study-header-columns -->
                <div class="columns graudate-study-columns">
                    <div class="column graudate-study-column">
-                        <div class="card--flat grad-overlay-card">
+                        <div class="card--flat has-border-primary ">
                           <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                            <div class="card-image">
-                               <figure class="image is-1by1"> 
+                               <figure class="image is-3by2">  
                                    <img alt="Placehoder image" src="style-assets/media/img/white-coats-two-guys--square.jpg" /> 
                                </figure>
-                               <div class="image-overlay--gradient"></div>
                            </div>
                            <div class="card-content ">      
                                <h2 class="card-heading is-feature-font">Masters programs</h2>
                                <p>Intro ut perspiciatis unde omnis iste natus error sit.</p> 
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#arrow-solid--thin"></use>
+                                       </svg>
+                                   </span>
                            </div>
                            </a>    
                         </div><!-- // .card-flat.grad-overlay-card -->
@@ -142,7 +165,7 @@
                         <div class="card--flat grad-overlay-card">
                           <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                            <div class="card-image">
-                               <figure class="image is-1by1"> 
+                               <figure class="image is-2by1"> 
                                    <img alt="Placehoder image" src="style-assets/media/img/white-coats-two-guys--square.jpg" /> 
                                </figure>
                                <div class="image-overlay--gradient"></div>
@@ -294,6 +317,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="style-assets/js/t4-scripts.js"></script>
-    <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8XZaozAEcqR4419ZbF1w1LEvrBPJzsbN4J2WHX3WbX0.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
+    
     </body>
 </html>

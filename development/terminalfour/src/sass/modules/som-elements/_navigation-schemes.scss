@@ -3,6 +3,7 @@
 */
 /* Main navigation */
 .main-navigation {
+    
     .navbar-brand {
         -ms-flex-pack: justify;
         justify-content: space-between;
@@ -143,12 +144,27 @@
         }
     }
 }
+
 //Overrides and icons - general
 .navbar-link, .navbar-item {
     &.has-dropdown {
         @include touch {
             -ms-flex-direction: column;
             flex-direction: column;
+        }
+    }
+    &.vcu-health-logo {
+        border-bottom:  1px solid #ccc;
+        @include boxShadow($light-10, insetTopThin, insetBottomThin); 
+        > img {
+             max-height: $size-8; 
+        }
+        background-color: $white;
+        @include active-link {
+            background-color: $light-8;
+        }
+        > span {
+            display: none;
         }
     }
 }
@@ -200,6 +216,11 @@
                 height:    1rem;
             }
         }
+        &.vcu-health-logo { 
+            > img {
+                max-height: 1rem;
+            }    
+        }
         &.vcu-health-link {
             background-color: $som-yellow;
             color: $black;
@@ -218,6 +239,9 @@
             flex-direction: row;
         }
         &:hover, &:focus, &:active, &.is-active {
+            &.vcu-health-logo {
+                 background-color: $light-8;
+            }
             color: $white;
             background-color: $black;
         }
@@ -261,7 +285,6 @@
         color: inherit;
         padding-top:     $space-1;
         padding-bottom:  $space-1;
-        /*font-size: $size-7;*/
         &.has-dropdown {
             padding-top: 0;
             padding-bottom: 0;
@@ -271,7 +294,16 @@
                 color: $white;
             } 
         }
+        &.vcu-health-logo {
+            > img {
+               max-height: 1rem;     
+            }
+           
+        }
         &:hover, &:active, &:focus, &.is-active {
+                &.vcu-health-logo {
+                    background-color: $light-8; 
+                }
                 background-color: lighten($gray-32, 15%);
                 color: $white;
         }  
@@ -1005,11 +1037,13 @@
     }
     li {
         list-style: none;
-        
     }
     .section__label {
         margin-top: $space-1;
         margin-bottom: $space-1;
+        @include fullhd {
+            margin-top: $space-4;
+        }
     }
     ul {
         @include make-flexbox($direction: column, $justify: space-around, $align: stretch);
@@ -1023,8 +1057,8 @@
             > a {
                 display: block;
                 text-align: left;
-                padding-top: $space-1;
-                padding-bottom: $space-1;
+                padding-top:      $space-1;
+                padding-bottom:   $space-1;
                 padding-left:     $gutter-width/2;
                 padding-right:    $gutter-width/2;
                 
@@ -1040,7 +1074,7 @@
                 @include widescreen {
                     border-top: 1px solid $gray-8;
                     text-align: center;
-                    padding-top: $space-2;
+                    padding-top:      $space-1;
                     padding-bottom: $space-2;
                     padding-left: $gutter-width;
                     padding-right: $gutter-width;
