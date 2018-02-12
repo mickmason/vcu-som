@@ -1,5 +1,6 @@
 //SoM Utilities
 /* Hide SVG stack */
+
 .vcu-som-icons-stack {
     display: none;
     visibility: hidden;
@@ -16,7 +17,9 @@
     .has-#{$name}-background {
         background-color:   $color;
         color: $color-invert;
-
+        .section__intro, .section__intro--thin {
+            border-color: $color-invert;    
+        }
         a {
             color: $color-invert;
         }
@@ -25,10 +28,51 @@
             border-color: $border-col; 
             background-color: $color;
             @include active-link {
-                background-color: darken($color, 10%);
+                color: $color;
+                background-color: $color-invert;
+                border-color: $color; 
             }
         }
+        &.has-vision-graphic {
+            background-color: transparent;
+            &::before {
+                background-color: $color;
+            }    
+        }
+        
+        &.is-transparent {
+            background-color:   $color; 
+            background-color: rgba($color, 0.72);
+            &.has-vision-graphic {
+                background-color: transparent;
+                &::before {
+                    background-color: rgba($color, 0.72);
+                }    
+            }
+            .button:not([class*='is-']) {
+                background-color: transparent;
+                @include active-link {
+                    background-color: $color-invert;
+                }
+            }
+        }
+        &.has-background-image {
+             > .container {
+                 z-index: 40;
+             }
+            .button:not([class*='is-']) {
+                background-color: transparent;
+                @include active-link {
+                    background-color: $color-invert;
+                }
+            }
+        }
+        
+        .image-overlay {
+            background-color: rgba($color, 0.72);
+        }
     }
+
     .has-#{$name}-background--grad {
         background-color:   $color;
         background-image:   linear-gradient(19.5deg, lighten($color, 5.57%), darken($color, 5.57%)); 
@@ -41,11 +85,13 @@
             border-color: $border-col; 
             background-color: $color;
             @include active-link {
-                background-color: darken($color, 10%);
+               color: $color;
+                background-color: $color-invert;
+                border-color: $color; 
             }
         }
     } 
-    .feature__column {
+    /*.feature__column {
         &.has-#{$name}-background {
             background-color:  $color;
             color:             $color-invert;
@@ -88,7 +134,7 @@
             }
             
         }
-    }
+    }*/
     .image-overlay {
         &.has-#{$name}-background {
             background-color:   rgba($color,0.32);
@@ -252,7 +298,9 @@
     text-transform: uppercase;
     font-size: $size-8;
 }
-
+.is-centered {
+    text-align: center;
+}
 .is-active {
     .show-more-icon {
         display: none;
@@ -346,17 +394,26 @@
             border-radius: ($space-1 * 2)+ ($size-1 * 1.1) / 2;
         }
     }
+    p {
+    
+        border-bottom: none;
+    }
 }
-.section__intro {
+.section__intro, .section__intro--thin  {
     font-size: $size-5;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.5;    
     margin-bottom: $space-4;
+    padding-bottom: $size-5;
+    border-bottom: 1px solid $black;
     &.is-touch-only {
         @media screen and (min-width: 1200px) {
             display: none;
         }
     }
+}
+.section__intro--thin {
+    font-weight: 200;
 }
 .som-content-label {
     color: $grey-light;

@@ -234,8 +234,19 @@
     }
 }
 /** Discovery slider **/
+.discovery-title {
+    .discovery-slider__title { 
+        margin-bottom: 0;
+    }
+}
 .discovery-slider-wrapper {
-    margin-bottom: $space-3;
+    padding-bottom: $space-6;
+    margin-bottom: $space-4;
+    border-bottom: 1px solid $gray-32;
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 }
 .discovery-slider__title {
     margin-bottom: 0;    

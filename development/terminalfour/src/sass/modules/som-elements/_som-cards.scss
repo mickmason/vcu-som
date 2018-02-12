@@ -64,7 +64,6 @@
     }
     .card__arrow {
         text-align: right;
-        margin-top: -$space-2/2;
         @include make-flexbox($direction: row, $justify: flex-end, $align: center);
         .icon {
             width: $gl-xsmall; 
@@ -101,20 +100,6 @@
                 }
             }
             transition: background-color 180ms ease-out;
-            
-            @include active-link { 
-                &.site-gateway__card {
-                    .card__anchor {
-                        * {
-                            color: $color-invert;
-                        }
-                        outline-color: $color-invert;
-                    }
-                        background-color: $color;
-                        color: $color-invert;
-                    }
-                
-            }
         }
         &.has-#{$name}-background {
             .card-content {
@@ -221,17 +206,22 @@
     border: none;
     .heading-only-card__content {
         border-left: 1px solid $light-10;
+        border-bottom: 3px solid $primary;
         @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
         .card-heading {
             font-size: $size-6;
             margin-bottom: 0;
         }
+        
         .card__arrow {
             max-width: $gl-small;
             .icon {
                 height: 100%;
                 width: 100%;
                 max-height: none;
+                &::before {
+                    background-color: $primary;
+                }
             }
             .heading-only-card__icon-wrap {
                 max-height: $space-5;
@@ -239,6 +229,11 @@
                     height: $space-5;
                 }
             }
+        }
+    }
+    @include active-link {    
+        .card__anchor {
+            text-decoration: underline;
         }
     }
 }
@@ -260,7 +255,8 @@
     padding-bottom:  $space-5;
 }
 .site-gateway__card {
-    border: 1px solid $light-8;
+    border: 1px solid $light-10;
+    border-bottom: 3px solid $primary;
     .card-heading {
         font-size: $size-6;
         margin-bottom: $space-1;
@@ -277,9 +273,32 @@
             color: $text;        
         }
     }
-    &:hover, &:focus, &:active {
-        background-color: darken($card-background-color, 2.5%)
-    }   
+    .card__arrow {
+        > .icon.icon--svg {
+            &::before {
+                background-color: $primary;
+            }
+            svg {
+               fill: $white;
+            }
+        }
+    }
+    @include active-link { 
+        .card__anchor {
+            * {
+                color: $white; 
+            }
+            text-decoration: underline; 
+            p {
+                text-decoration: underline;
+            }
+            outline-color: $black;
+            
+        }
+        background-color: $primary;
+        color: $white;
+    }
+
 }
 /** Featured programs cards **/
 .featured-programs {
@@ -538,7 +557,6 @@
     .card-image {
         position: relative;
     }
-    
     .card-content {
         @include make-flexbox($direction: column, $justify: flex-start, $align: stretch);
         &.is-featured {
@@ -549,7 +567,6 @@
             }
         }
     }
-    
     .card__date--plain {
         font-size: $size-7;
         margin-bottom: 0;
@@ -630,5 +647,85 @@
             font-size: $size-8;
         }    
     }
-
+}
+/*Feature sections with cards - .has-colour classes */
+$cardColours: (
+  "secondary": ($som-grana, $som-grana-invert),
+  "primary": ($primary, $primary-invert),
+  "som-yellow": ($som-yellow, $som-yellow-invert),
+);
+.section {
+    &.feature-section {
+        @each $name, $pair in $cardColours { 
+            $color: nth($pair, 1);
+            $color-invert: nth($pair, 2);
+            &.has-#{$name}-cards {
+                .card-flat {
+                    .card__arrow {
+                        span {
+                            &::before {
+                                background-color: $color;
+                            }
+                        }
+                    }
+                }
+                .site-gateway__card {
+                    .card__arrow {
+                            .icon {
+                                &::before {
+                                    background-color: $color;
+                                }
+                            }
+                     }
+                     @include active-link {
+                        background-color: $color;
+                        color: $color-invert;
+                     }
+                    border-bottom-color: $color;
+                }
+                .video-slider-card {
+                    border: none;
+                    .card-content__controls {
+                        background-color: $color;
+                        color: $color-invert;
+                        @include active-link {
+                            background-color: darken($color, 5%);
+                        }
+                    }
+                    .video-slider__play {
+                        @include active-link {
+                            background-color: darken($color, 5%);
+                        }
+                    }
+                }
+                .heading-only-card {
+                    border-bottom-color: $color; 
+                    .heading-only-card__content {
+                        border-bottom-color: $color;
+                    }
+                    
+                    .card__arrow {
+                        max-width: $gl-small;
+                        .icon {
+                            height: 100%;
+                            width: 100%;
+                            max-height: none;
+                            &::before {
+                                background-color: $color;
+                            }
+                        }
+                        .heading-only-card__icon-wrap {
+                            max-height: $space-5;
+                            svg {
+                                height: $space-5;
+                            }
+                        }
+                    }
+                }
+        }//end .has-{name}-cards
+        
+        }//end @each
+        
+        
+    }
 }

@@ -210,6 +210,9 @@
      */
      var matchHeightArray = 
          [
+             '.hero-body__text',
+             '.hero-body__text > p',
+             '.heading-only-card__content',
              '.discovery-slider .discovery-slider__slide',
              '.card--flat'
          ];
@@ -222,7 +225,7 @@
      $(window).on('resize', function() {
          if ($(window).outerWidth() >=767) {
              matchHeightArray.forEach(function($this, idx, arr) { 
-                 $($this).matchHeight();    
+                 $($this).matchHeight({byRow: true});    
              });
          } else {
              matchHeightArray.forEach(function($this, idx, arr) { 
@@ -510,15 +513,17 @@
     $('.inner-page-nav__item > a, .landing-page-navigation__link').on('click', function(event) {
         event.preventDefault();
         var $this = $(this);
-        console.log($this.attr('href'));
         var thisTarget = $($this.attr('href')).offset().top;
-        console.log(thisTarget);
         $('html, body').animate({scrollTop: thisTarget}, 300);
         return false;
     });
+    $('.svg-icon--scroll').on('click', function(event) {
+        event.preventDefault();
+        
+        $('html, body').animate({scrollTop: $('.section.feature-section').eq(0).offset().top}, 300);
+    });
     
     /* Program info cards */
-
     var $programInfoCards = $('.program-info-card__card');
     if ($(window).outerWidth() > 768) {
         $('.program-info-card').each(function(idx, el) {

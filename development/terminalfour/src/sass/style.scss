@@ -40,6 +40,7 @@
 @import 'modules/som-elements/som-accordion';  
 @import 'modules/structure/footer';  
 
+
 /** Diversity feature **/
 .feature-section--vision-graphic {
     &.is-narrow {
@@ -74,15 +75,7 @@
             right: 0;
             z-index: -1;
         }
-        @each $name, $pair in $colors {
-            $color: nth($pair, 1);
-            $color-invert: nth($pair, 2);
-            &.has-#{$name}-background {
-                &::before {
-                    background-color: $color; 
-                }
-            }
-        }//end for each in $colors
+        
     }//.feature-column
    
     @include tablet {
@@ -595,10 +588,13 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-            padding: 0;
+        padding-top: $space-4;
+        padding-bottom: $space-4;
         @include boxShadow($black, insetLeft, insetRight);
     }
     .two-col-feature__text {
+        padding-top: $space-4;
+        padding-bottom: $space-4;
             min-width: $gl-xlarge;
             .columns {
                 display: block;
