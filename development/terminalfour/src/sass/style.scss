@@ -520,20 +520,30 @@
     }
     
     .deans-message__content {
+        -ms-flex: 1 0 auto;
         @include tablet {
             @include make-flexbox($direction: row, $justify: flex-start, $align: stretch); 
             @include boxShadow($black, fullPaper);
             .deans-image {
-                
+                -ms-flex: none;
                 flex: none;
                 width: $gl-small;
                 img {
                     width: 100%;
                 }
             }
-            .deans-meassage {
+            .deans-message {
+                -ms-flex: 1 0 auto;
                 padding: $space-5 $gutter-width;
                 @include make-flexbox($direction: column, $justify: space-evenly);
+                h2, h3, h4, h5, p, .message-text {
+                    -ms-flex: 0 1 auto;
+                }
+                .message-text {
+                    p {
+                       -ms-flex: 0 1 auto; 
+                    }
+                }
             }
         }
     }

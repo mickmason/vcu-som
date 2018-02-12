@@ -721,7 +721,11 @@
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: 4px solid $black; 
+    .section__label {
+        color: $white;
+    }
     a {
+      font-size: $size-5a;
       color: inherit;
     }
     //Toggle nav body 
@@ -753,7 +757,7 @@
     background-color: $light-10;
     display: none;
 }
-.landing-page-nav__heading {
+.landing-page-nav__heading, .audience-nav__heading {
     padding-left: $gutter-width/2;
     padding-right: $gutter-width/2;
     .landing-page-nav__heading-text { 
@@ -761,7 +765,7 @@
         font-weight: 400;
         margin-bottom: 0;
     }
-   .landing-page-nav__toggle {
+   .landing-page-nav__toggle, .audience-nav__toggle {
         max-height: $size-3;
         max-width:  $size-3;
         min-width: 100%;
@@ -769,8 +773,8 @@
     } 
 }
 .landing-page-navigation__body {
-    padding-top:    $space-4;
-    padding-bottom: $space-5;
+    padding-top:    $space-3;
+    padding-bottom: $space-4;
     padding-left: $gutter-width/2;
     padding-right: $gutter-width/2;
     .column {
@@ -901,6 +905,12 @@
             }
         }
     }
+    a {
+        &:not(.sidebar-nav-toggle__icons) {
+            display: inline-block;
+        }
+    }
+    
     li {
         &.has-dropdown {
             > a {
@@ -909,14 +919,13 @@
                     flex: none;
                     width: (100%-$gld-7);    
                 }
-                
             }
             > ul {
                 display: none;
             }
         }
         list-style: none;
-        @include make-flexbox($direction: row, $justify: stretch, $align: center, $wrap: wrap);
+        @include make-flexbox($direction: row, $justify: stretch, $align: stretch, $wrap: wrap);
         a {
             &:not(.sidebar-nav-toggle__icons) {
                 @include make-flexitem(1, 1, auto);
@@ -1046,12 +1055,16 @@
         }
     }
     ul {
+        display: -ms-flexbox;
         @include make-flexbox($direction: column, $justify: space-around, $align: stretch);
+
         @include widescreen {
             -ms-flex-direction: row;
             flex-direction: row;
         }
         > li {
+            display: inline-block;
+            -ms-flex: 1 1 auto;
             flex-grow: 1;
             flex-shrink: 1;
             > a {

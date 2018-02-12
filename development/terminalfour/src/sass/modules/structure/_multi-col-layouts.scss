@@ -13,6 +13,7 @@
     }
 }
 .main-content {
+    
     padding-top: $space-4;
     > .section {
         
@@ -144,6 +145,7 @@
 }
 /** Two col layout **/
 .is-2col, .is-3col {
+   
     .left-sidebar {
         @include touch {
             padding-top: $space-5;    
@@ -183,7 +185,10 @@
             width: $gl-small;
         }
         .main-content {
-            @include make-flexitem(1, 1, auto);
+            -ms-flex: none;
+            flex: none; 
+            width: 100% - $gl-small;
+            
             @include boxShadow($black, leftThin, rightThin); 
             .video-slider-feature {
                 background-color: $light;
@@ -226,12 +231,6 @@
         }   
     }
     @include desktop {
-        .main-content {
-            
-            .section {
-            }
-            
-        }
         .right-sidebar {
             @include boxShadow($black, insetLeftThin);  
         }

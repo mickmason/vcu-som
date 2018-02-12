@@ -3,8 +3,7 @@
     > .container {
         > .columns {
             @include tablet {
-                -ms-flex: none;
-                -ms-flex-wrap: none;
+                -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
             }
         }
@@ -17,18 +16,28 @@
 .program-info-card {
     &__button {
         transition: background-color 120ms ease-out;
+        > span {
+                display: block;
+        }
+        > span:not(.program-info-card__deptartment) {
+                font-size: $size-5;
+        }
         @include active-link {
             text-decoration: none;
             background-color: $light-10;
             /*background-image: linear-gradient(to right, $light-10 0%,#ffffff 40%,#ffffff 60%,$light-10 100%);*/
+            
             > span:not(.program-info-card__deptartment) {
                 text-decoration: underline;
+            }
+            .program-info-card__deptartment {
+                color: inherit;
             }
         }
         @include make-flexbox($direction: column, $justify: flex-start, $align: left);
         .program-info-card__deptartment {
-            font-size: $size-9;
-            color: $grey-light;
+            font-size: $size-7;
+            color: $light-10;
         }
     }
     .program-info-card__card {

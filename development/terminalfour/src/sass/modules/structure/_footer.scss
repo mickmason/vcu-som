@@ -49,6 +49,9 @@
             }
         }
         > a {
+            display: inline-block;
+            -ms-flex: 1 1 auto;
+            -ms-flex-wrap: wrap;
             margin-right: $space-2;
             &:hover, &:active, &:focus { 
                 .icon {

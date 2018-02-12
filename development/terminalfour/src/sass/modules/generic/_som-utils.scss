@@ -1,4 +1,11 @@
 //SoM Utilities
+/* Hide SVG stack */
+.vcu-som-icons-stack {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
 @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
@@ -403,8 +410,11 @@ div {
 **/
 .a-z-navigation {
     @include make-flexbox($direction:row, $justify: space-around, $align: start, $wrap: wrap);
+    height: 100%;
     a {
+        display: inline-block;
         text-transform: uppercase;
+        text-align: center;
         color: inherit;
         border-colour: inherit;
         background-colour: inherit;
@@ -414,7 +424,7 @@ div {
         margin-bottom:  $space-11;
         border-width: 1px;
         border-style: solid;
-        -ms-flex: 0;
+        -ms-flex: 1 1 auto;
         flex-grow: 0;
         display: inline-flex;
         -ms-flex-pack: center;

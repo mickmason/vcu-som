@@ -106,9 +106,7 @@ $button-static-border-color: $grey-lighter !default
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
-    $border-col: if($name == 'transparent', transparent, $color-invert)    
-    $border-col: if($name == 'som-green', $color, $color-invert)
-    $border-col: if($name == 'som-grana', $color, $color-invert) 
+    $border-col:  $color-invert
     
     &.is-#{$name}
       background-color: $color
@@ -117,25 +115,25 @@ $button-static-border-color: $grey-lighter !default
       &:hover,
       &.is-hovered
         @if $name == 'transparent'
-          background-color: rgba($black, 0.382)
-          background-color: rgba($black, 0.382)
-        @else
-          color: $color-invert
-          background-color: darken($color, 6.18%)
-        border-color: $border-col
+          color: $black
+          border-color: $black
+        @else 
+          color: $color
+          border-color: $color
+        background-color: $color-invert
       &:focus,
       &.is-focused
         @if $name == 'transparent'
-          color: $white
-          background-color: rgba($black, 0.382)
+          color: $black
           &:not(:active)
             box-shadow: $button-focus-box-shadow-size rgba($color, 0.28)
         @else
-          color: $color-invert
-          background-color: darken($color, 7.5%)
-          outline: 1px dashed $border-col 
+          color: $color
+          border-color: $color
           &:not(:active)
             box-shadow: $button-focus-box-shadow-size rgba($color, 0.25)
+        background-color: $color-invert
+        outline: 1px solid $border-col
         border-color: $border-col
       &:active,
       &.is-active

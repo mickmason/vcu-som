@@ -4,10 +4,18 @@
     var myVar = 'Michael'; 
     
     /*
-    * Load SVG via AJAX for IE10
+     * Detect SVG support
+     */
+    function supportsSvg() {
+      var div = document.createElement('div');
+      div.innerHTML = '<svg/>';
+      return (div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
+    }
+    /*
+    * Load SVG via AJAX
     */
-    /*var $ajax = new XMLHttpRequest();
-    $ajax.open('GET', 'style-assets/media/svg/dfa-icons.svg', true);
+    var $ajax = new XMLHttpRequest();
+    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true);
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     
@@ -17,7 +25,7 @@
             var responseContentType = $ajax.getResponseHeader("Content-Type"); 
             if (responseContentType.indexOf('image/svg+xml') !== -1) {
                 var div = document.createElement("div");
-                div.setAttribute('class', 'dfa-icons-stack');
+                div.setAttribute('class', 'vcu-som-icons-stack');
                 div.innerHTML = $ajax.responseText;
                 document.body.insertBefore(div, document.body.childNodes[0]);    
             } else {
@@ -27,11 +35,21 @@
             console.log('Load SVG HTTP status is: '+$ajax.status);
           }
       }
-    }*/
+    }
     /** 
       ** Plugins
     **/
     /** Slick instances **/
+    $('.hero-slider__slider').slick({ 
+        mobileFirst: true,
+        slidesToShow: 1,
+        speed: 400,
+        slide: '.hero-slider__slide',
+        prevArrow: '.hero-slider__controls__prev', 
+        nextArrow: '.hero-slider__controls__next', 
+        appendArrows: '.slider__controls',
+        appendDots: '.slick-dots-container' 
+    });
     $('.news-slider__slick').slick({
         dots: true,
         slidesToShow: 1,
@@ -186,14 +204,6 @@
         appendDots: '.discovery-feature__slider__controls .slick-dots-container', 
         slidesToShow: 1
     });
-    $('.hero-slider__slider').slick({ 
-        mobileFirst: true,
-        slide: '.hero-slider__slide',
-        prevArrow: '.hero-slider__controls__prev', 
-        nextArrow: '.hero-slider__controls__next', 
-        appendArrows: '.slider__controls',
-        appendDots: '.slick-dots-container' 
-    });
     
      /*! 
      * jQuery Match Height https://github.com/liabru/jquery-match-height
@@ -316,6 +326,15 @@
     $landingNavToggle.on('click', function(event) {
         event.preventDefault();
         $('.landing-page-nav__body-wrap').slideToggle(240, function() {
+            $landingNav.toggleClass('is-active');
+        });
+    }).off('click');
+    var $audienceNav      = $('.audience-navigation');
+    var $audienceNavToggle= $('.audience-nav__toggle'); 
+    $audienceNavToggle.on('click', function(event) {
+        console.log('click');
+        event.preventDefault();
+        $('.audience-navigation__body-wrap').slideToggle(240, function() {
             $landingNav.toggleClass('is-active');
         });
     });
@@ -473,7 +492,6 @@
     } 
 
     //Diversity .active class toggle 
-
     $('.feature-section.feature-section--fixed').find('.feature-section--fixed__toggle').on('click', function(event) {
 
         event.preventDefault();
@@ -488,7 +506,16 @@
            });
         }
     });
-    
+    /* Landing and inner page nav scrolls */
+    $('.inner-page-nav__item > a, .landing-page-navigation__link').on('click', function(event) {
+        event.preventDefault();
+        var $this = $(this);
+        console.log($this.attr('href'));
+        var thisTarget = $($this.attr('href')).offset().top;
+        console.log(thisTarget);
+        $('html, body').animate({scrollTop: thisTarget}, 300);
+        return false;
+    });
     
     /* Program info cards */
 

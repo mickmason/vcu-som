@@ -66,6 +66,8 @@
     -ms-flex-pack: start;
     } @else if ($justify == flex-end) {
     -ms-flex-pack: end;
+    } @else if ($justify == center) {
+    -ms-flex-pack: center;
     } else {
     -ms-flex-pack:          $justify;    
     }

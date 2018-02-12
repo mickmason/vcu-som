@@ -1,5 +1,10 @@
 /* Hero block */ 
 .hero {
+    -ms-flex-pack: justify;
+    .hero-body {
+        -ms-flex-positive: 1;
+        
+    }
     &:not([class*='-background']) {
         background-color:   $grey;
         background-image:   linear-gradient(19.5deg, lighten($grey, 5.57%), darken($grey, 5.57%)); 
@@ -177,7 +182,13 @@
                 }
             }
         }   
-  
+        &.hero--news-heading {
+            .container {
+                .hero-text-wrap {
+                    max-width: 100%;       
+                }
+            }
+        }
     } 
     .hero-content-wrap {
         @include make-flexbox($direction: row, $justify: space-between, $align: flex-end);
@@ -232,9 +243,6 @@
         }
         .hero-subtext {
             font-size: $size-5;
-        }
-        .hero-content-wrap {
-            max-width: 850px; 
         }
         .hero-footer {
             padding-left: $gutter-width/2;
