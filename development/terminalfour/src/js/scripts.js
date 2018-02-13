@@ -210,9 +210,6 @@
      */
      var matchHeightArray = 
          [
-             '.hero-body__text',
-             '.hero-body__text > p',
-             '.heading-only-card__content',
              '.discovery-slider .discovery-slider__slide',
              '.card--flat'
          ];
@@ -225,7 +222,7 @@
      $(window).on('resize', function() {
          if ($(window).outerWidth() >=767) {
              matchHeightArray.forEach(function($this, idx, arr) { 
-                 $($this).matchHeight({byRow: true});    
+                 $($this).matchHeight();    
              });
          } else {
              matchHeightArray.forEach(function($this, idx, arr) { 
@@ -324,8 +321,8 @@
     });
     
     //Toggle landing page navigation
-    var $landingNav      = $('.landing-page-navigation');
-    var $landingNavToggle= $('.landing-page-nav__toggle');
+    var $landingNav       = $('.landing-page-navigation');
+    var $landingNavToggle = $('.landing-page-nav__toggle');
     $landingNavToggle.on('click', function(event) {
         event.preventDefault();
         $('.landing-page-nav__body-wrap').slideToggle(240, function() {
@@ -335,7 +332,6 @@
     var $audienceNav      = $('.audience-navigation');
     var $audienceNavToggle= $('.audience-nav__toggle'); 
     $audienceNavToggle.on('click', function(event) {
-        console.log('click');
         event.preventDefault();
         $('.audience-navigation__body-wrap').slideToggle(240, function() {
             $landingNav.toggleClass('is-active');
@@ -513,17 +509,15 @@
     $('.inner-page-nav__item > a, .landing-page-navigation__link').on('click', function(event) {
         event.preventDefault();
         var $this = $(this);
+        console.log($this.attr('href'));
         var thisTarget = $($this.attr('href')).offset().top;
+        console.log(thisTarget);
         $('html, body').animate({scrollTop: thisTarget}, 300);
         return false;
     });
-    $('.svg-icon--scroll').on('click', function(event) {
-        event.preventDefault();
-        
-        $('html, body').animate({scrollTop: $('.section.feature-section').eq(0).offset().top}, 300);
-    });
     
     /* Program info cards */
+
     var $programInfoCards = $('.program-info-card__card');
     if ($(window).outerWidth() > 768) {
         $('.program-info-card').each(function(idx, el) {
