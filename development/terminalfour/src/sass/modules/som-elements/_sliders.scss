@@ -257,7 +257,6 @@
 .discovery-slider {
     .discovery-slider__controls {
         bottom: 0;
-            
         position: absolute;
         z-index: 10;
         width: 100%;
@@ -301,6 +300,9 @@
         .columns { 
             padding-left:  $gutter-width/2;  
             padding-right: $gutter-width/2;  
+        }
+        .image-overlay { 
+            background-color: rgba($white, 0.32);
         }
     }
     .discovery-feature__slider {

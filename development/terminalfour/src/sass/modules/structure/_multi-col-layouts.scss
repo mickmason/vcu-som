@@ -183,6 +183,12 @@
             }
         }
     }
+    .main-content {
+    
+            .video-slider-feature {
+                padding: 0;
+            }
+    }
     @include desktop {
         .left-sidebar {
             background-color: $light-10;
@@ -194,14 +200,11 @@
             -ms-flex: none;
             flex: none; 
             width: 100% - $gl-small;
-            
-            @include boxShadow($black, leftThin, rightThin); 
-            .video-slider-feature {
+            .video-slider-feature { 
                 background-color: $light;
                 .columns {
                     margin-left: 0;
-                    margin-right: 0;
-                    @include boxShadow($black, fullPaper);    
+                    margin-right: 0;  
                 }
             }
         }

@@ -418,28 +418,48 @@
     .columns {
         padding:     $gld-4;
     }
-    .video-slider-feature__text {
-        margin-bottom: $gld-5;
-    }
     @include tablet {
         padding-top:     $gld-6; 
         padding-bottom:  $gld-6; 
         .columns {
-            align-items: center;
+            -ms-align-items: center;
+            align-items:     center; 
         }
         .video-slider-feature__text { 
-            transform: translateY(50%);
+            align-self: center;
+            margin-top: auto;
             margin-bottom: auto;
             
         }
     }
     @include desktop {
+        .columns {
+            -ms-flex-direction: column;
+            flex-direction:   column;
+            -ms-align-items: stretch;
+            align-items:     stretch; 
+        }
+  
+        .video-slider-feature__text { 
+            margin-bottom: $space-5;
+             max-width: none;
+        }
         padding-top:     $gld-4; 
         padding-bottom:  $gld-4; 
-        .video-slider-feature__text { 
-            max-width: $gl-med;
+        
+    }  
+    @include widescreen {
+        .columns {
+            -ms-flex-direction: row;
+            flex-direction:   row;
+            -ms-align-items: center;
+            align-items:     center; 
         }
-    }   
+        .video-slider-feature__text { 
+             margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
 }
 
 /** Plain cards feature **/

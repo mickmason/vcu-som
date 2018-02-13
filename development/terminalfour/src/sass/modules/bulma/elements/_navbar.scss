@@ -32,6 +32,10 @@
     .navbar, .navbar-menu, .navbar-start, .navbar-end {
         @include make-flexbox($direction: row, $align: stretch, $justify: space-between);
     }
+    .navbar-start {
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
     .navbar-menu {
         -ms-flex: 1 0 auto;
     }

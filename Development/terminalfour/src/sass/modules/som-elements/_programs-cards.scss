@@ -40,37 +40,61 @@
             color: $light-10;
         }
     }
-    .program-info-card__card {
-            margin-left: 0;
-            margin-right: 0;
-            width: 100%;
-            position: relative;
-            max-height: 0;
-            visibility: hidden;
-            opacity: 0;
-            overflow: hidden;
-            left: -100%;
-            transition: opacity 180ms ease-out, left 200ms ease-out, max-height 180ms ease-out;  
-            &.is-visible {
-                margin-top:     $space-1;
-                padding-top:     $space-2;
-                padding-bottom:  $space-2;
-                max-height: none;
-                visibility: visible;
-                opacity: 1;
-                left: 0;
-            }
-               background-color: $white; 
-            
-        }
-    .program-card__ctas {
-        .button {margin-right: $gutter-width/2;}
-        p { margin-bottom: 0;}
-    }
     
-    @include tablet {
+        @include tablet {
         -ms-flex: none;
         flex: none;
         width: 50%;
     }
 }
+.program-info-card__card--column {
+    padding-top: 0;
+    padding-bottom: 0;
+     @include tablet {
+        -ms-flex: none;
+        flex: none;
+        width: 100%;
+    }
+}
+.program-info-card__card {
+    padding-left:  $gutter-width/2;
+    padding-right: $gutter-width/2;
+    background-color: $white;
+    border: 1px solid $light-10;
+    width: 100%;
+    position: relative;
+    max-height: 0; 
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    left: -100%;
+    @include makeBoxShadow($black, fullPaper);
+    transition: opacity 180ms ease-out, left 200ms ease-out, right 200ms ease-out, max-height 180ms ease-out;  
+    &.is-visible {
+        margin-top:     $space-1;
+        padding-top:     $space-2;
+        padding-bottom:  $space-2;
+        max-height: none;
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+    }
+    background-color: $white; 
+    &--right {
+         left: auto;
+         right: -100%;
+        transition: right 200ms ease-out;  
+        &.is-visible {
+            left: auto;
+            right: 0;
+        }
+    }
+    .program-card__ctas {
+        .button {margin-right: $gutter-width/2;}
+        p { margin-bottom: 0;}
+    }
+    
+   
+}
+    
+    

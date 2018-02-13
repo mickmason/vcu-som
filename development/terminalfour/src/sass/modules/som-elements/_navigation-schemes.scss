@@ -646,8 +646,22 @@
             padding-right: $gutter-width/1.5;
         }
     }
+    @media screen and (min-width: 1560px) {
+        .main-navigation__item {
+            padding-left:  $gutter-width*1.5;
+            padding-right: $gutter-width*1.5;
+        }
+    }
+    @media screen and (min-width: 1560px) {
+        .main-navigation__item {
+            padding-left:  $gutter-width*1.5;
+            padding-right: $gutter-width*1.5;
+        }
+    }
     @include superhd {
-        padding-left: $gutter-width; 
+        padding-left:  $gutter-width; 
+        padding-right: $gutter-width; 
+        
         -ms-flex-pack: center;
         justify-content: center;
         .main-navigation__item {
@@ -675,6 +689,7 @@
             top: 76px;
         }
     }
+    
 } 
 //Navigation hovers - desktop 
 @include desktop {
@@ -705,13 +720,27 @@
             z-index: 400;
             @include boxShadow($black, fullPaper);
             transition: visibility 160ms ease-out 20ms, opacity 160ms ease-out 20ms; 
-
             &::after {
                 position: absolute;
                 content: " ";
                 z-index: -10;
             }
-       }   
+       }  
+        .main-navigation__item--left {
+            .navbar-dropdown {
+                left: 0;
+            }
+        }
+        .main-navigation__item--middle {
+            
+        }
+        .main-navigation__item--right {
+            .navbar-dropdown {
+                left: auto;
+                right: 0;
+            }
+        }
+        
     }
 }
 

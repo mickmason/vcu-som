@@ -15,7 +15,7 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true);
+    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     
@@ -172,8 +172,7 @@
        
     
     $('.video-slider-card.slick-slide').not('.slick-current').on('click', function(event) {
-        event.preventDefault();
-        console.log('click '+$(this).data('slick-index'));        
+        event.preventDefault();       
         $('.gallery-feature__slider').slick('slickGoTo', parseInt($(this).data('slick-index')));
     });
     $('.som-lightbox__slider').slick({
@@ -252,18 +251,15 @@
         var galleryTitle = "";
         var $lightBox = $('.som-lightbox');
             var $thisItem = $(this);
-            console.log($thisItem);
+            
             if ($thisItem.data('lightboxGallery') !== "" && $thisItem.data('lightboxGallery') !== undefined) {
                 var galleryTitle = $thisItem.data('lightbox-gallery');
                 var galleryItems = $('[data-lightbox-gallery="'+ galleryTitle + '"]');
             } else {
                 var thisTitle = $thisItem.data('lightbox-title');
                 var $lightBoxTitleH2 = $('<h2 />').append(thisTitle);
-
                 var $lightBoxTitle = $('<div class="som-lightbox__title" />').append($lightBoxTitleH2);
-
                 var thisCaption = $thisItem.data('lightbox-caption');
-                console.log(thisCaption);
                 var $lightBoxCaptionP = $('<p />').text(thisCaption);
                         
                 var $lightboxCaption = $('<div class="som-lightbox__caption" />').append($lightBoxCaptionP);
@@ -280,7 +276,6 @@
                     $lightBoxMediaContents.attr('height', '315');
                     $lightBoxMediaContents.attr('width', '560');
                     $lightBoxMediaContents.attr('src', thisUrl);
-                    console.log('Media contents '+$lightBoxMediaContents);
                 } else if (thisMediaType === 'youtube-video') { 
                     $lightBoxMediaContents = $('<iframe />');
                     $lightBoxMediaContents.attr('height', '315');
@@ -291,7 +286,6 @@
                 var $lightBoxMedia = $('<div class="som-lightbox__media" />');
                 $lightBoxMedia.addClass('video is-16by9');
                 $lightBoxMedia.append($lightBoxMediaContents);
-                console.log($lightBoxMedia);
                 var $lightBoxItem = $('<div class="som-lightbox-item" />');
                 $lightBoxItem.append($lightBoxTitle).append($lightBoxMedia).append($lightboxCaption);
 
@@ -402,7 +396,32 @@
      } 
      addMainNavClickHandlers();
      $(window).on('resize', addMainNavClickHandlers);
-    
+    /* Add classes to alight single column dropdowns in Main nav */
+    var $navItems = $('.main-navigation__item'), navItemsCount = $('.main-navigation__item').length; 
+    var isOdd = false;
+    var middleNumber = Math.floor(navItemsCount/2);
+    $navItems.each(function(idx, el) {
+        $thisNavItem = $(el);
+        if (navItemsCount % 2 === 0) {
+            //even number
+            if (idx === middleNumber - 1 || idx === middleNumber) {
+                $thisNavItem.addClass('main-navigation__item--middle');
+            } else if (idx < middleNumber -1) {
+                $thisNavItem.addClass('main-navigation__item--left');
+            } else {
+                $thisNavItem.addClass('main-navigation__item--right');
+            } 
+        } else {
+            //odd number
+            if (idx === middleNumber) {
+                $thisNavItem.addClass('main-navigation__item--middle');
+            } else if (idx < middleNumber) {
+                $thisNavItem.addClass('main-navigation__item--left');
+            } else {
+                $thisNavItem.addClass('main-navigation__item--right');
+            } 
+        }
+    });
      /* Show/hide inner nav in smaller resolutions max-width 991px */
     function toggleSidebarNav() {
         var $thisHeading = $(this).parent('.sidebar-nav-toggle') ;
@@ -486,18 +505,14 @@
                 incrementNumber();        
             }, 500);
         }) ;
-        
-        
     } 
 
     //Diversity .active class toggle 
     $('.feature-section.feature-section--fixed').find('.feature-section--fixed__toggle').on('click', function(event) {
-
         event.preventDefault();
         $(this).closest('.feature-section.feature-section--fixed').toggleClass('is-active');
     });
     $('.feature-section.feature-section--fixed').find('.feature-section--fixed__hide').on('click', function(event) {
-        console.log('click');
         event.preventDefault();
         if ($(this).closest('.feature-section.feature-section--fixed').hasClass('is-hidden') === false) {
            $(this).closest('.feature-section.feature-section--fixed').fadeOut(300, function() {
@@ -509,43 +524,61 @@
     $('.inner-page-nav__item > a, .landing-page-navigation__link').on('click', function(event) {
         event.preventDefault();
         var $this = $(this);
-        console.log($this.attr('href'));
         var thisTarget = $($this.attr('href')).offset().top;
-        console.log(thisTarget);
         $('html, body').animate({scrollTop: thisTarget}, 300);
         return false;
     });
     
     /* Program info cards */
 
-    var $programInfoCards = $('.program-info-card__card');
-    if ($(window).outerWidth() > 768) {
-        $('.program-info-card').each(function(idx, el) {
-            if (idx%2 !== 0) {
-              $(el).addClass('is-right');   
-            }
+    var $programInfoCards = $('.program-info-card'), $programInfoCardButtons = $('.program-info-card__button'), $programInfoCardCards = $('.program-info-card__card');
+    $('.program-info-card__card:odd').addClass('program-info-card__card--right');
+    $programInfoCardButtons.on('click', function(event) {
+           event.preventDefault();
+           var $this = $(this);
+           var target = $this.data('program');
+           if ($this.hasClass('is-visible')) {
+               $this.removeClass('is-visible');
+               $programInfoCardCards.each(function(idx, el) {
+                    if ($(this).hasClass('is-visible')) {
+                        $(this).removeClass('is-visible')
+                    }
+               });    
+           } else {
+               $programInfoCardCards.removeClass('is-visible');
+               $programInfoCardCards.each(function(idx, el) {
+                    if ($(this).data('program') === target) {
+                        $(this).addClass('is-visible')
+                    }
+               });
+               $this.addClass('is-visible');
+           }
+    });
+    if ($(window).outerWidth() > 768 && $('.programs-block').length > 0 && $('.programs-block').hasClass('programs-block--cloned') !== true ) {
+        var $programInfoCardsEven = $('.program-info-card__card--column:even');
+        var $programInfoCardsOdd = $('.program-info-card:odd');
+        $('.program-info-card:odd').each(function(idx, el) {
+            var $thisCard = $(el);
+            $thisCard.after($programInfoCardsEven[idx]);
         });
+        $('.programs-block').addClass('programs-block--cloned');
     }
     $(window).on('resize', function() {
-        if ($(window).outerWidth() > 768) {
-            $('.program-info-card').each(function(idx, el) {
-                if (idx%2 !== 0) {
-                  $(el).addClass('is-right');   
-                }
+        if ($(window).outerWidth() >= 768 && $('.programs-block').length > 0 && $('.programs-block').hasClass('programs-block--cloned') !== true) {
+            var $programInfoCardsEven = $('.program-info-card__card--column:even');
+            var $programInfoCardsOdd = $('.program-info-card:odd');
+            $('.program-info-card:odd').each(function(idx, el) {
+                var $thisCard = $(el);
+                $thisCard.after($programInfoCardsEven[idx]);
             });
+            $('.programs-block').addClass('programs-block--cloned');
+        } else {
+            if ($('.programs-block').length > 0 && $('.programs-block').hasClass('programs-block--cloned')) {
+                window.location.reload(true);    
+            }
         }
     });
-    $('.program-info-card__button').on('click', function(e) {
-        e.preventDefault(); 
-        var $thisInfoCard = $(this).siblings('.columns');
-        if ($thisInfoCard.hasClass('is-visible')) { 
-             $thisInfoCard.removeClass('is-visible').outerWidth( parseInt($(this).css('width')));  
-        } else { 
-            $programInfoCards.removeClass('is-visible');
-            $thisInfoCard.addClass('is-visible').outerWidth( $(this).closest('.columns').outerWidth()-parseInt($(this).closest('.column').css('paddingLeft'))*2);  
-        }
-        
-    });
+
     /** 
       * VCU Plugin Accordion panel
       * http://katmai.staging.vcu.edu/plugins/accordion-panel/

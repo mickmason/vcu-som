@@ -1,4 +1,13 @@
 //Cards
+/* General for all cards */
+.cards-columns {
+    > column {
+        margin-bottom: $space-5a;
+        &:last-child {
+            margin-bottom:0;
+        }
+    }
+}
 /** flat cards - base styling for cards **/
 .card--flat {
      border: 1px solid $light-8;
@@ -209,7 +218,6 @@
         border-bottom: 3px solid $primary;
         @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
         .card-heading {
-            font-size: $size-6;
             margin-bottom: 0;
         }
         
@@ -724,8 +732,40 @@ $cardColours: (
                 }
         }//end .has-{name}-cards
         
-        }//end @each
+        }//end @each        
+    }
+}
+.plain-cards-feature {
+    .cards-columns {
+        .card-content {
+            color: $white;   
+        }
         
-        
+        .column:nth-child(odd) {
+            .card-content {
+                background-color: $primary;
+            }  
+            .button {
+                background-color: $primary;
+                @include active-link {
+                    background-color: $white;
+                    border-color: $primary;
+                    color: primary;
+                }
+            }
+        }
+        .column:nth-child(even) {
+            .card-content {
+                background-color: $secondary;
+            }
+            .button {
+                background-color: $secondary;
+                @include active-link {
+                    background-color: $white;
+                    border-color: $secondary;
+                    color: $secondary;
+                }
+            }
+        }
     }
 }
