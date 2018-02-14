@@ -159,7 +159,7 @@
 @mixin vertical-align($shiftX: -50%, $shiftY: -50%) {
     transform: translate($shiftX, $shiftY);
 }
-@mixin vision-angle($bg-color: $light-8, $pull: left) {
+@mixin vision-angle($bg-color: $primary, $pull: left) {
     position: relative;
     z-index: 3; 
     &:before {

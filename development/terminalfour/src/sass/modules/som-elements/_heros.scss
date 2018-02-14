@@ -51,16 +51,33 @@
             flex-direction: row;
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            
+            
+            .hero-body {
+                -ms-flex: 0 1 $gl-xlarge;
+                flex: 0 1 $gl-xlarge;
+            }
+            .hero-quicklinks {
+                -ms-flex: 0 1 $gl-small;
+                flex: 0 1 $gl-small;
+                background-color: transparent;
+                @include make-flexbox($direction: column, $justify: space-around);
+                .button {
+                    margin-bottom: $space-1;
+                }
+                .hero-quicklinks__wrap {
+                    -ms-flex-align: end;
+                    align-items: flex-end;
+                }
+                .hero-quicklinks__text {
+                    text-align: right;
+                }
+            }
             .hero-foot {
-                width: 100%;
-                -ms-flex: none;
-                flex: none;
+                -ms-flex: 1 0 100%;
+                flex: 1 0 100%;
                 -ms-flex-align: end;
                 align-self: flex-end;
-            }
-            .hero-body {}
-            .hero-quicklinks {
-                max-width: $gl-small;
             }
         }
     }
@@ -140,6 +157,7 @@
 .hero-quicklinks {
     padding-bottom: $space-11;
     z-index: 20;
+    background-color: rgba($gray-32, 0.22);
     .section__label {
         color: $white;
     }
@@ -210,7 +228,8 @@
 }
 /** Triple hero **/
 .hero {
-    &.hero--triple { 
+    &.hero--triple {
+        padding-top: 0;
         color: $white;
         .hero-body {
             position: relative;
@@ -291,7 +310,6 @@
             .icon.icon--svg {
                 svg {
                     fill: $white;
-                    stroke: $white;
                 }
             }
         }
@@ -330,9 +348,6 @@
     .hero-slider__image {
         padding-top: 50%;
         overflow: hidden;
-        img {    
-            
-        }
     }
     .news-slider__story {
         right: 0;    

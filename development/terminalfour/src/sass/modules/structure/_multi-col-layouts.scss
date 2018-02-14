@@ -12,6 +12,31 @@
     .columns {
         margin-bottom: 0;
     }
+    //Cards columns
+    /* General for all cards */
+    .cards-columns {
+        @include desktop {
+            > .column {
+                 -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+            max-width:  50%;
+            }
+        }
+        @include widescreen {
+            > .column {
+                -ms-flex-preferred-size: 33%;
+                flex-basis: 33%;
+                max-width:  33%;
+            }
+        }
+        @include fullhd {
+            > .column {
+                -ms-flex-preferred-size: 25%;
+                flex-basis: 25%;
+                max-width:  25%;
+            }
+        }
+    }
 }
 .general-content {
         max-width: 850px;
@@ -40,10 +65,6 @@
         
         &:first-child {
             padding-top: 0;
-            >.container > .columns > .column {
-                padding-top: 0;
-                padding-bottom: 0;
-            }
             h1, h2, h3 {
                 &:first-child {
                     margin-top: flat-margin(1rem);
@@ -200,6 +221,7 @@
             -ms-flex: none;
             flex: none; 
             width: 100% - $gl-small;
+            @include boxShadow($black, leftThin);
             .video-slider-feature { 
                 background-color: $light;
                 .columns {

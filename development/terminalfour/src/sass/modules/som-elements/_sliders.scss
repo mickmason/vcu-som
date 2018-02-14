@@ -41,7 +41,6 @@
 }
 .slider__controls {
     @include make-flexbox($direction: row, $justify: center, $align: center);
-
     @each $name, $pair in $colors {
         $color:         nth($pair, 1);
         $color-invert:  nth($pair, 2);
@@ -310,6 +309,18 @@
         z-index: 20;
     }
     .discovery-feature__slide {
+        background-color: $black;
+        color: $white;
+        .button {
+            background-color: $black;
+            border-color: $white;
+            color: $white;
+            @include active-link {
+                background-color: $white;
+                border-color: $black;
+                color: $black;
+            }
+        }
         padding: $space-5 $gutter-width; 
         margin-left: $gutter-width/3;
         margin-right: $gutter-width/3;
@@ -332,7 +343,7 @@
         -ms-flex-direction: column;
         flex-direction: column;
         .column {
-            padding: $gl-xsmall/2 $gl-xsmall/2 $gl-xsmall/4;
+            padding: $gl-xsmall/4 $gl-xsmall/2 $gl-xsmall/4;
         }
     }
     .discovery-feature__slider__controls {

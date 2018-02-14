@@ -60,6 +60,9 @@
     .section__title, .section__intro {
         margin-bottom: $space-4;
     } 
+    .section__intro {
+        border-bottom: none;
+    }
     .feature__column {
         padding-top:     $space-6;
         padding-bottom:  $space-6;
@@ -439,7 +442,6 @@
             -ms-align-items: stretch;
             align-items:     stretch; 
         }
-  
         .video-slider-feature__text { 
             margin-bottom: $space-5;
              max-width: none;
@@ -469,6 +471,7 @@
             @include tablet {
                 -ms-flex-pack: space-around;
                 justify-content: space-around;
+                justify-content: space-around;
             }
         }
     }
@@ -476,14 +479,7 @@
 
 .deans-message-feature {
     .vcu-vision-angle {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -10;
-        height: 100%;
-        width: 100%;
-        background-color: $light-8;
-        transform: skewX(-19deg);
+        
     }
     background-color: $light-10;
     @include boxShadow($black, insetTop, insetBottom);
@@ -491,7 +487,17 @@
         margin-bottom: 0;
     }
     .section__title {
-        margin-bottom: 0;
+        display: none;
+        &.is-touch {
+            display: block;
+        }
+        @include tablet {
+            display: block;
+            &.is-touch {
+                display: none;
+            }
+        }
+        
     }
     .container {
         z-index: 20;
@@ -508,10 +514,24 @@
     }
     .deans-image {
         position: relative;
-        padding-top: $space-4;
+        padding-top:    $space-4;
         padding-bottom: $space-4;
+        padding: $space-4 $space-4; 
+        max-width: 180px;
+        
         .image {
-            max-width: $gl-large;    
+            @include boxShadow($black, fullPaper);
+        }
+        &::before {
+            content: " "; 
+            position: absolute;
+            top: 0;
+            left: 0%;
+            z-index: -10; 
+            height: 100%;
+            width: 100%; 
+            background-color: $light-8;
+            //transform: skewX(-19deg);
         }
         
     }
@@ -523,23 +543,24 @@
     .message-text {
         margin-top:     $space-4;
         margin-bottom:  $space-4;
+        padding: $space-4 $space-4; 
         background-color: $white;
         @include boxShadow($black, fullPaper);
     }
     .deans-messsage__text {
         font-size: $size-4; 
-        margin-bottom: $space-2;
+        margin-bottom: $space-4;
         font-weight: 200;
     }
     
-    .deans-message__content {
+    .deans-message__content { 
         -ms-flex: 1 0 auto;
         @include tablet {
-            @include make-flexbox($direction: row, $justify: flex-start, $align: stretch); 
-            @include boxShadow($black, fullPaper);
+            @include make-flexbox($direction: row, $justify: flex-start, $align: flex-start); 
             .deans-image {
                 -ms-flex: none;
                 flex: none;
+                max-width: none;
                 width: $gl-small;
                 img {
                     width: 100%;
@@ -547,16 +568,32 @@
             }
             .deans-message {
                 -ms-flex: 1 0 auto;
-                padding: $space-5 $gutter-width;
+                margin-top: 0;
+                
+                padding-left: $space-4;
                 @include make-flexbox($direction: column, $justify: space-evenly);
                 h2, h3, h4, h5, p, .message-text {
                     -ms-flex: 0 1 auto;
                 }
                 .message-text {
+                    margin-top: 0;
+                    margin-bottom: 0;
                     p {
                        -ms-flex: 0 1 auto; 
                     }
                 }
+            }
+            .deans-messsage__text {
+                padding-left: $size-4;
+                margin-top:     $space-4;
+                margin-bottom:  $space-4;
+                border-left: 3px solid $primary;
+                font-size: $size-5;
+                font-weight: 400;
+                @include boxShadow($black, insetLeft);
+            }
+            .deans-message-heading__desktop {
+                font-size: $size-3;
             }
         }
     }

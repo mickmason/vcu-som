@@ -20,9 +20,14 @@
     </head> 
     
     <body class="som-homepage"> 
+       <div class="som-skip-links" >
+               <a href="#content-start" class="som-skip-links__content" tabindex="1">Skip to content</a>
+               <a href="#footer" class="som-skip-links__footer" tabindex="1" >Skip to footer</a>
+       </div>
        <!--** VCU campaign branding bar **-->
 <script type="text/javascript" src="//branding.vcu.edu/bar/academic/latest.js"></script>
 <!--** VCU campaign branding bar **-->
+
 <header class="section main-site-header"> 
            <!-- ** Secondary navigation ** -->
            <div class="container secondary-navigation is-fluid">
@@ -1046,7 +1051,42 @@
                </div><!-- // .news-listing columns -->
            </div><!-- // .container.news-listing-container -->
        </section>
-       
+       <!-- ** Deans message ** --> 
+       <section class="section deans-message-feature" aria-labelledby="deans-message-section-heading" style="background-image: url(style-assets/media/img/commonwealth-medical-01.jpg)">  
+          <div class="container">
+               <div class="columns">
+                   <div class="column deans-column">
+                       <h1 id="deans-message-section-heading" class="is-feature-font--serif section__title is-touch">Meassage from the Dean</h1>  
+                       <div class="deans-message__content"> 
+                          <div class="deans-image">
+                             <figure class="image">
+                                <img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" />       
+                             </figure>
+                          </div>
+                          <div class="deans-message">
+                               <div class="message-text">
+                                  <h2 id="deans-message-section-heading" class="is-feature-font--serif section__title">Meassage from the Dean</h2>  
+                                   <p class="deans-messsage__text">“As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.”</p>
+                                   <p>– John Fitzgerald Kennedy</p>    
+                                   <p>
+                                        <a href="javascript:void(0)" class="read-more-link">Happy Thanksgiving</a>
+                                        <span class="icon icon--svg is-inline-icon has-icon-white">
+                                            <svg>
+                                                <use xlink:href="#next_arrow" />
+                                            </svg>
+                                        </span>       
+                                   </p>
+                               </div>
+                              
+                               
+                          </div>
+                       </div>
+                   </div>
+               </div>
+           </div><!-- // .container -->
+           <div class="image-overlay has-white-background"></div>
+       </section>
+       <!-- ** // Deans message ** --> 
     <!-- ** Diversity fixed feature ** -->  
        <section class="section feature-section feature-section--fixed has-secondary-background" aria-labelledby="diversity-flyout-section-heading" >
            <div class="container">
@@ -1098,7 +1138,7 @@
            </div><!-- // .container -->
        </section>
        <!-- ** // Diversity fixed feature ** -->
-    <footer class="section vcu-som-footer" aria-label="VCU School of Medicine contact and other links">
+    <footer class="section vcu-som-footer" id="footer" aria-label="VCU School of Medicine contact and other links">
         <div class="container is-fluid footer__container">
             <div class="columns footer__columns">
                 <div class="column is-half-tablet is-one-quarter-desktop footer__address">

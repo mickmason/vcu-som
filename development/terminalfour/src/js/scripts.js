@@ -15,7 +15,8 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+//  $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true);
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     
@@ -209,6 +210,10 @@
      */
      var matchHeightArray = 
          [
+             '.hero-body__text',
+             '.hero-body__text > p',
+             '.card-columns > .coloumn',
+             '.card--flat .card-content',
              '.discovery-slider .discovery-slider__slide',
              '.card--flat'
          ];
@@ -593,6 +598,9 @@
             $thisPanel.addClass('expand');
         }
     });
+    /* Skip links target */
+    $('.hero, .section:not(.main-site-header)').eq(0).attr('id', 'content-start');
+    
     /** Site exit survey **/
    /* $(document).on('click', '.t4-exit-survey__no', function(e) {
         e.preventDefault();
