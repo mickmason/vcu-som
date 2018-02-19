@@ -15,27 +15,26 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-//  $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true);
+    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
-    
     function loadSVGs() { 
-      if ($ajax.readyState === 4) {
-          if ($ajax.status === 200) {
-            var responseContentType = $ajax.getResponseHeader("Content-Type"); 
-            if (responseContentType.indexOf('image/svg+xml') !== -1) {
-                var div = document.createElement("div");
-                div.setAttribute('class', 'vcu-som-icons-stack');
-                div.innerHTML = $ajax.responseText;
-                document.body.insertBefore(div, document.body.childNodes[0]);    
+        if ($ajax.readyState === 4) {
+            if ($ajax.status === 200) {
+              var responseContentType = $ajax.getResponseHeader("Content-Type"); 
+              if (responseContentType.indexOf('image/svg+xml') !== -1) {
+                  var div = document.createElement("div");
+                  div.setAttribute('class', 'vcu-som-icons-stack');
+                  div.innerHTML = $ajax.responseText;
+                  document.body.insertBefore(div, document.body.childNodes[0]);    
+              } else {
+                  $('body').addClass('no-svg');
+              }
             } else {
-                $('body').addClass('no-svg');
+              console.log('Load SVG HTTP status is: '+$ajax.status);
             }
-          } else {
-            console.log('Load SVG HTTP status is: '+$ajax.status);
-          }
-      }
+        }
     }
     /** 
       ** Plugins
@@ -170,8 +169,6 @@
             ]
         });
     });
-       
-    
     $('.video-slider-card.slick-slide').not('.slick-current').on('click', function(event) {
         event.preventDefault();       
         $('.gallery-feature__slider').slick('slickGoTo', parseInt($(this).data('slick-index')));
@@ -208,11 +205,15 @@
      /*! 
      * jQuery Match Height https://github.com/liabru/jquery-match-height
      */
+     var alwaysMatchHeightArray = [
+         '.card--flat.featured-programs-card .card-heading' 
+     ];   
      var matchHeightArray = 
          [
              '.hero-body__text',
              '.hero-body__text > p',
-             '.card-columns > .coloumn',
+             '.card--flat.featured-programs-card .card-heading',
+             '.card-columns > .column',
              '.card--flat .card-content',
              '.discovery-slider .discovery-slider__slide',
              '.card--flat'

@@ -51,8 +51,6 @@
             flex-direction: row;
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-            
-            
             .hero-body {
                 -ms-flex: 0 1 $gl-xlarge;
                 flex: 0 1 $gl-xlarge;
@@ -102,8 +100,9 @@
 }
 .hero-subtext {
     font-size: $size-5a;
-    font-weight: $weight-light;
-    margin-bottom: $space-3;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: $space-5;
     color: $white;
 }
 

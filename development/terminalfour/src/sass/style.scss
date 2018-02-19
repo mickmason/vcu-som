@@ -78,9 +78,7 @@
             right: 0;
             z-index: -1;
         }
-        
     }//.feature-column
-   
     @include tablet {
         .feature__column {
             padding-top:     $space-8;
@@ -225,13 +223,7 @@
         }
      }
     .feature-section--fixed__toggle {
-        @include make-flexbox($direction: row, $justify: space-between, $align: center);    
-        @include desktop {
-            
-            
-            
-        }
-            
+        @include make-flexbox($direction: row, $justify: space-between, $align: center);   
     }
     @include desktop {
         bottom: 100px;
@@ -279,7 +271,6 @@
         .feature-section--fixed__content {
             padding-bottom: 0;
             background-position: right center;
-            
             color: white;
             border-bottom-left-radius: 12rem;
             border-top-left-radius: 12rem;
@@ -306,7 +297,6 @@
             }
         }
         .feature-section--fixed__text-container {
-            
             max-width: ($gl-med + $gld-6);    
             padding-left:  $gutter-width;
             padding-left: 8rem;
@@ -371,14 +361,11 @@
                 left: 22.5%;
                 z-index: 20;
                 width: 50%;
-                
-                 @media screen and (min-width: 1220px) {
+                @media screen and (min-width: 1220px) {
                     top: 70%;
                     left: 18%;
                 } 
-                
             }
-           
         }
         .feature-section--fixed__toggle {
             position: relative;
@@ -497,7 +484,6 @@
                 display: none;
             }
         }
-        
     }
     .container {
         z-index: 20;
@@ -531,9 +517,7 @@
             height: 100%;
             width: 100%; 
             background-color: $light-8;
-            //transform: skewX(-19deg);
         }
-        
     }
     .deans-meassage {
         padding-top: $space-3;
@@ -599,6 +583,36 @@
     }
     .image-overlay {
         background-color: rgba($white, 0.64);
+    }
+}
+.deans-image {
+        position: relative;
+        padding-top:    $space-4;
+        padding-bottom: $space-4;
+        padding: $space-4 $space-4; 
+        max-width: 180px;
+        
+        .image {
+            @include boxShadow($black, fullPaper);
+        }
+        &::before {
+            content: " "; 
+            position: absolute;
+            top: 0;
+            left: 0%;
+            z-index: -10; 
+            height: 100%;
+            width: 100%; 
+            background-color: $light-8;
+        }
+    @include tablet {
+        -ms-flex: none;
+        flex: none;
+        max-width: none;
+        width: $gl-small;
+        img {
+            width: 100%;
+        }
     }
 }
 

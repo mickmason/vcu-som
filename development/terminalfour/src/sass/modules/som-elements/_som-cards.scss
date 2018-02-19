@@ -272,7 +272,7 @@
     padding-top:     $space-5*1;
     padding-bottom:  $space-5;
 }
-.site-gateway__card {
+.site-gateway__card, .site-gateway__card--left {
     border: 1px solid $light-10;
     border-bottom: 3px solid $primary;
     .card-heading {
@@ -321,18 +321,25 @@
     }
 
 }
+.site-gateway__card--left { 
+    .card-content {
+        text-align: left;
+    }
+    .card-heading {
+        
+        font-size: $size-5;
+    }
+}
 /** Featured programs cards **/
 .featured-programs {
-    
+    > .container {
+        margin-right: auto;
+        margin-left: auto;
+    }
     background-color: $light-10;
     padding-top:     $space-5*1.5;
     padding-bottom:  $space-5*2;
     @media screen and (min-width: 700px) {
-        padding-top:     $space-6;
-        padding-bottom:  $space-6*1.8;
-    }
-    @include desktop {
-        padding-top:     $space-6*1.6;
     }
     .section__intro {
         border-bottom: none;
@@ -340,54 +347,90 @@
     @include boxShadow($black, top, insetBottom) ; 
 
     .featured-programs__outer-columns {
-        display: block;
-        @include desktop { 
-            @include make-flexbox($direction:row, $align: stretch);
-        }        
+        > .column {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+             > .column {
+                 &:first-child {
+                     padding-bottom: $space-5;
+                 }
+                 &:last-child {
+                     padding-top: $space-5;     
+                 }
+            }        
+        @include tablet { 
+            @include make-flexbox($direction:column, $align: normal);
+        } 
+        @include desktop {
+
+        }
     }
 
     .featured-programs__column {
-        padding-left:  $gld-7; 
-        padding-right: $gld-7; 
+        > .columns {
+            > .column {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
         @media screen and (min-width:  540px) {
             padding-left:  $gld-6; 
             padding-right: $gld-6; 
         }
         @include desktop {
-           padding:  ($space-2 / 2) $column-gap; 
+           padding:  ($space-2 / 2) $column-gap*2; 
         }
         &.featured-programs-cards {
-            .column {
-                padding: 0;
-               
-            }
+           
             @media screen and (min-width:  540px) {
                 > .columns {
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    display: -ms-flex;
                     display: flex;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    > .column {
+                        padding: 0;
+                        -ms-flex: 1 1 50%;
+                        flex: 1 1 50%;
+                        max-width: 50%;
+                    }
                 }        
             }
             @include desktop {
-                padding-left:  $gld-5; 
-                padding-right: $gld-5; 
+                > .columns {
+                    
+                    > .column {
+                        -ms-flex: 1 1 33%;
+                        flex: 1 1 33%;
+                        max-width: 33%;
+                    }
+                } 
+            }
+            @include widescreen {
+                > .columns {
+                    > .column {
+                        -ms-flex: 1 1 auto;
+                        flex: 1 1 auto;
+                        max-width: none;
+                    }
+                } 
             }
 
         }
         &.featured-programs__intro--column {
             @include desktop {
-                @include make-gl-col();
-                padding-left:  $gl-xsmall/3; 
-                padding-right: $gl-xsmall/3; 
                 .featured-programs-cards__intro {
-                    height: 100%;
-                    @include  make-flexbox;
-                    
+                    text-align: center;
                 }
             }
         }
     }
 }
 .featured-programs-cards__intro {
-    margin-bottom: $space-6;            
+              
     @include desktop {
         margin-bottom: auto;            
     }
@@ -408,27 +451,41 @@
     }
     .card-content {
         color: $white;
-        
-         padding-bottom:  $space-2;
-         padding-right: $gutter-width/1.25;
-         padding-left: $gutter-width/1.25;
-         padding-top: $gutter-width/1.25;
-         background-color: transparent;
-         position: absolute;
-         bottom: -8.6rem;
-         left: 0;
+        padding-bottom:  $space-2;
+        padding-right: $gutter-width/1.25;
+        padding-left: $gutter-width/1.25;
+        padding-top: $gutter-width/1.25; 
+        position: absolute;
+        bottom: -8.6rem;
+        left: 0;
         z-index: 20;
         width: 100%;
         .card-heading {
             font-family: $garamond-prem;
             font-size: $size-3;
             margin-bottom: $size-9;
+            
+        }
+        @media screen and (min-width:  540px) {
+            bottom: -10.2rem;
+        }
+        @media screen and (min-width:  680px) {
+            bottom: -8.6rem;
+        }
+        
+        @include tablet {
+            bottom: -9.2rem;
+        }
+        @media screen and (min-width:  900px) {
+            bottom: -8.0rem;
+        }
+        @include desktop {
+            bottom: -10.2rem;
         }
         p {
             margin-bottom: $space-11;
         }
         .card-content__read-more {
-            
             text-transform: uppercase;
             font-size: 0.8rem;
             color: inherit;
@@ -440,20 +497,11 @@
             }
         }
         transition: background-color 260ms ease-out, bottom 280ms ease-out;
-        
-        @include desktop {
-            bottom: -11.5rem;
-        }
-        @include widescreen {
-            bottom: -10rem; 
-        }
     }
     transition: transform 240ms ease-out 40ms;
     &:hover, &:active, &:focus {
         transform: scale(1.1);
-        -webkit-box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 16px    -2px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 16px         -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.75);
         overflow: visible;
         z-index: 30;
         .card-content {
