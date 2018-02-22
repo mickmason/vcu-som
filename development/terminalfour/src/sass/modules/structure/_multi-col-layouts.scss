@@ -10,7 +10,6 @@
         max-width: none;
     }
     .columns {
-        margin-bottom: 0;
     }
     //Cards columns
     /* General for all cards */
@@ -18,18 +17,16 @@
         @include desktop {
             > .column {
                  -ms-flex-preferred-size: 50%;
-            flex-basis: 50%;
-            max-width:  50%;
+                flex-basis: 50%;
+                max-width:  50%;
             }
         }
-        @include widescreen {
-            > .column {
-                -ms-flex-preferred-size: 33%;
-                flex-basis: 33%;
-                max-width:  33%;
+        @include superhd {
+            .card-heading {
+                font-size: $size-5a;
             }
         }
-        @include fullhd {
+        @media screen and (min-width: 1820px) {
             > .column {
                 -ms-flex-preferred-size: 25%;
                 flex-basis: 25%;
@@ -135,7 +132,6 @@
         }
         //deans message
         &.deans-message {
-            
             border-top:     1px solid $black;
             border-bottom:  1px solid $black;
             padding-bottom: $space-5;

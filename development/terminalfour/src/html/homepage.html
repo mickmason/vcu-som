@@ -25,7 +25,7 @@
        @@include('components/hero-large--video.html') 
        @@include('components/audience-navigation.html')  
        <!--** Site main gateways ** -->
-       <section class="section feature-section site-gateways " aria-labelledby="site-gateways-section-heading">
+       <section class="section feature-section site-gateways " id="site-gateways" aria-labelledby="site-gateways-section-heading"> 
            <div class="container section__label__container"><span class="section__label">Education</span></div>
            <div class="section__title__outer-wrap">
                <div class="container section__title--featured">
@@ -504,11 +504,21 @@
                              </figure>
                           </div>
                           <div class="deans-message">
-                               <div class="message-text">
-                                  <h2 id="deans-message-section-heading" class="is-feature-font--serif section__title">Meassage from the Dean</h2>  
-                                   <p class="deans-messsage__text">“As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.”</p>
-                                   <p>– John Fitzgerald Kennedy</p>    
-                                   <p>
+                                  <h2 id="deans-message-section-heading" class="is-feature-font--serif section__title"><span>Meassage from the Dean</span></h2>  
+                                  <div class="deans-messsage__text"> 
+                                       <span class="icon icon--svg has-icon-white">
+                                           <svg>
+                                                <use xlink:href="#quotes-square" />
+                                            </svg>
+                                       </span>
+                                       <div class="deans-messsage__text__message">
+                                           <p class="">As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.</p> 
+                                           <p class="">As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.</p>    
+                                       </div>
+                                       
+                                  </div><!-- // .deans-messsage__text -->
+                                   <p>– John Fitzgerald Kennedy</p> 
+                                   <p class="deans-message__read-more">
                                         <a href="javascript:void(0)" class="read-more-link">Happy Thanksgiving</a>
                                         <span class="icon icon--svg is-inline-icon has-icon-white">
                                             <svg>
@@ -516,10 +526,9 @@
                                             </svg>
                                         </span>       
                                    </p>
-                               </div>
-                              
-                               
-                          </div>
+                               <div class="image-overlay "></div>
+                           </div><!-- // .deans-message -->
+                           
                        </div>
                    </div>
                </div>

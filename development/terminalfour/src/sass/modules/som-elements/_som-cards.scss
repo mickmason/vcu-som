@@ -314,10 +314,20 @@
                 text-decoration: underline;
             }
             outline-color: $black;
-            
         }
         background-color: $primary;
         color: $white;
+        .card__arrow {
+             > .icon.icon--svg {
+                &::before {
+                    background-color: $white;
+                }
+                svg {
+                   fill: $primary; 
+                }
+            }
+            
+        }
     }
 
 }
@@ -342,6 +352,7 @@
     @media screen and (min-width: 700px) {
     }
     .section__intro {
+        padding-bottom: 1rem;
         border-bottom: none;
     }
     @include boxShadow($black, top, insetBottom) ; 

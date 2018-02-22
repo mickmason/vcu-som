@@ -354,17 +354,18 @@
                 }
                 
                 background-color: transparent;
-                transform-origin: left bottom;
+                transform-origin: center;
                 transform: rotate(270deg);
                 position: absolute;
-                top: 65%;
-                left: 22.5%;
-                z-index: 20;
-                width: 50%;
-                @media screen and (min-width: 1220px) {
+                top: 0%;
+                left: -0%;
+                z-index: -20;
+                width:     100%;
+                height:    100%;
+       /*         @media screen and (min-width: 1220px) {
                     top: 70%;
                     left: 18%;
-                } 
+                } */
             }
         }
         .feature-section--fixed__toggle {
@@ -465,14 +466,8 @@
 }
 
 .deans-message-feature {
-    .vcu-vision-angle {
-        
-    }
     background-color: $light-10;
     @include boxShadow($black, insetTop, insetBottom);
-    p {
-        margin-bottom: 0;
-    }
     .section__title {
         display: none;
         &.is-touch {
@@ -485,18 +480,18 @@
             }
         }
     }
+    .deans-message__read-more, .read-more-link {
+        font-size: $size-5;
+    }
+    a {
+        color: inherit;
+    }
     .container {
         z-index: 20;
     }
     .column {
         padding-top: 0;
         padding-bottom: 0;
-    }
-    .read-more-link {
-        font-size: 1rem;
-        text-transform: none;
-        font-weight: 500;
-        color: inherit;
     }
     .deans-image {
         position: relative;
@@ -519,22 +514,53 @@
             background-color: $light-8;
         }
     }
-    .deans-meassage {
-        padding-top: $space-3;
-        padding-bottom: $space-3;
+    .deans-message {
+        position: relative;
+        margin-top: $space-4;
+        margin-bottom: $space-4;
+        padding: $space-4 $gutter-width/2;
         @include make-flexbox($direction: column);
-    }
-    .message-text {
-        margin-top:     $space-4;
-        margin-bottom:  $space-4;
-        padding: $space-4 $space-4; 
-        background-color: $white;
         @include boxShadow($black, fullPaper);
+        color: $white; 
+        > .deans-messsage__text {
+            z-index: 10;
+        }
+        > .image-overlay {
+            z-index: -10;
+            background-color: rgba($primary, 0.72);
+        }
     }
     .deans-messsage__text {
-        font-size: $size-4; 
-        margin-bottom: $space-4;
-        font-weight: 200;
+        @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
+        padding-top:     $space-4;
+        padding-bottom:  $space-4;
+        &__message, .icon {
+            -ms-flex: 1 1 0;
+            flex: 1 1 0;
+        }
+        .icon {
+            -ms-flex: 1 1 $gld-6;
+            flex: 1 1     $gld-6;
+            margin-top: $space-11;
+        }
+        &__message {
+           
+            -ms-flex: 1 1 (100% - $gld-7);
+            flex: 1 1     (100% - $gld-7);
+            > p {
+                font-size: $size-5; 
+                margin-bottom: $space-4;    
+            }    
+        }
+        @include tablet {
+            .icon {
+                margin-top: $space-1;
+            }
+            &__message {
+                -ms-flex: 1 1 (100% - $gld-7);
+                flex: 1 1     (100% - $gld-7);   
+            }   
+        }
     }
     
     .deans-message__content { 
@@ -550,34 +576,27 @@
                     width: 100%;
                 }
             }
+            .read-more-link {
+                font-size: $size-6;
+            }
             .deans-message {
                 -ms-flex: 1 0 auto;
                 margin-top: 0;
-                
+                margin-left: $space-4; 
                 padding-left: $space-4;
                 @include make-flexbox($direction: column, $justify: space-evenly);
-                h2, h3, h4, h5, p, .message-text {
+                h2, h3, h4, h5, p {
                     -ms-flex: 0 1 auto;
+                } 
+                h2, h3, h4, h5 {
+                    width: 100%;
+                    > span {
+                        width: 100%;
+                        display: inline-block;
+                        padding-bottom: $space-11    ;
+                        border-bottom: 2px solid $white;
+                    }    
                 }
-                .message-text {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    p {
-                       -ms-flex: 0 1 auto; 
-                    }
-                }
-            }
-            .deans-messsage__text {
-                padding-left: $size-4;
-                margin-top:     $space-4;
-                margin-bottom:  $space-4;
-                border-left: 3px solid $primary;
-                font-size: $size-5;
-                font-weight: 400;
-                @include boxShadow($black, insetLeft);
-            }
-            .deans-message-heading__desktop {
-                font-size: $size-3;
             }
         }
     }
@@ -619,10 +638,6 @@
 /** Education landing page **/
 .featured-programs-2 {
     padding-top: $space-4a;
-     padding-bottom: $space-4;
-}
-.graduate-study-section {
-    padding-top: 0;
     padding-bottom: $space-4;
 }
 .graudate-study-header-columns {

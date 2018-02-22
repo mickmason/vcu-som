@@ -644,11 +644,6 @@
         padding-left: $gutter-width; 
         -ms-flex-pack: center;
         justify-content: center;
-        .main-navigation__item {
-            padding-left:  $gutter-width;
-            padding-right: $gutter-width;
-            font-size: $size-5a;
-        }
         .navbar-start {
             -ms-flex-pack: center; 
             justify-content: center;
@@ -699,7 +694,6 @@
             z-index: 400;
             @include boxShadow($black, fullPaper);
             transition: visibility 160ms ease-out 20ms, opacity 160ms ease-out 20ms; 
-
             &::after {
                 position: absolute;
                 content: " ";
@@ -708,10 +702,6 @@
        }   
     }
 }
-@include widescreen {
-    
-}
-
 //Search form
 .site-search-form {
     display: block;

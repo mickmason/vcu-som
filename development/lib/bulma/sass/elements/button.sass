@@ -158,7 +158,9 @@ $button-static-border-color: $grey-lighter !default
         @if $name == 'transparent' 
           color: findColorInvert($color-invert)
         &:hover
-          background-color: darken($color-invert, 5%)
+          background-color: $color 
+          border-color: $color-invert
+          color: $color-invert
         &[disabled]
           background-color: $color-invert
           border-color: $border-col

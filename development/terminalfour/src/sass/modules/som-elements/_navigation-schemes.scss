@@ -373,13 +373,14 @@
         background-color: $gray-32;
         z-index: 400;
         transition: visibility 160ms ease-out 20ms, opacity 160ms ease-out 20ms; 
+        
         .navbar-item {
+            padding-right: $gutter-width; 
             &:hover, &:active, &:focus, &.is-active {
                 background-color: lighten($gray-32, 15%);
                 color: $white;
             } 
         }
-       
         &::after {
             position: absolute;
             top:       -5%;
@@ -396,6 +397,7 @@
         @include make-flexbox($direction: row, $justify: flex-end, $align: center);
         .navbar-item {
             font-size: 0.8rem; 
+            
         }
     }
     @include widescreen {
@@ -699,7 +701,6 @@
         .main-navigation__item {
             padding-left:  $gutter-width;
             padding-right: $gutter-width;
-            font-size: $size-5a;
         }
         .navbar-start {
             -ms-flex-pack: center; 

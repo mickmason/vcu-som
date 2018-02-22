@@ -408,7 +408,7 @@
     */
     var $ajax = new XMLHttpRequest();
     $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
+    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
@@ -927,6 +927,28 @@
         return false;
     });
     
+    //.feature-section
+    $('.hero-foot a.svg-icon-wrap').on('click', function(eve) {
+        eve.preventDefault();
+        var $this = $(this);
+        console.log($this.attr('href'));
+        try {
+           
+           if ($($this.attr('href')).offset() != undefined || $($this.attr('href')).offset() != null) {
+               console.log($($this.attr('href')).offset().top);
+                var thisTarget = $($this.attr('href')).offset().top; 
+                $('html, body').animate({scrollTop: thisTarget}, 300);    
+           } else {
+                var thisTarget = $($this.closest('.hero').next('.section')).offset().top; 
+                $('html, body').animate({scrollTop: thisTarget}, 300);       
+           }
+            
+        } catch (err) {
+            console.error('Hero scroll function error: '+ err);
+            console.info('Stack: '+ err.stack);
+        }
+        return false;
+    });
     /* Program info cards */
 
     var $programInfoCards = $('.program-info-card'), $programInfoCardButtons = $('.program-info-card__button'), $programInfoCardCards = $('.program-info-card__card');
