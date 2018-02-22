@@ -16,7 +16,7 @@
     */
     var $ajax = new XMLHttpRequest();
     $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
+    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
@@ -210,6 +210,7 @@
      ];   
      var matchHeightArray = 
          [
+             '.hero-body-quicklinks-container > .hero-body > .container, .hero-body-quicklinks-container .hero-quicklinks > .container', 
              '.hero-body__text',
              '.hero-body__text > p',
              '.card--flat.featured-programs-card .card-heading',
@@ -623,6 +624,33 @@
     });
     /* Skip links target */
     $('.hero, .section:not(.main-site-header)').eq(0).attr('id', 'content-start');
+    
+    /* Diversity fixed element */
+    function fixFixedFeature(featureRightValue) {
+        console.log('Fixing fixed feature '+featureRightValue); 
+        var $fixedFeature = $('.feature-section.feature-section--fixed');    
+        ($fixedFeature.outerWidth() - 72 - 5)  / $(document).outerWidth();
+        var featureLeftPadding = parseInt($fixedFeature.find('.feature-section--fixed__text-container').css('paddingLeft'));
+        if (featureRightValue === undefined) {
+            var featureRightValue = - (($fixedFeature.outerWidth() - (featureLeftPadding / 2) - 5) / $(document).outerWidth()) * 100;  
+            $fixedFeature.css({right: featureRightValue + '%'});
+        } else {
+            $fixedFeature.css({right: featureRightValue});    
+        }
+        
+    }
+    if ($('.feature-section.feature-section--fixed').length > 0) {
+        if ($(window).outerWidth() > 1024) {
+            fixFixedFeature();    
+        }
+        $(window).on('resize', function() {
+            if ($(window).outerWidth() > 1024) {
+                fixFixedFeature();    
+            } else {
+                fixFixedFeature('auto');  
+            }
+        });
+    }
     
     /** Site exit survey **/
    /* $(document).on('click', '.t4-exit-survey__no', function(e) {

@@ -58,41 +58,45 @@
                 height: 100%;
             }
         }
-            background-image: none !important;
-        
-        
+        background-image: none !important;
     }
-    &.has-quicklinks {
-        @include widescreen {
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            .hero-body {
-                -ms-flex: 0 1 $gl-xlarge;
-                flex: 0 1 $gl-xlarge;
+}
+.hero-body-quicklinks-container {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    @include make-flexbox($justify: space-between, $align: stretch); 
+    width: 100%; 
+    margin: 0 auto;
+    hr {
+        display: none;
+    }
+    @include fullhd {
+        max-width: 1344px;
+        -ms-flex-direction: row;    
+        flex-direction: row;    
+        .hero-body {
+            -ms-flex: 1 1 $gl-large;
+            flex: 1 1 $gl-large;
+        }
+        .hero-quicklinks {
+            background-color: transparent;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            display: -ms-flex;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            .button {
+                margin-bottom: $size-8;
             }
-            .hero-quicklinks {
-                -ms-flex: 0 1 $gl-small;
-                flex: 0 1 $gl-small;
-                background-color: transparent;
-                @include make-flexbox($direction: column, $justify: space-around);
-                .button {
-                    margin-bottom: $space-1;
-                }
-                .hero-quicklinks__wrap {
-                    -ms-flex-align: end;
-                    align-items: flex-end;
-                }
-                .hero-quicklinks__text {
-                    text-align: right;
-                }
+            .hero-quicklinks__text {
+                text-align: right;
             }
-            .hero-foot {
-                -ms-flex: 1 0 100%;
-                flex: 1 0 100%;
+            .hero-quicklinks__wrap {
+                -ms-flex-direction: column;    
+                flex-direction: column;
                 -ms-flex-align: end;
-                align-self: flex-end;
+                align-items: flex-end;
             }
         }
     }
@@ -209,12 +213,6 @@
             -ms-flex-pack: start;
             justify-content: flex-start;
         }  
-        @include widescreen {
-             -ms-flex-direction: column;
-                flex-direction: column;
-                -ms-flex-pack: center;
-                justify-content: center;
-        }
     }
     @include touch {
         .button {
@@ -234,7 +232,7 @@
         &.is-fullheight, &.hero--narrow {
             .container {
                 .hero-text-wrap {
-                    max-width: $gl-xlarge;       
+                    max-width: 80%;       
                 }
             }
         }   
