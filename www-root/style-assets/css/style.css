@@ -13877,6 +13877,7 @@ label.panel-block:hover {
 .has-som-yellow-background .button:not([class*='is-']) {
   color: rgba(0, 0, 0, 0.7);
   background-color: white;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-som-yellow-background .button:not([class*='is-']):hover, .has-som-yellow-background .button:not([class*='is-']):active, .has-som-yellow-background .button:not([class*='is-']):focus {
   color: #ffba00;
@@ -16134,6 +16135,9 @@ a:hover, a:active, a:focus {
   .content-area-wrap .cards-columns .card-heading {
     font-size: 1.125rem;
   }
+  .content-area-wrap .cards-columns .grad-overlay-card .card-heading {
+    font-size: 1.563rem;
+  }
 }
 @media screen and (min-width: 1820px) {
   .content-area-wrap .cards-columns > .column {
@@ -16150,7 +16154,7 @@ a:hover, a:active, a:focus {
 }
 
 .main-content {
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
 }
 .main-content > .section {
   margin-left: -0.809rem;
@@ -16316,9 +16320,6 @@ a:hover, a:active, a:focus {
   }
 }
 @media screen and (min-width: 1408px) {
-  .main-content {
-    padding-top: 2.637rem;
-  }
   .main-content .general-content figure.is-pulled-right {
     float: right;
     margin-left: 1.5rem;
@@ -16328,16 +16329,11 @@ a:hover, a:active, a:focus {
 
 /** Two col layout **/
 .is-2col .left-sidebar, .is-3col .left-sidebar {
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
 }
 @media screen and (max-width: 1023px) {
   .is-2col .left-sidebar, .is-3col .left-sidebar {
     padding-top: 2.344rem;
-  }
-}
-@media screen and (min-width: 1408px) {
-  .is-2col .left-sidebar, .is-3col .left-sidebar {
-    padding-top: 2.637rem;
   }
 }
 .is-2col .sidebar-nav-wrap, .is-2col .sidebar-card, .is-3col .sidebar-nav-wrap, .is-3col .sidebar-card {
@@ -17887,7 +17883,7 @@ a:hover, a:active, a:focus {
   transition: transform 160ms ease-in;
 }
 .card--flat .image-overlay {
-  background-color: rgba(32, 32, 32, 0.12);
+  background-color: rgba(32, 32, 32, 0.28);
 }
 .card--flat:not(.program-card) .button {
   margin-top: 0.96rem;
@@ -18738,7 +18734,7 @@ a:hover, a:active, a:focus {
   transform: scale(1.05);
 }
 .card--flat:hover .image-overlay, .card--flat:focus .image-overlay, .card--flat:active .image-overlay {
-  background-color: rgba(32, 32, 32, 0.32);
+  background-color: rgba(32, 32, 32, 0.36);
 }
 .card--flat:hover .card-content__text, .card--flat:focus .card-content__text, .card--flat:active .card-content__text {
   text-decoration: underline;
@@ -18803,13 +18799,16 @@ a:hover, a:active, a:focus {
 }
 
 /** Card image - inset in image **/
-.card-label--inset {
-  right: 0;
+.card-label--inset, .card-label--inset--left {
   top: 9.01657%;
   padding-top: 0.23025rem;
   padding-bottom: 0.23025rem;
   padding-left: 0.809rem;
   padding-right: 0.809rem;
+}
+
+.card-label--inset {
+  right: 0;
   position: relative;
   z-index: 3;
   position: absolute;
@@ -18829,6 +18828,1020 @@ a:hover, a:active, a:focus {
   background-color: white;
 }
 .card-label--inset:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-white {
+  color: #202020;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-white:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: white;
+}
+.card-label--inset.is-white:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-black {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-black:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #202020;
+}
+.card-label--inset.is-black:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-light {
+  color: #303030;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-light:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: whitesmoke;
+}
+.card-label--inset.is-light:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-dark {
+  color: whitesmoke;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-dark:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #303030;
+}
+.card-label--inset.is-dark:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-primary {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-primary:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #00504d;
+}
+.card-label--inset.is-primary:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-link {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-link:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #00504d;
+}
+.card-label--inset.is-link:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-info {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-info:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #209cee;
+}
+.card-label--inset.is-info:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-success {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-success:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #008A00;
+}
+.card-label--inset.is-success:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-warning {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-warning:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #ffdd57;
+}
+.card-label--inset.is-warning:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-danger {
+  color: white;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-danger:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #b50000;
+}
+.card-label--inset.is-danger:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-secondary {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-secondary:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #8E0021;
+}
+.card-label--inset.is-secondary:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-transparent {
+  color: white;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-transparent:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: transparent;
+}
+.card-label--inset.is-transparent:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-som-green {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-som-green:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #00504d;
+}
+.card-label--inset.is-som-green:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-som-grana {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-som-grana:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #8E0021;
+}
+.card-label--inset.is-som-grana:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-som-yellow {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-som-yellow:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #ffba00;
+}
+.card-label--inset.is-som-yellow:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-orange {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-orange:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #d43900;
+}
+.card-label--inset.is-orange:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-green {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-green:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #008A00;
+}
+.card-label--inset.is-green:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-blue {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-blue:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #007EB5;
+}
+.card-label--inset.is-blue:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-purple {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-purple:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #fff;
+}
+.card-label--inset.is-purple:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-red {
+  color: white;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-red:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #b50000;
+}
+.card-label--inset.is-red:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset.is-wine {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset.is-wine:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: 0;
+  right: -19.5%;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #80225f;
+}
+.card-label--inset.is-wine:before else {
+  left: 0;
+  right: 0;
+}
+
+.card-label--inset--left {
+  left: 0;
+  right: auto;
+  position: absolute;
+}
+.card-label--inset--left.is-white {
+  color: #202020;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-white:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: white;
+}
+.card-label--inset--left.is-white:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-black {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-black:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #202020;
+}
+.card-label--inset--left.is-black:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-light {
+  color: #303030;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-light:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: whitesmoke;
+}
+.card-label--inset--left.is-light:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-dark {
+  color: whitesmoke;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-dark:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #303030;
+}
+.card-label--inset--left.is-dark:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-primary {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-primary:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #00504d;
+}
+.card-label--inset--left.is-primary:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-link {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-link:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #00504d;
+}
+.card-label--inset--left.is-link:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-info {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-info:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #209cee;
+}
+.card-label--inset--left.is-info:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-success {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-success:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #008A00;
+}
+.card-label--inset--left.is-success:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-warning {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-warning:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #ffdd57;
+}
+.card-label--inset--left.is-warning:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-danger {
+  color: white;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-danger:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #b50000;
+}
+.card-label--inset--left.is-danger:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-secondary {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-secondary:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #8E0021;
+}
+.card-label--inset--left.is-secondary:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-transparent {
+  color: white;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-transparent:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: transparent;
+}
+.card-label--inset--left.is-transparent:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-som-green {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-som-green:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #00504d;
+}
+.card-label--inset--left.is-som-green:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-som-grana {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-som-grana:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #8E0021;
+}
+.card-label--inset--left.is-som-grana:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-som-yellow {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-som-yellow:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #ffba00;
+}
+.card-label--inset--left.is-som-yellow:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-orange {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-orange:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #d43900;
+}
+.card-label--inset--left.is-orange:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-green {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-green:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #008A00;
+}
+.card-label--inset--left.is-green:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-blue {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-blue:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #007EB5;
+}
+.card-label--inset--left.is-blue:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-purple {
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-purple:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #fff;
+}
+.card-label--inset--left.is-purple:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-red {
+  color: white;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-red:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #b50000;
+}
+.card-label--inset--left.is-red:before else {
+  left: 0;
+  right: 0;
+}
+.card-label--inset--left.is-wine {
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  position: absolute;
+}
+.card-label--inset--left.is-wine:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 119.5%;
+  top: 0;
+  left: -19.5%;
+  right: 0;
+  transition: background-color 120ms ease-out;
+  transform: skewX(-19.5deg);
+  z-index: -1;
+  background-color: #80225f;
+}
+.card-label--inset--left.is-wine:before else {
   left: 0;
   right: 0;
 }
@@ -19383,10 +20396,34 @@ a:hover, a:active, a:focus {
   position: relative;
 }
 .grad-overlay-card .card-heading {
+  font-size: 1.563rem;
   margin-bottom: 0.307rem;
+}
+@media screen and (min-width: 1024px) {
+  .grad-overlay-card .card-heading {
+    font-size: 1.563rem;
+  }
+}
+@media screen and (min-width: 1216px) {
+  .grad-overlay-card .card-heading {
+    font-size: 1.563rem;
+  }
+}
+@media screen and (min-width: 1408px) {
+  .grad-overlay-card .card-heading {
+    font-size: 1.563rem;
+  }
+}
+@media screen and (min-width: 1684px) {
+  .grad-overlay-card .card-heading {
+    font-size: 1.563rem;
+  }
 }
 .grad-overlay-card p {
   margin-bottom: 0;
+}
+.grad-overlay-card .som-content-label {
+  z-index: 20;
 }
 .grad-overlay-card .card-content {
   position: absolute;
@@ -19396,6 +20433,25 @@ a:hover, a:active, a:focus {
   z-index: 10;
 }
 .grad-overlay-card a:hover p, .grad-overlay-card a:active p, .grad-overlay-card a:focus p {
+  text-decoration: underline;
+}
+.grad-overlay-card.grad-overlay-card--vcu-health .card-heading {
+  text-shadow: 2px 2px 2px rgba(32, 32, 32, 0.52);
+  margin-bottom: 0;
+}
+.grad-overlay-card.grad-overlay-card--vcu-health .card-cta {
+  font-size: 1.25rem;
+  color: #ffba00;
+}
+.grad-overlay-card.grad-overlay-card--vcu-health .card-cta .icon.is-inline-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  bottom: -0.32rem;
+}
+.grad-overlay-card.grad-overlay-card--vcu-health .card-cta svg {
+  fill: #ffba00;
+}
+.grad-overlay-card.grad-overlay-card--vcu-health:hover .card-cta, .grad-overlay-card.grad-overlay-card--vcu-health:active .card-cta, .grad-overlay-card.grad-overlay-card--vcu-health:focus .card-cta {
   text-decoration: underline;
 }
 
@@ -19754,6 +20810,26 @@ a:hover, a:active, a:focus {
   font-family: "azo-sans-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, sans-serif;
   font-weight: 500;
 }
+.hero-title.hero-title--vcu-health {
+  font-size: 2.441rem;
+  color: #ffba00;
+  line-height: 1.0;
+  text-shadow: 4px 4px 2px rgba(32, 32, 32, 0.32);
+}
+.hero-title.hero-title--vcu-health > span {
+  text-shadow: none;
+  color: white;
+  font-size: 1.563rem;
+  display: block;
+}
+@media screen and (min-width: 1024px) {
+  .hero-title.hero-title--vcu-health {
+    font-size: 3.052rem;
+  }
+  .hero-title.hero-title--vcu-health > span {
+    margin-top: 0.614rem;
+  }
+}
 
 .hero-subtext {
   font-size: 1.25rem;
@@ -19881,6 +20957,7 @@ a:hover, a:active, a:focus {
   }
   .hero.hero--news-heading .container .hero-text-wrap {
     max-width: 59.952rem;
+    max-width: 61.8047vw;
     margin-left: auto;
     margin-right: auto;
     width: 100%;

@@ -210,4 +210,7 @@
         background-color: $color;
      }
 }
+@mixin make-text-shadow($x: 4px, $y: 4px, $blur: 2px, $color: rgba($black, 0.32)) {
+    text-shadow: $x $y $blur $color;
+}
     

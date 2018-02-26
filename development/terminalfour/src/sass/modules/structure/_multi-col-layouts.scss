@@ -25,6 +25,12 @@
             .card-heading {
                 font-size: $size-5a;
             }
+            .grad-overlay-card {
+                .card-heading {
+                    font-size: $size-4;
+                }
+            }
+                    
         }
         @media screen and (min-width: 1820px) {
             > .column {
@@ -42,10 +48,8 @@
         margin-right: auto;
 }
 .main-content {
-    
-    padding-top: $space-4;
+    padding-top: $space-3; 
     > .section {
-        
         @include touch {
             padding-top: $space-5;    
         }
@@ -54,7 +58,6 @@
                 padding-bottom: $space-2;
             }
         }
-        
         margin-left: -$gutter-width/2;
         margin-right: -$gutter-width/2;
         
@@ -212,7 +215,6 @@
         }   
     }
     @include fullhd {
-        padding-top: $space-5a;
         .general-content {
             figure {
                 &.is-pulled-right {
@@ -228,18 +230,13 @@
 }
 /** Two col layout **/
 .is-2col, .is-3col {
-   
     .left-sidebar {
+        padding-top: $space-3; 
         @include touch {
             padding-top: $space-5;    
         }
-        padding-top: $space-4;
-        @include fullhd  {
-            padding-top: $space-5a;    
-        }
     }
     .sidebar-nav-wrap, .sidebar-card {
-        
         margin-bottom: $space-4;
     }
     @include touch {
@@ -286,8 +283,7 @@
                 }
             }
         }
-        
-               //Heroes
+        //Heroes
         .hero.is-inner-hero {
             .container {
                 max-width: none; 
@@ -296,11 +292,8 @@
                 width: auto;
                 margin-left: ($gl-small);
             }
-        }
-        
+        }   
     }
-    
-    
 }
 
 /** Three col layout **/
@@ -319,7 +312,6 @@
         }
     }
     @include fullhd {
-        
         .left-sidebar {
             width: $gl-small;
         }

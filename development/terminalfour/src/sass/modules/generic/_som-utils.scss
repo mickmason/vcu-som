@@ -30,6 +30,7 @@
             @if ($name == "som-yellow") {
                 color: $color-invert;
                 background-color: $white;
+                border-color: $color-invert;
                 @include active-link {
                     color: $color;
                     border-color: $color; 

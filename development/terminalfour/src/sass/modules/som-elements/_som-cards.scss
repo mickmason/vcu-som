@@ -71,7 +71,7 @@
         transition: transform 160ms ease-in        
     }
     .image-overlay {
-        background-color: rgba($black, 0.12);
+        background-color: rgba($black, 0.28);
     }
     &:not(.program-card) {
         .button {
@@ -165,7 +165,7 @@
             }
         }
         .image-overlay {
-            background-color: rgba($black, 0.32);
+            background-color: rgba($black, 0.36);
         }
         .card-content__text {
             text-decoration: underline;
@@ -216,15 +216,42 @@
         }
     }
 /** Card image - inset in image **/
+.card-label--inset, .card-label--inset--left {
+    top: $gld-6;
+    padding-top:    $space-11*0.75;
+    padding-bottom: $space-11*0.75;
+    padding-left:  $gutter-width/2;
+    padding-right: $gutter-width/2;
+    
+    
+}
 .card-label--inset {
-        right: 0;
-        top: $gld-6;
-        padding-top:    $space-11*0.75;
-        padding-bottom: $space-11*0.75;
-        padding-left:  $gutter-width/2;
-        padding-right: $gutter-width/2;
-        @include vision-angle($bg-color: $white, $pull: right);
-        position: absolute;
+    right: 0;
+    @include vision-angle($bg-color: $white, $pull: right);    
+    position: absolute;
+    @each $name, $pair in $colors { 
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name} {
+            color: $color-invert;
+            @include vision-angle($bg-color: $color, $pull: right);    
+            position: absolute;
+        }
+    }
+}
+.card-label--inset--left {
+    left: 0;
+    right: auto;
+    @each $name, $pair in $colors { 
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name} {
+            color: $color-invert;
+            @include vision-angle($bg-color: $color, $pull: left);  
+            position: absolute;
+        }
+    }
+    position: absolute;
 }
 .heading-only-card {
     border: none;
@@ -235,7 +262,6 @@
         .card-heading {
             margin-bottom: 0;
         }
-        
         .card__arrow {
             max-width: $gl-small;
             .icon {
@@ -678,16 +704,34 @@
         font-size: $size-6;
         font-weight: 500;
     }
+    @include active-link {
+        
+    }
 }
 .grad-overlay-card {
     color: $white;
     position: relative;
     .card-heading {
+        font-size: $size-4;
         margin-bottom: $space-11;
+        @include desktop {
+            font-size: $size-4;
+        }
+        @include widescreen {
+            font-size: $size-4;
+        }
+        @include fullhd {
+            font-size: $size-4;
+        }
+        @include superhd {
+            font-size: $size-4;
+        }
     }
-    
     p {
         margin-bottom: 0;
+    }
+    .som-content-label {
+        z-index: 20;
     }
     .card-content {
         position: absolute; 
@@ -700,6 +744,29 @@
         @include active-link {
             p {
                 text-decoration: underline;    
+            }
+        }
+    }
+    &.grad-overlay-card--vcu-health {
+        .card-heading {
+            @include make-text-shadow($x: 2px, $y: 2px, $color: rgba($black, 0.52));
+            margin-bottom: 0;
+        }
+        .card-cta {
+            .icon.is-inline-icon {
+                height: $size-5;
+                width:  $size-5;
+                bottom: -0.32rem;
+            }
+            font-size: $size-5;
+            color: $som-yellow;
+            svg {
+                fill: $som-yellow;
+            }
+        }
+        @include active-link {
+            .card-cta {
+                text-decoration: underline;
             }
         }
     }
@@ -722,6 +789,7 @@
     .by-the-numbers__text {
         font-size: $size-5a; 
     }
+    
 }
 .card--plain-text {
     
