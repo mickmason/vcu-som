@@ -4,6 +4,14 @@
         box-shadow: none;
     }
 }
+.navbar {
+    a {
+        text-decoration: none;
+        @include active-link {
+            text-decoration: none;
+        }
+    }
+}
 .navbar-item img {
     max-height: none;
 }

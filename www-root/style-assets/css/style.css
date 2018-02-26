@@ -12441,6 +12441,13 @@ label.panel-block:hover {
     box-shadow: none;
   }
 }
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:hover, .navbar a:active, .navbar a:focus {
+  text-decoration: none;
+}
+
 .navbar-item img {
   max-height: none;
 }
@@ -12543,6 +12550,21 @@ label.panel-block:hover {
     background-color: inherit;
   }
 }
+.button {
+  color: white;
+  background-color: #00504d;
+  border-color: white;
+  text-decoration: none;
+}
+.button:hover, .button:active, .button:focus {
+  color: #00504d;
+  border-color: #00504d;
+  background-color: white;
+}
+.button:hover, .button:active, .button:focus {
+  text-decoration: none;
+}
+
 /* Hide SVG stack */
 .vcu-som-icons-stack {
   display: none;
@@ -12561,15 +12583,18 @@ label.panel-block:hover {
 .has-white-background a {
   color: #202020;
 }
-.has-white-background .button:not([class*='is-']) {
+.has-white-background a:hover, .has-white-background a:active, .has-white-background a:focus {
   color: #202020;
-  border-color: #202020;
-  background-color: white;
 }
-.has-white-background .button:not([class*='is-']):hover, .has-white-background .button:not([class*='is-']):active, .has-white-background .button:not([class*='is-']):focus {
+.has-white-background .button:not([class*='is-']) {
   color: white;
   background-color: #202020;
   border-color: white;
+}
+.has-white-background .button:not([class*='is-']):hover, .has-white-background .button:not([class*='is-']):active, .has-white-background .button:not([class*='is-']):focus {
+  color: #202020;
+  border-color: #202020;
+  background-color: white;
 }
 .has-white-background.has-vision-graphic {
   background-color: transparent;
@@ -12579,31 +12604,37 @@ label.panel-block:hover {
 }
 .has-white-background.is-transparent {
   background-color: white;
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 .has-white-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-white-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 .has-white-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #202020;
+  color: white;
 }
 .has-white-background.is-transparent .button:not([class*='is-']):hover, .has-white-background.is-transparent .button:not([class*='is-']):active, .has-white-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #202020;
+  color: #202020;
+  background-color: white;
+  border-color: #202020;
 }
 .has-white-background.has-background-image > .container {
   z-index: 40;
 }
 .has-white-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #202020;
+  color: white;
 }
 .has-white-background.has-background-image .button:not([class*='is-']):hover, .has-white-background.has-background-image .button:not([class*='is-']):active, .has-white-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #202020;
+  color: #202020;
+  background-color: white;
+  border-color: #202020;
 }
 .has-white-background .image-overlay {
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 
 .has-white-background--grad {
@@ -12625,50 +12656,6 @@ label.panel-block:hover {
   border-color: white;
 }
 
-/*.feature__column {
-    &.has-white-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-white-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-white-background {
   background-color: rgba(255, 255, 255, 0.32);
   color: #202020;
@@ -12688,15 +12675,18 @@ label.panel-block:hover {
 .has-black-background a {
   color: #fff;
 }
-.has-black-background .button:not([class*='is-']) {
+.has-black-background a:hover, .has-black-background a:active, .has-black-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #202020;
 }
-.has-black-background .button:not([class*='is-']):hover, .has-black-background .button:not([class*='is-']):active, .has-black-background .button:not([class*='is-']):focus {
+.has-black-background .button:not([class*='is-']) {
   color: #202020;
   background-color: #fff;
   border-color: #202020;
+}
+.has-black-background .button:not([class*='is-']):hover, .has-black-background .button:not([class*='is-']):active, .has-black-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #202020;
 }
 .has-black-background.has-vision-graphic {
   background-color: transparent;
@@ -12706,31 +12696,37 @@ label.panel-block:hover {
 }
 .has-black-background.is-transparent {
   background-color: #202020;
-  background-color: rgba(32, 32, 32, 0.72);
+  background-color: rgba(32, 32, 32, 0.82);
 }
 .has-black-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-black-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(32, 32, 32, 0.72);
+  background-color: rgba(32, 32, 32, 0.82);
 }
 .has-black-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #202020;
 }
 .has-black-background.is-transparent .button:not([class*='is-']):hover, .has-black-background.is-transparent .button:not([class*='is-']):active, .has-black-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #202020;
+  border-color: #fff;
 }
 .has-black-background.has-background-image > .container {
   z-index: 40;
 }
 .has-black-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #202020;
 }
 .has-black-background.has-background-image .button:not([class*='is-']):hover, .has-black-background.has-background-image .button:not([class*='is-']):active, .has-black-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #202020;
+  border-color: #fff;
 }
 .has-black-background .image-overlay {
-  background-color: rgba(32, 32, 32, 0.72);
+  background-color: rgba(32, 32, 32, 0.82);
 }
 
 .has-black-background--grad {
@@ -12752,50 +12748,6 @@ label.panel-block:hover {
   border-color: #202020;
 }
 
-/*.feature__column {
-    &.has-black-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-black-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-black-background {
   background-color: rgba(32, 32, 32, 0.32);
   color: #fff;
@@ -12815,15 +12767,18 @@ label.panel-block:hover {
 .has-light-background a {
   color: #303030;
 }
-.has-light-background .button:not([class*='is-']) {
+.has-light-background a:hover, .has-light-background a:active, .has-light-background a:focus {
   color: #303030;
-  border-color: #303030;
-  background-color: whitesmoke;
 }
-.has-light-background .button:not([class*='is-']):hover, .has-light-background .button:not([class*='is-']):active, .has-light-background .button:not([class*='is-']):focus {
+.has-light-background .button:not([class*='is-']) {
   color: whitesmoke;
   background-color: #303030;
   border-color: whitesmoke;
+}
+.has-light-background .button:not([class*='is-']):hover, .has-light-background .button:not([class*='is-']):active, .has-light-background .button:not([class*='is-']):focus {
+  color: #303030;
+  border-color: #303030;
+  background-color: whitesmoke;
 }
 .has-light-background.has-vision-graphic {
   background-color: transparent;
@@ -12833,31 +12788,37 @@ label.panel-block:hover {
 }
 .has-light-background.is-transparent {
   background-color: whitesmoke;
-  background-color: rgba(245, 245, 245, 0.72);
+  background-color: rgba(245, 245, 245, 0.82);
 }
 .has-light-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-light-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(245, 245, 245, 0.72);
+  background-color: rgba(245, 245, 245, 0.82);
 }
 .has-light-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #303030;
+  color: whitesmoke;
 }
 .has-light-background.is-transparent .button:not([class*='is-']):hover, .has-light-background.is-transparent .button:not([class*='is-']):active, .has-light-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #303030;
+  color: #303030;
+  background-color: whitesmoke;
+  border-color: #303030;
 }
 .has-light-background.has-background-image > .container {
   z-index: 40;
 }
 .has-light-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #303030;
+  color: whitesmoke;
 }
 .has-light-background.has-background-image .button:not([class*='is-']):hover, .has-light-background.has-background-image .button:not([class*='is-']):active, .has-light-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #303030;
+  color: #303030;
+  background-color: whitesmoke;
+  border-color: #303030;
 }
 .has-light-background .image-overlay {
-  background-color: rgba(245, 245, 245, 0.72);
+  background-color: rgba(245, 245, 245, 0.82);
 }
 
 .has-light-background--grad {
@@ -12879,50 +12840,6 @@ label.panel-block:hover {
   border-color: whitesmoke;
 }
 
-/*.feature__column {
-    &.has-light-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-light-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-light-background {
   background-color: rgba(245, 245, 245, 0.32);
   color: #303030;
@@ -12942,15 +12859,18 @@ label.panel-block:hover {
 .has-dark-background a {
   color: whitesmoke;
 }
-.has-dark-background .button:not([class*='is-']) {
+.has-dark-background a:hover, .has-dark-background a:active, .has-dark-background a:focus {
   color: whitesmoke;
-  border-color: whitesmoke;
-  background-color: #303030;
 }
-.has-dark-background .button:not([class*='is-']):hover, .has-dark-background .button:not([class*='is-']):active, .has-dark-background .button:not([class*='is-']):focus {
+.has-dark-background .button:not([class*='is-']) {
   color: #303030;
   background-color: whitesmoke;
   border-color: #303030;
+}
+.has-dark-background .button:not([class*='is-']):hover, .has-dark-background .button:not([class*='is-']):active, .has-dark-background .button:not([class*='is-']):focus {
+  color: whitesmoke;
+  border-color: whitesmoke;
+  background-color: #303030;
 }
 .has-dark-background.has-vision-graphic {
   background-color: transparent;
@@ -12960,31 +12880,37 @@ label.panel-block:hover {
 }
 .has-dark-background.is-transparent {
   background-color: #303030;
-  background-color: rgba(48, 48, 48, 0.72);
+  background-color: rgba(48, 48, 48, 0.82);
 }
 .has-dark-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-dark-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(48, 48, 48, 0.72);
+  background-color: rgba(48, 48, 48, 0.82);
 }
 .has-dark-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: whitesmoke;
+  color: #303030;
 }
 .has-dark-background.is-transparent .button:not([class*='is-']):hover, .has-dark-background.is-transparent .button:not([class*='is-']):active, .has-dark-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: whitesmoke;
+  color: whitesmoke;
+  background-color: #303030;
+  border-color: whitesmoke;
 }
 .has-dark-background.has-background-image > .container {
   z-index: 40;
 }
 .has-dark-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: whitesmoke;
+  color: #303030;
 }
 .has-dark-background.has-background-image .button:not([class*='is-']):hover, .has-dark-background.has-background-image .button:not([class*='is-']):active, .has-dark-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: whitesmoke;
+  color: whitesmoke;
+  background-color: #303030;
+  border-color: whitesmoke;
 }
 .has-dark-background .image-overlay {
-  background-color: rgba(48, 48, 48, 0.72);
+  background-color: rgba(48, 48, 48, 0.82);
 }
 
 .has-dark-background--grad {
@@ -13006,50 +12932,6 @@ label.panel-block:hover {
   border-color: #303030;
 }
 
-/*.feature__column {
-    &.has-dark-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-dark-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-dark-background {
   background-color: rgba(48, 48, 48, 0.32);
   color: whitesmoke;
@@ -13069,15 +12951,18 @@ label.panel-block:hover {
 .has-primary-background a {
   color: #fff;
 }
-.has-primary-background .button:not([class*='is-']) {
+.has-primary-background a:hover, .has-primary-background a:active, .has-primary-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #00504d;
 }
-.has-primary-background .button:not([class*='is-']):hover, .has-primary-background .button:not([class*='is-']):active, .has-primary-background .button:not([class*='is-']):focus {
+.has-primary-background .button:not([class*='is-']) {
   color: #00504d;
   background-color: #fff;
   border-color: #00504d;
+}
+.has-primary-background .button:not([class*='is-']):hover, .has-primary-background .button:not([class*='is-']):active, .has-primary-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #00504d;
 }
 .has-primary-background.has-vision-graphic {
   background-color: transparent;
@@ -13087,31 +12972,37 @@ label.panel-block:hover {
 }
 .has-primary-background.is-transparent {
   background-color: #00504d;
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .has-primary-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-primary-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .has-primary-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #00504d;
 }
 .has-primary-background.is-transparent .button:not([class*='is-']):hover, .has-primary-background.is-transparent .button:not([class*='is-']):active, .has-primary-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #00504d;
+  border-color: #fff;
 }
 .has-primary-background.has-background-image > .container {
   z-index: 40;
 }
 .has-primary-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #00504d;
 }
 .has-primary-background.has-background-image .button:not([class*='is-']):hover, .has-primary-background.has-background-image .button:not([class*='is-']):active, .has-primary-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #00504d;
+  border-color: #fff;
 }
 .has-primary-background .image-overlay {
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 
 .has-primary-background--grad {
@@ -13133,50 +13024,6 @@ label.panel-block:hover {
   border-color: #00504d;
 }
 
-/*.feature__column {
-    &.has-primary-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-primary-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-primary-background {
   background-color: rgba(0, 80, 77, 0.32);
   color: #fff;
@@ -13196,15 +13043,18 @@ label.panel-block:hover {
 .has-link-background a {
   color: #fff;
 }
-.has-link-background .button:not([class*='is-']) {
+.has-link-background a:hover, .has-link-background a:active, .has-link-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #00504d;
 }
-.has-link-background .button:not([class*='is-']):hover, .has-link-background .button:not([class*='is-']):active, .has-link-background .button:not([class*='is-']):focus {
+.has-link-background .button:not([class*='is-']) {
   color: #00504d;
   background-color: #fff;
   border-color: #00504d;
+}
+.has-link-background .button:not([class*='is-']):hover, .has-link-background .button:not([class*='is-']):active, .has-link-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #00504d;
 }
 .has-link-background.has-vision-graphic {
   background-color: transparent;
@@ -13214,31 +13064,37 @@ label.panel-block:hover {
 }
 .has-link-background.is-transparent {
   background-color: #00504d;
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .has-link-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-link-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .has-link-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #00504d;
 }
 .has-link-background.is-transparent .button:not([class*='is-']):hover, .has-link-background.is-transparent .button:not([class*='is-']):active, .has-link-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #00504d;
+  border-color: #fff;
 }
 .has-link-background.has-background-image > .container {
   z-index: 40;
 }
 .has-link-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #00504d;
 }
 .has-link-background.has-background-image .button:not([class*='is-']):hover, .has-link-background.has-background-image .button:not([class*='is-']):active, .has-link-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #00504d;
+  border-color: #fff;
 }
 .has-link-background .image-overlay {
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 
 .has-link-background--grad {
@@ -13260,50 +13116,6 @@ label.panel-block:hover {
   border-color: #00504d;
 }
 
-/*.feature__column {
-    &.has-link-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-link-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-link-background {
   background-color: rgba(0, 80, 77, 0.32);
   color: #fff;
@@ -13323,15 +13135,18 @@ label.panel-block:hover {
 .has-info-background a {
   color: #fff;
 }
-.has-info-background .button:not([class*='is-']) {
+.has-info-background a:hover, .has-info-background a:active, .has-info-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #209cee;
 }
-.has-info-background .button:not([class*='is-']):hover, .has-info-background .button:not([class*='is-']):active, .has-info-background .button:not([class*='is-']):focus {
+.has-info-background .button:not([class*='is-']) {
   color: #209cee;
   background-color: #fff;
   border-color: #209cee;
+}
+.has-info-background .button:not([class*='is-']):hover, .has-info-background .button:not([class*='is-']):active, .has-info-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #209cee;
 }
 .has-info-background.has-vision-graphic {
   background-color: transparent;
@@ -13341,31 +13156,37 @@ label.panel-block:hover {
 }
 .has-info-background.is-transparent {
   background-color: #209cee;
-  background-color: rgba(32, 156, 238, 0.72);
+  background-color: rgba(32, 156, 238, 0.82);
 }
 .has-info-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-info-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(32, 156, 238, 0.72);
+  background-color: rgba(32, 156, 238, 0.82);
 }
 .has-info-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #209cee;
 }
 .has-info-background.is-transparent .button:not([class*='is-']):hover, .has-info-background.is-transparent .button:not([class*='is-']):active, .has-info-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #209cee;
+  border-color: #fff;
 }
 .has-info-background.has-background-image > .container {
   z-index: 40;
 }
 .has-info-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #209cee;
 }
 .has-info-background.has-background-image .button:not([class*='is-']):hover, .has-info-background.has-background-image .button:not([class*='is-']):active, .has-info-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #209cee;
+  border-color: #fff;
 }
 .has-info-background .image-overlay {
-  background-color: rgba(32, 156, 238, 0.72);
+  background-color: rgba(32, 156, 238, 0.82);
 }
 
 .has-info-background--grad {
@@ -13387,50 +13208,6 @@ label.panel-block:hover {
   border-color: #209cee;
 }
 
-/*.feature__column {
-    &.has-info-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-info-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-info-background {
   background-color: rgba(32, 156, 238, 0.32);
   color: #fff;
@@ -13450,15 +13227,18 @@ label.panel-block:hover {
 .has-success-background a {
   color: #fff;
 }
-.has-success-background .button:not([class*='is-']) {
+.has-success-background a:hover, .has-success-background a:active, .has-success-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #008A00;
 }
-.has-success-background .button:not([class*='is-']):hover, .has-success-background .button:not([class*='is-']):active, .has-success-background .button:not([class*='is-']):focus {
+.has-success-background .button:not([class*='is-']) {
   color: #008A00;
   background-color: #fff;
   border-color: #008A00;
+}
+.has-success-background .button:not([class*='is-']):hover, .has-success-background .button:not([class*='is-']):active, .has-success-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #008A00;
 }
 .has-success-background.has-vision-graphic {
   background-color: transparent;
@@ -13468,31 +13248,37 @@ label.panel-block:hover {
 }
 .has-success-background.is-transparent {
   background-color: #008A00;
-  background-color: rgba(0, 138, 0, 0.72);
+  background-color: rgba(0, 138, 0, 0.82);
 }
 .has-success-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-success-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 138, 0, 0.72);
+  background-color: rgba(0, 138, 0, 0.82);
 }
 .has-success-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #008A00;
 }
 .has-success-background.is-transparent .button:not([class*='is-']):hover, .has-success-background.is-transparent .button:not([class*='is-']):active, .has-success-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #008A00;
+  border-color: #fff;
 }
 .has-success-background.has-background-image > .container {
   z-index: 40;
 }
 .has-success-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #008A00;
 }
 .has-success-background.has-background-image .button:not([class*='is-']):hover, .has-success-background.has-background-image .button:not([class*='is-']):active, .has-success-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #008A00;
+  border-color: #fff;
 }
 .has-success-background .image-overlay {
-  background-color: rgba(0, 138, 0, 0.72);
+  background-color: rgba(0, 138, 0, 0.82);
 }
 
 .has-success-background--grad {
@@ -13514,50 +13300,6 @@ label.panel-block:hover {
   border-color: #008A00;
 }
 
-/*.feature__column {
-    &.has-success-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-success-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-success-background {
   background-color: rgba(0, 138, 0, 0.32);
   color: #fff;
@@ -13577,15 +13319,18 @@ label.panel-block:hover {
 .has-warning-background a {
   color: rgba(0, 0, 0, 0.7);
 }
-.has-warning-background .button:not([class*='is-']) {
+.has-warning-background a:hover, .has-warning-background a:active, .has-warning-background a:focus {
   color: rgba(0, 0, 0, 0.7);
-  border-color: rgba(0, 0, 0, 0.7);
-  background-color: #ffdd57;
 }
-.has-warning-background .button:not([class*='is-']):hover, .has-warning-background .button:not([class*='is-']):active, .has-warning-background .button:not([class*='is-']):focus {
+.has-warning-background .button:not([class*='is-']) {
   color: #ffdd57;
   background-color: rgba(0, 0, 0, 0.7);
   border-color: #ffdd57;
+}
+.has-warning-background .button:not([class*='is-']):hover, .has-warning-background .button:not([class*='is-']):active, .has-warning-background .button:not([class*='is-']):focus {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.7);
+  background-color: #ffdd57;
 }
 .has-warning-background.has-vision-graphic {
   background-color: transparent;
@@ -13595,31 +13340,37 @@ label.panel-block:hover {
 }
 .has-warning-background.is-transparent {
   background-color: #ffdd57;
-  background-color: rgba(255, 221, 87, 0.72);
+  background-color: rgba(255, 221, 87, 0.82);
 }
 .has-warning-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-warning-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(255, 221, 87, 0.72);
+  background-color: rgba(255, 221, 87, 0.82);
 }
 .has-warning-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffdd57;
 }
 .has-warning-background.is-transparent .button:not([class*='is-']):hover, .has-warning-background.is-transparent .button:not([class*='is-']):active, .has-warning-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffdd57;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-warning-background.has-background-image > .container {
   z-index: 40;
 }
 .has-warning-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffdd57;
 }
 .has-warning-background.has-background-image .button:not([class*='is-']):hover, .has-warning-background.has-background-image .button:not([class*='is-']):active, .has-warning-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffdd57;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-warning-background .image-overlay {
-  background-color: rgba(255, 221, 87, 0.72);
+  background-color: rgba(255, 221, 87, 0.82);
 }
 
 .has-warning-background--grad {
@@ -13641,50 +13392,6 @@ label.panel-block:hover {
   border-color: #ffdd57;
 }
 
-/*.feature__column {
-    &.has-warning-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-warning-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-warning-background {
   background-color: rgba(255, 221, 87, 0.32);
   color: rgba(0, 0, 0, 0.7);
@@ -13704,15 +13411,18 @@ label.panel-block:hover {
 .has-danger-background a {
   color: white;
 }
-.has-danger-background .button:not([class*='is-']) {
+.has-danger-background a:hover, .has-danger-background a:active, .has-danger-background a:focus {
   color: white;
-  border-color: white;
-  background-color: #b50000;
 }
-.has-danger-background .button:not([class*='is-']):hover, .has-danger-background .button:not([class*='is-']):active, .has-danger-background .button:not([class*='is-']):focus {
+.has-danger-background .button:not([class*='is-']) {
   color: #b50000;
   background-color: white;
   border-color: #b50000;
+}
+.has-danger-background .button:not([class*='is-']):hover, .has-danger-background .button:not([class*='is-']):active, .has-danger-background .button:not([class*='is-']):focus {
+  color: white;
+  border-color: white;
+  background-color: #b50000;
 }
 .has-danger-background.has-vision-graphic {
   background-color: transparent;
@@ -13722,31 +13432,37 @@ label.panel-block:hover {
 }
 .has-danger-background.is-transparent {
   background-color: #b50000;
-  background-color: rgba(181, 0, 0, 0.72);
+  background-color: rgba(181, 0, 0, 0.82);
 }
 .has-danger-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-danger-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(181, 0, 0, 0.72);
+  background-color: rgba(181, 0, 0, 0.82);
 }
 .has-danger-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: white;
+  color: #b50000;
 }
 .has-danger-background.is-transparent .button:not([class*='is-']):hover, .has-danger-background.is-transparent .button:not([class*='is-']):active, .has-danger-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: white;
+  color: white;
+  background-color: #b50000;
+  border-color: white;
 }
 .has-danger-background.has-background-image > .container {
   z-index: 40;
 }
 .has-danger-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: white;
+  color: #b50000;
 }
 .has-danger-background.has-background-image .button:not([class*='is-']):hover, .has-danger-background.has-background-image .button:not([class*='is-']):active, .has-danger-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: white;
+  color: white;
+  background-color: #b50000;
+  border-color: white;
 }
 .has-danger-background .image-overlay {
-  background-color: rgba(181, 0, 0, 0.72);
+  background-color: rgba(181, 0, 0, 0.82);
 }
 
 .has-danger-background--grad {
@@ -13768,50 +13484,6 @@ label.panel-block:hover {
   border-color: #b50000;
 }
 
-/*.feature__column {
-    &.has-danger-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-danger-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-danger-background {
   background-color: rgba(181, 0, 0, 0.32);
   color: white;
@@ -13831,15 +13503,18 @@ label.panel-block:hover {
 .has-secondary-background a {
   color: #fff;
 }
-.has-secondary-background .button:not([class*='is-']) {
+.has-secondary-background a:hover, .has-secondary-background a:active, .has-secondary-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #8E0021;
 }
-.has-secondary-background .button:not([class*='is-']):hover, .has-secondary-background .button:not([class*='is-']):active, .has-secondary-background .button:not([class*='is-']):focus {
+.has-secondary-background .button:not([class*='is-']) {
   color: #8E0021;
   background-color: #fff;
   border-color: #8E0021;
+}
+.has-secondary-background .button:not([class*='is-']):hover, .has-secondary-background .button:not([class*='is-']):active, .has-secondary-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #8E0021;
 }
 .has-secondary-background.has-vision-graphic {
   background-color: transparent;
@@ -13849,31 +13524,37 @@ label.panel-block:hover {
 }
 .has-secondary-background.is-transparent {
   background-color: #8E0021;
-  background-color: rgba(142, 0, 33, 0.72);
+  background-color: rgba(142, 0, 33, 0.82);
 }
 .has-secondary-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-secondary-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(142, 0, 33, 0.72);
+  background-color: rgba(142, 0, 33, 0.82);
 }
 .has-secondary-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #8E0021;
 }
 .has-secondary-background.is-transparent .button:not([class*='is-']):hover, .has-secondary-background.is-transparent .button:not([class*='is-']):active, .has-secondary-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #8E0021;
+  border-color: #fff;
 }
 .has-secondary-background.has-background-image > .container {
   z-index: 40;
 }
 .has-secondary-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #8E0021;
 }
 .has-secondary-background.has-background-image .button:not([class*='is-']):hover, .has-secondary-background.has-background-image .button:not([class*='is-']):active, .has-secondary-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #8E0021;
+  border-color: #fff;
 }
 .has-secondary-background .image-overlay {
-  background-color: rgba(142, 0, 33, 0.72);
+  background-color: rgba(142, 0, 33, 0.82);
 }
 
 .has-secondary-background--grad {
@@ -13895,50 +13576,6 @@ label.panel-block:hover {
   border-color: #8E0021;
 }
 
-/*.feature__column {
-    &.has-secondary-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-secondary-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-secondary-background {
   background-color: rgba(142, 0, 33, 0.32);
   color: #fff;
@@ -13958,15 +13595,18 @@ label.panel-block:hover {
 .has-transparent-background a {
   color: white;
 }
-.has-transparent-background .button:not([class*='is-']) {
+.has-transparent-background a:hover, .has-transparent-background a:active, .has-transparent-background a:focus {
   color: white;
-  border-color: white;
-  background-color: transparent;
 }
-.has-transparent-background .button:not([class*='is-']):hover, .has-transparent-background .button:not([class*='is-']):active, .has-transparent-background .button:not([class*='is-']):focus {
+.has-transparent-background .button:not([class*='is-']) {
   color: transparent;
   background-color: white;
   border-color: transparent;
+}
+.has-transparent-background .button:not([class*='is-']):hover, .has-transparent-background .button:not([class*='is-']):active, .has-transparent-background .button:not([class*='is-']):focus {
+  color: white;
+  border-color: white;
+  background-color: transparent;
 }
 .has-transparent-background.has-vision-graphic {
   background-color: transparent;
@@ -13976,31 +13616,37 @@ label.panel-block:hover {
 }
 .has-transparent-background.is-transparent {
   background-color: transparent;
-  background-color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(0, 0, 0, 0.82);
 }
 .has-transparent-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-transparent-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(0, 0, 0, 0.82);
 }
 .has-transparent-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: white;
+  color: transparent;
 }
 .has-transparent-background.is-transparent .button:not([class*='is-']):hover, .has-transparent-background.is-transparent .button:not([class*='is-']):active, .has-transparent-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: white;
+  color: white;
+  background-color: transparent;
+  border-color: white;
 }
 .has-transparent-background.has-background-image > .container {
   z-index: 40;
 }
 .has-transparent-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: white;
+  color: transparent;
 }
 .has-transparent-background.has-background-image .button:not([class*='is-']):hover, .has-transparent-background.has-background-image .button:not([class*='is-']):active, .has-transparent-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: white;
+  color: white;
+  background-color: transparent;
+  border-color: white;
 }
 .has-transparent-background .image-overlay {
-  background-color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(0, 0, 0, 0.82);
 }
 
 .has-transparent-background--grad {
@@ -14022,50 +13668,6 @@ label.panel-block:hover {
   border-color: transparent;
 }
 
-/*.feature__column {
-    &.has-transparent-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-transparent-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-transparent-background {
   background-color: rgba(0, 0, 0, 0.32);
   color: white;
@@ -14085,15 +13687,18 @@ label.panel-block:hover {
 .has-som-green-background a {
   color: #fff;
 }
-.has-som-green-background .button:not([class*='is-']) {
+.has-som-green-background a:hover, .has-som-green-background a:active, .has-som-green-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #00504d;
 }
-.has-som-green-background .button:not([class*='is-']):hover, .has-som-green-background .button:not([class*='is-']):active, .has-som-green-background .button:not([class*='is-']):focus {
+.has-som-green-background .button:not([class*='is-']) {
   color: #00504d;
   background-color: #fff;
   border-color: #00504d;
+}
+.has-som-green-background .button:not([class*='is-']):hover, .has-som-green-background .button:not([class*='is-']):active, .has-som-green-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #00504d;
 }
 .has-som-green-background.has-vision-graphic {
   background-color: transparent;
@@ -14103,31 +13708,37 @@ label.panel-block:hover {
 }
 .has-som-green-background.is-transparent {
   background-color: #00504d;
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .has-som-green-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-som-green-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .has-som-green-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #00504d;
 }
 .has-som-green-background.is-transparent .button:not([class*='is-']):hover, .has-som-green-background.is-transparent .button:not([class*='is-']):active, .has-som-green-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #00504d;
+  border-color: #fff;
 }
 .has-som-green-background.has-background-image > .container {
   z-index: 40;
 }
 .has-som-green-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #00504d;
 }
 .has-som-green-background.has-background-image .button:not([class*='is-']):hover, .has-som-green-background.has-background-image .button:not([class*='is-']):active, .has-som-green-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #00504d;
+  border-color: #fff;
 }
 .has-som-green-background .image-overlay {
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 
 .has-som-green-background--grad {
@@ -14149,50 +13760,6 @@ label.panel-block:hover {
   border-color: #00504d;
 }
 
-/*.feature__column {
-    &.has-som-green-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-som-green-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-som-green-background {
   background-color: rgba(0, 80, 77, 0.32);
   color: #fff;
@@ -14212,15 +13779,18 @@ label.panel-block:hover {
 .has-som-grana-background a {
   color: #fff;
 }
-.has-som-grana-background .button:not([class*='is-']) {
+.has-som-grana-background a:hover, .has-som-grana-background a:active, .has-som-grana-background a:focus {
   color: #fff;
-  border-color: #8E0021;
-  background-color: #8E0021;
 }
-.has-som-grana-background .button:not([class*='is-']):hover, .has-som-grana-background .button:not([class*='is-']):active, .has-som-grana-background .button:not([class*='is-']):focus {
+.has-som-grana-background .button:not([class*='is-']) {
   color: #8E0021;
   background-color: #fff;
   border-color: #8E0021;
+}
+.has-som-grana-background .button:not([class*='is-']):hover, .has-som-grana-background .button:not([class*='is-']):active, .has-som-grana-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #8E0021;
+  background-color: #8E0021;
 }
 .has-som-grana-background.has-vision-graphic {
   background-color: transparent;
@@ -14230,31 +13800,37 @@ label.panel-block:hover {
 }
 .has-som-grana-background.is-transparent {
   background-color: #8E0021;
-  background-color: rgba(142, 0, 33, 0.72);
+  background-color: rgba(142, 0, 33, 0.82);
 }
 .has-som-grana-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-som-grana-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(142, 0, 33, 0.72);
+  background-color: rgba(142, 0, 33, 0.82);
 }
 .has-som-grana-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #8E0021;
 }
 .has-som-grana-background.is-transparent .button:not([class*='is-']):hover, .has-som-grana-background.is-transparent .button:not([class*='is-']):active, .has-som-grana-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #8E0021;
+  border-color: #fff;
 }
 .has-som-grana-background.has-background-image > .container {
   z-index: 40;
 }
 .has-som-grana-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #8E0021;
 }
 .has-som-grana-background.has-background-image .button:not([class*='is-']):hover, .has-som-grana-background.has-background-image .button:not([class*='is-']):active, .has-som-grana-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #8E0021;
+  border-color: #fff;
 }
 .has-som-grana-background .image-overlay {
-  background-color: rgba(142, 0, 33, 0.72);
+  background-color: rgba(142, 0, 33, 0.82);
 }
 
 .has-som-grana-background--grad {
@@ -14276,50 +13852,6 @@ label.panel-block:hover {
   border-color: #8E0021;
 }
 
-/*.feature__column {
-    &.has-som-grana-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-som-grana-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-som-grana-background {
   background-color: rgba(142, 0, 33, 0.32);
   color: #fff;
@@ -14339,15 +13871,17 @@ label.panel-block:hover {
 .has-som-yellow-background a {
   color: rgba(0, 0, 0, 0.7);
 }
+.has-som-yellow-background a:hover, .has-som-yellow-background a:active, .has-som-yellow-background a:focus {
+  color: rgba(0, 0, 0, 0.7);
+}
 .has-som-yellow-background .button:not([class*='is-']) {
   color: rgba(0, 0, 0, 0.7);
-  border-color: rgba(0, 0, 0, 0.7);
-  background-color: #ffba00;
+  background-color: white;
 }
 .has-som-yellow-background .button:not([class*='is-']):hover, .has-som-yellow-background .button:not([class*='is-']):active, .has-som-yellow-background .button:not([class*='is-']):focus {
   color: #ffba00;
-  background-color: rgba(0, 0, 0, 0.7);
   border-color: #ffba00;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .has-som-yellow-background.has-vision-graphic {
   background-color: transparent;
@@ -14357,31 +13891,37 @@ label.panel-block:hover {
 }
 .has-som-yellow-background.is-transparent {
   background-color: #ffba00;
-  background-color: rgba(255, 186, 0, 0.72);
+  background-color: rgba(255, 186, 0, 0.82);
 }
 .has-som-yellow-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-som-yellow-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(255, 186, 0, 0.72);
+  background-color: rgba(255, 186, 0, 0.82);
 }
 .has-som-yellow-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffba00;
 }
 .has-som-yellow-background.is-transparent .button:not([class*='is-']):hover, .has-som-yellow-background.is-transparent .button:not([class*='is-']):active, .has-som-yellow-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffba00;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-som-yellow-background.has-background-image > .container {
   z-index: 40;
 }
 .has-som-yellow-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffba00;
 }
 .has-som-yellow-background.has-background-image .button:not([class*='is-']):hover, .has-som-yellow-background.has-background-image .button:not([class*='is-']):active, .has-som-yellow-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffba00;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-som-yellow-background .image-overlay {
-  background-color: rgba(255, 186, 0, 0.72);
+  background-color: rgba(255, 186, 0, 0.82);
 }
 
 .has-som-yellow-background--grad {
@@ -14403,50 +13943,6 @@ label.panel-block:hover {
   border-color: #ffba00;
 }
 
-/*.feature__column {
-    &.has-som-yellow-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-som-yellow-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-som-yellow-background {
   background-color: rgba(255, 186, 0, 0.32);
   color: rgba(0, 0, 0, 0.7);
@@ -14466,15 +13962,18 @@ label.panel-block:hover {
 .has-orange-background a {
   color: #fff;
 }
-.has-orange-background .button:not([class*='is-']) {
+.has-orange-background a:hover, .has-orange-background a:active, .has-orange-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #d43900;
 }
-.has-orange-background .button:not([class*='is-']):hover, .has-orange-background .button:not([class*='is-']):active, .has-orange-background .button:not([class*='is-']):focus {
+.has-orange-background .button:not([class*='is-']) {
   color: #d43900;
   background-color: #fff;
   border-color: #d43900;
+}
+.has-orange-background .button:not([class*='is-']):hover, .has-orange-background .button:not([class*='is-']):active, .has-orange-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #d43900;
 }
 .has-orange-background.has-vision-graphic {
   background-color: transparent;
@@ -14484,31 +13983,37 @@ label.panel-block:hover {
 }
 .has-orange-background.is-transparent {
   background-color: #d43900;
-  background-color: rgba(212, 57, 0, 0.72);
+  background-color: rgba(212, 57, 0, 0.82);
 }
 .has-orange-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-orange-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(212, 57, 0, 0.72);
+  background-color: rgba(212, 57, 0, 0.82);
 }
 .has-orange-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #d43900;
 }
 .has-orange-background.is-transparent .button:not([class*='is-']):hover, .has-orange-background.is-transparent .button:not([class*='is-']):active, .has-orange-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #d43900;
+  border-color: #fff;
 }
 .has-orange-background.has-background-image > .container {
   z-index: 40;
 }
 .has-orange-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #d43900;
 }
 .has-orange-background.has-background-image .button:not([class*='is-']):hover, .has-orange-background.has-background-image .button:not([class*='is-']):active, .has-orange-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #d43900;
+  border-color: #fff;
 }
 .has-orange-background .image-overlay {
-  background-color: rgba(212, 57, 0, 0.72);
+  background-color: rgba(212, 57, 0, 0.82);
 }
 
 .has-orange-background--grad {
@@ -14530,50 +14035,6 @@ label.panel-block:hover {
   border-color: #d43900;
 }
 
-/*.feature__column {
-    &.has-orange-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-orange-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-orange-background {
   background-color: rgba(212, 57, 0, 0.32);
   color: #fff;
@@ -14593,15 +14054,18 @@ label.panel-block:hover {
 .has-green-background a {
   color: #fff;
 }
-.has-green-background .button:not([class*='is-']) {
+.has-green-background a:hover, .has-green-background a:active, .has-green-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #008A00;
 }
-.has-green-background .button:not([class*='is-']):hover, .has-green-background .button:not([class*='is-']):active, .has-green-background .button:not([class*='is-']):focus {
+.has-green-background .button:not([class*='is-']) {
   color: #008A00;
   background-color: #fff;
   border-color: #008A00;
+}
+.has-green-background .button:not([class*='is-']):hover, .has-green-background .button:not([class*='is-']):active, .has-green-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #008A00;
 }
 .has-green-background.has-vision-graphic {
   background-color: transparent;
@@ -14611,31 +14075,37 @@ label.panel-block:hover {
 }
 .has-green-background.is-transparent {
   background-color: #008A00;
-  background-color: rgba(0, 138, 0, 0.72);
+  background-color: rgba(0, 138, 0, 0.82);
 }
 .has-green-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-green-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 138, 0, 0.72);
+  background-color: rgba(0, 138, 0, 0.82);
 }
 .has-green-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #008A00;
 }
 .has-green-background.is-transparent .button:not([class*='is-']):hover, .has-green-background.is-transparent .button:not([class*='is-']):active, .has-green-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #008A00;
+  border-color: #fff;
 }
 .has-green-background.has-background-image > .container {
   z-index: 40;
 }
 .has-green-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #008A00;
 }
 .has-green-background.has-background-image .button:not([class*='is-']):hover, .has-green-background.has-background-image .button:not([class*='is-']):active, .has-green-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #008A00;
+  border-color: #fff;
 }
 .has-green-background .image-overlay {
-  background-color: rgba(0, 138, 0, 0.72);
+  background-color: rgba(0, 138, 0, 0.82);
 }
 
 .has-green-background--grad {
@@ -14657,50 +14127,6 @@ label.panel-block:hover {
   border-color: #008A00;
 }
 
-/*.feature__column {
-    &.has-green-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-green-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-green-background {
   background-color: rgba(0, 138, 0, 0.32);
   color: #fff;
@@ -14720,15 +14146,18 @@ label.panel-block:hover {
 .has-blue-background a {
   color: #fff;
 }
-.has-blue-background .button:not([class*='is-']) {
+.has-blue-background a:hover, .has-blue-background a:active, .has-blue-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #007EB5;
 }
-.has-blue-background .button:not([class*='is-']):hover, .has-blue-background .button:not([class*='is-']):active, .has-blue-background .button:not([class*='is-']):focus {
+.has-blue-background .button:not([class*='is-']) {
   color: #007EB5;
   background-color: #fff;
   border-color: #007EB5;
+}
+.has-blue-background .button:not([class*='is-']):hover, .has-blue-background .button:not([class*='is-']):active, .has-blue-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #007EB5;
 }
 .has-blue-background.has-vision-graphic {
   background-color: transparent;
@@ -14738,31 +14167,37 @@ label.panel-block:hover {
 }
 .has-blue-background.is-transparent {
   background-color: #007EB5;
-  background-color: rgba(0, 126, 181, 0.72);
+  background-color: rgba(0, 126, 181, 0.82);
 }
 .has-blue-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-blue-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(0, 126, 181, 0.72);
+  background-color: rgba(0, 126, 181, 0.82);
 }
 .has-blue-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #007EB5;
 }
 .has-blue-background.is-transparent .button:not([class*='is-']):hover, .has-blue-background.is-transparent .button:not([class*='is-']):active, .has-blue-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #007EB5;
+  border-color: #fff;
 }
 .has-blue-background.has-background-image > .container {
   z-index: 40;
 }
 .has-blue-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #007EB5;
 }
 .has-blue-background.has-background-image .button:not([class*='is-']):hover, .has-blue-background.has-background-image .button:not([class*='is-']):active, .has-blue-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #007EB5;
+  border-color: #fff;
 }
 .has-blue-background .image-overlay {
-  background-color: rgba(0, 126, 181, 0.72);
+  background-color: rgba(0, 126, 181, 0.82);
 }
 
 .has-blue-background--grad {
@@ -14784,50 +14219,6 @@ label.panel-block:hover {
   border-color: #007EB5;
 }
 
-/*.feature__column {
-    &.has-blue-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-blue-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-blue-background {
   background-color: rgba(0, 126, 181, 0.32);
   color: #fff;
@@ -14847,15 +14238,18 @@ label.panel-block:hover {
 .has-purple-background a {
   color: rgba(0, 0, 0, 0.7);
 }
-.has-purple-background .button:not([class*='is-']) {
+.has-purple-background a:hover, .has-purple-background a:active, .has-purple-background a:focus {
   color: rgba(0, 0, 0, 0.7);
-  border-color: rgba(0, 0, 0, 0.7);
-  background-color: #fff;
 }
-.has-purple-background .button:not([class*='is-']):hover, .has-purple-background .button:not([class*='is-']):active, .has-purple-background .button:not([class*='is-']):focus {
+.has-purple-background .button:not([class*='is-']) {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
   border-color: #fff;
+}
+.has-purple-background .button:not([class*='is-']):hover, .has-purple-background .button:not([class*='is-']):active, .has-purple-background .button:not([class*='is-']):focus {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: rgba(0, 0, 0, 0.7);
+  background-color: #fff;
 }
 .has-purple-background.has-vision-graphic {
   background-color: transparent;
@@ -14865,31 +14259,37 @@ label.panel-block:hover {
 }
 .has-purple-background.is-transparent {
   background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 .has-purple-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-purple-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 .has-purple-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
 }
 .has-purple-background.is-transparent .button:not([class*='is-']):hover, .has-purple-background.is-transparent .button:not([class*='is-']):active, .has-purple-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-purple-background.has-background-image > .container {
   z-index: 40;
 }
 .has-purple-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
 }
 .has-purple-background.has-background-image .button:not([class*='is-']):hover, .has-purple-background.has-background-image .button:not([class*='is-']):active, .has-purple-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .has-purple-background .image-overlay {
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 
 .has-purple-background--grad {
@@ -14911,50 +14311,6 @@ label.panel-block:hover {
   border-color: #fff;
 }
 
-/*.feature__column {
-    &.has-purple-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-purple-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-purple-background {
   background-color: rgba(255, 255, 255, 0.32);
   color: rgba(0, 0, 0, 0.7);
@@ -14974,15 +14330,18 @@ label.panel-block:hover {
 .has-red-background a {
   color: white;
 }
-.has-red-background .button:not([class*='is-']) {
+.has-red-background a:hover, .has-red-background a:active, .has-red-background a:focus {
   color: white;
-  border-color: white;
-  background-color: #b50000;
 }
-.has-red-background .button:not([class*='is-']):hover, .has-red-background .button:not([class*='is-']):active, .has-red-background .button:not([class*='is-']):focus {
+.has-red-background .button:not([class*='is-']) {
   color: #b50000;
   background-color: white;
   border-color: #b50000;
+}
+.has-red-background .button:not([class*='is-']):hover, .has-red-background .button:not([class*='is-']):active, .has-red-background .button:not([class*='is-']):focus {
+  color: white;
+  border-color: white;
+  background-color: #b50000;
 }
 .has-red-background.has-vision-graphic {
   background-color: transparent;
@@ -14992,31 +14351,37 @@ label.panel-block:hover {
 }
 .has-red-background.is-transparent {
   background-color: #b50000;
-  background-color: rgba(181, 0, 0, 0.72);
+  background-color: rgba(181, 0, 0, 0.82);
 }
 .has-red-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-red-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(181, 0, 0, 0.72);
+  background-color: rgba(181, 0, 0, 0.82);
 }
 .has-red-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: white;
+  color: #b50000;
 }
 .has-red-background.is-transparent .button:not([class*='is-']):hover, .has-red-background.is-transparent .button:not([class*='is-']):active, .has-red-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: white;
+  color: white;
+  background-color: #b50000;
+  border-color: white;
 }
 .has-red-background.has-background-image > .container {
   z-index: 40;
 }
 .has-red-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: white;
+  color: #b50000;
 }
 .has-red-background.has-background-image .button:not([class*='is-']):hover, .has-red-background.has-background-image .button:not([class*='is-']):active, .has-red-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: white;
+  color: white;
+  background-color: #b50000;
+  border-color: white;
 }
 .has-red-background .image-overlay {
-  background-color: rgba(181, 0, 0, 0.72);
+  background-color: rgba(181, 0, 0, 0.82);
 }
 
 .has-red-background--grad {
@@ -15038,50 +14403,6 @@ label.panel-block:hover {
   border-color: #b50000;
 }
 
-/*.feature__column {
-    &.has-red-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-red-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-red-background {
   background-color: rgba(181, 0, 0, 0.32);
   color: white;
@@ -15101,15 +14422,18 @@ label.panel-block:hover {
 .has-wine-background a {
   color: #fff;
 }
-.has-wine-background .button:not([class*='is-']) {
+.has-wine-background a:hover, .has-wine-background a:active, .has-wine-background a:focus {
   color: #fff;
-  border-color: #fff;
-  background-color: #80225f;
 }
-.has-wine-background .button:not([class*='is-']):hover, .has-wine-background .button:not([class*='is-']):active, .has-wine-background .button:not([class*='is-']):focus {
+.has-wine-background .button:not([class*='is-']) {
   color: #80225f;
   background-color: #fff;
   border-color: #80225f;
+}
+.has-wine-background .button:not([class*='is-']):hover, .has-wine-background .button:not([class*='is-']):active, .has-wine-background .button:not([class*='is-']):focus {
+  color: #fff;
+  border-color: #fff;
+  background-color: #80225f;
 }
 .has-wine-background.has-vision-graphic {
   background-color: transparent;
@@ -15119,31 +14443,37 @@ label.panel-block:hover {
 }
 .has-wine-background.is-transparent {
   background-color: #80225f;
-  background-color: rgba(128, 34, 95, 0.72);
+  background-color: rgba(128, 34, 95, 0.82);
 }
 .has-wine-background.is-transparent.has-vision-graphic {
   background-color: transparent;
 }
 .has-wine-background.is-transparent.has-vision-graphic::before {
-  background-color: rgba(128, 34, 95, 0.72);
+  background-color: rgba(128, 34, 95, 0.82);
 }
 .has-wine-background.is-transparent .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #80225f;
 }
 .has-wine-background.is-transparent .button:not([class*='is-']):hover, .has-wine-background.is-transparent .button:not([class*='is-']):active, .has-wine-background.is-transparent .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #80225f;
+  border-color: #fff;
 }
 .has-wine-background.has-background-image > .container {
   z-index: 40;
 }
 .has-wine-background.has-background-image .button:not([class*='is-']) {
-  background-color: transparent;
+  background-color: #fff;
+  color: #80225f;
 }
 .has-wine-background.has-background-image .button:not([class*='is-']):hover, .has-wine-background.has-background-image .button:not([class*='is-']):active, .has-wine-background.has-background-image .button:not([class*='is-']):focus {
-  background-color: #fff;
+  color: #fff;
+  background-color: #80225f;
+  border-color: #fff;
 }
 .has-wine-background .image-overlay {
-  background-color: rgba(128, 34, 95, 0.72);
+  background-color: rgba(128, 34, 95, 0.82);
 }
 
 .has-wine-background--grad {
@@ -15165,50 +14495,6 @@ label.panel-block:hover {
   border-color: #80225f;
 }
 
-/*.feature__column {
-    &.has-wine-background {
-        background-color:  $color;
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-                background-color: darken($color, 10%);
-            }
-        }
-        &::before {
-            background-color: $color;
-        }
-    } 
-    &.has-wine-background-transp {
-        &:not(.has-vision-graphic) {
-            background-color:  rgba($color, 0.7);
-        }
-        color:             $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: transparent;
-            @include active-link {
-                background-color: rgba($color, 0.5
-                );
-            }
-        }
-        &.has-vision-graphic {
-            &::before {
-                background-color:  rgba($color, 0.7);
-            }    
-        }
-        
-    }
-}*/
 .image-overlay.has-wine-background {
   background-color: rgba(128, 34, 95, 0.32);
   color: #fff;
@@ -15847,6 +15133,15 @@ h5 {
   text-transform: uppercase;
 }
 
+a {
+  color: #00504d;
+  text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+  color: #8E0021;
+  text-decoration: underline;
+}
+
 .main-site-header {
   z-index: 20000;
 }
@@ -16292,6 +15587,12 @@ h5 {
 
 .main-navigation__menu {
   padding: 0.96rem 0;
+}
+.main-navigation__menu a {
+  text-decoration: none;
+}
+.main-navigation__menu .navbar-item a {
+  text-decoration: none;
 }
 @media screen and (max-width: 1023px) {
   .main-navigation__menu {
@@ -16916,13 +16217,14 @@ h5 {
   color: #606060;
 }
 .main-content .general-content figure.is-feature-image {
-  max-width: 850px;
+  max-width: 100%;
 }
 .main-content .general-content ul {
   margin-bottom: 1.5rem;
 }
 .main-content .general-content .fulltext-video {
   margin-bottom: 1.5rem;
+  max-width: 40rem;
 }
 .main-content .general-content.deans-message {
   border-top: 1px solid #202020;
@@ -18121,6 +17423,7 @@ h5 {
   display: block;
   padding: 0.614rem 0.809rem;
   padding-bottom: 0.614rem;
+  text-decoration: none;
   transition: background-color 120px ease-in;
 }
 .landing-page-navigation__body .landing-page-navigation__link:first-child {
@@ -18131,6 +17434,7 @@ h5 {
 }
 .landing-page-navigation__body .landing-page-navigation__link:hover, .landing-page-navigation__body .landing-page-navigation__link:active, .landing-page-navigation__body .landing-page-navigation__link:focus {
   background-color: white;
+  text-decoration: underline;
 }
 @media screen and (max-width: 767px) {
   .landing-page-navigation__body .landing-page-navigation__link {
@@ -18214,6 +17518,7 @@ h5 {
 }
 .sidebar-nav-toggle > a {
   color: inherit;
+  text-decoration: none;
   display: -ms-flexbox;
   -js-display: flex;
   display: flex;
@@ -18306,6 +17611,7 @@ h5 {
   -ms-flex-pack: stretch;
 }
 .sidebar-nav li a {
+  text-decoration: none;
   background-color: white;
   color: #202020;
   align-self: stretch;
@@ -18318,6 +17624,7 @@ h5 {
 }
 .sidebar-nav li a:hover, .sidebar-nav li a:active, .sidebar-nav li a:focus {
   background-color: #f1f1f1;
+  text-decoration: underline;
 }
 .sidebar-nav li.is-active > a {
   border-bottom: 1px solid #f1f1f1;
@@ -18537,6 +17844,7 @@ h5 {
 .card--flat .card__anchor {
   display: block;
   color: inherit;
+  text-decoration: none;
 }
 .card--flat .card__anchor:hover, .card--flat .card__anchor:focus, .card--flat .card__anchor:active {
   text-decoration: none;
@@ -18574,6 +17882,10 @@ h5 {
 }
 .card--flat a {
   color: inherit;
+  text-decoration: none;
+}
+.card--flat a:hover, .card--flat a:active, .card--flat a:focus {
+  text-decoration: underline;
 }
 .card--flat img {
   transition: transform 160ms ease-in;
@@ -19841,7 +19153,7 @@ h5 {
 }
 .featured-programs-card:hover .card-content, .featured-programs-card:active .card-content, .featured-programs-card:focus .card-content {
   bottom: 0rem;
-  background-color: rgba(0, 80, 77, 0.7);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 
 .featured-programs-2 .cards-columns > .columns {
@@ -21452,6 +20764,10 @@ body.has-lightbox-active {
 }
 .news-slider__story a {
   color: inherit;
+  text-decoration: none;
+}
+.news-slider__story a:hover, .news-slider__story a:active, .news-slider__story a:focus {
+  text-decoration: underline;
 }
 .news-slider__story .news-label, .news-slider__story .news-date {
   text-transform: uppercase;
@@ -21557,6 +20873,24 @@ body.has-lightbox-active {
   margin-bottom: 0.96rem;
 }
 
+.discovery-slider .card--flat {
+  border-bottom: 3px solid #00504d;
+}
+.discovery-slider .card--flat:hover .card-content, .discovery-slider .card--flat:active .card-content, .discovery-slider .card--flat:focus .card-content {
+  background-color: #00504d;
+}
+.discovery-slider .card--flat:hover .card-content .card__title, .discovery-slider .card--flat:hover .card-content a, .discovery-slider .card--flat:active .card-content .card__title, .discovery-slider .card--flat:active .card-content a, .discovery-slider .card--flat:focus .card-content .card__title, .discovery-slider .card--flat:focus .card-content a {
+  color: white;
+}
+.discovery-slider .card--flat:hover .card-content .som-content-label, .discovery-slider .card--flat:hover .card-content .card__date--plain, .discovery-slider .card--flat:active .card-content .som-content-label, .discovery-slider .card--flat:active .card-content .card__date--plain, .discovery-slider .card--flat:focus .card-content .som-content-label, .discovery-slider .card--flat:focus .card-content .card__date--plain {
+  color: #efefef;
+}
+.discovery-slider.is-secondary .card--flat {
+  border-bottom-color: #8E0021;
+}
+.discovery-slider.is-secondary .card--flat:hover .card-content, .discovery-slider.is-secondary .card--flat:active .card-content, .discovery-slider.is-secondary .card--flat:focus .card-content {
+  background-color: #8E0021;
+}
 .discovery-slider .discovery-slider__controls {
   bottom: 0;
   position: absolute;
@@ -21827,11 +21161,15 @@ body.has-lightbox-active {
   margin-bottom: 0.614rem;
   transition: background-color 120ms ease-out;
 }
+.news-events--listing .news-listing__item a, .news-events--listing .events-listing__item a {
+  text-decoration: none;
+}
 .news-events--listing .news-listing__item:hover, .news-events--listing .news-listing__item:active, .news-events--listing .news-listing__item:focus, .news-events--listing .events-listing__item:hover, .news-events--listing .events-listing__item:active, .news-events--listing .events-listing__item:focus {
   background-color: #efefef;
   cursor: pointer;
 }
 .news-events--listing .news-listing__item:hover a, .news-events--listing .news-listing__item:active a, .news-events--listing .news-listing__item:focus a, .news-events--listing .events-listing__item:hover a, .news-events--listing .events-listing__item:active a, .news-events--listing .events-listing__item:focus a {
+  color: #00504d;
   text-decoration: underline;
 }
 .news-events--listing .news-listing__item p, .news-events--listing .events-listing__item p {
@@ -21919,6 +21257,12 @@ body.has-lightbox-active {
 }
 .news-events--listing .read-more-block .icon {
   margin-right: 0.4045rem;
+}
+.news-events--listing .read-more-block a {
+  text-decoration: none;
+}
+.news-events--listing .read-more-block a:hover, .news-events--listing .read-more-block a:active, .news-events--listing .read-more-block a:focus {
+  text-decoration: underline;
 }
 .news-events--listing .read-more-block:hover, .news-events--listing .read-more-block:active, .news-events--listing .read-more-block:focus {
   background-color: #dfdfdf;
@@ -22037,6 +21381,14 @@ body.has-lightbox-active {
 }
 .program-info-card__card .program-card__ctas .button {
   margin-right: 0.809rem;
+  color: white;
+  background-color: #00504d;
+  border-color: white;
+}
+.program-info-card__card .program-card__ctas .button:hover, .program-info-card__card .program-card__ctas .button:active, .program-info-card__card .program-card__ctas .button:focus {
+  color: #00504d;
+  border-color: #00504d;
+  background-color: white;
 }
 .program-info-card__card .program-card__ctas p {
   margin-bottom: 0;
@@ -22164,9 +21516,11 @@ body.has-lightbox-active {
 .vcu-som-footer a {
   color: white;
   font-weight: 500;
+  text-decoration: none;
 }
 .vcu-som-footer a:hover, .vcu-som-footer a:active, .vcu-som-footer a:focus {
   color: #00837e;
+  text-decoration: underline;
 }
 .vcu-som-footer a:focus {
   outline: 1px dashed #dfdfdf;
@@ -22174,6 +21528,13 @@ body.has-lightbox-active {
 .vcu-som-footer .footer__meta-links a {
   margin-bottom: 0;
   font-weight: normal;
+}
+
+.site-index-section a {
+  text-decoration: none;
+}
+.site-index-section a:hover, .site-index-section a:active, .site-index-section a:focus {
+  text-decoration: underline;
 }
 
 /** Diversity feature **/
@@ -22284,7 +21645,6 @@ body.has-lightbox-active {
     padding-bottom: 0;
     background-position: center bottom;
     max-height: 0;
-    visibility: hidden;
     transition: max-height 280ms ease-out, visibility 280ms ease-out 120ms;
   }
   .feature-section--fixed .feature-section--fixed__content .button {
@@ -22324,6 +21684,12 @@ body.has-lightbox-active {
     font-size: 1.563rem;
     width: auto;
   }
+}
+.feature-section--fixed .tab-column a {
+  text-decoration: none;
+}
+.feature-section--fixed .tab-column a:hover, .feature-section--fixed .tab-column a:active, .feature-section--fixed .tab-column a:focus {
+  text-decoration: underline;
 }
 .feature-section--fixed .tab-column.tab-column__mobile {
   padding-top: 0.96rem;
@@ -22794,6 +22160,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-white-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-white-background .tab-column a {
+    color: #202020;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-white-background .tab-column a:hover, .feature-section--fixed.has-white-background .tab-column a:active, .feature-section--fixed.has-white-background .tab-column a:focus {
+    color: #202020;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-white-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22806,6 +22180,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-black-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-black-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-black-background .tab-column a:hover, .feature-section--fixed.has-black-background .tab-column a:active, .feature-section--fixed.has-black-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-black-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22820,6 +22202,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-light-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-light-background .tab-column a {
+    color: #303030;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-light-background .tab-column a:hover, .feature-section--fixed.has-light-background .tab-column a:active, .feature-section--fixed.has-light-background .tab-column a:focus {
+    color: #303030;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-light-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22832,6 +22222,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-dark-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-dark-background .tab-column a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-dark-background .tab-column a:hover, .feature-section--fixed.has-dark-background .tab-column a:active, .feature-section--fixed.has-dark-background .tab-column a:focus {
+    color: whitesmoke;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-dark-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22846,6 +22244,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-primary-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-primary-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-primary-background .tab-column a:hover, .feature-section--fixed.has-primary-background .tab-column a:active, .feature-section--fixed.has-primary-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-primary-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22858,6 +22264,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-link-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-link-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-link-background .tab-column a:hover, .feature-section--fixed.has-link-background .tab-column a:active, .feature-section--fixed.has-link-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-link-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22872,6 +22286,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-info-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-info-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-info-background .tab-column a:hover, .feature-section--fixed.has-info-background .tab-column a:active, .feature-section--fixed.has-info-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-info-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22884,6 +22306,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-success-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-success-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-success-background .tab-column a:hover, .feature-section--fixed.has-success-background .tab-column a:active, .feature-section--fixed.has-success-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-success-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22898,6 +22328,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-warning-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-warning-background .tab-column a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-warning-background .tab-column a:hover, .feature-section--fixed.has-warning-background .tab-column a:active, .feature-section--fixed.has-warning-background .tab-column a:focus {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-warning-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22910,6 +22348,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-danger-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-danger-background .tab-column a {
+    color: white;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-danger-background .tab-column a:hover, .feature-section--fixed.has-danger-background .tab-column a:active, .feature-section--fixed.has-danger-background .tab-column a:focus {
+    color: white;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-danger-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22924,6 +22370,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-secondary-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-secondary-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-secondary-background .tab-column a:hover, .feature-section--fixed.has-secondary-background .tab-column a:active, .feature-section--fixed.has-secondary-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-secondary-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22936,6 +22390,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-transparent-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-transparent-background .tab-column a {
+    color: white;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-transparent-background .tab-column a:hover, .feature-section--fixed.has-transparent-background .tab-column a:active, .feature-section--fixed.has-transparent-background .tab-column a:focus {
+    color: white;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-transparent-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22950,6 +22412,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-som-green-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-som-green-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-som-green-background .tab-column a:hover, .feature-section--fixed.has-som-green-background .tab-column a:active, .feature-section--fixed.has-som-green-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-som-green-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22962,6 +22432,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-som-grana-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-som-grana-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-som-grana-background .tab-column a:hover, .feature-section--fixed.has-som-grana-background .tab-column a:active, .feature-section--fixed.has-som-grana-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-som-grana-background .feature-section--fixed__content {
     background-color: transparent;
@@ -22976,6 +22454,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-som-yellow-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-som-yellow-background .tab-column a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-som-yellow-background .tab-column a:hover, .feature-section--fixed.has-som-yellow-background .tab-column a:active, .feature-section--fixed.has-som-yellow-background .tab-column a:focus {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-som-yellow-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -22988,6 +22474,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-orange-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-orange-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-orange-background .tab-column a:hover, .feature-section--fixed.has-orange-background .tab-column a:active, .feature-section--fixed.has-orange-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-orange-background .feature-section--fixed__content {
     background-color: transparent;
@@ -23002,6 +22496,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-green-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-green-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-green-background .tab-column a:hover, .feature-section--fixed.has-green-background .tab-column a:active, .feature-section--fixed.has-green-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-green-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -23014,6 +22516,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-blue-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-blue-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-blue-background .tab-column a:hover, .feature-section--fixed.has-blue-background .tab-column a:active, .feature-section--fixed.has-blue-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-blue-background .feature-section--fixed__content {
     background-color: transparent;
@@ -23028,6 +22538,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-purple-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-purple-background .tab-column a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-purple-background .tab-column a:hover, .feature-section--fixed.has-purple-background .tab-column a:active, .feature-section--fixed.has-purple-background .tab-column a:focus {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-purple-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -23041,6 +22559,14 @@ body.has-lightbox-active {
   .feature-section--fixed.has-red-background .tab-column.tab-column__desktop {
     background-color: transparent;
   }
+  .feature-section--fixed.has-red-background .tab-column a {
+    color: white;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-red-background .tab-column a:hover, .feature-section--fixed.has-red-background .tab-column a:active, .feature-section--fixed.has-red-background .tab-column a:focus {
+    color: white;
+    text-decoration: underline;
+  }
   .feature-section--fixed.has-red-background .feature-section--fixed__content {
     background-color: transparent;
   }
@@ -23053,6 +22579,14 @@ body.has-lightbox-active {
   }
   .feature-section--fixed.has-wine-background .tab-column.tab-column__desktop {
     background-color: transparent;
+  }
+  .feature-section--fixed.has-wine-background .tab-column a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .feature-section--fixed.has-wine-background .tab-column a:hover, .feature-section--fixed.has-wine-background .tab-column a:active, .feature-section--fixed.has-wine-background .tab-column a:focus {
+    color: #fff;
+    text-decoration: underline;
   }
   .feature-section--fixed.has-wine-background .feature-section--fixed__content {
     background-color: transparent;
@@ -23100,18 +22634,29 @@ body.has-lightbox-active {
     justify-content: center;
     font-size: 0.64rem;
     width: 100%;
-    color: #a0a0a0;
+    color: #808080;
+    margin-bottom: 1.25rem;
     margin-bottom: 1.2rem;
   }
   .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide .icon.icon--svg {
-    margin-left: 0.809rem;
+    margin-left: 0.20225rem;
     max-width: 0.75rem;
     max-height: 0.75rem;
-    stroke: #a0a0a0;
-    fill: #a0a0a0;
+    stroke: #808080;
+    fill: #808080;
   }
   .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide .show-less-icon {
     display: inherit;
+  }
+  .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide:hover, .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide:active, .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide:focus {
+    color: #808080;
+  }
+  .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide:hover .icon.icon--svg, .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide:active .icon.icon--svg, .feature-section--fixed .tab-column.tab-column__desktop .feature-section--fixed__hide:focus .icon.icon--svg {
+    margin-left: 0.20225rem;
+    max-width: 0.75rem;
+    max-height: 0.75rem;
+    stroke: #dfdfdf;
+    fill: #dfdfdf;
   }
   .feature-section--fixed .tab-column.tab-column__desktop .tab-column__text {
     display: -ms-flex;
@@ -23129,14 +22674,19 @@ body.has-lightbox-active {
     max-width: 1.953rem;
   }
 }
-@media screen and (min-width: 1024px) and (min-width: 1124px) {
+@media screen and (min-width: 1024px) and (min-width: 1080px) {
   .feature-section--fixed .tab-column.tab-column__desktop {
     left: -4%;
   }
 }
+@media screen and (min-width: 1024px) and (min-width: 1080px) {
+  .feature-section--fixed .tab-column.tab-column__desktop {
+    left: -6%;
+  }
+}
 @media screen and (min-width: 1024px) and (min-width: 1200px) {
   .feature-section--fixed .tab-column.tab-column__desktop {
-    left: -8%;
+    left: -10%;
   }
 }
 @media screen and (min-width: 1024px) and (min-width: 1216px) {
@@ -23267,6 +22817,10 @@ body.has-lightbox-active {
     justify-content: space-around;
   }
 }
+.feature-section.discovery-slider {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
 
 .deans-message-feature {
   background-color: #efefef;
@@ -23291,8 +22845,14 @@ body.has-lightbox-active {
 .deans-message-feature .deans-message__read-more, .deans-message-feature .read-more-link {
   font-size: 1.25rem;
 }
+.deans-message-feature .deans-message__read-more:hover svg, .deans-message-feature .deans-message__read-more:active svg, .deans-message-feature .deans-message__read-more:focus svg, .deans-message-feature .read-more-link:hover svg, .deans-message-feature .read-more-link:active svg, .deans-message-feature .read-more-link:focus svg {
+  fill: #8E0021;
+}
 .deans-message-feature a {
   color: inherit;
+}
+.deans-message-feature a:hover, .deans-message-feature a:active, .deans-message-feature a:focus {
+  color: #8E0021;
 }
 .deans-message-feature .container {
   z-index: 20;
@@ -23355,7 +22915,7 @@ body.has-lightbox-active {
 }
 .deans-message-feature .deans-message > .image-overlay {
   z-index: -10;
-  background-color: rgba(0, 80, 77, 0.72);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .deans-message-feature .deans-messsage__text {
   display: -ms-flexbox;

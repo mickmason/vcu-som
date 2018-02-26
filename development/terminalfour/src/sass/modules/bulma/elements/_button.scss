@@ -1,0 +1,7 @@
+.button {
+    @include make-button;
+    text-decoration: none;
+    @include active-link {
+        text-decoration: none;
+    }
+}

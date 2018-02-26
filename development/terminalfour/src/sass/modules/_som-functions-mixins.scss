@@ -200,4 +200,14 @@
         background-position: center; 
         background-size: $size;
 }
+@mixin make-button($background: $primary, $color: $white, $border-color: $white) {
+     color: $color;
+     background-color: $background;
+     border-color: $border-color; 
+     @include active-link {
+        color: $background;
+        border-color: $background; 
+        background-color: $color;
+     }
+}
     

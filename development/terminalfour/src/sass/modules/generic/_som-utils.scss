@@ -22,16 +22,30 @@
         }
         a {
             color: $color-invert;
+            @include active-link {
+                color: $color-invert;
+            }
         }
         .button:not([class*='is-']) {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
+            @if ($name == "som-yellow") {
+                color: $color-invert;
+                background-color: $white;
+                @include active-link {
+                    color: $color;
+                    border-color: $color; 
+                    background-color: $color-invert;
+                }
+            } @else {
                 color: $color;
                 background-color: $color-invert;
                 border-color: $color; 
+                @include active-link {
+                    color: $color-invert;
+                    border-color: $border-col; 
+                    background-color: $color;
+                }
             }
+            
         }
         &.has-vision-graphic {
             background-color: transparent;
@@ -42,17 +56,20 @@
         
         &.is-transparent {
             background-color:   $color; 
-            background-color: rgba($color, 0.72);
+            background-color: rgba($color, $transparency);
             &.has-vision-graphic {
                 background-color: transparent;
                 &::before {
-                    background-color: rgba($color, 0.72);
+                    background-color: rgba($color, $transparency);
                 }    
             }
             .button:not([class*='is-']) {
-                background-color: transparent;
+                background-color: $color-invert;
+                color: $color;
                 @include active-link {
-                    background-color: $color-invert;
+                    color: $color-invert;
+                    background-color: $color;
+                    border-color: $color-invert;
                 }
             }
         }
@@ -61,15 +78,17 @@
                  z-index: 40;
              }
             .button:not([class*='is-']) {
-                background-color: transparent;
+                background-color: $color-invert;
+                color: $color;
                 @include active-link {
-                    background-color: $color-invert;
+                    color: $color-invert;
+                    background-color: $color;
+                    border-color: $color-invert;
                 }
             }
         }
-        
         .image-overlay {
-            background-color: rgba($color, 0.72);
+            background-color: rgba($color, $transparency);
         }
     }
 
@@ -90,51 +109,7 @@
                 border-color: $color; 
             }
         }
-    } 
-    /*.feature__column {
-        &.has-#{$name}-background {
-            background-color:  $color;
-            color:             $color-invert;
-            a {
-                color: $color-invert;
-            }
-            .button {
-                color: $color-invert;
-                border-color: $border-col; 
-                background-color: $color;
-                @include active-link {
-                    background-color: darken($color, 10%);
-                }
-            }
-            &::before {
-                background-color: $color;
-            }
-        } 
-        &.has-#{$name}-background-transp {
-            &:not(.has-vision-graphic) {
-                background-color:  rgba($color, 0.7);
-            }
-            color:             $color-invert;
-            a {
-                color: $color-invert;
-            }
-            .button {
-                color: $color-invert;
-                border-color: $border-col; 
-                background-color: transparent;
-                @include active-link {
-                    background-color: rgba($color, 0.5
-                    );
-                }
-            }
-            &.has-vision-graphic {
-                &::before {
-                    background-color:  rgba($color, 0.7);
-                }    
-            }
-            
-        }
-    }*/
+    }     
     .image-overlay {
         &.has-#{$name}-background {
             background-color:   rgba($color,0.32);

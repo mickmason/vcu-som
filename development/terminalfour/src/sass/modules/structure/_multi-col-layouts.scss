@@ -121,7 +121,7 @@
             }
             
             &.is-feature-image {
-                max-width: 850px;
+                max-width: 100%;
             }
         }
         ul {
@@ -129,6 +129,7 @@
         }
         .fulltext-video {
             margin-bottom: $space-4;
+            max-width: 40rem;
         }
         //deans message
         &.deans-message {

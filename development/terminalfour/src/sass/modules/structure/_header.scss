@@ -360,6 +360,14 @@
 }
 //Main nav 
 .main-navigation__menu {
+    a {
+        text-decoration: none;
+    }
+    .navbar-item {
+        a {
+            text-decoration: none;
+        }
+    }
     @include touch {
         display: block;
         position: absolute;
@@ -443,7 +451,6 @@
     }
     //Top level links
     .navbar-link--main {
-        
         font-weight: 700;
         display: inline-block;
         -ms-flex: 1 0 auto;

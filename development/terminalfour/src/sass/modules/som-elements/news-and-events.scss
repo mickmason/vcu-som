@@ -53,15 +53,18 @@
         padding-top: $space-11;
         margin-bottom: $space-1;
         transition: background-color 120ms ease-out;
-
+        a {
+            text-decoration: none;    
+        }
+        
         &:hover, &:active, &:focus {
             background-color: $light-10;
             cursor: pointer;
-            a {
+            a { 
+                color: $primary;
                 text-decoration: underline;
             }
         }
-        
         p {
              margin-bottom: $space-11;
         }
@@ -131,6 +134,12 @@
         text-align: right;
         .icon {
             margin-right: $gutter-width/4;
+        }
+        a {
+            text-decoration: none;
+            @include active-link {
+                text-decoration: underline;
+            }
         }
         &:hover, &:active, &:focus {
              background-color: $light-8;

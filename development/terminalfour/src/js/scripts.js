@@ -2,7 +2,6 @@
 !/* Build scripts */
 (function() {
     var myVar = 'Michael'; 
-    
     /*
      * Detect SVG support
      */
@@ -268,9 +267,7 @@
                 var $lightBoxTitle = $('<div class="som-lightbox__title" />').append($lightBoxTitleH2);
                 var thisCaption = $thisItem.data('lightbox-caption');
                 var $lightBoxCaptionP = $('<p />').text(thisCaption);
-                        
                 var $lightboxCaption = $('<div class="som-lightbox__caption" />').append($lightBoxCaptionP);
-
                 var thisUrl = $thisItem.data('lightbox-url');
                 var thisMediaType = $thisItem.data('lightbox-media-type');
                 var $lightBoxMediaContents;
@@ -572,7 +569,7 @@
                     if ($(this).hasClass('is-visible')) {
                         $(this).removeClass('is-visible')
                     }
-               });    
+               });
            } else {
                $programInfoCardCards.removeClass('is-visible');
                $programInfoCardCards.each(function(idx, el) {
@@ -627,9 +624,7 @@
     
     /* Diversity fixed element */
     function fixFixedFeature(featureRightValue) {
-        console.log('Fixing fixed feature '+featureRightValue); 
-        var $fixedFeature = $('.feature-section.feature-section--fixed');    
-        ($fixedFeature.outerWidth() - 72 - 5)  / $(document).outerWidth();
+        var $fixedFeature = $('.feature-section.feature-section--fixed');
         var featureLeftPadding = parseInt($fixedFeature.find('.feature-section--fixed__text-container').css('paddingLeft'));
         if (featureRightValue === undefined) {
             var featureRightValue = - (($fixedFeature.outerWidth() - (featureLeftPadding / 2) - 5) / $(document).outerWidth()) * 100;  
@@ -651,45 +646,15 @@
             }
         });
     }
-    
-    /** Site exit survey **/
-   /* $(document).on('click', '.t4-exit-survey__no', function(e) {
-        e.preventDefault();
-        Cookies.set('t4WillTakeSurvey', false, {expires: 3});
-        $('.t4-exit-survey').removeClass('is-visible');
-    });
-    $(document).on('click', '.t4-exit-survey__yes', function(e) {
-        e.preventDefault();
-        Cookies.set('t4WillTakeSurvey', false, {expires: 3});
-        window.location.href = 'https://www.surveymonkey.com/r/PXXG239';
-    });*/
-    
-    /*if (Cookies.get('t4WillTakeSurvey') === undefined) {
-        console.log(Cookies.get('t4WillTakeSurvey'));
-        Cookies.set('t4WillTakeSurvey', true, {expires: 3});
-        var timeOut = new Date();
-        timeOut.setUTCMinutes(timeOut.getUTCMinutes()+2);
-        console.log(timeOut);
-        Cookies.set('t4SurveyTimeOut', timeOut, {expires: 3});
-        setTimeout(showSurvey, 1000*60*2);
-    } else if (Cookies.get('t4WillTakeSurvey') === 'true') {
-        
-        
-        if (parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes()) <= 0) {
-            console.log('show survey');
-            showSurvey();
+    //Responsive videos in general content
+    $('.main-content .general-content iframe').each(function(idx, ele) {
+        var $this = $(ele);
+        if ($this.parents('.fulltext-video').length < 1) {
+            console.log('Needs wrap');
+            $this.wrap('<div class="fulltext-video video is-16by9"></div>');
         } else {
-            console.log('show survey set time out '+parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);
-            setTimeout(showSurvey, parseInt(new Date(Cookies.get('t4SurveyTimeOut')).getUTCMinutes() - new Date().getUTCMinutes())*1000*60);          
+            console.log('Doesn\'t need wrap');
         }
         
-    } else {
-      console.log(Cookies.get('t4WillTakeSurvey'));
-    }
-    function showSurvey() {
-        if (Cookies.get('t4WillTakeSurvey') === 'true') {
-            $('.t4-exit-survey').addClass('is-visible');
-            return;
-        }
-    }*/
+    });
 }());

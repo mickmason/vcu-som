@@ -163,6 +163,10 @@
     color: $white;
     a {
         color: inherit;
+        text-decoration: none;
+        @include active-link {
+            text-decoration: underline;
+        }
     }
     .news-label, .news-date {
         text-transform: uppercase;
@@ -254,6 +258,30 @@
     }
 }
 .discovery-slider {
+    .card--flat {
+        border-bottom: 3px solid $primary;
+        @include active-link {
+            .card-content {
+                background-color: $primary;
+                .card__title, a {
+                    color: $white;
+                }
+                .som-content-label, .card__date--plain {
+                    color: $light-10;
+                }
+            }
+        }
+    }
+    &.is-secondary {
+        .card--flat {
+           border-bottom-color: $secondary;
+           @include active-link {
+               .card-content {
+                   background-color: $secondary;
+               }
+           }
+        }
+    }
     .discovery-slider__controls {
         bottom: 0;
         position: absolute;
