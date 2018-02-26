@@ -16389,10 +16389,6 @@ a:hover, a:active, a:focus {
   .is-2col .hero.is-inner-hero .container, .is-3col .hero.is-inner-hero .container {
     max-width: none;
   }
-  .is-2col .hero.is-inner-hero .hero-body, .is-3col .hero.is-inner-hero .hero-body {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .is-2col .hero.is-inner-hero .hero-content-wrap, .is-3col .hero.is-inner-hero .hero-content-wrap {
     width: auto;
     margin-left: 23.60649%;
@@ -19884,7 +19880,10 @@ a:hover, a:active, a:focus {
     max-width: 80%;
   }
   .hero.hero--news-heading .container .hero-text-wrap {
-    max-width: 100%;
+    max-width: 59.952rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
   .hero-content-wrap {
@@ -20015,13 +20014,16 @@ a:hover, a:active, a:focus {
   padding-right: 0.809rem;
 }
 .hero.hero--news-heading .hero-footer .content-author-date {
-  background-color: #404040;
+  background-color: #005d59;
 }
 .hero.hero--news-heading .hero-footer .content-author-date__date, .hero.hero--news-heading .hero-footer .content-share__label {
+  margin-bottom: 0.307rem;
+}
+.hero.hero--news-heading .hero-footer .content-share__label {
   margin-bottom: 0.614rem;
 }
 .hero.hero--news-heading .hero-footer .content-share {
-  background-color: #303030;
+  background-color: rgba(0, 80, 77, 0.92);
 }
 .hero.hero--news-heading .hero-footer .content-share .content-label {
   color: white;
@@ -20049,9 +20051,22 @@ a:hover, a:active, a:focus {
   height: 1.563rem;
   width: 1.563rem;
   margin-right: 0.4045rem;
+  transition: background-color 200ms ease-out;
+}
+.hero.hero--news-heading .hero-footer .content-share__icons .icon:hover, .hero.hero--news-heading .hero-footer .content-share__icons .icon:active, .hero.hero--news-heading .hero-footer .content-share__icons .icon:focus {
+  background-color: white;
 }
 .hero.hero--news-heading .hero-footer .content-share__icons .icon:hover svg, .hero.hero--news-heading .hero-footer .content-share__icons .icon:active svg, .hero.hero--news-heading .hero-footer .content-share__icons .icon:focus svg {
   fill: #00504d;
+}
+@media screen and (min-width: 1024px) {
+  .hero.hero--news-heading .hero-footer .content-share__icons .icon {
+    height: 2.225rem;
+    width: 2.225rem;
+    padding: 0.38375rem;
+    border-radius: 50%;
+    border: 1px solid white;
+  }
 }
 .hero.hero--news-heading .hero-footer .hero-content-wrap {
   -ms-flex-direction: column;
