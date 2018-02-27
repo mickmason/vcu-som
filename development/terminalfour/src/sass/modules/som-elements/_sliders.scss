@@ -270,16 +270,21 @@
                     color: $light-10;
                 }
             }
+            border-bottom: 3px solid $som-yellow;
         }
     }
     &.is-secondary {
         .card--flat {
            border-bottom-color: $secondary;
-           @include active-link {
-               .card-content {
-                   background-color: $secondary;
-               }
-           }
+           @include active-link { 
+                border-bottom-color: $som-yellow;
+                .card-content {
+                    background-color: $secondary;
+                }
+                .card-content {
+                     background-color: $secondary;
+                }
+            }
         }
     }
     .discovery-slider__controls {

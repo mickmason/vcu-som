@@ -406,8 +406,8 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-    //$ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
+    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
@@ -1042,7 +1042,6 @@
     $('.main-content .general-content iframe').each(function(idx, ele) {
         var $this = $(ele);
         if ($this.parents('.fulltext-video').length < 1) {
-            console.log('Needs wrap');
             $this.wrap('<div class="fulltext-video video is-16by9"></div>');
         } else {
             console.log('Doesn\'t need wrap');

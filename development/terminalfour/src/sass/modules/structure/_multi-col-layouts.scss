@@ -8,9 +8,11 @@
         margin: 0;
         width: 100%;
         max-width: none;
+        > .columns {
+            margin-bottom: 0;
+        }
     }
-    .columns {
-    }
+
     //Cards columns
     /* General for all cards */
     .cards-columns {
@@ -19,6 +21,13 @@
                  -ms-flex-preferred-size: 50%;
                 flex-basis: 50%;
                 max-width:  50%;
+            }
+        }
+        @include widescreen {
+            > .column {
+                 -ms-flex-preferred-size: 33%;
+                flex-basis: 33%;
+                max-width:  33%;
             }
         }
         @include superhd {
@@ -49,6 +58,7 @@
 }
 .main-content {
     padding-top: $space-3; 
+    padding-bottom: 0;
     > .section {
         @include touch {
             padding-top: $space-5;    
@@ -225,13 +235,12 @@
             }
         }
     }
-    
-    
 }
 /** Two col layout **/
 .is-2col, .is-3col {
     .left-sidebar {
         padding-top: $space-3; 
+        padding-bottom: 0;
         @include touch {
             padding-top: $space-5;    
         }

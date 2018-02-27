@@ -14970,7 +14970,7 @@ label.panel-block:hover {
 }
 
 .som-content-label {
-  color: #808080;
+  color: #404040;
   text-transform: uppercase;
   font-size: 0.8rem;
   margin-bottom: 0;
@@ -16124,11 +16124,21 @@ a:hover, a:active, a:focus {
   width: 100%;
   max-width: none;
 }
+.content-area-wrap > .container > .columns {
+  margin-bottom: 0;
+}
 @media screen and (min-width: 1024px) {
   .content-area-wrap .cards-columns > .column {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
     max-width: 50%;
+  }
+}
+@media screen and (min-width: 1216px) {
+  .content-area-wrap .cards-columns > .column {
+    -ms-flex-preferred-size: 33%;
+    flex-basis: 33%;
+    max-width: 33%;
   }
 }
 @media screen and (min-width: 1684px) {
@@ -16155,6 +16165,7 @@ a:hover, a:active, a:focus {
 
 .main-content {
   padding-top: 1.2rem;
+  padding-bottom: 0;
 }
 .main-content > .section {
   margin-left: -0.809rem;
@@ -16330,6 +16341,7 @@ a:hover, a:active, a:focus {
 /** Two col layout **/
 .is-2col .left-sidebar, .is-3col .left-sidebar {
   padding-top: 1.2rem;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 1023px) {
   .is-2col .left-sidebar, .is-3col .left-sidebar {
@@ -21968,6 +21980,9 @@ body.has-lightbox-active {
 .discovery-slider .card--flat {
   border-bottom: 3px solid #00504d;
 }
+.discovery-slider .card--flat:hover, .discovery-slider .card--flat:active, .discovery-slider .card--flat:focus {
+  border-bottom: 3px solid #ffba00;
+}
 .discovery-slider .card--flat:hover .card-content, .discovery-slider .card--flat:active .card-content, .discovery-slider .card--flat:focus .card-content {
   background-color: #00504d;
 }
@@ -21979,6 +21994,12 @@ body.has-lightbox-active {
 }
 .discovery-slider.is-secondary .card--flat {
   border-bottom-color: #8E0021;
+}
+.discovery-slider.is-secondary .card--flat:hover, .discovery-slider.is-secondary .card--flat:active, .discovery-slider.is-secondary .card--flat:focus {
+  border-bottom-color: #ffba00;
+}
+.discovery-slider.is-secondary .card--flat:hover .card-content, .discovery-slider.is-secondary .card--flat:active .card-content, .discovery-slider.is-secondary .card--flat:focus .card-content {
+  background-color: #8E0021;
 }
 .discovery-slider.is-secondary .card--flat:hover .card-content, .discovery-slider.is-secondary .card--flat:active .card-content, .discovery-slider.is-secondary .card--flat:focus .card-content {
   background-color: #8E0021;
@@ -22611,7 +22632,7 @@ body.has-lightbox-active {
   text-decoration: none;
 }
 .vcu-som-footer a:hover, .vcu-som-footer a:active, .vcu-som-footer a:focus {
-  color: #00837e;
+  color: light-10;
   text-decoration: underline;
 }
 .vcu-som-footer a:focus {
