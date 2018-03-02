@@ -61,7 +61,7 @@ module.exports = function(grunt) {
           //Uncomment the line below to add Compass into the project
           //compass: true,
         },//options
-        files: {
+        files: { 
           'www-root/style-assets/css/style.css': 'development/terminalfour/src/sass/style.scss'
         }//files
       }//dist

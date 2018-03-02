@@ -635,11 +635,11 @@
         
     }
     if ($('.feature-section.feature-section--fixed').length > 0) {
-        if ($(window).outerWidth() > 1024) {
+        if ($(window).outerWidth() > 1024 && $(window).outerWidth() <= 1920) {
             fixFixedFeature();    
         }
         $(window).on('resize', function() {
-            if ($(window).outerWidth() > 1024) {
+            if ($(window).outerWidth() > 1024 && $(window).outerWidth() <= 1920) {
                 fixFixedFeature();    
             } else {
                 fixFixedFeature('auto');  

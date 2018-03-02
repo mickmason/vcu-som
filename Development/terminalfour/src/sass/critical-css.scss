@@ -1,0 +1,20 @@
+//Bulma imports
+@import "../../../lib/bulma/sass/utilities/initial-variables";
+@import "../../../lib/bulma/sass/utilities/functions";
+
+//Project modules - overrides for Bulma initial variables
+@import 'modules/generic/fonts'; 
+@import 'modules/generic/spacing';
+@import 'modules/generic/colors'; 
+//Bulma imports
+@import "../../../lib/bulma/sass/utilities/_all";
+@import "../../../lib/bulma/sass/base/_all";
+@import "../../../lib/bulma/sass/layout/_all";
+@import "../../../lib/bulma/sass/grid/_all";
+@import "../../../lib/bulma/sass/elements/_all";
+@import "../../../lib/bulma/sass/components/_all";
+
+@import 'modules/som-functions-mixins';
+@import 'modules/generic/generic-styling'; 
+@import 'modules/structure/header'; 
+@import 'modules/som-elements/heros'; 

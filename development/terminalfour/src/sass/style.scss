@@ -41,6 +41,9 @@
 @import 'modules/som-elements/som-accordion';  
 @import 'modules/structure/footer';  
 
+body {
+    background-color: #f0f0f0;
+}
 .site-index-section { 
     a {
         text-decoration: none; 
@@ -48,6 +51,22 @@
             text-decoration: underline;
         }
     }
+}
+
+/* Body wrap */
+.body-wrap {
+    
+    overflow: hidden;
+    @include boxShadow($black, left, right);
+    background-color: $white;
+    
+    @media screen and (min-width: 1920px) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    max-width: 1920px;
+    
 }
 
 /** Diversity feature **/
@@ -240,7 +259,9 @@
         @include make-flexbox($direction: row, $justify: space-between, $align: center);   
     }
     @include desktop {
-        bottom: 100px;
+        position: absolute;
+        bottom: auto;
+        top: 12.5%;
         right: -89%; 
         transition: right 520ms ease-out; 
         &.is-active {
@@ -292,32 +313,8 @@
             right: -58%;  
         }
         @media screen and (min-width: 1920px) {
-            right: -58%;  
+            right: -57%;  
         }
-        @media screen and (min-width: 1980px) {
-            right: -55%;  
-        }
-        @media screen and (min-width: 2040px) {
-            right: -53%;  
-        } 
-        @media screen and (min-width: 2080px) {
-            right: -51%;  
-        } 
-        @media screen and (min-width: 2130px) {
-            right: -49%;  
-        } 
-        @media screen and (min-width: 2310px) {
-            right: -45%;  
-        } 
-        @media screen and (min-width: 2420px) {
-            right: -43%;
-        }
-        @media screen and (min-width: 2500px) {
-            right: -42%;
-        } 
-        @media screen and (min-width: 2690px) {
-            right: -40%;
-        } 
         .container {
             margin: 0;
         }
