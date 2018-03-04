@@ -4,8 +4,7 @@ $som-green-invert: findColorInvert($som-green);
 $som-grana: #8E0021; 
 $som-grana-invert: findColorInvert($som-grana);
 $som-yellow: #ffba00;
-$som-yellow-invert: findColorInvert($som-yellow);
-
+$som-yellow-invert: $black;
 $primary: $som-green;
 $primary-invert: $som-green-invert;
 

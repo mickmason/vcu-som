@@ -307,11 +307,10 @@
         font-size: $size-2;
     }
 }
-.is-vision-angle {
-    
+.is-vision-angle, .has-vision-graphic {
     @include vision-angle($pull: left);
 }
-.is-vision-angle--right {
+.is-vision-angle--right, .has-vision-graphic--right {
     @include vision-angle($pull: right);
 }
 .section__label__container {

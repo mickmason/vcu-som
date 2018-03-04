@@ -159,7 +159,7 @@
 @mixin vertical-align($shiftX: -50%, $shiftY: -50%) {
     transform: translate($shiftX, $shiftY);
 }
-@mixin vision-angle($bg-color: $primary, $pull: left) {
+@mixin vision-angle($bg-color: $primary, $pull: center) {
     position: relative;
     z-index: 3; 
     &:before {
@@ -169,20 +169,22 @@
         height: 100%;
         width: 119.5%;
         top: 0;
-        @if $pull == left { 
-            left: -19.5%; 
-            right: 0;  
-        } @else if $pull == right {
-            left: 0;
-            right: -19.5%;
-        } else {
-            left: 0;
-            right: 0;
-        }
         transition: background-color 120ms ease-out; 
         transform: skewX(-19.5deg);
         z-index: -1;
         background-color: $bg-color;
+        @if $pull == left { 
+            left: -19.5%; 
+            right: 0;  
+        } @elseif $pull == right {
+            left: 0;
+            right: -19.5%;
+        } @else {
+            transform: translateX(-19.5%/2) skewX(-19.5deg);
+            transform: skewX(-19.5deg), translate(-(19.5/2)deg);
+            right: auto;
+        }
+        
     }
 }
 @mixin active-link {

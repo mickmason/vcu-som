@@ -14,8 +14,8 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
+    //$ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
@@ -627,7 +627,18 @@
         var $fixedFeature = $('.feature-section.feature-section--fixed');
         var featureLeftPadding = parseInt($fixedFeature.find('.feature-section--fixed__text-container').css('paddingLeft'));
         if (featureRightValue === undefined) {
-            var featureRightValue = - (($fixedFeature.outerWidth() - (featureLeftPadding / 2) - 5) / $(document).outerWidth()) * 100;  
+            console.log($fixedFeature.outerWidth());
+            console.log(featureLeftPadding);
+            console.log($(document).outerWidth());
+            console.log($('.body-wrap').offset().left); 
+            if ($fixedFeature.css('position') === 'absolute') {
+                var featureRightValue = - ($fixedFeature.outerWidth() - (featureLeftPadding / 2) - 8) / ($('.body-wrap').outerWidth()) * 100; 
+                var offsetTop = $fixedFeature.offset().top;
+                console.log(offsetTop);
+            } else {
+                var featureRightValue = - ((($fixedFeature.outerWidth() - (featureLeftPadding / 2) - 8) / $('.body-wrap')) * 100) + (($('.body-wrap').offset().left / $(document).outerWidth()) * 100); 
+
+            }
             $fixedFeature.css({right: featureRightValue + '%'});
         } else {
             $fixedFeature.css({right: featureRightValue});    
@@ -635,15 +646,11 @@
         
     }
     if ($('.feature-section.feature-section--fixed').length > 0) {
-        if ($(window).outerWidth() > 1024 && $(window).outerWidth() <= 1920) {
-            fixFixedFeature();    
-        }
+        fixFixedFeature();    
         $(window).on('resize', function() {
-            if ($(window).outerWidth() > 1024 && $(window).outerWidth() <= 1920) {
+            
                 fixFixedFeature();    
-            } else {
-                fixFixedFeature('auto');  
-            }
+            
         });
     }
     //Responsive videos in general content
