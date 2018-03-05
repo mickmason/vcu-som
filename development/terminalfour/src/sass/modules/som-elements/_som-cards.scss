@@ -472,7 +472,6 @@
     }
 }
 .featured-programs-cards__intro {
-              
     @include desktop {
         margin-bottom: auto;            
     }
@@ -560,8 +559,6 @@
             }
         }    
 }
-
-
 .program-card {
     position: relative;
     .card-heading {
@@ -601,13 +598,34 @@
    }
     
 }
- .program-card__ctas {
-        
-        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
-     p, .button {
-         margin-right: $gutter-width/2;
-     }
- }
+.program-card__ctas {
+    @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+    a, .button {
+        margin-right: $gutter-width/2;
+    }
+}
+.featured-programs-card-alt {
+    border-bottom-width: 3px;
+    border-bottom-color: $primary;
+    .card-content {
+        padding-top: $space-4a;
+        padding-bottom: $space-1;
+    }
+    .program-card__ctas {
+        margin-top: $space-4;
+        .button {
+            margin-top: 0;
+        }
+    }
+    .button:not([class*='is-']) {
+        @include active-link {
+            background-color: $som-yellow;
+            border-color: $white;
+        }
+    }
+}
+
+
 /** Video slider - has a caption and play icon **/
 .video-slider-card {
     .card-content {
@@ -769,6 +787,19 @@
                 text-decoration: underline;
             }
         }
+        @media screen and (min-width: 1820px) {
+            .card-content {
+                .card-heading {
+                    font-size: $size-4;
+                }
+                .card-label {
+                    font-size: $size-8;  
+                }
+                .card-cta { 
+                    font-size: $size-6;
+                }
+            }
+        }
     }
 }
 .by-the-numbers-card {
@@ -904,11 +935,13 @@ $cardColours: (
                 background-color: $primary;
             }  
             .button {
-                background-color: $primary;
+                color: $primary;
+                background-color: $white;
+                border-color: $som-yellow;
                 @include active-link {
-                    background-color: $white;
-                    border-color: $primary;
-                    color: primary;
+                    background-color: $som-yellow;
+                    border-color: $white;
+                    color: $primary;
                 }
             }
         }
@@ -917,10 +950,12 @@ $cardColours: (
                 background-color: $secondary;
             }
             .button {
-                background-color: $secondary;
+                color: $secondary;
+                background-color: $white;
+                border-color: $som-yellow;
                 @include active-link {
-                    background-color: $white;
-                    border-color: $secondary;
+                    background-color: $som-yellow;
+                    border-color: $white;
                     color: $secondary;
                 }
             }

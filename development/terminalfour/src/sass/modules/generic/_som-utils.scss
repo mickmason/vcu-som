@@ -36,6 +36,15 @@
                     border-color: $color; 
                     background-color: $color-invert;
                 }
+            } @else if $name == "primary" or $name == "secondary" {
+                color: $color;
+                background-color: $white;
+                border-color: $som-yellow;
+                @include active-link {
+                    color: $color;
+                    border-color: $white; 
+                    background-color: $som-yellow;
+                }
             } @else {
                 color: $color;
                 background-color: $color-invert;
@@ -71,6 +80,10 @@
                     color: $color-invert;
                     background-color: $color;
                     border-color: $color-invert;
+                    @if $name == 'primary' or $name == 'secondary' {
+                        color: $color;
+                        background-color: $som-yellow;
+                    }
                 }
             }
         }
@@ -85,6 +98,10 @@
                     color: $color-invert;
                     background-color: $color;
                     border-color: $color-invert;
+                    @if $name == 'primary' or $name == 'secondary' {
+                        color: $color;
+                        background-color: $som-yellow;
+                    }
                 }
             }
         }

@@ -34,7 +34,6 @@
 }
 /* Main navigation */
 .main-navigation {
-    
     .navbar-brand {
         -ms-flex-pack: justify;
         justify-content: space-between;
@@ -786,9 +785,20 @@
     .section__label {
         color: $white;
     }
+    ul, li {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    } 
+    
     a {
       font-size: $size-5a;
       color: inherit;
+      @include active-link {
+        text-decoration: underline;      
+      }
+      text-decoration: none;
+      
     }
     //Toggle nav body 
     .icon {
@@ -800,8 +810,12 @@
     &.is-active {
         .landing-page-nav__body-wrap {
             display: block;
+            @include touch {
+                display: none;
+            }
         }
     }
+    
 }
 .landing-page-nav__top-wrap {
     color: $white;
@@ -833,6 +847,10 @@
         max-width:  $size-3;
         min-width: 100%;
         @include make-flexbox($direction: row, $justify: space-between, $align: center);
+       text-decoration: none;
+       @include active-link {
+           text-decoration: none;
+       }
     } 
 }
 .landing-page-navigation__body {

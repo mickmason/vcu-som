@@ -246,6 +246,7 @@
         }
     }
     .sidebar-nav-wrap, .sidebar-card {
+        margin-top: $space-4;
         margin-bottom: $space-4;
     }
     @include touch {
@@ -285,7 +286,6 @@
             width: 100% - $gl-small;
             @include boxShadow($black, leftThin);
             .video-slider-feature { 
-                background-color: $light;
                 .columns {
                     margin-left: 0;
                     margin-right: 0;  

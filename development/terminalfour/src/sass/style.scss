@@ -486,6 +486,40 @@ body {
     .columns {
         padding:     $gld-4;
     }
+    @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        $border-col: $color-invert;
+        &.has-#{$name}-background {
+            > .container {
+                > .columns {
+                    margin-bottom: 0;
+                    background: $color;
+                    color: $color-invert;
+                    .button:not([class*='is-']) {
+                        background-color: $color-invert;
+                        border-color: $color;
+                        color: $color;
+                        @include active-link {
+                            background-color: $color;
+                            border-color: $color-invert;
+                            color: $color-invert;
+                        }
+                    }
+                    @if $name == 'primary' or $name == 'secondary' {
+                        .button:not([class*='is-']) {
+                            border-color: $som-yellow;
+                            @include active-link {
+                                background-color: $som-yellow;
+                                border-color: $color-invert;
+                                color: $color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     @include tablet {
         padding-top:     $gld-6; 
         padding-bottom:  $gld-6; 
