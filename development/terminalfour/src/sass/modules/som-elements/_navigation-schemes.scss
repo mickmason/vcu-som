@@ -810,9 +810,7 @@
     &.is-active {
         .landing-page-nav__body-wrap {
             display: block;
-            @include touch {
-                display: none;
-            }
+  
         }
     }
     
@@ -913,6 +911,9 @@
 }
 .audience-navigation__body-wrap {
     background-color: $gray-32;
+    @include touch {
+        display: none;
+    }
 }
 .audience-navigation__body {
     color: $white;

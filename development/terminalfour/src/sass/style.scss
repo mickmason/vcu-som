@@ -759,7 +759,7 @@ body {
 }
 
 /** Education landing page **/
-.featured-programs-2 {
+.featured-programs-alt {
     padding-top: $space-4a;
     padding-bottom: $space-4;
 }
@@ -775,6 +775,158 @@ body {
 }
 .graduate-study-intro {
     font-size: $size-5;
+}
+/** Landing page section with heading pulled left, intro text an image to the right **/
+.feature-section--section-intro {
+    padding-top: 0;
+    padding-bottom: 0;
+    > .container {
+        max-width: none;
+        > .columns {
+            @media screen and (max-width: 890px) {
+                display: block;
+            }
+            > .column {
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    .section-intro__heading {
+        padding: $gutter-width $gutter-width $gutter-width*1.5;
+        color: $black;
+        position: relative;
+        background-position: center center;
+        &::before {
+            z-index: 0; 
+            content: " ";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba($white, 0.82);
+            @include boxShadow($black, insetTop, insetBottom); 
+            @media screen and (min-width: 900px) {
+                @include boxShadow($black, insetRight); 
+            }
+        }
+        &__text {
+            position: relative;
+            width: 100%;
+            padding-bottom: $space-2;
+            z-index: 10;
+            > h1 {
+                margin-bottom: 0;
+            }
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: " ";
+                width: $gld-9;
+                height: 2px;
+                background-color: $primary;
+                @media screen and (min-width: 900px) {
+                    width: 100%;
+                }
+            }
+            
+        }
+        @media screen and (min-width: 900px) {
+            max-width: $gld-9;   
+        }
+        @include desktop {
+             display: -ms-flex;
+             display: flex;
+             -ms-flex-pack: end;
+             justify-content: flex-end;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            &__text {
+                max-width: 90%;
+                padding-bottom: $space-4;
+            }
+        }
+        @media screen and (min-width: 1100px) {
+            &__text {
+                max-width: 80%;
+            }
+        }
+        @include widescreen {
+            padding-top: $gutter-width*2;
+            padding-bottom: $gutter-width*2;
+            &__text {
+                max-width: 95%;
+            }
+        }
+        @include fullhd {
+            max-width: ($gl-small);
+        }
+            
+    }
+    .section-intro__body {
+        padding: $gutter-width;
+        background-position: center;
+        position: relative;
+        p, ul, li {
+            font-weight: 200; 
+            font-size: $size-5;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__text {
+            position: relative;
+            z-index: 20;
+        }
+        &::before {
+            z-index: 0; 
+            content: " ";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba($primary, 0.82);
+            @include boxShadow($black, insetTop, insetBottom); 
+            @media screen and (min-width: 900px) {
+                @include boxShadow($black, insetRight); 
+            }
+        }
+        @include widescreen {
+            padding-top: $gutter-width*2;
+            padding: $gutter-width*2;
+        }
+    }
+    .section-intro__right-image {
+        background-position: right center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: none;
+        @include fullhd {
+            display: inherit;
+            max-width: ($gl-small);  
+        }
+        @include widescreen {
+            padding-top: $gutter-width*2;
+            padding-bottom: $gutter-width*2;
+        }
+    }
+    &.has-secondary-background {
+        .section-intro__body {
+            &::before {
+                background-color: rgba($secondary, 0.82);
+            }
+        }
+        .section-intro__heading {
+            &__text {
+                &::after {
+                    background-color: $secondary; 
+                }
+            }
+        }
+    }
 }
 .feature-section--two-col-text {
     padding-top: 0;

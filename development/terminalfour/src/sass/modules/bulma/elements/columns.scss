@@ -78,7 +78,7 @@
 }
 //Modifier classes extended to work in IE10 and add golden ratio widths
 .column {
-    -ms-flex: 1 1 auto;
+    -ms-flex: 1 1 0;
     &.is-narrow-mobile, &.is-full-mobile, &.is-three-quarters-mobile, &.is-two-thirds-mobile, &.is-half-mobile, &.is-one-third-mobile, &.is-one-quarter-mobile, &.is-one-fifth-mobile, &.is-two-fifths-mobile, &.is-three-fifths-mobile,&.is-four-fifths-mobile {
         -ms-flex: none;
         flex: none;
@@ -109,7 +109,7 @@
     &.is-half,
     &.is-half-tablet {
       -ms-flex: none;
-      flex: none;
+      flex: none; 
     }
     &.is-one-third,
     &.is-one-third-tablet {
