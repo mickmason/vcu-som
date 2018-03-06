@@ -797,15 +797,8 @@ body {
         color: $black;
         position: relative;
         background-position: center center;
+        @include make-image-overlay($white, $transp: 0.82);
         &::before {
-            z-index: 0; 
-            content: " ";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-color: rgba($white, 0.82);
             @include boxShadow($black, insetTop, insetBottom); 
             @media screen and (min-width: 900px) {
                 @include boxShadow($black, insetRight); 
@@ -831,7 +824,6 @@ body {
                     width: 100%;
                 }
             }
-            
         }
         @media screen and (min-width: 900px) {
             max-width: $gld-9;   
@@ -868,7 +860,7 @@ body {
     .section-intro__body {
         padding: $gutter-width;
         background-position: center;
-        position: relative;
+        @include make-image-overlay($white, $transp: 0.82);
         p, ul, li {
             font-weight: 200; 
             font-size: $size-5;
@@ -879,20 +871,6 @@ body {
         &__text {
             position: relative;
             z-index: 20;
-        }
-        &::before {
-            z-index: 0; 
-            content: " ";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-color: rgba($primary, 0.82);
-            @include boxShadow($black, insetTop, insetBottom); 
-            @media screen and (min-width: 900px) {
-                @include boxShadow($black, insetRight); 
-            }
         }
         @include widescreen {
             padding-top: $gutter-width*2;

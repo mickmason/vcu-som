@@ -577,7 +577,6 @@
     .program-card__intro {
         margin-bottom: $space-3; 
     }
-   
     @include active-link {
          cursor: auto;
          .card-content__read-more {
@@ -586,17 +585,12 @@
     }
     .card__arrow {
         margin-top: -$space-4;
-    }
-    
-    .card__arrow {
         .icon {
             svg {
                 height: 90%; 
             }    
-        }
-        
-   }
-    
+        } 
+    }
 }
 .program-card__ctas {
     @include make-flexbox($direction: row, $justify: flex-start, $align: center);
@@ -611,6 +605,15 @@
         padding-top: $space-4a;
         padding-bottom: $space-1;
     }
+    .image {
+        @include make-image-overlay($black, $z-index: 20, $transp: 0.8); 
+        &::before {
+            transition: background-color 200ms ease-out;
+        }
+        > img {
+            z-index: 0;
+        }
+    }
     .program-card__ctas {
         margin-top: $space-4;
         .button {
@@ -622,6 +625,13 @@
             background-color: $som-yellow;
             border-color: $white;
         }
+    }
+    @include active-link {
+        .image {
+            &::before {
+                background-color: rgba($black, 0.22);
+            }
+        }   
     }
 }
 

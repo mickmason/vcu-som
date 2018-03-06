@@ -367,15 +367,6 @@
     }
 }
 @media screen and (min-width: $desktop) {
-    .hero {
-        &.is-fullheight, &.hero--narrow, &.is-inner-hero {
-            .container {
-                .hero-text-wrap {
-                    max-width: 80%;       
-                }
-            }
-        }   
-    } 
     .hero-content-wrap {
         @include make-flexbox($direction: row, $justify: space-between, $align: flex-end);
     }
@@ -385,11 +376,19 @@
         &.hero--news-heading {
             .container {
                 .hero-text-wrap {
-                    max-width:960px;
                     margin-left: auto;
                     margin-right: auto; 
                     width: 100%;
                 } 
+            }
+        }
+        &.hero--narrow, &.is-inner-hero:not(.is-vcu-health) {
+            .container {
+                .hero-text-wrap {
+                    max-width: 80%;  
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     } 
@@ -508,9 +507,6 @@
                     fill: $white;
                 }
             }
-        }
-        @include widescreen {
-            min-height: 61.8vh;
         }
     }
 }

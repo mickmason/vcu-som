@@ -184,12 +184,24 @@
             transform: skewX(-19.5deg), translate(-(19.5/2)deg);
             right: auto;
         }
-        
     }
 }
 @mixin active-link {
     &:hover, &:active, &:focus {
         @content;    
+    }
+}
+@mixin make-image-overlay($color, $z-index: 0, $transp: 0.32) { 
+    position: relative;
+    &::before {
+        z-index: $z-index; 
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba($color, $transp); 
     }
 }
 @mixin do-gradient($direction: to top, $start-col: $black, $end-col: transparent, $end-stop: 72%) {
