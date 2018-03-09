@@ -516,7 +516,7 @@
                                 </div>  <!-- // .discovery-feature__slide -->  
                            </div><!-- // .discovery-feature__slider -->
                            <div class="discovery-feature__slider__controls slider__controls">
-                              <button class="slider-control slider-control__prev news-slider__controls__prev">
+                              <button class="slider-control slider-control__prev">
                                 <span class="icon icon--svg has-icon-white"> 
                                     <svg class="svg-icon">
                                         <use xlink:href="#prev_arrow"></use>
@@ -526,7 +526,7 @@
                               <div class="slick-dots-container">
 
                               </div>
-                              <button class="slider-control slider-control__prev news-slider__controls__next">
+                              <button class="slider-control slider-control__next">
                                   <span class="icon icon--svg has-icon-white">
                                        <svg class="svg-icon">
                                            <use xlink:href="#next_arrow"></use> 
@@ -546,10 +546,12 @@
 
 
             <!-- ** triple hero image -->
-            <section class="hero hero--triple is-fullheight">
+            <section class="hero hero--triple is-in-page">
                 <div class="hero-body" style="background-image: url(style-assets/media/img/river-james-richmond.jpg)">
                     <div class="hero-body__text">
-                        <h1 class="is-feature-font--serif">VCU Health</h1>
+                        <div class="hero-body__text__heading">
+                            <h1 class="is-feature-font--serif">VCU Health</h1>    
+                        </div>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
                         <a class="button is-transparent">Find out more about...</a>
                     </div>
@@ -557,7 +559,9 @@
                 </div><!-- // .hero-body -->
                 <div class="hero-body" style="background-image: url(style-assets/media/img/river-james-richmond.jpg)">
                     <div class="hero-body__text">
-                        <h1 class="is-feature-font--serif">About Richmond</h1>
+                        <div class="hero-body__text__heading">
+                            <h1 class="is-feature-font--serif">About Richmond</h1>    
+                        </div>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                         <a class="button is-transparent">Find out more about...</a>
                     </div>
@@ -565,7 +569,9 @@
                 </div><!-- // .hero-body -->
                 <div class="hero-body" style="background-image: url(style-assets/media/img/river-james-richmond.jpg)">
                     <div class="hero-body__text">
-                        <h1 class="is-feature-font--serif">Getting Around</h1>
+                        <div class="hero-body__text__heading">
+                            <h1 class="is-feature-font--serif">Getting Around</h1>    
+                        </div>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                         <a class="button is-transparent">Find out more about...</a>
                     </div>
@@ -577,22 +583,7 @@
 
             @@include('structure/footer.html')
             <!-- ** // Diversity fixed feature ** -->
-            <div class="t4-exit-survey">
-                <div class="t4-exit-survey__body">
-                    <h2 class="t4-exit-survey__heading">We value your thoughts...</h2>
-                    <p>We're redesigning VCU School of Medicine website and we would value your feedback about the good and bad of your experience here.</p>
-                    <p>Help us out?</p>
-                    <div class="t4-exit-survey__buttons">
-                        <div class="t4-exit-survey__no-wrap"> 
-                            <button class="t4-exit-survey__button t4-exit-survey__no">No thanks</button>
-                        </div>
-                        <div class="t4-exit-survey__yes-wrap">
-                            <button class="t4-exit-survey__button t4-exit-survey__yes">Yes, I will help</button> 
-                            <span>You will be redirected to Survey Monkey</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         <section class="som-lightbox" aria-label="School of Medicine Media viewer">
             <div class="som-lightbox-container">
                <div class="som-lightbox-column">
@@ -613,9 +604,7 @@
         </section>
     </div><!-- // .body-wrap -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
         <script src="style-assets/js/t4-scripts.js"></script>
-        <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8XZaozAEcqR4419ZbF1w1LEvrBPJzsbN4J2WHX3WbX0.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
         
     </body>
 </html>

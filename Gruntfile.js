@@ -136,11 +136,11 @@ module.exports = function(grunt) {
     },
     postcss: {
       options: {
-        map: true, // inline sourcemaps
-        processors: [
-          require('postcss-flexibility')(), // add IE 10 flexbox support
-        ]
-      },
+                map: true,
+                processors: [
+                    require('autoprefixer')
+                ]
+            },
       dist: {
         src: 'www-root/style-assets/css/style.css'
       }
@@ -191,7 +191,6 @@ module.exports = function(grunt) {
     'copy',
     'svgstore',
     'watch',
-    'postcss',
     'express-keepalive'
   ]);
 

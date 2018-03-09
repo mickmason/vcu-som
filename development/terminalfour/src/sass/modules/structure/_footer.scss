@@ -8,8 +8,18 @@
         @include tablet-only {
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-            .column {
+            > .column {
                 margin-bottom: $space-3; 
+                -ms-flex: 1 1 50%;
+                flex: 1 1 50%;
+            }
+        }
+        @include tablet {
+            > .column {
+                display: -ms-flex;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
             }
         }
     }

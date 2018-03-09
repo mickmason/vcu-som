@@ -14,8 +14,8 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
+    //$ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
@@ -111,7 +111,6 @@
         ]
     }); 
     //Video gallery 
-    //Video gallery 
     $('.gallery-feature__slider').slick({
         mobileFirst: true,
         slidesToShow: 1,
@@ -123,7 +122,10 @@
             {
                 breakpoint: 787,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 1,
+                    centerMode: true,
+                    centerPadding: '30.9015%',
+                    breakpoint: 1024
                 }
             },
             {
@@ -209,6 +211,7 @@
      ];   
      var matchHeightArray = 
          [
+             
              '.hero-body-quicklinks-container > .hero-body > .container, .hero-body-quicklinks-container .hero-quicklinks > .container', 
              '.hero-body__text',
              '.hero-body__text > p',
@@ -563,6 +566,7 @@
            event.preventDefault();
            var $this = $(this);
            var target = $this.data('program');
+           console.log(target);
            if ($this.hasClass('is-visible')) {
                $this.removeClass('is-visible');
                $programInfoCardCards.each(function(idx, el) {
@@ -599,9 +603,7 @@
             });
             $('.programs-block').addClass('programs-block--cloned');
         } else {
-            if ($('.programs-block').length > 0 && $('.programs-block').hasClass('programs-block--cloned')) {
-                window.location.reload(true);    
-            }
+            
         }
     });
 

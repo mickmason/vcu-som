@@ -457,7 +457,7 @@
     @include tablet {
 
     }
-    @include desktop {
+    @include tablet {
         
         .video-slider-card {
             transition: opacity 160ms ease-out, transform 400ms ease-out;

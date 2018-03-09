@@ -366,6 +366,7 @@
     .navbar-item {
         a {
             text-decoration: none;
+            
         }
     }
     @include touch {
@@ -409,7 +410,16 @@
     }
     padding:    $space-2 0;
     .main-navigation__item {
-        
+        > a {
+            display: -ms-flex; 
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            @include desktop {
+                -ms-flex-align: start;
+                align-items:    flex-start;
+            }
+        }
         padding: 0;
         .navbar-dropdown__header, .navbar-dropdown__feature{
             @include touch {
@@ -715,7 +725,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 86.615px;
+    top: 63px;
     width: calc(100% + $gutter-width); 
     margin-left:   -$gutter-width/2;
     margin-right:  -$gutter-width/2;

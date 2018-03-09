@@ -4,4 +4,7 @@
     @include active-link {
         text-decoration: none;
     }
+    @include touch {
+        margin-bottom: $space-1;
+    }
 }

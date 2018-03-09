@@ -27,7 +27,6 @@
         &:focus {
             outline: none;
             top: 0px;
-           
         }
     }
     
@@ -49,8 +48,8 @@
             flex-shrink: 0;
             
             .navbar-link {
-                padding-top:     $space-5;
-                padding-bottom:  $space-5;
+                padding-top:     $space-4;
+                padding-bottom:  $space-4;
                 padding-left:  $gutter-width/2;
                 padding-right: $gutter-width/2;
                 @include make-flexbox($direction: row, $justify: center, $align: center);
@@ -59,6 +58,10 @@
             @include desktop {
                 display: none;
             }
+        }
+        
+        .main-nav-close-icon {
+            max-height: 1rem;
         }
         .main-nav-toggle__mobile {
             .navbar-link {
@@ -150,6 +153,10 @@
                     }
                 }
             }
+            .show-less-icon {
+                max-height: 1rem;
+                max-width:  1rem;
+            }
         }
     }
     .navbar-burger {
@@ -209,13 +216,13 @@
         }
     }    
 }  
-/* Secondary navigation - mobile */
+/* Secondary navigation - mobile */ 
 .secondary-nav--mobile__menu {
     display: block;
     position: absolute;
     left: 0;
     right: 0;
-    top: 86.615px;
+    top: 63px;
     width: calc(100% + $gutter-width); 
     margin-left:   -$gutter-width/2;
     margin-right:  -$gutter-width/2;
@@ -242,14 +249,38 @@
         color: $white;
         padding: $space-1 $gutter-width ;
         &.has-dropdown, &.has-icon { 
+            display: -ms-flex;
+            display: flex;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -ms-flex-align: center;
+            align-items: center;
             .icon {
                 width:     1rem;
                 height:    1rem;
             }
+            .show-more-icon {
+                display: inherit;
+            }
+            .show-less-icon {
+                display: none;
+            }
+            &.is-active {
+                .show-more-icon {
+                    display: none;
+                }
+                .show-less-icon {
+                    display: inherit;
+                }
+            }
         }
         &.vcu-health-logo { 
+             display: -ms-flex;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
             > img {
-                max-height: 1rem;
+                max-height: 1.125rem;
             }    
         }
         &.vcu-health-link {
@@ -417,7 +448,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 86.615px;
+        top: 63px;
         visibility: hidden;
         opacity: 0;
         z-index: 100;
@@ -435,6 +466,7 @@
         padding-top: 0;
         border-top: 1px solid rgba($black, 0.24);
         border-bottom: 4px solid $som-green;
+        
         .navbar-dropdown {
             width: 100%; 
             display: none;
@@ -456,7 +488,6 @@
     }
     padding:    $space-2 0;
     .main-navigation__item {
-        
         padding: 0;
         .navbar-dropdown__header, .navbar-dropdown__feature{
             @include touch {
@@ -509,9 +540,25 @@
             margin-top: -1px;
             width: 100%;
         }
+        .mobile-nav-toggle {
+            max-width:  1rem;
+            max-height: 1rem; 
+        }
+        .show-more-icon {
+            display: inherit;
+        }
+        .show-less-icon {
+            display: none;
+        }
         @include make-flexbox($direction: row, $justify: space-between);
         &.is-active {
             background-color: transparent;
+            .show-more-icon {
+                display: none;
+            }
+            .show-less-icon {
+                display: inherit;
+            }
         }
         @include desktop {
              padding: $space-1 $gutter-width/2;
@@ -1151,51 +1198,70 @@
     ul {
         display: -ms-flexbox;
         @include make-flexbox($direction: column, $justify: space-around, $align: stretch);
-
+        @include tablet-only {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
         @include widescreen {
             -ms-flex-direction: row;
             flex-direction: row;
         }
+        
         > li {
-            display: inline-block;
             -ms-flex: 1 1 auto;
             flex-grow: 1;
             flex-shrink: 1;
+            display: -ms-flex; 
+            display: flex; 
+            -ms-flex-pack: stretch;
+            justify-content: stretch;
+            -ms-flex-align: center;
+            align-items: center;
+            border-top: 1px solid $gray-8;
+            &:last-child {
+                border-bottom: 1px solid $gray-8;
+            }
             > a {
-                display: block;
+                text-decoration: none;
+                width: 100%;
                 text-align: left;
-                padding-top:      $space-1;
+                padding-top:      $space-1; 
                 padding-bottom:   $space-1;
                 padding-left:     $gutter-width/2;
                 padding-right:    $gutter-width/2;
                 
-                border-bottom: 1px solid $gray-8;
-                border-left: 1px solid $gray-8;
-                &:first-child {
-                    border-left: none;
-                }
                 transition: background-color 180ms ease-out;
                 @include active-link {
                     background-color: $light-10;
+                    text-decoration: underline;
                 }
-                @include widescreen {
-                    border-top: 1px solid $gray-8;
+                @include tablet-only {
                     text-align: center;
                     padding-top:      $space-1;
                     padding-bottom: $space-2;
-                    padding-left: $gutter-width;
-                    padding-right: $gutter-width;
-                    border-right: 1px solid $gray-a;
+                    padding-left:  $gutter-width/2;
+                    padding-right: $gutter-width/2;
+                }
+                @include widescreen {
+                    text-align: center;
+                    padding-top:      $space-1;
+                    padding-bottom: $space-2;
+                    padding-left:  $gutter-width/2;
+                    padding-right: $gutter-width/2;
                 }
             }
-            &:first-child { 
-                a {
-                    border-top: 1px solid $gray-8;
+            @include tablet-only {
+                border-left: 1px solid $gray-8;
+                border-bottom: 1px solid $gray-8;
+                &:first-child { 
+                    border-left: none;
                 }
             }
-            &:last-child {
-                > a {
-                    border-right: 0;                    
+            @include widescreen {
+                border-left: 1px solid $gray-8;
+                border-bottom: 1px solid $gray-8;
+                &:first-child { 
+                    border-left: none;
                 }
             }
         }
