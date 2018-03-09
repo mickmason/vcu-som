@@ -131,15 +131,6 @@
             }
         }
     }
-    @include desktop { 
-        &:nth-child(odd) {
-            .news-slider__story {
-                &::before {
-                    background-color: $primary;
-                }
-            }
-        }
-    }
     position: relative;
     height: 50vm;
     padding-left: $gutter-width/2;

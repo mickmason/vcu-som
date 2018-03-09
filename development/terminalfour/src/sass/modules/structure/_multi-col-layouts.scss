@@ -23,14 +23,13 @@
                 max-width:  50%;
             }
         }
-        @include widescreen {
-            > .column {
-                 -ms-flex-preferred-size: 33%;
-                flex-basis: 33%;
-                max-width:  33%;
-            }
-        }
+        
         @include superhd {
+            > .column {
+                 -ms-flex-preferred-size: 25%;
+                flex-basis: 25%;
+                max-width:  25%;
+            }
             .card-heading {
                 font-size: $size-5a;
             }
@@ -153,21 +152,18 @@
             border-bottom:  1px solid $black;
             padding-bottom: $space-5;
             margin-top: $space-6;
-            @include make-flexbox($direction: row, $justify: start, $wrap: wrap);
+            
             .deans-message__heading {
-                -ms-flex: none;
-                flex: none;
                 width: 100%;
-            }
-            .deans-message__content {
-                -ms-flex: 0 1 auto ;
-                flex:     0 1 auto ;
+                margin-bottom: $space-4a;
             }
             .deans-image {
                 max-width: none;
-                -ms-flex: 1 0 $gl-small;
-                flex:     1 0 $gl-small; 
-               
+                float: left;
+                width:     $gld-9;
+                padding-top: 0;
+                padding-left:  $gutter-width/2;  
+                padding-right: $gutter-width;   
                 &:before {
                     height: 0;
                     width: 0;
@@ -181,25 +177,35 @@
                     }
                 }
             }
-            @media screen and (min-width: 400px) {
-                .deans-message__heading {
-                    padding-left: $gl-small;
+            @media screen and (min-width: 500px) { 
+                @include make-flexbox($direction: row, $justify: start, $wrap: wrap);
+                .deans-image {
+                    float: none;
+                    max-width:     $gld-9;
+                    flex: 1 1 $gld-9;
                 }
                 .deans-message__content {
-                    -ms-flex: 1 0 100% - $gl-small;
-                    flex:     1 0 100% - $gl-small; 
+                    flex: 1 1 0;
+                }
+            }
+             @media screen and (min-width: 700px) { 
+                .deans-image {
+                    max-width:     $gld-8;
                 }
             }
             @include tablet {
                 .deans-image {
-                    -ms-flex: 1 0 $gl-small;
-                    flex:     1 0 $gl-small;
                     padding-top: 0;
                 }
             } 
             @include desktop {
                 .deans-image {
-                    padding-left: 0;
+                    padding-left: $gutter-width/2;      
+                }
+            }
+            @include widescreen {
+                .deans-image {
+                    max-width:     $gld-7*1.5;
                 }
             }
         }

@@ -1,6 +1,10 @@
 @import '../som-functions-mixins';
 .button {
-    &.is-primary { 
+    &__is-primary, &__is-secondary {
+        @include make-button;
+    }
+    
+    &__is-primary, &.is-primary { 
         background-color: $primary;
         border-color: $som-yellow;
         color: $white;
@@ -10,7 +14,7 @@
             color: $primary;    
         }
     }
-    &.is-secondary { 
+    &__is-secondary, &.is-secondary { 
         background-color: $secondary;
         border-color: $som-yellow;
         color: $white;

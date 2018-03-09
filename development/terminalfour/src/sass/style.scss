@@ -126,6 +126,7 @@ body {
             }
         }
         .columns {
+            justify-content: flex-start;
             &.pull-right {
                 -ms-flex-pack: end;
                 justify-content: flex-end;
@@ -484,7 +485,6 @@ body {
         margin-right: $gutter-width/2;
     }
 }
-
 /** Video slider feature **/
 .video-slider-feature {
     padding-top:     $gl-xsmall; 
@@ -568,7 +568,24 @@ body {
         }
     }
 }
-
+.feature-section {
+    &.by-the-numbers-feature {
+        .by-the-numbers__columns {
+            @media screen and (min-width: 600px) {
+                @include make-flexbox($direction: row, $wrap: wrap);
+                > .column {
+                    flex: 1 1 50%;
+                }
+            }
+            @include tablet {
+                > .column {
+                    flex: 1 1 0;
+                }
+            }
+            
+        }
+    }
+}
 /** Plain cards feature **/
 .feature-section {
     &.plain-cards-feature {
@@ -694,7 +711,7 @@ body {
     
     .deans-message__content { 
         -ms-flex: 1 0 auto;
-        @include tablet {
+        @media screen and (min-width: 550px) {
             @include make-flexbox($direction: row, $justify: flex-start, $align: flex-start); 
             .deans-image {
                 -ms-flex: none;

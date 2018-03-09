@@ -2,8 +2,10 @@
 /* General for all cards */
 .cards-columns {
     @include tablet {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+        &.columns {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;            
+        }
         > .column {
             -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
@@ -11,11 +13,37 @@
         }
     }
     @include desktop {
+        &.columns {
+            justify-content: flex-start;            
+        }
+        
         > .column {
-            -ms-flex-preferred-size: 0;
-            flex-basis: 0;
+            flex-basis: 25%;
+         //       max-width: 25%;
         }
     }
+}
+.vcu-health-cards {
+    .cards-columns {
+        @include tablet {
+            > .column {
+                flex-basis: 33%;
+                max-width: none;
+            }
+        }
+        @include tablet {
+            justify-content: space-around;
+            > .column {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+        }
+        @include widescreen {
+            > .column {
+                flex-basis: 33%;
+            }
+        }
+    }    
 }
 /** flat cards - base styling for cards **/
 .card--flat {
@@ -516,7 +544,6 @@
         @media screen and (min-width:  680px) {
             bottom: -8.6rem;
         }
-        
         @include tablet {
             bottom: -9.2rem;
         }

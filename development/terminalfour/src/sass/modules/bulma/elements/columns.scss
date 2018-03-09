@@ -57,21 +57,21 @@
     }
     @include tablet {
           &:not(.is-widescreen) {
-              display: -ms-flexbox;
               display: flex;
+              justify-content: space-around;
           }
     }
     @include desktop {
         // Modifiers
         &.is-desktop {
-          display: -ms-flexbox;
-          display: flex;
+            display: flex;
+            justify-content: space-around;
         }
     }
     @include widescreen {
         &.is-widescreen {
-          display: -ms-flexbox;
-          display: flex;
+            display: flex;
+            justify-content: space-around;
         }
     }
   
