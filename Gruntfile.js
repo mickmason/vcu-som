@@ -188,9 +188,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('server', [
     'express',
-    'copy',
-    'svgstore',
     'watch',
+    'svgstore',
+    'copy',
     'express-keepalive'
   ]);
 

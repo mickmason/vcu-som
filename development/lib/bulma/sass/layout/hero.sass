@@ -104,9 +104,7 @@
   &.is-fullheight,
   &.hero--narrow
     .hero-body
-      -ms-flex-align: center
       align-items: center
-      display: -ms-flexbox
       display: flex
       & > .container
         -ms-flex: 1
@@ -116,6 +114,7 @@
     min-height: 50vh
   &.is-fullheight
     @include touch
+      min-height: 500px
       min-height: 80vh  
     min-height: 100vh
 

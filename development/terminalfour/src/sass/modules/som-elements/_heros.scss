@@ -1,6 +1,5 @@
 /* Hero block */ 
 .hero {
-    -ms-flex-pack: justify;
     .hero-body {
         -ms-flex-positive: 1;
     }
@@ -30,9 +29,6 @@
             padding-top:     $space-7; 
             padding-bottom:  $space-7; 
         }
-    }
-    &.is-inner-hero {
-        
     }
     &.hero--video {
         padding-top: 0;
