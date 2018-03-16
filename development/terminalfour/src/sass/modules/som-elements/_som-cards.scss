@@ -27,7 +27,7 @@
     .cards-columns {
         @include tablet {
             > .column {
-                flex-basis: 33%;
+                flex-basis: 33%; 
                 max-width: none;
             }
         }
@@ -47,168 +47,169 @@
 }
 /** flat cards - base styling for cards **/
 .card--flat {
-     border: 1px solid $light-8;
-     overflow: hidden;
+  border: 1px solid $light-8;
+  overflow: hidden;
+  .card-content {
     .card__anchor {
-        display: block  ;
-        color: inherit;
-        text-decoration: none;
-        &:hover, &:focus, &:active {
-            text-decoration: none;
-        }
+      display: block  ;
+      color: inherit;
+      text-decoration: none;
+      &:hover, &:focus, &:active {
+          text-decoration: none;
+      }
     }
-    .card-header {
-        box-shadow: none ;  
+  }
+  .card-header {
+      box-shadow: none ;  
+  }
+  .card-heading {
+    color: inherit;
+    font-size: $size-5;
+    margin-top: flat-margin($size-4);
+    margin-bottom: $space-1; 
+  }
+  .card-content {
+    padding: $space-3 $gutter-width/2;
+    padding: $space-3 $gutter-width/2;
+    transition: background-color 160ms ease-out;
+  }
+  .card-content__text {
+    color: inherit;
+    margin-bottom: 0;
+  }
+  .button {
+    background-color: $primary;
+    color: $primary-invert;
+    border-color: $primary-invert;
+    @include active-link {
+      background-color: $primary-invert;
+      color: $primary;
+      border-color: $primary;
     }
-    .card-heading {
-        color: inherit;
-        font-size: $size-5;
-        margin-top: flat-margin($size-4);
-        margin-bottom: $space-1; 
+  }
+  p {
+    margin-bottom: $space-1;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    @include active-link {
+        text-decoration: underline;
     }
-    .card-content {
-        padding: $space-3 $gutter-width/2;
-        padding: $space-3 $gutter-width/2;
-        transition: background-color 160ms ease-out;
-    }
-    .card-content__text {
-        color: inherit;
-        margin-bottom: 0;
-    }
+  }
+  img {
+    transition: transform 160ms ease-in        
+  }
+  .image-overlay {
+    background-color: rgba($black, 0.28);
+  }
+  &:not(.program-card) {
     .button {
-        background-color: $primary;
-        color: $primary-invert;
-        border-color: $primary-invert;
-        @include active-link {
-            background-color: $primary-invert;
-            color: $primary;
-            border-color: $primary;
-        }
+        margin-top: $space-2;
     }
-    p {
-        margin-bottom: $space-1;
+  }
+  .card-content__read-more {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: inherit;
+    margin-top: $space-1;
+    margin-bottom: 0;
+  }
+  .card__arrow {
+    text-align: right;
+    @include make-flexbox($direction: row, $justify: flex-end, $align: center);
+    .icon {
+      width: $gl-xsmall; 
+      max-height: $space-4;
+      @include vision-angle($pull: right);
+      &::before {
+         height: 102%;
+         width: 130%;
+         right: -30%;
+      }
+      svg {
+          height: 80%;
+          fill: $white; 
+          transition: height 180ms ease-out;
+      }
     }
-    a {
-        color: inherit;
-        text-decoration: none;
-        @include active-link {
-            text-decoration: underline;
-        }
-    }
-    img {
-        transition: transform 160ms ease-in        
-    }
-    .image-overlay {
-        background-color: rgba($black, 0.28);
-    }
-    &:not(.program-card) {
-        .button {
-            margin-top: $space-2;
-        }
-    }
-    .card-content__read-more {
-        display: block;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: inherit;
-        margin-top: $space-1;
-        margin-bottom: 0;
-    }
-    .card__arrow {
-        text-align: right;
-        @include make-flexbox($direction: row, $justify: flex-end, $align: center);
-        .icon {
-            width: $gl-xsmall; 
-            max-height: $space-4;
-            @include vision-angle($pull: right);
+  }
+  @each $name, $pair in $colors {
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+      &.has-border-#{$name} {
+        border-bottom: 3px solid $color;
+        .card__arrow {
+          span {
             &::before {
-               height: 102%;
-               width: 130%;
-               right: -30%;
+              background-color: $color;
+              transition: background-color 180ms ease-out;
             }
-            svg {
-                height: 80%;
-                fill: $white; 
-                transition: height 180ms ease-out;
+            .icon {
+              svg {
+                  fill: $color-invert;
+              }
             }
+          }
         }
-    }
-    @each $name, $pair in $colors {
-        $color: nth($pair, 1);
-        $color-invert: nth($pair, 2);
-        &.has-border-#{$name} {
-            border-bottom: 3px solid $color;
-            .card__arrow {
-                span {
-                    &::before {
-                        background-color: $color;
-                        transition: background-color 180ms ease-out;
-                    }
-                    .icon {
-                        svg {
-                            fill: $color-invert;
-                        }
-                    }
-                }
-            }
-            transition: background-color 180ms ease-out;
+        transition: background-color 180ms ease-out;
+      }
+      &.has-#{$name}-background {
+        .card-content {
+          background-color: $color;
+          color: $color-invert;
+        }  
+        .button {
+          background-color: $color;
+          color: $color-invert;
+          border-color: $color-invert;
+          @include active-link {
+              background-color: $color-invert;
+              color: $color;
+              border-color: $color;
+          }
         }
-        &.has-#{$name}-background {
-            .card-content {
-                background-color: $color;
-                color: $color-invert;
-            }  
-            .button {
-                background-color: $color;
-                color: $color-invert;
-                border-color: $color-invert;
-                @include active-link {
-                    background-color: $color-invert;
-                    color: $color;
-                    border-color: $color;
-                }
-            }
-            .icon.icon--svg svg {
-                fill: $color-invert;
-            }
-            .card__arrow {
-                > .icon.icon--svg {
-                    &::before {
-                        background-color: $color-invert;
-                        @include boxShadow($light-8, insetLeftThin, insetTopThin);
-                    }
-                    svg {
-                       fill: $color;
-                    }
-                }
-            }
-        }
-
-    }
-    &:hover, &:focus, &:active {
-        cursor: pointer;           
-        .card-image {
-            img {
-                transform: scale(1.05);
-            }
-        }
-        .image-overlay {
-            background-color: rgba($black, 0.36);
-        }
-        .card-content__text {
-            text-decoration: underline;
-        }
-        .card-content__read-more {
-            font-weight: 700;
+        .icon.icon--svg svg {
+            fill: $color-invert;
         }
         .card__arrow {
-            .icon {
-                svg {
-                    height: 100%;
-                }
-            }
+          > .icon.icon--svg {
+            &::before {
+              background-color: $color-invert;
+              @include boxShadow($light-8, insetLeftThin, insetTopThin);
+          }
+          svg {
+            fill: $color;
+          }
         }
+      }
     }
+  }
+  &:hover, &:focus, &:active {
+      cursor: pointer;           
+      .card-image {
+          img {
+              transform: scale(1.05);
+          }
+      }
+      .image-overlay {
+          background-color: rgba($black, 0.36);
+      }
+      .card-content__text {
+          text-decoration: underline;
+      }
+      .card-content__read-more {
+          font-weight: 700;
+      }
+      .card__arrow {
+          .icon {
+              svg {
+                  height: 100%;
+              }
+          }
+      }
+  }
 }
 /** Card date - inset in card image **/
 .card__date--inset { 
@@ -270,6 +271,7 @@
 .card-label--inset--left {
     left: 0;
     right: auto;
+    @include vision-angle($bg-color: $white, $pull: left);  
     @each $name, $pair in $colors { 
         $color: nth($pair, 1);
         $color-invert: nth($pair, 2);
@@ -358,9 +360,6 @@
             &::before {
                 background-color: $primary;
             }
-            svg {
-               fill: $white;
-            }
         }
     }
     @include active-link { 
@@ -380,9 +379,6 @@
              > .icon.icon--svg {
                 &::before {
                     background-color: $white;
-                }
-                svg {
-                   fill: $primary; 
                 }
             }
             
@@ -659,7 +655,7 @@
     }
     .button:not([class*='is-']) {
         @include active-link {
-            background-color: $som-yellow;
+            background-color: $som-gold;
             border-color: $white;
         }
     }
@@ -813,6 +809,11 @@
         }
     }
     &.grad-overlay-card--vcu-health {
+        .card-label {
+            &::before {
+                background-color: $som-gold;
+            }
+        }
         .card-heading {
             @include make-text-shadow($x: 2px, $y: 2px, $color: rgba($black, 0.52));
             margin-bottom: 0;
@@ -824,9 +825,9 @@
                 bottom: -0.32rem;
             }
             font-size: $size-5;
-            color: $som-yellow;
+            color: $som-gold;
             svg {
-                fill: $som-yellow;
+                fill: $som-gold;
             }
         }
         @include active-link {
@@ -896,80 +897,85 @@
 $cardColours: (
   "secondary": ($som-grana, $som-grana-invert),
   "primary": ($primary, $primary-invert),
-  "som-yellow": ($som-yellow, $som-yellow-invert),
+  "som-yellow": ($som-gold, $som-gold-invert),
 );
 .section {
-    &.feature-section {
-        @each $name, $pair in $cardColours { 
-            $color: nth($pair, 1);
-            $color-invert: nth($pair, 2);
-            &.has-#{$name}-cards {
-                .card-flat {
-                    .card__arrow {
-                        span {
-                            &::before {
-                                background-color: $color;
-                            }
-                        }
-                    }
-                }
-                .site-gateway__card {
-                    .card__arrow {
-                            .icon {
-                                &::before {
-                                    background-color: $color;
-                                }
-                            }
-                     }
-                     @include active-link {
-                        background-color: $color;
-                        color: $color-invert;
-                     }
-                    border-bottom-color: $color;
-                }
-                .video-slider-card {
-                    border: none;
-                    .card-content__controls {
-                        background-color: $color;
-                        color: $color-invert;
-                        @include active-link {
-                            background-color: darken($color, 5%);
-                        }
-                    }
-                    .video-slider__play {
-                        @include active-link {
-                            background-color: darken($color, 5%);
-                        }
-                    }
-                }
-                .heading-only-card {
-                    border-bottom-color: $color; 
-                    .heading-only-card__content {
-                        border-bottom-color: $color;
-                    }
-                    
-                    .card__arrow {
-                        max-width: $gl-small;
-                        .icon {
-                            height: 100%;
-                            width: 100%;
-                            max-height: none;
-                            &::before {
-                                background-color: $color;
-                            }
-                        }
-                        .heading-only-card__icon-wrap {
-                            max-height: $space-5;
-                            svg {
-                                height: $space-5;
-                            }
-                        }
-                    }
-                }
-        }//end .has-{name}-cards
-        
-        }//end @each        
-    }
+  &.feature-section {
+    @each $name, $pair in $cardColours { 
+      $color: nth($pair, 1);
+      $color-invert: nth($pair, 2);
+      &.has-#{$name}-cards {
+        .section__title--featured {   
+          .section__title {
+            > span {
+              background-color: $color;
+            }
+          }
+        }
+        .card-flat {
+          .card__arrow {
+            span {
+              &::before {
+                  background-color: $color;
+              }
+            }
+          }
+        }
+        .site-gateway__card {
+          .card__arrow {
+            .icon {
+              &::before {
+                  background-color: $color;
+              }
+            }
+          }
+          @include active-link {
+            background-color: $color;
+            color: $color-invert;
+          }
+          border-bottom-color: $color;
+        }
+        .video-slider-card {
+          border: none;
+          .card-content__controls {
+              background-color: $color;
+              color: $color-invert;
+              @include active-link {
+                  background-color: darken($color, 5%);
+              }
+          }
+          .video-slider__play {
+              @include active-link {
+                  background-color: darken($color, 5%);
+              }
+          }
+        }
+        .heading-only-card {
+          border-bottom-color: $color; 
+          .heading-only-card__content {
+              border-bottom-color: $color;
+          }
+          .card__arrow {
+            max-width: $gl-small;
+            .icon {
+              height: 100%;
+              width: 100%;
+              max-height: none;
+              &::before {
+                  background-color: $color;
+              }
+            }
+            .heading-only-card__icon-wrap {
+              max-height: $space-5;
+              svg {
+                height: $space-5;
+              }
+            }
+          }
+        }
+      }//end .has-{name}-cards  
+    }//end @each        
+  }
 }
 .plain-cards-feature {
     .cards-columns {
@@ -984,9 +990,9 @@ $cardColours: (
             .button {
                 color: $primary;
                 background-color: $white;
-                border-color: $som-yellow;
+                border-color: $som-gold;
                 @include active-link {
-                    background-color: $som-yellow;
+                    background-color: $som-gold;
                     border-color: $white;
                     color: $primary;
                 }
@@ -999,9 +1005,9 @@ $cardColours: (
             .button {
                 color: $secondary;
                 background-color: $white;
-                border-color: $som-yellow;
+                border-color: $som-gold;
                 @include active-link {
-                    background-color: $som-yellow;
+                    background-color: $som-gold;
                     border-color: $white;
                     color: $secondary;
                 }

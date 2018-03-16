@@ -40,6 +40,7 @@
 @import 'modules/som-elements/programs-cards';  
 @import 'modules/som-elements/som-accordion';  
 @import 'modules/structure/footer';  
+@import 'modules/generic/themes';
 
 body {
     background-color: #f0f0f0;
@@ -113,6 +114,17 @@ body {
             transform: none;
         }
     }//.feature-column
+  .button {
+    background-color: $white;
+    color: $primary;
+    border-color: $som-gold;
+    @include active-link {
+      background-color: $som-gold;
+      color: $primary;
+      border-color: $white;
+    }
+    
+  }
     @include tablet {
         .feature__column {
             padding-top:     $space-8;
@@ -244,24 +256,30 @@ body {
             display: none;
         }
     }
-    @each $name, $pair in $colors {
-        $color: nth($pair, 1);
-        $color-invert: nth($pair, 2);
-        &.has-#{$name}-background {
-            background-color: transparent;
-            .tab-column { 
-                background-color: $color;
-                color: $white;
-                @include active-link {
-                    background-color: darken($color, 5%);
-                }  
-            }
-            .feature-section--fixed__content {
-                background-color: $color;
-                color: $white;
-            }
+    background-color: transparent;
+    .tab-column { 
+        background-color: $primary;
+        color: $white;
+        @include active-link {
+            background-color: darken($primary, 5%);
         }
-     }
+    }
+    .feature-section--fixed__content {
+        background-color: $primary;
+        color: $white;
+    }
+    &.has-secondary-background {    
+        .tab-column { 
+            background-color: $primary;
+            @include active-link {
+                background-color: darken($primary, 5%);
+            }  
+        }
+        .feature-section--fixed__content {
+            background-color: $primary;
+        }
+    }
+
     .feature-section--fixed__toggle {
         @include make-flexbox($direction: row, $justify: space-between, $align: center);   
     }
@@ -332,32 +350,39 @@ body {
             border-bottom-left-radius: 12rem;
             border-top-left-radius: 12rem;
         }
-        @each $name, $pair in $colors {
-            $color: nth($pair, 1);
-            $color-invert: nth($pair, 2);
-            &.has-#{$name}-background {
-                .tab-column {
-                    &.tab-column__desktop {
-                        background-color: transparent;
-                    } 
-                    a {
-                        color: $color-invert;
-                        text-decoration: none;
-                        @include active-link { 
-                            color: $color-invert;
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                .feature-section--fixed__content {
+        .tab-column {
+             &.tab-column__desktop {
+                 background-color: transparent;
+             } 
+             a {
+                 color: $white;
+                 text-decoration: none;
+                 @include active-link { 
+                     color: $white;
+                     text-decoration: underline;
+                 }
+             }
+         }
+         .feature-section--fixed__content {
+             background-color: transparent;
+         }
+        .feature-section--fixed__text-container { 
+            background-color: $primary;
+            color: $white;
+            &::before {
+                background-color: $primary;
+            }
+        }
+        &.has-secondary-background {
+            .tab-column {
+                &.tab-column__desktop {
                     background-color: transparent;
                 }
-               .feature-section--fixed__text-container {
-                    background-color: $color;
-                    color: $color-invert;
-                    &::before {
-                        background-color: $color;
-                    }
+            }
+           .feature-section--fixed__text-container {
+                background-color: $secondary;
+                &::before {
+                    background-color: $secondary;
                 }
             }
         }
@@ -514,9 +539,9 @@ body {
                     }
                     @if $name == 'primary' or $name == 'secondary' {
                         .button:not([class*='is-']) {
-                            border-color: $som-yellow;
+                            border-color: $som-gold;
                             @include active-link {
-                                background-color: $som-yellow;
+                                background-color: $som-gold;
                                 border-color: $color-invert;
                                 color: $color;
                             }
@@ -989,85 +1014,6 @@ body {
          .two-col-feature__heading-col {
             max-width: $gl-med; 
         }   
-    }
-}
-
-
-/** Exit survey styling **/
-.t4-exit-survey {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 50000;
-    background-color: rgba($black, 0.21);
-    width: 100%;
-    height: 100vh;
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 160ms ease-out, opacity 160ms ease-out;
-    &.is-visible {
-        @include make-flexbox($direction: row, $justify: center, $align: center);
-        visibility: visible;
-        opacity: 1;
-    }
-    &__body {
-        padding: $space-4a $gutter-width;
-        max-width: $gl-large;
-        background-color: $light-10;
-        @include make-flexbox($direction: column, $justify: center, $align: left);
-    }
-    &__heading, p {
-        margin-bottom: $space-4;
-    }
-    &__buttons {
-        width: 100%;
-        padding-top: $space-11;
-        @include make-flexbox($direction: row, $justify: center, $align:  flex-start);
-    }
-    &__button {
-        border-radius: 4px;
-        font-size: 1rem;
-        padding: $space-4/2 $gutter-width;
-        transition: background-color 120ms ease-out;
-        @include active-link {
-             cursor: pointer;
-        }
-        &.t4-exit-survey__yes {
-            color: $primary-invert;
-            background-color: $primary;
-            @include active-link {
-                background-color: darken($primary, 10%);
-            }
-        }
-        &.t4-exit-survey__no {
-            background-color: $gray-a;
-            @include active-link {
-                background-color: darken($gray-a, 10%);
-            }
-        }
-    }
-    &__no-wrap, &__yes-wrap {
-        width: 50%
-    }
-    &__no-wrap {
-        @include make-flexbox($direction: column, $justify: center, $align: flex-end);
-        padding-right: $gutter-width/2;
-        span {
-            font-size: $size-9;
-        }
-    }
-    &__yes-wrap {
-        @include make-flexbox($direction: column, $justify: center, $align: flex-start);
-        padding-left: $gutter-width/2;
-        span {
-            font-size: $size-9;
-        }
-    }
-    @include widescreen {
-        &__body {
-            max-width: $gl-med;
-        }
     }
 }
 .text-feature {

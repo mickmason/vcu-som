@@ -240,7 +240,7 @@
     }
     &.hero-title--vcu-health {
         font-size: $size-2;
-        color: $som-yellow;
+        color: $som-gold; 
         line-height: 1.0;
         
         @include make-text-shadow;
@@ -319,13 +319,9 @@
         }
     }
     .section__label {
-        color: $black;
+        color: $white;
         display: inline-block;
         margin-bottom: $space-2;
-        
-       // @include vision-angle($bg-color: $white); 
-        
-        
     }
 }
 .hero-quicklinks {
@@ -384,7 +380,7 @@
                 } 
             }
         }
-        &.hero--narrow, &.is-inner-hero:not(.is-vcu-health) {
+        &.hero--narrow, &.is-inner-hero:not(.has-footer-nav) {
             .container {
                 .hero-text-wrap {
                     max-width: 80%;  
@@ -569,8 +565,7 @@
         right: 0;    
     }
     .hero-slider__controls {
-        /*-ms-flex-pack: justify; 
-        justify-content: space-between;*/
+        background-color: $black;
         padding-left: $gutter-width/2;
         padding-right: $gutter-width/2;
         
@@ -581,8 +576,6 @@
     }
     @include tablet {
         .hero-slider__controls {
-            
-            -ms-flex-pack: center; 
             justify-content: center;
             .hero-slider__controls__next {
                 margin-left: $gutter-width/2

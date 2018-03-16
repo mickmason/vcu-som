@@ -44,19 +44,7 @@ $gld-4:	    $gld-5 / $golden;
 $gld-3:	    $gld-5 - $gld-4;
 $gld-2:	    $gld-3 / $golden; 
 $gld-1:	    $gld-3 - $gld-2;
-
-@debug "$golden"    $golden;
-@debug "$base"      $base;  
-@debug "$gld-10"    $gld-10;
-@debug "$gld-9"     $gld-9;	  
-@debug "$gld-8"     $gld-8;	  
-@debug "$gld-7"     $gld-7;	  
-@debug "$gld-6"     $gld-6;	  
-@debug "$gld-5"     $gld-5;	  
-@debug "$gld-4"     $gld-4;	   
-@debug "$gld-3"     $gld-3;	  
-@debug "$gld-2"     $gld-2;	  
-@debug "$gld-1"     $gld-1;	  
+  
 $gl-large:	    $gld-10;
 $gl-xlarge:	    $base - ($gld-7 + $gld-7);
 $gl-med:        $gld-9;
@@ -64,5 +52,4 @@ $gl-small:	    $gld-8;
 $gl-xsmall:	    $gld-7; 
 
 $gutter-width: $golden * 1rem;
-@debug '$gutter'    $gutter-width;
 $separator: ($gutter-width /2);

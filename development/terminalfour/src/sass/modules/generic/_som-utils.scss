@@ -1,61 +1,44 @@
 //SoM Utilities
 /* Hide SVG stack */
-
 .vcu-som-icons-stack {
     display: none;
     visibility: hidden;
     height: 0;
     width: 0;
 }
-@each $name, $pair in $colors {
+@each $name, $pair in $colors { 
     $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
-    $border-col: $color-invert;
-    $border-col: if($name == 'transparent', transparent, $color-invert);
-    $border-col: if($name == 'som-green', $color, $color-invert);
-    $border-col: if($name == 'som-grana', $color, $color-invert);
+    $color-invert: nth($pair, 2);   
+    @if $name == "som-gold" {
+        $color: nth($pair, 1);
+        $color-invert: $black; 
+    }
     .has-#{$name}-background {
-        background-color:   $color;
         color: $color-invert;
-        .section__intro, .section__intro--thin {
-            border-color: $color-invert;    
+        background-color: $color;
+        .icon {
+          fill: $color-invert;
+          stroke: $color-invert;      
         }
-        a {
-            color: $color-invert;
-            @include active-link {
-                color: $color-invert;
-            }
-        }
-        .button:not([class*='is-']) {
-            @if ($name == "som-yellow") {
-                color: $color-invert;
-                background-color: $white;
-                border-color: $color-invert;
-                @include active-link {
-                    color: $color;
-                    border-color: $color; 
-                    background-color: $color-invert;
-                }
-            } @else if $name == "primary" or $name == "secondary" {
-                color: $color;
-                background-color: $white;
-                border-color: $som-yellow;
-                @include active-link {
-                    color: $color;
-                    border-color: $white; 
-                    background-color: $som-yellow;
-                }
+        .button:not([class*="is-"]) {
+            @if $name == "som-gold" {
+                color: $black;  
+                border-color: $black; 
             } @else {
                 color: $color;
-                background-color: $color-invert;
-                border-color: $color; 
-                @include active-link {
-                    color: $color-invert;
-                    border-color: $border-col; 
-                    background-color: $color;
-                }
+                border-color: $som-gold; 
             }
-            
+            background-color: $white;
+            @include active-link {
+                @if $name == "som-gold" {
+                    color: $color;  
+                    background-color: $color-invert;
+                } @else {
+                    color: $color;
+                    background-color: $som-gold;
+                }    
+                border-color: $white; 
+            }
         }
         &.has-vision-graphic {
             background-color: transparent;
@@ -63,7 +46,6 @@
                 background-color: $color;
             }    
         }
-        
         &.is-transparent {
             background-color:   $color; 
             background-color: rgba($color, $transparency);
@@ -73,76 +55,26 @@
                     background-color: rgba($color, $transparency);
                 }    
             }
-            .button:not([class*='is-']) {
-                background-color: $color-invert;
-                color: $color;
-                @include active-link {
-                    color: $color-invert;
-                    background-color: $color;
-                    border-color: $color-invert;
-                    @if $name == 'primary' or $name == 'secondary' {
-                        color: $color;
-                        background-color: $som-yellow;
-                    }
-                }
-            }
-        }
-        &.has-background-image {
-             > .container {
-                 z-index: 40;
-             }
-            .button:not([class*='is-']) {
-                background-color: $color-invert;
-                color: $color;
-                @include active-link {
-                    color: $color-invert;
-                    background-color: $color;
-                    border-color: $color-invert;
-                    @if $name == 'primary' or $name == 'secondary' {
-                        color: $color;
-                        background-color: $som-yellow;
-                    }
-                }
-            }
         }
         .image-overlay {
-            background-color: rgba($color, $transparency);
-        }
-    }
-
-    .has-#{$name}-background--grad {
-        background-color:   $color;
-        background-image:   linear-gradient(19.5deg, lighten($color, 5.57%), darken($color, 5.57%)); 
-        color: $color-invert;
-        a {
-            color: $color-invert;
-        }
-        .button:not([class*='is-']) {
-            color: $color-invert;
-            border-color: $border-col; 
-            background-color: $color;
-            @include active-link {
-               color: $color;
-                background-color: $color-invert;
-                border-color: $color; 
-            }
-        }
-    }     
-    .image-overlay {
-        &.has-#{$name}-background {
-            background-color:   rgba($color,0.32);
-            color: $color-invert;
-        }
-        &.is-darker-overlay {
-            &.has-#{$name}-background {
-                background-color:   rgba($color,0.48);
-                color: $color-invert;
-            }
-
-        }
+            background-color: rgba($color, $transparency); 
+        }   
+    }   
+}
+.has-primary-background--grad, .has-secondary-background--grad {
+    color: $white;
+    a {
+        color: $white;
     }
 }
-
+.has-primary-background--grad {
+    background-color:   $primary;
+    background-image:   linear-gradient(19.5deg, lighten($primary, 5.57%), darken($primary, 5.57%)); 
+} 
+.has-secondary-background--grad {
+    background-color:   $secondary;
+    background-image:   linear-gradient(19.5deg, lighten($secondary, 5.57%), darken($secondary, 5.57%)); 
+}
 /* Vision graphic angle */
 .vcu-angle {
     width:  0; 
@@ -170,17 +102,6 @@
     transform: skew(-19.5deg, 0);
     z-index: -10;
 }
-
-/* Background color utils */
-.has-primary-bg {
-    background-color: $som-green;
-    color: $white;
-}
-.has-secondary-bg {
-    background-color: $som-grana;
-    color: $white;
-}
-
 //Custom utlis
 .image-overlay, .angle-overlay, .image-overlay--gradient {
     position: absolute; 
@@ -206,20 +127,17 @@
 .image-overlay--gradient {  
     @include do-gradient($start-col: rgba($black, 0.92), $end-stop: 50%);        
     transition: background-image 300ms ease-in;
-
 }
 .angle-overlay {
    @include desktop {
        transform: skewX(-19.5deg);
-    }    
-    @each $name, $pair in $colors {
-         $color: nth($pair, 1);
-         &.is-#{$name} {
-            background-color: rgba($color, 0.7);    
-         }
     }
-        
-
+    &.is-primary {
+       background-color: rgba($primary, $transparency);    
+    }
+    &.is-secondary {
+       background-color: rgba($secondary, $transparency);    
+    }
     @include desktop {
         &.is-half {
             max-width: 57%;
@@ -227,7 +145,6 @@
         }        
     }
 }
-
 /* SVG Icons */
 .svg-icon-wrap {
     display: -ms-inline-flex;
@@ -265,10 +182,6 @@
         fill: $color;
         stroke: $color;
       }
-    }
-    &.has-icon-gray-32 {
-        fill: $gray-32; 
-        stroke: $gray-32; 
     }
     &.icon--svg--has-text {
         width: auto;
@@ -325,10 +238,18 @@
     }
 }
 .is-vision-angle, .has-vision-graphic {
-    @include vision-angle($pull: left);
+  @include vision-angle($pull: left);
+  &.is-transparent {
+    &::before {
+      background-color: rgba($primary, $transparency);
+    }
+  }
 }
 .is-vision-angle--right, .has-vision-graphic--right {
-    @include vision-angle($pull: right);
+   @include vision-angle($pull: right);
+   &.is-transparent {
+    background-color: rgba($primary, $transparency);
+  }
 }
 .section__label__container {
     margin-bottom: $space-1;    
@@ -344,14 +265,10 @@
     margin-left: -0.768rem;
     margin-right: -0.768rem;
     margin-bottom: $space-5;
-
 }
 .section__title--featured__wrap {
     @include make-flexbox($direction: row, $justify: flex-start, $align: baseline);
-
     margin-bottom: 2.2rem; 
-
-    
     .section__intro {
         margin-bottom: 0;
         -ms-flex: 1;
@@ -372,22 +289,17 @@
         font-size: 2.25rem;
         > span {
             display: inline-block;
-            
             padding-left:     $gutter-width*1.5;
             padding-right:    $space-5;
             padding-top:      $space-1;
             padding-bottom:   $space-1;
             margin-left: -$gutter-width;
-        
             background-color: $primary;
             color: $white;
-            
-            @include boxShadow($light-10, insetRight, insetLeft);
             border-radius: ($space-1 * 2)+ ($size-1 * 1.1) / 2;
         }
     }
     p {
-    
         border-bottom: none;
     }
 }
@@ -409,7 +321,6 @@
 }
 .som-content-label {
     color: $gray-4;
-    
     text-transform: uppercase;
     font-size: 0.8rem;
     margin-bottom: 0;

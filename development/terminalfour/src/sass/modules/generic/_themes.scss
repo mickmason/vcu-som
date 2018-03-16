@@ -1,14 +1,445 @@
 /** Site themeing **/
-/* Green theme */
-.theme-green {
-  .site-gateway-card {
-    .card-content {
-          border-bottom-color: $green;
+
+$slate-blue: #094d63;
+$slate-blue-invert: findColorInvert($slate-blue);
+$slate-pair: ($slate-blue, $slate-blue-invert);
+
+$deep-rose: #770031;
+$deep-rose-invert: findColorInvert($deep-rose);
+$rose-pair: ($deep-rose, $deep-rose-invert);
+
+$maroon: #61001f;
+$maroon-invert: findColorInvert($maroon);
+$maroon-pair: ($maroon, $maroon-invert);
+
+$tan: #8c6239;
+$tan-invert: findColorInvert($tan);
+$tan-pair: ($tan, $tan-invert);
+
+$deep-blue: #0b2751;
+$deep-blue-invert: findColorInvert($deep-blue);
+$deep-blue-pair: ($deep-blue, $deep-blue-invert);
+
+$light-teal: #0c6e6d;
+$light-teal-invert: findColorInvert($light-teal);
+$light-teal-pair: ($light-teal, $light-teal-invert);
+
+$deep-purple: #330130;
+$deep-purple-invert: findColorInvert($deep-purple);
+$deep-purple-pair: ($deep-purple, $deep-purple-invert);
+
+$orange: #BA5400;
+$orange-invert: findColorInvert($orange);
+$orange-pair: ($orange, $orange-invert);
+
+$themeColours: (
+  "slate-blue-and-rose": ($slate-pair, $rose-pair),
+  "maroon-and-tan": ($maroon-pair, $tan-pair),
+  "deep-blue-and-light-teal": ($deep-blue-pair, $light-teal-pair),
+  "deep-purple-and-orange": ($deep-purple-pair, $orange-pair)
+);
+/** Department site colour themes **/
+@each $theme-name, $theme-color-pair in $themeColours { 
+  @debug $theme-name;
+  @debug $theme-color-pair;
+  $primary-pair:    nth($theme-color-pair, 1);
+  $theme-primary:     nth($primary-pair,1);  
+  $theme-primary-invert: nth($primary-pair,2);  
+  $secondary-pair:    nth($theme-color-pair, 2);
+  $theme-secondary: nth($secondary-pair,1);  
+  $theme-secondary-invert: nth($secondary-pair,2);  
+  
+  /* #{$theme-name} */
+  .#{$theme-name} {
+    //General
+    a {
+      color: $theme-secondary;
+      @include active-link {
+        color: $theme-primary;
+      }
+      &:focus {
+        outline-color: $theme-primary;
+      }
     }
-  } 
-  featured-programs-card {
-    .card-content {
-         background-color: $green;
+    
+    //Utils
+    .icon.icon--svg {
+      &.has-icon-primary {
+          fill: $theme-primary;
+          stroke: $theme-primary;
+      }
+      &.has-icon-secodary {
+          fill:   $theme-secondary;
+          stroke: $theme-secondary;
+      }  
     }
-  }
-}
+    //header and main nav
+    .main-navigation__menu {
+      @include touch {
+        border-bottom-color: $theme-primary;
+      }
+      .main-navigation__item {
+        @include desktop {
+          @include active-link {
+            &::before {
+              border-top-color: $theme-primary;
+            }
+          }
+        }
+      }
+      .navbar-dropdown__body {
+        border-bottom-color: $theme-primary;
+        .card--dark {
+          .card-content {
+            background-color: $theme-primary;
+            color: $theme-primary-invert;
+            .card__anchor {
+              @include active-link {
+                color: $theme-primary-invert;
+              }
+            }
+          }
+        }
+      }
+    }
+    .main-navigation__item {
+      @include desktop {
+        @include active-link {
+          .navbar-link--main {
+            background-color: $theme-primary; 
+            &::before {
+              border-top-color: $theme-primary ;
+            }
+          }
+        }
+      }
+    }
+    //footer
+    footer.vcu-som-footer {
+      a {
+        @include active-link {
+          color: $theme-primary;
+        }
+      }
+      .footer__a-z__links.a-z-navigation {
+        a {
+          @include active-link {
+            background-color: $theme-primary;
+          }
+            
+        }
+      }
+      .footer__social-icons {
+        > a {
+          @include active-link { 
+              .icon {
+                  background-color: $theme-primary;
+              }
+            }
+        }
+      }
+    }
+    //Utils
+    //Featured title background span color
+    .section__title--featured {   
+      .section__title {
+        > span {
+            background-color: $theme-primary;
+            color: $theme-primary-invert; 
+        }
+      }
+    }
+    //.has-{primary|secondary}-background  
+    .has-primary-background {
+      color: $theme-primary-invert;
+      background-color: $theme-primary;
+      .icon {
+        fill: $theme-primary-invert;
+        stroke: $theme-primary-invert;      
+      }
+      .button:not([class*="is-"]) {
+        color: $theme-primary;
+        background-color: $white;
+        @include active-link {
+          background-color: $som-gold;
+          color: $theme-primary;
+        }    
+        border-color: $white; 
+      }
+      &.has-vision-graphic {
+        &::before {
+          background-color: $theme-primary;
+        }    
+      }
+      &.is-transparent {
+        background-color:   $theme-primary; 
+        background-color: rgba($theme-primary, $transparency);
+        &.has-vision-graphic {
+          background-color: transparent;
+          &::before {
+            background-color: rgba($theme-primary, $transparency);
+          }    
+        }
+      }
+      .image-overlay {
+        background-color: rgba($theme-primary, $transparency); 
+      }
+    }
+    .has-secondary-background {
+      color: $theme-secondary-invert;
+      background-color: $theme-secondary;
+      .icon {
+        fill: $theme-secondary-invert;
+        stroke: $theme-secondary-invert;      
+      }
+      .button:not([class*="is-"]) {
+        color: $theme-secondary;
+        background-color: $white;
+        @include active-link {
+          background-color: $som-gold;
+          color: $theme-secondary;
+        }    
+        border-color: $white; 
+      }
+      &.has-vision-graphic {
+        &::before {
+          background-color: $theme-secondary;
+        }    
+      }
+      &.is-transparent {
+        background-color:   $theme-secondary; 
+        background-color: rgba($theme-secondary, $transparency);
+        &.has-vision-graphic {
+          background-color: transparent;
+          &::before {
+            background-color: rgba($theme-secondary, $transparency);
+          }    
+        }
+      }
+      .image-overlay {
+        background-color: rgba($theme-secondary, $transparency); 
+      }
+    }
+    .has-primary-background--grad {
+      background-color: $theme-primary;
+      background-image: linear-gradient(5deg, lighten($theme-primary, 5.57%), darken($theme-primary, 5.57%)); 
+    } 
+    .has-secondary-background--grad {
+      background-color: $theme-secondary;
+      background-image: linear-gradient(5deg, lighten($theme-secondary, 5.57%), darken($theme-secondary, 5.57%)); 
+    }
+    .is-vision-angle, .has-vision-graphic {
+      &::before {
+        background-colour: $theme-primary;
+      }
+      &.is-transparent {
+        background-color: transparent;
+        &::before {
+          background-color: rgba($theme-primary, $transparency);  
+        }
+      }
+    }
+    .is-vision-angle--right, .has-vision-graphic--right {
+       &.is-transparent {
+        background-color: rgba($theme-primary, $transparency);
+      }
+    }
+    //Components
+    //Cards
+    .section {
+      &.feature-section {
+        .section__title--featured {   
+            .section__title {
+              > span {
+                background-color: $theme-primary;
+              }
+            }
+          }
+          .card-flat {
+            .card__arrow {
+              span {
+                &::before {
+                    background-color: $theme-primary;
+                }
+              }
+            }
+          }
+          .site-gateway__card {
+            .card__arrow {
+              .icon {
+                &::before {
+                    background-color: $theme-primary;
+                }
+              }
+            }
+            @include active-link {
+              background-color: $theme-primary;
+              color: $theme-primary-invert;
+            }
+            border-bottom-color: $theme-primary;
+          }
+          .video-slider-card {
+            .card-content__controls {
+                background-color: $theme-primary;
+                color: $theme-primary-invert;
+                @include active-link {
+                    background-color: darken($theme-primary, 5%);
+                }
+            }
+            .video-slider__play {
+                @include active-link {
+                    background-color: darken($theme-primary, 5%);
+                }
+            }
+          }
+          .heading-only-card {
+            border-bottom-color: $theme-primary; 
+            .heading-only-card__content {
+                border-bottom-color: $theme-primary;
+            }
+            .card__arrow {
+              .icon {
+                &::before {
+                    background-color: $theme-primary;
+                }
+              }
+            }
+          }
+        &.has-secondary-cards {
+          .section__title--featured {   
+            .section__title {
+              > span {
+                background-color: $theme-secondary;
+              }
+            }
+          }
+          .card-flat {
+            .card__arrow {
+              span {
+                &::before {
+                    background-color: $theme-secondary;
+                }
+              }
+            }
+          }
+          .site-gateway__card {
+            .card__arrow {
+              .icon {
+                &::before {
+                    background-color: $theme-secondary;
+                }
+              }
+            }
+            @include active-link {
+              background-color: $theme-secondary;
+              color: $theme-secondary-invert;
+            }
+            border-bottom-color: $theme-secondary;
+          }
+          .video-slider-card {
+            .card-content__controls {
+                background-color: $theme-secondary;
+                color: $theme-secondary-invert;
+                @include active-link {
+                    background-color: darken($theme-secondary, 5%);
+                }
+            }
+            .video-slider__play {
+                @include active-link {
+                    background-color: darken($theme-secondary, 5%);
+                }
+            }
+          }
+          .heading-only-card {
+            border-bottom-color: $theme-secondary; 
+            .heading-only-card__content {
+                border-bottom-color: $theme-secondary;
+            }
+            .card__arrow {
+              .icon {
+                &::before {
+                    background-color: $theme-secondary;
+                }
+              }
+            }
+          }
+        }//end .has-secondary-cards       
+      }
+    }//cards .sections
+    .feature-section--vision-graphic {
+      .button{
+        color: $theme-primary;
+        @include active-link {
+          color: $theme-primary;
+        }
+      }
+    }
+    .hero-slider__slide, .news-slider__slide {
+      &:nth-child(even) {
+        .news-slider__story {
+          &::before {
+            background-color: $theme-primary;
+          }
+        }
+      }
+      &:nth-child(odd) {
+        .news-slider__story {
+          &::before {
+            background-color: $theme-secondary;
+          }
+        }
+      }
+    }
+    //Homepage news slider
+    .news-slider {
+      .section__title--featured {   
+        .section__title {
+          > span {
+            background-color: $theme-secondary;
+            color: $theme-secondary-invert; 
+          }
+        }
+      }
+      &.has-primary-color {
+        .section__title--featured {   
+          .section__title {
+            > span {
+              background-color: $theme-primary;
+              color: $theme-primary-invert; 
+            }
+          }
+        }
+      }
+      
+    }
+    //News & events listing
+    .news-events--listing {
+      .news-listing__title, .events-listing__title {
+        > a {
+          color: $theme-secondary;
+          @include active-link {
+            color: $theme-primary;
+          }
+        }
+      }
+      .event-day {
+        background-color: rgba($theme-secondary, 0.84);
+      }
+    }
+    .news-and-events-feature.has-primary-color {
+      .news-events--listing {
+        .news-listing__title, .events-listing__title {
+          > a {
+            color: $theme-primary;
+            @include active-link {
+              color: $theme-secondary;
+            }
+          }
+        }
+      }
+      .event-day {
+        background-color: rgba($theme-primary, 0.84);
+      }
+    }
+  }//a.#{theme-name}
+}//@each $name, $pair in $themeColours

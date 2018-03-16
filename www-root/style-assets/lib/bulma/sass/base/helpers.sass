@@ -116,7 +116,6 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
 $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
 
 @each $display in $displays
-  @debug $display
   .is-#{$display}
     display: #{$display} !important
   +mobile

@@ -6,20 +6,20 @@
     
     &__is-primary, &.is-primary { 
         background-color: $primary;
-        border-color: $som-yellow;
+        border-color: $som-gold;
         color: $white;
         @include active-link {
-            background-color: $som-yellow;
+            background-color: $som-gold; 
             border-color: $primary;
             color: $primary;    
         }
     }
     &__is-secondary, &.is-secondary { 
         background-color: $secondary;
-        border-color: $som-yellow;
+        border-color: $som-gold;
         color: $white;
         @include active-link {
-            background-color: $som-yellow;
+            background-color: $som-gold;
             border-color: $secondary;
             color: $secondary;    
         }

@@ -1,6 +1,10 @@
 //Container extensions
 .container {
     width: 100%;
+    max-width: 1152px;
+    @include fullhd {
+        max-width: 1344px;
+    }
     &.is-fullwidth {
         max-width: none;
         width: auto;
@@ -9,4 +13,4 @@
             margin-right: 0;
         }
     }
-}
+} 

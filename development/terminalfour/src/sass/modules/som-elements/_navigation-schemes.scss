@@ -238,7 +238,7 @@
     color: $white;
     padding-top:    $space-4;
     padding-bottom: $space-4;
-    border-bottom: 2px solid $som-yellow;
+    border-bottom: 2px solid $som-gold;
     .navbar-dropdown {
             display: none;
             &.is-active {
@@ -248,6 +248,10 @@
     .secondary-nav--mobile__link {
         color: $white;
         padding: $space-1 $gutter-width ;
+        @include active-link {
+          color: $white;
+          text-decoration: underline;
+        }
         &.has-dropdown, &.has-icon { 
             display: -ms-flex;
             display: flex;
@@ -284,12 +288,12 @@
             }    
         }
         &.vcu-health-link {
-            background-color: $som-yellow;
+            background-color: $som-gold;
             color: $black;
             @include make-flexbox($direction: row, $justify: space-between, $align: center);
 
             &:hover, &:focus, &:active, &.is-active {
-                background-color: darken($som-yellow, 16%);
+                background-color: darken($som-gold, 16%);
                 svg {
                     fill: $white;
                 }
@@ -405,7 +409,8 @@
         transition: visibility 160ms ease-out 20ms, opacity 160ms ease-out 20ms; 
         
         .navbar-item {
-            padding-right: $gutter-width; 
+            padding-right: $gutter-width/2; 
+            padding-left: $gutter-width/2; 
             &:hover, &:active, &:focus, &.is-active {
                 background-color: lighten($gray-32, 15%);
                 color: $white;
@@ -520,7 +525,7 @@
                         width: 0; 
                         height: 0; 
                         border-left:     8px solid transparent;
-                        border-right:    8px solid transparent;
+                        border-right:    8px solid transparent; 
                         border-top:      8px solid $som-green ;
                     }
                 }
@@ -551,6 +556,7 @@
             display: none;
         }
         @include make-flexbox($direction: row, $justify: space-between);
+        
         &.is-active {
             background-color: transparent;
             .show-more-icon {
@@ -825,42 +831,50 @@
 
 /** Audience navigation **/
 .landing-page-navigation {
-    @include boxShadow($black, bottom);
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: 4px solid $black; 
-    .section__label {
-        color: $white;
+  @include boxShadow($black, bottom);
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 4px solid $black; 
+  color: $white;
+  .section__label {
+    color: $white;
+  }
+  ul, li {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  } 
+  a {
+    font-size: $size-5a;
+    @include active-link {
+      text-decoration: underline;      
     }
-    ul, li {
-        margin-left: 0;
-        padding-left: 0;
-        list-style: none;
-    } 
-    
+    text-decoration: none;  
+  }
+  //Toggle nav body 
+  .icon {
+    -ms-flex:  0;
+    flex-grow: 0;
+    height: $size-4;
+    width:  $size-4;
+  }
+  .landing-page-nav__heading, .landing-page-navigation__body {
     a {
-      font-size: $size-5a;
-      color: inherit;
+      color: $white;
       @include active-link {
-        text-decoration: underline;      
+        color: $white;
       }
-      text-decoration: none;
-      
     }
-    //Toggle nav body 
-    .icon {
-        -ms-flex:  0;
-        flex-grow: 0;
-        height: $size-4;
-        width:  $size-4;
+  }
+  &.is-active {
+    .landing-page-nav__body-wrap {
+      display: block;
     }
-    &.is-active {
-        .landing-page-nav__body-wrap {
-            display: block;
+  }
+      a { 
+      $color: $white;
+    }
   
-        }
-    }
-    
 }
 .landing-page-nav__top-wrap {
     color: $white;
@@ -868,6 +882,7 @@
 .landing-page-nav__top-wrap, .landing-page-nav__body-wrap {
     margin-left: -$gutter-width/2;
     margin-right: -$gutter-width/2;
+
 }
 .landing-page-nav__top-wrap {
     background-color: $gray-32;
@@ -951,7 +966,7 @@
     }
 }
 .audience-navigation {
-    border-bottom-color: $som-yellow; 
+    border-bottom-color: $som-gold; 
 }
 .audience-navigation__top-wrap {
     background-color: $black; 
@@ -1199,27 +1214,25 @@
         display: -ms-flexbox;
         @include make-flexbox($direction: column, $justify: space-around, $align: stretch);
         @include tablet-only {
-            -ms-flex-direction: row;
             flex-direction: row;
         }
         @include widescreen {
-            -ms-flex-direction: row;
             flex-direction: row;
         }
         
         > li {
-            -ms-flex: 1 1 auto;
             flex-grow: 1;
             flex-shrink: 1;
-            display: -ms-flex; 
             display: flex; 
-            -ms-flex-pack: stretch;
             justify-content: stretch;
-            -ms-flex-align: center;
-            align-items: center;
+            align-items: flex-start;
             border-top: 1px solid $gray-8;
             &:last-child {
                 border-bottom: 1px solid $gray-8;
+            }
+            transition: background-color 180ms ease-out;
+            @include active-link {
+                    background-color: $light-10;
             }
             > a {
                 text-decoration: none;
@@ -1229,10 +1242,7 @@
                 padding-bottom:   $space-1;
                 padding-left:     $gutter-width/2;
                 padding-right:    $gutter-width/2;
-                
-                transition: background-color 180ms ease-out;
                 @include active-link {
-                    background-color: $light-10;
                     text-decoration: underline;
                 }
                 @include tablet-only {

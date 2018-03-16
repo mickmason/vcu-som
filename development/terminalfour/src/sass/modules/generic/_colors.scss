@@ -3,27 +3,20 @@ $som-green: #00504d;
 $som-green-invert: findColorInvert($som-green);
 $som-grana: #8E0021; 
 $som-grana-invert: findColorInvert($som-grana);
-$som-yellow: #ffba00;
-$som-yellow-invert: $black;
+$som-gold: #ffba00;
+$som-gold-invert: $black;
 $primary: $som-green;
 $primary-invert: $som-green-invert;
 
 $secondary: $som-grana;
 $secondary-invert: $som-grana-invert;
 
-$orange:      #d43900;
-$orange-invert: findColorInvert($orange);
-$green:       #008A00;
-$green-invert: findColorInvert($green);
-$blue:        #007EB5; 
-$blue-invert: findColorInvert($blue);
-$purple:      #011d9a;
-$purple: findColorInvert($purple);
-$red:         #b50000;
-$red-invert: $white; 
 //new
 $wine:        #80225f; 
 $wine-invert: findColorInvert($wine);
+$white:       #ffffff;
+$white-invert:findColorInvert($white);
+
 
 $blacker: #101010;
 $black: #202020;
@@ -31,13 +24,15 @@ $black-invert: findColorInvert($black);
 
 $gray-3: #303030; 
 $gray-32: #323232;
-$gray-4: #404040;
+$gray-4: #404040; 
 $gray-6: #606060;
 $gray-8: #808080;
 $gray-a: #a0a0a0;
 
 $light-10: #efefef;
+$light-10-invert: findColorInvert($light-10);
 $light-8: #dfdfdf;
+$light-8-invert: findColorInvert($light-8);
 
 $grey-darker:  $gray-3;
 $grey-dark:    $gray-32; 
@@ -48,17 +43,13 @@ $grey-lighter: $gray-a;
 //Add transparent as a colour
 @import "../../../../../lib/bulma/sass/utilities/derived-variables.sass";
 $addColors: (
-  "secondary": ($som-grana, $som-grana-invert),
-  "transparent":(rgba(#000, 0), $white),
-  "som-green": ($som-green, $som-green-invert),
-  "som-grana": ($som-grana, $som-grana-invert),
-  "som-yellow": ($som-yellow, $som-yellow-invert),
-  "orange": ($orange, $orange-invert),
-  "green": ($green, $green-invert),
-  "blue": ($blue, $blue-invert),
-  "purple": ($purple, $purple-invert),
-  "red": ($red, $white),
-  "wine": ($wine, $wine-invert),
+  "primary": ($primary, $primary-invert),
+  "secondary": ($secondary, $secondary-invert),
+  "som-gold": ($som-gold, $som-gold-invert),
+  "white": ($white, $white-invert),
+  "light-10": ($light-10, $light-10-invert),
+  "light-8": ($light-8, $light-8-invert),
   "black": ($black, $black-invert),
+  "transparent":(rgba(#000, 0), $white) 
 );
 $colors: map-merge($colors, $addColors);

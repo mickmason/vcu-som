@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VCU School of Medicine: Homepage</title>
-    <link rel="stylesheet" href="style-assets/css/style.css" /> 
-    
+    <link rel="stylesheet" href="../style-assets/css/style.css" /> 
         <script>
           (function(d) {
             var config = {
@@ -16,14 +15,46 @@
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
         </script>
-        
     </head> 
     
-    <body class="som-homepage"> 
+    <body class="som-homepage slate-blue-and-rose"> 
       <div class="body-wrap">
        @@include('structure/skip-links.html')  
-       @@include('structure/header.html')  
-       @@include('components/hero-large--video.html') 
+       @@include('structure/header-l2.html')  
+       <!-- ** Hero video big ** -->
+       <section class=" hero hero--video is-fullheight hero-image" aria-labelledby="hero-image-lrg-title">
+           <div class="hero-video__wrap">
+               <div class="hero-video">
+                   <video role="presentation" src="../style-assets/media/video/lmu-video.mp4" preload loop autoplay muted alt="A decorative video of the VCU School of Medicine campus. It contains no end-user content" ></video>    
+               </div>
+           </div><!-- // .hero-video__wrap -->
+           <div class="hero-body">
+              <div class="container">
+                 <div  class="columns">
+                     <div class="hero-content-wrap column">
+                         <div class="hero-text-wrap">
+                             <h1 id="hero-image-lrg-title" class="hero-title is-feature-font--serif">VCU School of Medicine</h1> 
+                             <p class="hero-subtext is-feature-font">Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center</p>
+                             <a href="javascript:void(0)" title="Read more" class="button is-transparent">Go to Med School</a>
+                         </div>
+
+                     </div>
+                 </div>
+              </div>
+          </div>
+          <div class="hero-foot">
+              <div class="container">
+                 <a href="#site-gateways" class="svg-icon-wrap svg-icon--scroll"> 
+                     <span>More</span>
+                     <svg class="svg-icon">
+                         <use xlink:href="#arrow-dots--down"></use>
+                     </svg>
+                 </a>
+              </div>
+          </div>
+           <div class="image-overlay "></div>
+       </section>
+       <!-- // ** Hero video fullsize ** -->
        @@include('components/audience-navigation.html')  
        <!--** Site main gateways ** -->
        <section class="section feature-section site-gateways " id="site-gateways" aria-labelledby="site-gateways-section-heading"> 
@@ -48,7 +79,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                </a>
                            </div>
@@ -59,7 +90,7 @@
                                </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -72,7 +103,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                     <div class="image-overlay "></div>
                                </a>
@@ -85,7 +116,7 @@
                                </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -98,7 +129,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                    <div class="image-overlay "></div>
                                </a>
@@ -110,7 +141,7 @@
                              </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -123,7 +154,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                    <div class="image-overlay "></div>
                                </a>
@@ -135,7 +166,7 @@
                              </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -150,7 +181,6 @@
        <!-- // ** Site main gateways ** -->
        <!--** Site main gateways ** -->
        <section class="section feature-section site-gateways " id="site-gateways" aria-labelledby="site-gateways-section-heading"> 
-           
            <div class="container">
                <div class="columns site-gateways__cards cards-columns ">
                    <div class="column">
@@ -158,7 +188,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                </a>
                            </div>
@@ -169,7 +199,7 @@
                                </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -182,7 +212,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                     <div class="image-overlay "></div>
                                </a>
@@ -195,7 +225,7 @@
                                </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -208,7 +238,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                    <div class="image-overlay "></div>
                                </a>
@@ -220,7 +250,7 @@
                              </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -233,7 +263,7 @@
                            <div class="card-image">
                                <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
                                    <figure class="image is-2by1">
-                                       <img alt="Placehoder image" src="style-assets/media/img/education-img-1.jpg" />
+                                       <img alt="Placehoder image" src="../style-assets/media/img/education-img-1.jpg" />
                                    </figure>
                                    <div class="image-overlay "></div>
                                </a>
@@ -245,7 +275,7 @@
                              </a>
                            </div>
                            <div class="card__arrow">
-                                <span class="icon icon--svg">
+                                <span class="icon icon--svg has-icon-white ">
                                        <svg class="">
                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
                                        </svg> 
@@ -258,130 +288,12 @@
            </div><!-- // .container -->
        </section>
        <!-- // ** Site main gateways ** -->
-       <!--** Featured programs cards **-->
-       <section class="section feature-section featured-programs" aria-labelledby="featured-programs-section-heading">
-           <div class="container">
-               <div class="columns featured-programs__outer-columns "> 
-                   <div class="column featured-programs__intro--column featured-programs__column">
-                       <div class="featured-programs-cards__intro">
-                           <h1 id="featured-programs-section-heading" class="section__title is-feature-font--serif">Featured programs</h1>
-                           <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
-                           <a href="javascript:void(0)" title="Read more" class="button is-primary">Find more study options</a> 
-                       </div><!-- // .featured-programs-cards__intro -->
-                   </div>
-                   <div class="column featured-programs-cards featured-programs__column">
-                      <div class="columns">
-                         <div class="column ">
-                              <div class="card--flat featured-programs-card">
-                               <div class="card-image">
-                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                       <figure class="image">
-                                           <img alt="Placehoder image" src="style-assets/media/img/white-coats-two-guys-12x17.jpg" />
-                                       </figure>
-                                   </a>
-                               </div>
-                               <div class="card-content"> 
-                                 <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                   <h2 class="card-heading is-feature-font--serif">MD Program</h2>
-                                   <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
-                                   <p class="card-content__read-more">More
-                                       <span class="icon icon--svg is-inline-icon has-icon-white">
-                                           <svg>
-                                               <use xlink:href="#next_arrow" />
-                                           </svg>
-                                       </span>
-                                    </p>
-                                 </a> 
-                               </div>
-                                <div class="image-overlay "></div>
-                           </div><!-- // .card-flat -->
-                       </div><!-- // . column -->
-                       <div class="column">
-                           <div class="card--flat featured-programs-card">
-                               <div class="card-image">
-                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                       <figure class="image is-12by17">
-                                           <img alt="Placehoder image" src="style-assets/media/img/convocation-1-12x17.jpg" />
-                                       </figure>
-                                   </a>
-                               </div>
-                               <div class="card-content"> 
-                                 <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                   <h2 class="card-heading is-feature-font--serif">Graduate Medical Education</h2>
-                                   <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
-                                   <p class="card-content__read-more"><strong>More</strong>
-                                       <span class="icon icon--svg is-inline-icon has-icon-white">
-                                           <svg>
-                                               <use xlink:href="#next_arrow" />
-                                           </svg>
-                                       </span>
-                                    </p>
-                                  </a>
-                               </div>
-                               <div class="image-overlay "></div>
-                           </div><!-- // .card-flat -->
-                          </div><!-- // .column -->
-                          <div class="column">
-                           <div class="card--flat featured-programs-card">
-                               <div class="card-image">
-                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                       <figure class="image is-12by17">
-                                           <img alt="Placehoder image" src="style-assets/media/img/convocation-1-12x17.jpg" />
-                                       </figure>
-                                   </a>
-                               </div>
-                               <div class="card-content"> 
-                                 <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                   <h2 class="card-heading is-feature-font--serif">Graduate Medical Education</h2>
-                                   <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
-                                   <p class="card-content__read-more"><strong>More</strong>
-                                       <span class="icon icon--svg is-inline-icon has-icon-white">
-                                           <svg>
-                                               <use xlink:href="#next_arrow" />
-                                           </svg>
-                                       </span>
-                                    </p>
-                                  </a>
-                               </div>
-                               <div class="image-overlay "></div>
-                           </div><!-- // .card-flat -->
-                          </div><!-- // .column -->
-                          <div class="column">
-                           <div class="card--flat featured-programs-card">
-                               <div class="card-image">
-                                   <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                       <figure class="image is-12by17">
-                                           <img alt="Placehoder image" src="style-assets/media/img/convocation-1-12x17.jpg" />
-                                       </figure>
-                                   </a>
-                               </div>
-                               <div class="card-content"> 
-                                 <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                   <h2 class="card-heading is-feature-font--serif">Graduate Medical Education</h2>
-                                   <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque.</p>
-                                   <p class="card-content__read-more"><strong>More</strong>
-                                       <span class="icon icon--svg is-inline-icon has-icon-white">
-                                           <svg>
-                                               <use xlink:href="#next_arrow" />
-                                           </svg>
-                                       </span>
-                                    </p>
-                                  </a>
-                               </div>
-                               <div class="image-overlay "></div>
-                           </div><!-- // .card-flat -->
-                          </div><!-- // .column -->
-                      </div><!-- // .cards-coloumns -->
-                   </div><!-- // cards outer column -->
-               </div><!-- // .columns-->
-           </div><!-- // .container -->
-       </section>
-       <!--** Featured programs cards **-->
+       
        <!-- ** Diversity feature ** -->
-       <section class="section feature-section feature-section--vision-graphic" aria-labelledby="diversity-section-heading" style="background-image: url('style-assets/media/img/diversity-2.jpg')">
+       <section class="section feature-section feature-section--vision-graphic" aria-labelledby="diversity-section-heading" style="background-image: url('../style-assets/media/img/diversity-2.jpg')">
            <div class="container">
                <div class="columns"> 
-                   <div class="column feature__column has-primary-background is-transparent has-vision-graphic">    
+                   <div class="column feature__column is-transparent has-vision-graphic">    
                         <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
                         <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
                         <a href="javascript:void(0)" title="Read more" class="button">Find out more about diversity</a> 
@@ -405,7 +317,7 @@
            <div class=" news-slider__columns news-slider__slick">
                <div class=" news-slider__slide">
                    <figure class="image news-slider__image is-16by9">
-                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                       <img alt="News item title" class="" src="../style-assets/media/img/pregnant-women-img.jpg" />
                    </figure>
                    <div class="news-slider__story is-feature-font">
                        <div class="news-slider__story__text">
@@ -424,7 +336,7 @@
                </div><!-- // .news-slider__slide -->
                <div class="column news-slider__slide">
                    <figure class="image news-slider__image is-16by9">
-                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                       <img alt="News item title" class="" src="../style-assets/media/img/pregnant-women-img.jpg" />
                    </figure>
                    <div class="news-slider__story is-feature-font">
                        <div class="news-slider__story__text">
@@ -443,7 +355,7 @@
                </div><!-- // .news-slider__slide -->
                <div class="column news-slider__slide">
                    <figure class="image news-slider__image is-16by9">
-                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                       <img alt="News item title" class="" src="../style-assets/media/img/pregnant-women-img.jpg" />
                    </figure>
                    <div class="news-slider__story is-feature-font">
                        <div class="news-slider__story__text">
@@ -463,7 +375,7 @@
                </div><!-- // .news-slider__slide -->
              <div class="column news-slider__slide">
                    <figure class="image news-slider__image is-16by9">
-                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                       <img alt="News item title" class="" src="../style-assets/media/img/pregnant-women-img.jpg" />
                    </figure>
                    <div class="news-slider__story is-feature-font">
                        <div class="news-slider__story__text">
@@ -559,7 +471,7 @@
                        <div class="read-more-block">
                           <hr /> 
                            <a href="javascript:void(0)" class="read-more-link">Read more news</a>
-                          <span class="icon icon--svg is-inline-icon has-icon-som-grana">
+                          <span class="icon icon--svg is-inline-icon has-icon-secondary">
                               <svg>
                                   <use xlink:href="#next_arrow" />
                               </svg>
@@ -617,7 +529,7 @@
                         <div class="read-more-block">
                           <hr /> 
                            <a href="javascript:void(0)" class="read-more-link">Read more events</a>
-                          <span class="icon icon--svg is-inline-icon has-icon-som-grana">
+                          <span class="icon icon--svg is-inline-icon has-icon-secondary">
                               <svg>
                                   <use xlink:href="#next_arrow" />
                               </svg>
@@ -627,108 +539,12 @@
                </div><!-- // .news-listing columns -->
            </div><!-- // .container.news-listing-container -->
        </section>
-       <!-- ** Deans message ** --> 
-       <section class="section deans-message-feature" aria-labelledby="deans-message-section-heading" style="background-image: url(style-assets/media/img/commonwealth-medical-01.jpg)">  
-          <div class="container">
-               <div class="columns">
-                   <div class="column deans-column">
-                       <h1 id="deans-message-section-heading" class="is-feature-font--serif section__title is-touch">Meassage from the Dean</h1>  
-                       <div class="deans-message__content"> 
-                          <div class="deans-image">
-                             <figure class="image">
-                                <img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" />       
-                             </figure>
-                          </div>
-                          <div class="deans-message">
-                                  <h2 id="deans-message-section-heading" class="is-feature-font--serif section__title"><span>Meassage from the Dean</span></h2>  
-                                  <div class="deans-messsage__text"> 
-                                       <span class="icon icon--svg has-icon-white">
-                                           <svg>
-                                                <use xlink:href="#quotes-square" />
-                                            </svg>
-                                       </span>
-                                       <div class="deans-messsage__text__message">
-                                           <p class="">As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.</p> 
-                                           <p class="">As we express our gratitude, we must never forget that the highest appreciation is not to utter words, but to live by them.</p>
-                                           <p>– John Fitzgerald Kennedy</p>     
-                                       </div>
-                                       
-                                  </div><!-- // .deans-messsage__text -->
-                                   
-                                   <p class="deans-message__read-more">
-                                        <a href="javascript:void(0)" class="read-more-link">Happy Thanksgiving</a>
-                                        <span class="icon icon--svg is-inline-icon has-icon-white">
-                                            <svg>
-                                                <use xlink:href="#next_arrow" />
-                                            </svg>
-                                        </span>       
-                                   </p>
-                               <div class="image-overlay "></div>
-                           </div><!-- // .deans-message -->
-                           
-                       </div>
-                   </div>
-               </div>
-           </div><!-- // .container -->
-           <div class="image-overlay has-white-background"></div>
-       </section>
-       <!-- ** // Deans message ** --> 
-      <!-- ** Diversity fixed feature ** -->  
-       <section class="section feature-section feature-section--fixed has-secondary-background" aria-labelledby="diversity-flyout-section-heading" >
-           <div class="container">
-               <div class="columns is-desktop is-widescreen">
-                   <div class="tab-column tab-column__mobile has-secondary-background column is-active">
-                      <a href="javascript:void(0)" class="feature-section--fixed__toggle">
-                         <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
-                         <span class="icon icon--svg has-icon-white">
-                                <svg class="show-more-icon">
-                                    <use xlink:href="#plus_icon" />
-                                </svg>
-                                <svg class=" show-less-icon">
-                                    <use xlink:href="#minus_icon" />
-                                </svg>
-                         </span>    
-                      </a>
-                   </div><!-- // .tab-column column -->
-                   <div class="column feature-section--fixed__content " style="background-image: url('style-assets/media/img/diversity-2.jpg')">
-                        <div class="feature-section--fixed__text-container has-secondary-background"> 
-                            <h1 id="diversity-flyout-section-heading" class="section__title is-feature-font--serif">Our Committment to diversity</h1>
-                            <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
-                            <a href="javascript:void(0)" title="Read more" class="button">Find out more about diversity</a> 
-                            <div class="tab-column tab-column__desktop"> 
-                              <a class="feature-section--fixed__hide">Close me
-                                     <span class="icon icon--svg is-inline-icon">
-                                            <svg class=" show-less-icon">
-                                                <use xlink:href="#x-icon--regular" />
-                                            </svg>
-                                     </span> 
-                              </a>
-                              <a href="javascript:void(0)" class="feature-section--fixed__toggle">
-                                 <div class="tab-column__text">
-                                     <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
-                                     <span class="icon icon--svg has-icon-white is-inline-icon">
-                                            <svg class="show-more-icon">
-                                                <use xlink:href="#plus_icon" />
-                                            </svg>
-                                            <svg class=" show-less-icon">
-                                                <use xlink:href="#minus_icon" />
-                                            </svg>
-                                     </span>    
-                                 </div>
-                                 
-                              </a>
-                           </div><!-- // .tab-column column -->   
-                        </div><!-- // .feature-section--fixedtext-container -->
-                   </div>
-               </div>
-           </div><!-- // .container -->
-       </section>
-       <!-- ** // Diversity fixed feature ** --> 
+       
        @@include('structure/footer.html')
     
     </div><!-- // .body-wrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     
-    <script src="style-assets/js/t4-scripts.js"></script>
+    <script src="../style-assets/js/t4-scripts.js"></script>
     </body>
 </html>

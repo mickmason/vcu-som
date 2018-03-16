@@ -192,7 +192,7 @@
     color: $white;
     padding-top:    $space-4;
     padding-bottom: $space-4;
-    border-bottom: 2px solid $som-yellow;
+    border-bottom: 2px solid $som-gold; 
     .navbar-dropdown {
             display: none;
             &.is-active {
@@ -209,12 +209,12 @@
             }
         }
         &.vcu-health-link {
-            background-color: $som-yellow;
+            background-color: $som-gold;
             color: $black;
             @include make-flexbox($direction: row, $justify: space-between, $align: center);
 
             &:hover, &:focus, &:active, &.is-active {
-                background-color: darken($som-yellow, 16%);
+                background-color: darken($som-gold, 16%);
                 svg {
                     fill: $white;
                 }
@@ -282,8 +282,8 @@
             
         }
         &:hover, &:active, &:focus, &.is-active {
-                background-color: lighten($gray-32, 15%);
-                color: $white;
+          background-color: lighten($gray-32, 15%);
+          color: $white;
 
         }  
         transition: background-color 120ms ease-out;  
@@ -415,9 +415,17 @@
             display: flex;
             -ms-flex-align: center;
             align-items: center;
+            &.navbar-link--main {
+              color: $gray-32;
+            }
             @include desktop {
-                -ms-flex-align: start;
-                align-items:    flex-start;
+              -ms-flex-align: start;
+              align-items:    flex-start;
+              &.navbar-link--main {
+                @include active-link {
+                  color: $white;  
+                }
+              }
             }
         }
         padding: 0;
@@ -508,7 +516,7 @@
     }
         
     //Sublinks
-    
+  .navbar-dropdown {
     .navbar-dropdown__link { 
         font-size: 1rem;
         padding: $space-2 $gutter-width;
@@ -518,13 +526,17 @@
         transition: background-color 160ms ease-out;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        color: $gray-32;
         &:hover, &:active, &:focus {
-            background-color: $light-10;
+          background-color: $white;
+          text-decoration: underline;
         }
         &:last-child {
             border-bottom: 0;
         }
     }
+  }
+    
     .navbar-dropdown .navbar-item {
         -ms-flex-pack: start;
         justify-content: flex-start;
@@ -801,6 +813,13 @@
         .site-search-form__filter {
             -ms-flex:     0;
             flex-grow:    0;
+        }
+        a {
+          color: $gray-32;
+          @include active-link {
+            color: $gray-32;
+            text-decoration: underline;
+          }
         }
         .site-search-form__filter_label {
             -ms-flex:  0;

@@ -125,8 +125,7 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         dist: {
-            src: [ 
-                
+            src: [
                 'development/lib/jquery-match-height/jquery.matchHeight.js',  
                 'development/lib/slick/slick/slick.min.js', 
                 'development/terminalfour/src/js/*.js'
@@ -136,14 +135,23 @@ module.exports = function(grunt) {
     },
     postcss: {
       options: {
-                map: true,
-                processors: [
-                    require('autoprefixer')
-                ]
-            },
+        map: true,
+        processors: [
+            require('autoprefixer')
+        ]
+      },
+      minify: {
+        options: {
+            map: true,
+            processors: [
+                require('cssnano')
+            ]
+          }
+      },
       dist: {
         src: 'www-root/style-assets/css/style.css'
-      }
+      },
+      
     },
     watch: {
       options: { livereload: true },
@@ -180,7 +188,6 @@ module.exports = function(grunt) {
          tasks: ['svgstore:default', 'copy']
       }
     }//watch
-    
   });
 
   // Default task(s).

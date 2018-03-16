@@ -56,14 +56,14 @@
     flex-direction:         $direction;
     flex-wrap:              $wrap;
     justify-content:        $justify;
-    align-items:            $align;
+    align-items:            $align; 
 }
 @mixin make-flexitem($grow: 1, $shrink: 1, $basis: auto, $none: 0) {
     @if $none == none {
         -ms-flex: none;
         flex: none;    
     } @else {
-         -ms-flex: $grow $shrink $basis;
+         -ms-flex: $grow $shrink $basis; 
         flex: $grow $shrink $basis;       
     }
 }
