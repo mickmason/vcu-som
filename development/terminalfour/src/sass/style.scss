@@ -97,22 +97,6 @@ body {
         padding-bottom:  $space-6;
         position: relative;
         z-index: 5;
-        @include touch {
-            &::before {
-                
-            }
-        }
-        &:before {
-            position: absolute;
-            content: " ";
-            display: block;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
-            transform: none;
-        }
     }//.feature-column
   .button {
     background-color: $white;
@@ -123,7 +107,6 @@ body {
       color: $primary;
       border-color: $white;
     }
-    
   }
     @include tablet {
         .feature__column {
@@ -906,24 +889,25 @@ body {
             
     }
     .section-intro__body {
-        padding: $gutter-width;
-        background-position: center;
-        @include make-image-overlay($white, $transp: 0.82);
-        p, ul, li {
-            font-weight: 200; 
-            font-size: $size-5;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        &__text {
-            position: relative;
-            z-index: 20;
-        }
-        @include widescreen {
-            padding-top: $gutter-width*2;
-            padding: $gutter-width*2;
-        }
+      color: $white; 
+      padding: $gutter-width;
+      background-position: center;
+      @include make-image-overlay($primary, $transp: 0.82);
+      p, ul, li {
+          font-weight: 200; 
+          font-size: $size-5;
+          &:last-child {
+              margin-bottom: 0;
+          }
+      }
+      &__text {
+          position: relative;
+          z-index: 20;
+      }
+      @include widescreen {
+          padding-top: $gutter-width*2; 
+          padding: $gutter-width*2; 
+      }
     }
     .section-intro__right-image {
         background-position: right center;

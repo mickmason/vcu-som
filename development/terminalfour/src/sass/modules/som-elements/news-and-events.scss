@@ -29,7 +29,6 @@
             width: $gl-xlarge;
         }
     }
-
     .news-events--listing__heading {
         width: 100%;
         font-size: $size-4;
@@ -39,7 +38,6 @@
         margin-bottom: $space-2;
         border-top: 1px solid $black;
         border-bottom: 1px solid $black;
-        
     }
     .news-listing__items {
         @include tablet {
@@ -73,7 +71,7 @@
         font-size: $size-6;
         margin-bottom: $space-11;
         > a {
-            color: $som-grana;
+            color: $secondary;
         }
     }
     .events-items {

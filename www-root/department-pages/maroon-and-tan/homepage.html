@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VCU School of Medicine: Homepage</title>
-    <link rel="stylesheet" href="../style-assets/css/style.css" /> 
-    
+    <link rel="stylesheet" href="../../style-assets/css/style.css" /> 
         <script>
           (function(d) {
             var config = {
@@ -16,10 +15,14 @@
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
         </script>
-        
     </head> 
-    <body>
-       <div class="body-wrap maroon-and-tan">
+    
+    <body class="som-homepage maroon-and-tan">  
+      <div class="body-wrap">
+       <div class="som-skip-links" >
+    <a href="#content-start" class="som-skip-links__content" tabindex="1">Skip to content</a>
+    <a href="#footer" class="som-skip-links__footer" tabindex="1" >Skip to footer</a>
+</div>  
        <!--** VCU campaign branding bar **-->
 <script type="text/javascript" src="//branding.vcu.edu/bar/academic/latest.js"></script>
 <!--** VCU campaign branding bar **-->
@@ -521,380 +524,588 @@
            </div><!-- // .container.main-navigation  -->
            <!-- ** // Main navigation ** -->
        </header><!-- // .main-site-header -->  
-       <!-- ** Hero slider ** -->
-       <section class="hero hero-image hero-slider"  aria-label="Latest news from VCU School of Medicine" > 
-          <div class="hero-slider__slider hero-body">
-               <div class="hero-slider__slide" >
-                  <figure class="image is-2by1 hero-slider__image"> 
-                      <img src="../style-assets/media/img/egyptian-building-at-night.jpg" alt="Egyptian building" />
-                  </figure>
-                  <div class="news-slider__story is-feature-font">
-                      <div class="news-slider__story__text">
-                          <span class="news-label">Biomedical Sciences</span>
-                          <h2 class="news-slider__story__title">#1 VCU Health experts agree new moms should have depression screenings</h2>
-                          <span class="news-date">October 22, 2017</span>
-                          <a class="" href="javascript:void(0)">Read more
-                              <span class="icon icon--svg is-inline-icon has-icon-white">
-                                           <svg>
-                                               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
-                                           </svg>
-                                       </span>
-                          </a> 
-                      </div>
-                  </div>
-              </div><!-- // .hero-slider__slide -->
-              <div class="hero-slider__slide">
-                  <figure class="image is-2by1 hero-slider__image"> 
-                      <img src="../style-assets/media/img/egyptian-building-at-night.jpg" alt="Egyptian building" />
-                  </figure>
-                  <div class="news-slider__story is-feature-font">
-                      <div class="news-slider__story__text">
-                          <span class="news-label">Biomedical Sciences</span>
-                          <h2 class="news-slider__story__title">#2 VCU Health experts agree new moms should have depression screenings</h2>
-                          <span class="news-date">October 22, 2017</span>
-                          <a class="" href="javascript:void(0)">Read more
-                              <span class="icon icon--svg is-inline-icon has-icon-white">
-                                           <svg>
-                                               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
-                                           </svg>
-                                       </span>
-                          </a>
-                      </div>
-                  </div>
-              </div><!-- // .hero-slider__slide -->
+       <!-- ** Hero video big ** -->
+       <section class=" hero hero--video is-fullheight hero-image" aria-labelledby="hero-image-lrg-title">
+           <div class="hero-video__wrap">
+               <div class="hero-video">
+                   <video role="presentation" src="../../style-assets/media/video/lmu-video.mp4" preload loop autoplay muted alt="A decorative video of the VCU School of Medicine campus. It contains no end-user content" ></video>    
+               </div>
+           </div><!-- // .hero-video__wrap -->
+           <div class="hero-body">
+              <div class="container">
+                 <div  class="columns">
+                     <div class="hero-content-wrap column">
+                         <div class="hero-text-wrap">
+                             <h1 id="hero-image-lrg-title" class="hero-title is-feature-font--serif">VCU School of Medicine</h1> 
+                             <p class="hero-subtext is-feature-font">Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center</p>
+                             <a href="javascript:void(0)" title="Read more" class="button is-transparent">Go to Med School</a>
+                         </div>
+
+                     </div>
+                 </div>
+              </div>
           </div>
-          <div class="hero-slider__controls slider__controls has-black-background">
-                    <button class="slider-control slider-control__prev hero-slider__controls__prev ">
-                        <span class="icon icon--svg has-icon-white"> 
+          <div class="hero-foot">
+              <div class="container">
+                 <a href="#site-gateways" class="svg-icon-wrap svg-icon--scroll"> 
+                     <span>More</span>
+                     <svg class="svg-icon">
+                         <use xlink:href="#arrow-dots--down"></use>
+                     </svg>
+                 </a>
+              </div>
+          </div>
+           <div class="image-overlay "></div>
+       </section>
+       <!-- // ** Hero video fullsize ** -->
+              <!-- ** Audience navigation ** -->
+       <nav class="section audience-navigation landing-page-navigation is-active" role="navigation" aria-label="Audience navigation">
+          <div class="audience-navigation__top-wrap landing-page-nav__top-wrap">
+               <div class="container audience-nav__top landing-page-nav__top"> 
+                   <div class="audience-nav__heading landing-page-nav__heading"> 
+                       <h3 class="audience-nav__heading-text landing-page-nav__heading-text"> 
+                           <a href="javascript:void(0)" class="audience-nav__toggle " title="Show/hide audience navigation">
+                              Information for...
+                               <span class="icon icon--svg has-icon-white show-more-icon">
+                                   <svg>
+                                       <use xlink:href="#circle_plus" />
+                                   </svg>
+                               </span>    
+                               <span class="icon icon--svg has-icon-white show-less-icon">
+                                   <svg>
+                                       <use xlink:href="#circle_minus" />
+                                   </svg>
+                               </span>    
+                           </a>
+                       </h3> 
+                       
+                   </div>
+ 
+               </div><!-- // audience-nav__top container -->
+           </div><!-- // audience-nav__top wrap -->
+         <div class="audience-navigation__body-wrap landing-page-nav__body-wrap"> 
+           <div class="container"> 
+                  <div class="audience-navigation__body landing-page-navigation__body">
+                   <div class="columns">
+                       <div class="column">
+                            <ul>
+                                <li><a href="javascript:void(0)">Prospective Students     </a></li>
+                                <li><a href="javascript:void(0)">Medical Students     </a></li>
+                                <li><a href="javascript:void(0)">Foundations             </a></li>
+                           </ul>
+                       </div>
+                       <div class="column">
+                           <ul>
+                                <li><a href="javascript:void(0)">Graduate Students     </a></li>
+                                <li><a href="javascript:void(0)">Residents and Fellows </a></li>
+                                <li><a href="javascript:void(0)">Faculty and Staff     </a></li>
+                            </ul>
+                       </div>
+                       <div class="column">
+                           <ul>
+                                <li><a href="javascript:void(0)"> Patients                       </a></li>
+                                <li><a href="javascript:void(0)"> Health Care Professionals      </a></li>
+                                <li><a href="javascript:void(0)"> Alumni, Donors and Friends     </a></li>
+                            </ul>
+                       </div>
+                       <div class="column">
+                           <ul>
+                                <li><a href="javascript:void(0)">Patients</a></li> 
+                                <li><a href="javascript:void(0)">Health Care Professionals</a></li>
+                                <li><a href="javascript:void(0)">Alumni, Donors and Friends</a></li>
+                            </ul>
+                       </div>
+                   </div><!-- // .columns -->
+                </div><!-- // .audience-navigation__body -->
+           </div><!-- // audience-navigation__body container -->
+         </div><!-- / audience-navigation__body-wrap -->
+       </nav>
+       <!--** // audience-navigation **-->  
+       <!--** Site main gateways ** -->
+       <section class="section feature-section site-gateways " id="site-gateways" aria-labelledby="site-gateways-section-heading"> 
+           <div class="container section__label__container"><span class="section__label">Education</span></div>
+           <div class="section__title__outer-wrap">
+               <div class="container section__title--featured">
+                <div class="section__title--featured__wrap">
+                    <h1 id="site-gateways-section-heading" class="section__title is-feature-font--serif"><span>Start your journey</span></h1>  
+                    <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p>         
+                </div>  
+               </div><!-- // section title container -->
+           </div>
+           <div class="container">
+               <div class="columns site-gateways__intro">
+                   <div class="column ">
+                       <p class="section__intro feature-font is-touch-only">Begin your learning journey at VCU School of Medicine.</p>
+                   </div><!-- // .site-gateways__intro -->
+               </div><!-- // .columns -->
+               <div class="columns site-gateways__cards cards-columns ">
+                   <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                               </a>
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Education</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                   <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                                    <div class="image-overlay "></div>
+                               </a>
+                               
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Admissions</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                   <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                                   <div class="image-overlay "></div>
+                               </a>
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Research</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                             </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                    <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                                   <div class="image-overlay "></div>
+                               </a>
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Research</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                             </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                   
+               </div><!-- // .site-gateways -->
+           </div><!-- // .container -->
+       </section>
+       <!-- // ** Site main gateways ** -->
+       <!--** Site main gateways ** -->
+       <section class="section feature-section site-gateways " id="site-gateways" aria-labelledby="site-gateways-section-heading"> 
+           <div class="container">
+               <div class="columns site-gateways__cards cards-columns ">
+                   <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                               </a>
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Education</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                   <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                                    <div class="image-overlay "></div>
+                               </a>
+                               
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Admissions</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                               </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                   <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                                   <div class="image-overlay "></div>
+                               </a>
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Research</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                             </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                    <div class="column">
+                       <div class="card--flat site-gateway__card ">
+                           <div class="card-image">
+                               <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                   <figure class="image is-2by1">
+                                       <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                   </figure>
+                                   <div class="image-overlay "></div>
+                               </a>
+                           </div>
+                           <div class="card-content"> 
+                             <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                               <h2 class="card-heading">Research</h2>
+                               <p class="card-content__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                             </a>
+                           </div>
+                           <div class="card__arrow">
+                                <span class="icon icon--svg has-icon-white ">
+                                       <svg class="">
+                                           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-solid--thin"></use>
+                                       </svg> 
+                                </span>
+                           </div>
+                       </div>
+                   </div><!-- //.column -->
+                   
+               </div><!-- // .site-gateways -->
+           </div><!-- // .container -->
+       </section>
+       <!-- // ** Site main gateways ** -->
+       
+       <!-- ** Diversity feature ** -->
+       <section class="section feature-section feature-section--vision-graphic" aria-labelledby="diversity-section-heading" style="background-image: url('../../style-assets/media/img/diversity-2.jpg')">
+           <div class="container">
+               <div class="columns"> 
+                   <div class="column feature__column is-transparent has-vision-graphic">    
+                        <h1 id="diversity-section-heading" class="section__title is-feature-font--serif">Committment to diversity</h1>
+                        <p class="section__intro">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni</p>   
+                        <a href="javascript:void(0)" title="Read more" class="button">Find out more about diversity</a> 
+                   </div>
+                   
+               </div>
+           </div><!-- // .container -->
+       </section>
+       <!-- ** // Diversity feature ** -->
+       <div class="section news-slider">
+           <div class="container section__label__container"><span class="section__label">Discover</span></div>
+           <div class="section__title__outer-wrap">
+               <div class="container section__title--featured ">
+                <div class="section__title--featured__wrap">
+                        <h1 id="news-and-events-section-heading" class="section__title is-feature-font--serif"><span>News and Events</span></h1>  
+                        <p class="section__intro is-feature-font">Begin your learning journey at VCU School of Medicine.</p>         
+                </div>  
+               </div><!-- // .container.section__title--featured-->
+           </div>     
+              <!--** Featured news slick -->
+           <div class=" news-slider__columns news-slider__slick">
+               <div class=" news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="../../style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 20, 2017</span>
+                           <a class="" href="javascript:void(0)">Read more
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+               <div class="column news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="../../style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">#2 VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 22, 2017</span>
+                           <a class="" href="javascript:void(0)">Read all about it
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+               <div class="column news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="../../style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 22, 2017</span>
+                           <a class="" href="javascript:void(0)">Read about screenings 
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                       
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+             <div class="column news-slider__slide">
+                   <figure class="image news-slider__image is-16by9">
+                       <img alt="News item title" class="" src="../../style-assets/media/img/pregnant-women-img.jpg" />
+                   </figure>
+                   <div class="news-slider__story is-feature-font">
+                       <div class="news-slider__story__text">
+                           <span class="news-label">Biomedical Sciences</span>
+                           <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
+                           <span class="news-date">October 22, 2017</span>
+                           <a class="" href="javascript:void(0)">Read about this story
+                               <span class="icon icon--svg is-inline-icon has-icon-white">
+                                   <svg>
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
+                                   </svg>
+                               </span>
+                           </a>
+                       </div>
+                       
+                   </div><!-- // .news-slider__story -->
+               </div><!-- // .news-slider__slide -->
+              </div><!-- // .news-slider__slick -->
+              <div class="slider__controls-wrap">
+                   <div class="news-slider__controls slider__controls">
+                      <button class="slider-control slider-control__prev news-slider__control">
+                        <span class="icon icon--svg has-icon-white">
                             <svg class="svg-icon">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#prev_arrow"></use>
+                                <use xlink:href="#prev_arrow"></use>
                              </svg>
                         </span>
-                    </button>
-                    <div class="slider-control__dots hero-slider-control__dots">
-                        
-                    </div>
-                    <button class="slider-control slider-control__next hero-slider__controls__next " > 
-                        <span class="icon icon--svg has-icon-white">
-                             <svg class="svg-icon">
-                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use> 
-                             </svg>   
-                        </span>
-                    </button>
-           </div><!-- // .discovery-slider__controls -->
-          <!-- ** hero-quicklinks **-->
-          <div class="hero-quicklinks">
-              <div class="container">
-                 <div class="columns">
-                     <div class="hero-quicklinks__text column">
-                         <span class="section__label">News and events quicklinks:</span>
-                     </div><!-- // .hero-quicklinks__wrap -->     
-                 </div>
-                 <div class="columns">
-                     <div class="hero-quicklinks__wrap column">
-                         <a href="javascript:void(0)" class="button is-transparent">Biomedical News</a> <a href="javascript:void(0)" class="button is-transparent">Clinical Advances</a><a href="javascript:void(0)" class="button is-transparent">Talk to an expert</a>
-                     </div><!-- // .hero-quicklinks__wrap -->
-                 </div>
-              </div><!-- ** // .container ** -->
-          </div>
-          <!-- ** // .hero-quicklinks **-->
-       </section>
-       <!-- // ** Hero slider ** -->
-       <!--** Landing page section with heading pulled left, intro text an image to the right - Landing pages only **-->
-           <section class="section feature-section feature-section--section-intro has-secondary-background" aria-labelledby="section-intro-heading"> 
-              <div class="container">
-                 <div class="columns is-feature-font">
-                      <div class="column section-intro__heading" style="background-image: url(../style-assets/media/img/diversity-2-1by1.jpg)">
-                          <div class="section-intro__heading__text is-feature-font ">  
-                            <h1 id="section-intro-heading" class="section__title is-feature-font--serif">Study at VCU School of Medicine</h1>
-                          </div>
-                       </div><!-- // .section-intro__heading -->
-                       <div class="column section-intro__body" style="background-image: url(../style-assets/media/img/doctors.jpg)">  
-                           <div class="section-intro__body__text">
-                               <p>The VCU School of Medicine is committed to training the clinicians, scientists and scholars of tomorrow. More than 1000 students from around the world come to the VCU School of Medicine to pursue medical and graduate degrees as well as specialized certificate training. </p>
-                               <p>The VCU School of Medicine is committed to training the clinicians, scientists and scholars of tomorrow. More than 1000 students from around the world come to the VCU School of Medicine to pursue medical and graduate degrees as well as specialized certificate training. </p>    
-                           </div><!-- // .section-intro__body__text -->
-                       </div><!-- // .section-intro__body -->
-                       <div class="column section-intro__right-image" style="background-image: url(../style-assets/media/img/diversity-2-1by1.jpg)">
-                       </div><!-- // .section-intro__right-image -->    
-                   </div><!-- // .columns -->
-               </div>
-           </section><!-- ** // .feature-section--section-intro ** -->
-       <!--- ** News sliders ** -->
-       <!-- ** Biomedical news slider ** -->
-       <section class="section  feature-section discovery-slider has-light-background is-secondary">
-            <div class="container">
-                <div class="columns discovery-slider__title">
-                   <div class="column">
-                       <h2 class="section__title is-feature-font">Latest news</h2> 
-                       <h3>Biomedical news</h3>
-                   </div>
-               </div>
-               <!-- ** Biomedical advances slider ** -->
-               <div class="discovery-slider-wrapper">
-                   <div class="columns discovery-slider__slider">
-                       <div class="column discovery-slider__slide">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/diversity-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#1 Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide ">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#2 PM&R Resident Jason Tucker selected for seed grant funding for PRP proof of concept study</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide ">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#3 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#4 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide">
-                            <div class="card--flat featured-discovery-card has-border-secondary">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#5 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="discovery-slider__controls">
-                          
-                     </div><!-- // .discovery-slider__controls -->
-                   </div><!-- // .discovery-slider__slider -->
-                   
-                 <!-- ** // Biomedical advances slider ** -->
-               </div><!-- // .slider-wrapper -->
-            </div><!-- // .container -->
-        </section><!-- // .feature-section.discovery-slider - biomed -->
-        <!-- ** // Biomedical news slider ** -->
-        <!-- ** Alumni advances slider ** -->
-        <section class="section  feature-section discovery-slider">
-           <div class="container">
-               <!-- ** Alumni achievements slider ** -->
-               <div class="columns discovery-slider__title">
-                       <div class="column">
-                           <h3>Alumni achievements</h3>
-                       </div>
-               </div>   
-               <div class="discovery-slider-wrapper">
-                   <div class="columns discovery-slider__slider">
-                       <div class="column discovery-slider__slide">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/diversity-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Alumni Achievements</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#1 Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide ">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#2 PM&R Resident Jason Tucker selected for seed grant funding for PRP proof of concept study</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide ">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#3 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide">
-                            <div class="card--flat featured-discovery-card has-border-secondary ">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#4 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="column discovery-slider__slide">
-                            <div class="card--flat featured-discovery-card has-border-secondary">
-                                <div class="card-image">
-                                    <figure class="image is-3by2">
-                                        <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                    </figure>
-                                </div>
-                                <div class="card-content">
-                                    <p class="som-content-label">Biomedical advances</p>
-                                    <h3 class="card__title"><a href="javascript:void(0)">#5 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                    <p class="card__date--plain">9 December</p>
-                                </div>
-                            </div><!-- // .featured-discovery-card -->
-                       </div><!-- // .column -->
-                       <div class="discovery-slider__controls">
-                            
-                        </div><!-- // .discovery-slider__controls -->
-                   
-                   </div><!-- // .discovery-slider__slider -->
-               </div><!-- // .discovery-slider-wrapper -->
-           </div>
-       </section>
-       <!-- ** // Alumni achievements slider ** -->
-       <!-- ** Clinical advances slider ** -->
-        <section class="section  feature-section discovery-slider has-light-background  is-secondary">
-            <div class="container">
-             <!-- ** Clinical advances slider ** -->
-                <div class="columns discovery-slider__title">
-                    <div class="column">
-                        <h3>Clinical advances</h3>
-                    </div>
-                </div>  
-                 <div class="discovery-slider-wrapper">
-                     <div class="columns discovery-slider__slider">
-                           <div class="column discovery-slider__slide">
-                                <div class="card--flat featured-discovery-card has-border-secondary ">
-                                    <div class="card-image">
-                                        <figure class="image is-3by2">
-                                            <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/diversity-1-3by2.jpg" class="" />
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <p class="som-content-label">Biomedical advances</p>
-                                        <h3 class="card__title"><a href="javascript:void(0)">#1 Timely scholarship gives nontraditional student the help he needs to return to the classroom</a></h3>
-                                        <p class="card__date--plain">9 December</p>
-                                    </div>
-                                </div><!-- // .featured-discovery-card -->
-                           </div><!-- // .column -->
-                           <div class="column discovery-slider__slide ">
-                                <div class="card--flat featured-discovery-card has-border-secondary ">
-                                    <div class="card-image">
-                                        <figure class="image is-3by2">
-                                            <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <p class="som-content-label">Biomedical advances</p>
-                                        <h3 class="card__title"><a href="javascript:void(0)">#2 PM&R Resident Jason Tucker selected for seed grant funding for PRP proof of concept study</a></h3>
-                                        <p class="card__date--plain">9 December</p>
-                                    </div>
-                                </div><!-- // .featured-discovery-card -->
-                           </div><!-- // .column -->
-                           <div class="column discovery-slider__slide ">
-                                <div class="card--flat featured-discovery-card has-border-secondary ">
-                                    <div class="card-image">
-                                        <figure class="image is-3by2">
-                                            <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <p class="som-content-label">Biomedical advances</p>
-                                        <h3 class="card__title"><a href="javascript:void(0)">#3 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                        <p class="card__date--plain">9 December</p>
-                                    </div>
-                                </div><!-- // .featured-discovery-card -->
-                           </div><!-- // .column -->
-                           <div class="column discovery-slider__slide">
-                                <div class="card--flat featured-discovery-card has-border-secondary ">
-                                    <div class="card-image">
-                                        <figure class="image is-3by2">
-                                            <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <p class="som-content-label">Biomedical advances</p>
-                                        <h3 class="card__title"><a href="javascript:void(0)">#4 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                        <p class="card__date--plain">9 December</p>
-                                    </div>
-                                </div><!-- // .featured-discovery-card -->
-                           </div><!-- // .column -->
-                           <div class="column discovery-slider__slide">
-                                <div class="card--flat featured-discovery-card  has-border-secondary ">
-                                    <div class="card-image">
-                                        <figure class="image is-3by2">
-                                            <img alt="A day in the life of a Medical Student" src="../style-assets/media/img/education-img-1-3by2.jpg" class="" />
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <p class="som-content-label">Biomedical advances</p>
-                                        <h3 class="card__title"><a href="javascript:void(0)">#5 Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
-                                        <p class="card__date--plain">9 December</p>
-                                    </div>
-                                </div><!-- // .featured-discovery-card -->
-                           </div><!-- // .column -->
-                           <div class="discovery-slider__controls">
-                                
-                            </div><!-- // .discovery-slider__controls -->
-                       </div><!-- // .discovery-slider__slider -->
+                      </button>
+                      <div class="slick-dots-container">
+                      
+                      </div>
+                      <button class="slider-control slider-control__next news-slider__control">
+                         <span class="icon icon--svg has-icon-white">
+                              <svg class="svg-icon">
+                                  <use xlink:href="#next_arrow"></use> 
+                              </svg>   
+                         </span>
+                       </button>
+                  </div>
+            </div>
+           </div><!-- // .news-main-container.is-fluid -->
+       <!-- ** News and media ** -->
+       <section class="section news-and-events-feature" aria-labelledby="news-and-events-section-heading">
+           <div class="container news-events--listing"> 
+               <div class="columns is-widescreen"> 
+                   <div class="column  news-listing-column is-feature-font">
+                      
+                       <h2 class="news-events--listing__heading is-feature-font">Latest News</h2>
                        
-                        <!-- ** // Clinical advances slider ** -->
-                 </div><!-- // .discovery-slider-wrapper -->
-              </div><!-- // .container -->
-        </section>
-        <!-- ** // Clinical advances slider ** -->
-        <footer class="section vcu-som-footer" id="footer" aria-label="VCU School of Medicine contact and other links">
+                       <div class="news-listing__items"> 
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>    
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>    
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>    
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>    
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>    
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                           <div class="news-listing__item">
+                               <h3 class="news-listing__title"><a href="javascript:void(0)">Alumni star M’99 Eduardo Rodriguez inspires the next generation</a></h3>    
+                               <p class="news-listing__label som-content-label">Biomedical advances</p>
+                               <p class="news-listing__date">November 23, 2017</p>
+                           </div><!-- // .news-listing__item -->
+                       </div>
+                       <div class="read-more-block">
+                          <hr /> 
+                           <a href="javascript:void(0)" class="read-more-link">Read more news</a>
+                          <span class="icon icon--svg is-inline-icon has-icon-secondary">
+                              <svg>
+                                  <use xlink:href="#next_arrow" />
+                              </svg>
+                          </span>    
+                       </div>
+                   </div><!-- // .news-lising-column -->
+                   <div class="column is-tablet events-listing-column">
+                       <h2  class="news-events--listing__heading is-feature-font">Events</h2>
+                       <div class="events-items">
+                           <div class="events-listing__item">
+                               <div class="events-listing__date">
+                                   <span class="event-day">29</span>
+                                   <span class="event-month">Nov</span>
+                               </div>
+                               <div class="event-details">
+                                   <h3 class="events-listing__title"><a href="javascript:void(0)">Traumatic Brain Injury Seminar</a></h3>
+                                   <p class="news-listing__label som-content-label">Academic</p>
+                                   <p class="event-listing__location">	Kontos Medical Sciences Building | 7:45 am</p>    
+                               </div>
+                           </div>
+                           <div class="events-listing__item">
+                               <div class="events-listing__date">
+                                   <span class="event-day">30</span>
+                                   <span class="event-month">Nov</span>
+                               </div>
+                               <div class="event-details">
+                                   <h3 class="events-listing__title"><a href="javascript:void(0)">Microbiology &amp; Immunology Research Seminar</a></h3>
+                                   <p class="news-listing__label som-content-label">Research</p>
+                                   <p class="event-listing__location">Sanger Hall | Noon</p>
+                               </div>
+                           </div>
+                           <div class="events-listing__item">
+                               <div class="events-listing__date">
+                                   <span class="event-day">1</span>
+                                   <span class="event-month">Dec</span>
+                               </div>
+                               <div class="event-details">
+                                   <h3 class="events-listing__title"><a href="javascript:void(0)">Anatomy &amp; Neurobiology Seminar</a></h3>
+                                   <p class="news-listing__label som-content-label">International Focus</p>
+                                   <p class="event-listing__location">Sanger Hall | Noon</p>
+                               </div>
+                           </div>
+                           <div class="events-listing__item">
+                               <div class="events-listing__date">
+                                   <span class="event-day">3</span>
+                                   <span class="event-month">Dec</span>
+                               </div>
+                               <div class="event-details">
+                                   <h3 class="events-listing__title"><a href="javascript:void(0)">LLS Support Group</a></h3>
+                                   <p class="news-listing__label som-content-label">The Larger Community</p>
+                                   <p class="event-listing__location">Stony Point - 9000 Stony Point Parkway | 7 pm</p>
+                               </div>
+                           </div>
+                       </div><!-- // .events-items -->
+                        <div class="read-more-block">
+                          <hr /> 
+                           <a href="javascript:void(0)" class="read-more-link">Read more events</a>
+                          <span class="icon icon--svg is-inline-icon has-icon-secondary">
+                              <svg>
+                                  <use xlink:href="#next_arrow" />
+                              </svg>
+                          </span>    
+                       </div>
+                   </div><!-- // .news-lising-column -->
+               </div><!-- // .news-listing columns -->
+           </div><!-- // .container.news-listing-container -->
+       </section>
+       
+       <footer class="section vcu-som-footer" id="footer" aria-label="VCU School of Medicine contact and other links">
         <div class="container is-fluid footer__container">
             <div class="columns footer__columns">
                 <div class="column footer__address">
@@ -997,10 +1208,11 @@
                 </div>
             </div>
         </div><!-- // footer .container -->
-    </footer><!-- // footer --> 
-    </div><!-- //.body-wrap -->
+    </footer><!-- // footer -->
+    
+    </div><!-- // .body-wrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="../style-assets/js/t4-scripts.js"></script>
-    <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8XZaozAEcqR4419ZbF1w1LEvrBPJzsbN4J2WHX3WbX0.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
+    
+    <script src="../../style-assets/js/t4-scripts.js"></script>
     </body>
 </html>

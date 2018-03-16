@@ -248,8 +248,11 @@
     }
 }
 .discovery-slider {
-    .card--flat {
+  .card--flat {
         border-bottom: 3px solid $primary;
+    a {
+      color: $gray-32;
+    }  
         @include active-link {
             .card-content {
                 background-color: $primary;

@@ -441,5 +441,61 @@ $themeColours: (
         background-color: rgba($theme-primary, 0.84);
       }
     }
+    
+    //Discoveries/news sliders
+    .discovery-slider {
+      .card--flat {
+          border-bottom-color: $theme-primary;
+          @include active-link {
+              .card-content {
+                  background-color: $theme-primary;
+              }
+              border-bottom-color: $som-gold;
+          }
+      }
+      &.is-secondary {
+        .card--flat {
+          border-bottom-color: $theme-secondary;
+          @include active-link { 
+            border-bottom-color: $som-gold;
+            .card-content {
+                background-color: $theme-secondary;
+            }
+            border-bottom-color: $som-gold;
+          }
+        }
+      }
+    }
+    
+    // Landing page section with heading pulled left, intro text an image to the right
+    .feature-section--section-intro { 
+      .section-intro__heading {
+        &__text {
+          &::after {
+              background-color: $theme-primary;
+          }
+        }
+      }
+      .section-intro__body {
+          &::before {
+              background-color: rgba($theme-primary, $transparency);
+          }
+      }
+      &.has-secondary-background {
+        .section-intro__body {
+            &::before {
+                background-color: rgba($theme-secondary, $transparency);
+            }
+        }
+        .section-intro__heading {
+            &__text {
+                &::after {
+                    background-color: $theme-secondary; 
+                }
+            }
+        }
+    }
+    }
+    
   }//a.#{theme-name}
 }//@each $name, $pair in $themeColours

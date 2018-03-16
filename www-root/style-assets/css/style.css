@@ -11968,11 +11968,6 @@ label.panel-block:hover {
   text-decoration: none;
 }
 
-a.navbar-item,
-a.navbar-link {
-  colour: #202020;
-}
-
 .navbar-item img {
   max-height: none;
 }
@@ -20281,6 +20276,9 @@ body.has-lightbox-active {
 .discovery-slider .card--flat {
   border-bottom: 3px solid #00504d;
 }
+.discovery-slider .card--flat a {
+  color: #323232;
+}
 .discovery-slider .card--flat:hover, .discovery-slider .card--flat:active, .discovery-slider .card--flat:focus {
   border-bottom: 3px solid #ffba00;
 }
@@ -21239,6 +21237,37 @@ footer.vcu-som-footer .footer__meta-links a {
 .slate-blue-and-rose .news-and-events-feature.has-primary-color .event-day {
   background-color: rgba(9, 77, 99, 0.84);
 }
+.slate-blue-and-rose .discovery-slider .card--flat {
+  border-bottom-color: #094d63;
+}
+.slate-blue-and-rose .discovery-slider .card--flat:hover, .slate-blue-and-rose .discovery-slider .card--flat:active, .slate-blue-and-rose .discovery-slider .card--flat:focus {
+  border-bottom-color: #ffba00;
+}
+.slate-blue-and-rose .discovery-slider .card--flat:hover .card-content, .slate-blue-and-rose .discovery-slider .card--flat:active .card-content, .slate-blue-and-rose .discovery-slider .card--flat:focus .card-content {
+  background-color: #094d63;
+}
+.slate-blue-and-rose .discovery-slider.is-secondary .card--flat {
+  border-bottom-color: #770031;
+}
+.slate-blue-and-rose .discovery-slider.is-secondary .card--flat:hover, .slate-blue-and-rose .discovery-slider.is-secondary .card--flat:active, .slate-blue-and-rose .discovery-slider.is-secondary .card--flat:focus {
+  border-bottom-color: #ffba00;
+  border-bottom-color: #ffba00;
+}
+.slate-blue-and-rose .discovery-slider.is-secondary .card--flat:hover .card-content, .slate-blue-and-rose .discovery-slider.is-secondary .card--flat:active .card-content, .slate-blue-and-rose .discovery-slider.is-secondary .card--flat:focus .card-content {
+  background-color: #770031;
+}
+.slate-blue-and-rose .feature-section--section-intro .section-intro__heading__text::after {
+  background-color: #094d63;
+}
+.slate-blue-and-rose .feature-section--section-intro .section-intro__body::before {
+  background-color: rgba(9, 77, 99, 0.82);
+}
+.slate-blue-and-rose .feature-section--section-intro.has-secondary-background .section-intro__body::before {
+  background-color: rgba(119, 0, 49, 0.82);
+}
+.slate-blue-and-rose .feature-section--section-intro.has-secondary-background .section-intro__heading__text::after {
+  background-color: #770031;
+}
 
 /* maroon-and-tan */
 .maroon-and-tan a {
@@ -21492,6 +21521,37 @@ footer.vcu-som-footer .footer__meta-links a {
 }
 .maroon-and-tan .news-and-events-feature.has-primary-color .event-day {
   background-color: rgba(97, 0, 31, 0.84);
+}
+.maroon-and-tan .discovery-slider .card--flat {
+  border-bottom-color: #61001f;
+}
+.maroon-and-tan .discovery-slider .card--flat:hover, .maroon-and-tan .discovery-slider .card--flat:active, .maroon-and-tan .discovery-slider .card--flat:focus {
+  border-bottom-color: #ffba00;
+}
+.maroon-and-tan .discovery-slider .card--flat:hover .card-content, .maroon-and-tan .discovery-slider .card--flat:active .card-content, .maroon-and-tan .discovery-slider .card--flat:focus .card-content {
+  background-color: #61001f;
+}
+.maroon-and-tan .discovery-slider.is-secondary .card--flat {
+  border-bottom-color: #8c6239;
+}
+.maroon-and-tan .discovery-slider.is-secondary .card--flat:hover, .maroon-and-tan .discovery-slider.is-secondary .card--flat:active, .maroon-and-tan .discovery-slider.is-secondary .card--flat:focus {
+  border-bottom-color: #ffba00;
+  border-bottom-color: #ffba00;
+}
+.maroon-and-tan .discovery-slider.is-secondary .card--flat:hover .card-content, .maroon-and-tan .discovery-slider.is-secondary .card--flat:active .card-content, .maroon-and-tan .discovery-slider.is-secondary .card--flat:focus .card-content {
+  background-color: #8c6239;
+}
+.maroon-and-tan .feature-section--section-intro .section-intro__heading__text::after {
+  background-color: #61001f;
+}
+.maroon-and-tan .feature-section--section-intro .section-intro__body::before {
+  background-color: rgba(97, 0, 31, 0.82);
+}
+.maroon-and-tan .feature-section--section-intro.has-secondary-background .section-intro__body::before {
+  background-color: rgba(140, 98, 57, 0.82);
+}
+.maroon-and-tan .feature-section--section-intro.has-secondary-background .section-intro__heading__text::after {
+  background-color: #8c6239;
 }
 
 /* deep-blue-and-light-teal */
@@ -21747,6 +21807,37 @@ footer.vcu-som-footer .footer__meta-links a {
 .deep-blue-and-light-teal .news-and-events-feature.has-primary-color .event-day {
   background-color: rgba(11, 39, 81, 0.84);
 }
+.deep-blue-and-light-teal .discovery-slider .card--flat {
+  border-bottom-color: #0b2751;
+}
+.deep-blue-and-light-teal .discovery-slider .card--flat:hover, .deep-blue-and-light-teal .discovery-slider .card--flat:active, .deep-blue-and-light-teal .discovery-slider .card--flat:focus {
+  border-bottom-color: #ffba00;
+}
+.deep-blue-and-light-teal .discovery-slider .card--flat:hover .card-content, .deep-blue-and-light-teal .discovery-slider .card--flat:active .card-content, .deep-blue-and-light-teal .discovery-slider .card--flat:focus .card-content {
+  background-color: #0b2751;
+}
+.deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat {
+  border-bottom-color: #0c6e6d;
+}
+.deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat:hover, .deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat:active, .deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat:focus {
+  border-bottom-color: #ffba00;
+  border-bottom-color: #ffba00;
+}
+.deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat:hover .card-content, .deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat:active .card-content, .deep-blue-and-light-teal .discovery-slider.is-secondary .card--flat:focus .card-content {
+  background-color: #0c6e6d;
+}
+.deep-blue-and-light-teal .feature-section--section-intro .section-intro__heading__text::after {
+  background-color: #0b2751;
+}
+.deep-blue-and-light-teal .feature-section--section-intro .section-intro__body::before {
+  background-color: rgba(11, 39, 81, 0.82);
+}
+.deep-blue-and-light-teal .feature-section--section-intro.has-secondary-background .section-intro__body::before {
+  background-color: rgba(12, 110, 109, 0.82);
+}
+.deep-blue-and-light-teal .feature-section--section-intro.has-secondary-background .section-intro__heading__text::after {
+  background-color: #0c6e6d;
+}
 
 /* deep-purple-and-orange */
 .deep-purple-and-orange a {
@@ -22001,6 +22092,37 @@ footer.vcu-som-footer .footer__meta-links a {
 .deep-purple-and-orange .news-and-events-feature.has-primary-color .event-day {
   background-color: rgba(51, 1, 48, 0.84);
 }
+.deep-purple-and-orange .discovery-slider .card--flat {
+  border-bottom-color: #330130;
+}
+.deep-purple-and-orange .discovery-slider .card--flat:hover, .deep-purple-and-orange .discovery-slider .card--flat:active, .deep-purple-and-orange .discovery-slider .card--flat:focus {
+  border-bottom-color: #ffba00;
+}
+.deep-purple-and-orange .discovery-slider .card--flat:hover .card-content, .deep-purple-and-orange .discovery-slider .card--flat:active .card-content, .deep-purple-and-orange .discovery-slider .card--flat:focus .card-content {
+  background-color: #330130;
+}
+.deep-purple-and-orange .discovery-slider.is-secondary .card--flat {
+  border-bottom-color: #BA5400;
+}
+.deep-purple-and-orange .discovery-slider.is-secondary .card--flat:hover, .deep-purple-and-orange .discovery-slider.is-secondary .card--flat:active, .deep-purple-and-orange .discovery-slider.is-secondary .card--flat:focus {
+  border-bottom-color: #ffba00;
+  border-bottom-color: #ffba00;
+}
+.deep-purple-and-orange .discovery-slider.is-secondary .card--flat:hover .card-content, .deep-purple-and-orange .discovery-slider.is-secondary .card--flat:active .card-content, .deep-purple-and-orange .discovery-slider.is-secondary .card--flat:focus .card-content {
+  background-color: #BA5400;
+}
+.deep-purple-and-orange .feature-section--section-intro .section-intro__heading__text::after {
+  background-color: #330130;
+}
+.deep-purple-and-orange .feature-section--section-intro .section-intro__body::before {
+  background-color: rgba(51, 1, 48, 0.82);
+}
+.deep-purple-and-orange .feature-section--section-intro.has-secondary-background .section-intro__body::before {
+  background-color: rgba(186, 84, 0, 0.82);
+}
+.deep-purple-and-orange .feature-section--section-intro.has-secondary-background .section-intro__heading__text::after {
+  background-color: #BA5400;
+}
 
 body {
   background-color: #f0f0f0;
@@ -22054,18 +22176,6 @@ body {
   padding-bottom: 3.662rem;
   position: relative;
   z-index: 5;
-}
-.feature-section--vision-graphic .feature__column:before {
-  position: absolute;
-  content: " ";
-  display: block;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-transform: none;
-          transform: none;
 }
 .feature-section--vision-graphic .button {
   background-color: #ffffff;
@@ -23290,6 +23400,7 @@ body {
   }
 }
 .feature-section--section-intro .section-intro__body {
+  color: #ffffff;
   padding: 1.618rem;
   background-position: center;
   position: relative;
@@ -23302,7 +23413,7 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.82);
+  background-color: rgba(0, 80, 77, 0.82);
 }
 .feature-section--section-intro .section-intro__body p, .feature-section--section-intro .section-intro__body ul, .feature-section--section-intro .section-intro__body li {
   font-weight: 200;

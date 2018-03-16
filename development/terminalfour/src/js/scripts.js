@@ -14,8 +14,8 @@
     * Load SVG via AJAX
     */
     var $ajax = new XMLHttpRequest();
-    //$ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
-    $ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
+    $ajax.open('GET', '/vcu-school-of-medicine/style-assets/media/svg-icons/som-icons.svg', true);
+    //$ajax.open('GET', '/style-assets/media/svg-icons/som-icons.svg', true); 
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
