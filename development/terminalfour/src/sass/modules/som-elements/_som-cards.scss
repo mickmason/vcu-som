@@ -747,6 +747,9 @@
         &.is-featured {
             background-color: $black;
             color: $white;
+						a {
+							color: $white;
+						}
             .card__title {
                 font-size: $size-5a;
             }

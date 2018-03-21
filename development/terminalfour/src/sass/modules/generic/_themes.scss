@@ -73,6 +73,29 @@ $themeColours: (
           stroke: $theme-secondary;
       }  
     }
+		//Buttons
+		.button {
+			&__is-primary, &.is-primary { 
+				background-color: $theme-primary;
+				border-color: $som-gold;
+				color: $theme-primary-invert;
+				@include active-link {
+					background-color: $som-gold; 
+					border-color: $theme-primary;
+					color: $theme-primary;    
+				}
+			}
+			&__is-secondary, &.is-secondary { 
+				background-color: $theme-secondary;
+				border-color: $som-gold;
+				color: $theme-secondary-invert;
+				@include active-link {
+					background-color: $som-gold;
+					border-color: $theme-secondary;
+					color: $theme-secondary;
+				}
+			}
+		}
     //header and main nav
     .main-navigation__menu {
       @include touch {
@@ -196,8 +219,12 @@ $themeColours: (
         color: $theme-secondary;
         background-color: $white;
         @include active-link {
+					
           background-color: $som-gold;
           color: $theme-secondary;
+					@if $theme-name == 'deep-purple-and-orange' {
+						color: $black;
+					}
         }    
         border-color: $white; 
       }
@@ -245,6 +272,25 @@ $themeColours: (
       }
     }
     //Components
+		//Heros
+		.hero {
+			&.hero--news-heading {
+
+			.hero-footer {
+				.content-author-date {
+					background-color: rgba($theme-primary, .82);    
+					color: $white;
+				}
+				.content-share {
+					background-color: $theme-primary;    
+					color: $white;
+						.content-label {
+								color: $white;
+						}
+					}
+				}
+			}
+		}
     //Cards
     .section {
       &.feature-section {
@@ -278,25 +324,17 @@ $themeColours: (
             }
             border-bottom-color: $theme-primary;
           }
-          .video-slider-card {
-            .card-content__controls {
-                background-color: $theme-primary;
-                color: $theme-primary-invert;
-                @include active-link {
-                    background-color: darken($theme-primary, 5%);
-                }
-            }
-            .video-slider__play {
-                @include active-link {
-                    background-color: darken($theme-primary, 5%);
-                }
-            }
-          }
           .heading-only-card {
             border-bottom-color: $theme-primary; 
             .heading-only-card__content {
                 border-bottom-color: $theme-primary;
             }
+						.card__anchor {
+							color: $theme-primary;
+							@include active-link {
+								color: $theme-secondary;
+							}
+						}
             .card__arrow {
               .icon {
                 &::before {
@@ -355,6 +393,12 @@ $themeColours: (
             .heading-only-card__content {
                 border-bottom-color: $theme-secondary;
             }
+						.card__anchor {
+							color: $theme-secondary;
+							@include active-link {
+								color: $theme-primary;
+							}
+						}
             .card__arrow {
               .icon {
                 &::before {
@@ -494,8 +538,53 @@ $themeColours: (
                 }
             }
         }
+    	}
     }
-    }
+		//Plain text intro
+		.text-feature {
+			&__intro-para {
+				&::before {
+					background-color: $theme-primary; 
+				}
+			}
+			.inner-page-nav {
+				> ul {
+					> li {
+						> a {
+							color: $theme-primary;
+							@include active-link {
+								background-color: $theme-primary;
+								color: $theme-primary-invert;
+							}
+						}
+					}
+				}
+			}
+		}
+		//Katami plugin accordion
+		.plugin-accordion {
+			.plugin-accordion-heading {
+      	background-color: $theme-primary;
+      	color: $theme-primary-invert;
+      	@include active-link {
+      	    background-color: darken($theme-primary, 5%);
+      	}
+			}
+		}
+		.accordion-feature-section {
+			&.has-secondary-background {
+				color: $black;
+				background-color: $white;
+				.plugin-accordion-heading {
+					background-color: $theme-secondary;
+					color: $theme-secondary-invert;
+					@include active-link {
+						background-color: darken($theme-secondary, 5%);
+					}
+				}
+			}
+		}
+		
     
   }//a.#{theme-name}
 }//@each $name, $pair in $themeColours

@@ -451,7 +451,7 @@
         min-height: 50vh;
         padding-top: 0;
 
-        .columns {
+        .columns { 
             margin-bottom: 0;
         }
         .hero-body {
@@ -479,7 +479,8 @@
             padding-left: $gutter-width/2;
             padding-right: $gutter-width/2;
             .content-author-date {
-                background-color: lighten($primary, 2.5%);    
+                background-color: rgba($primary, .82);    
+							color: $white;
             }
             .content-author-date__date, .content-share__label {
                 margin-bottom: $space-11;
@@ -488,10 +489,11 @@
                 margin-bottom: $space-1;
             }
             .content-share {
-                background-color: rgba($primary, 0.92);    
-                .content-label {
-                    color: $white;
-                }
+							background-color: $primary;    
+							color: $white;
+              .content-label {
+                  color: $white;
+              }
             }
             .content-share__icons {
                 @include make-flexbox($direction: row, $align: center, $justify: flex-start);

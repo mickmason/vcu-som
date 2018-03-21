@@ -976,7 +976,7 @@
                $this.addClass('is-visible');
            }
     });
-    if ($(window).outerWidth() > 768 && $('.programs-block').length > 0 && $('.programs-block').hasClass('programs-block--cloned') !== true ) {
+    if ($(window).outerWidth() >= 768 && $('.programs-block').length > 0 && $('.programs-block').hasClass('programs-block--cloned') !== true ) {
         var $programInfoCardsEven = $('.program-info-card__card--column:even');
         var $programInfoCardsOdd = $('.program-info-card:odd');
         $('.program-info-card:odd').each(function(idx, el) {

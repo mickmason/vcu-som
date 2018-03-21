@@ -1005,8 +1005,12 @@
     background-color: $gray-32;
     color: $white;
     overflow: hidden;
+		
     > a {
-        color: inherit;
+			> h3 {
+				color: $white;
+			}
+        color: $white;
         text-decoration: none;
         @include make-flexbox($direction: row, $align: center, $justify: space-between);
         h3 { 
@@ -1017,6 +1021,9 @@
             margin-bottom: 0;
         }
         @include active-link {
+					> h3 {
+						color: $white;
+					}
             .sidebar-nav-toggle__icons {
                 &::before {
                     background-color: darken($gray-8,  5.57224%);
@@ -1211,69 +1218,71 @@
         }
     }
     ul {
-        display: -ms-flexbox;
-        @include make-flexbox($direction: column, $justify: space-around, $align: stretch);
-        @include tablet-only {
-            flex-direction: row;
-        }
-        @include widescreen {
-            flex-direction: row;
-        }
-        
-        > li {
-            flex-grow: 1;
-            flex-shrink: 1;
-            display: flex; 
-            justify-content: stretch;
-            align-items: flex-start;
-            border-top: 1px solid $gray-8;
-            &:last-child {
-                border-bottom: 1px solid $gray-8;
-            }
-            transition: background-color 180ms ease-out;
-            @include active-link {
-                    background-color: $light-10;
-            }
-            > a {
-                text-decoration: none;
-                width: 100%;
-                text-align: left;
-                padding-top:      $space-1; 
-                padding-bottom:   $space-1;
-                padding-left:     $gutter-width/2;
-                padding-right:    $gutter-width/2;
-                @include active-link {
-                    text-decoration: underline;
-                }
-                @include tablet-only {
-                    text-align: center;
-                    padding-top:      $space-1;
-                    padding-bottom: $space-2;
-                    padding-left:  $gutter-width/2;
-                    padding-right: $gutter-width/2;
-                }
-                @include widescreen {
-                    text-align: center;
-                    padding-top:      $space-1;
-                    padding-bottom: $space-2;
-                    padding-left:  $gutter-width/2;
-                    padding-right: $gutter-width/2;
-                }
-            }
-            @include tablet-only {
-                border-left: 1px solid $gray-8;
-                border-bottom: 1px solid $gray-8;
-                &:first-child { 
-                    border-left: none;
-                }
-            }
-            @include widescreen {
-                border-left: 1px solid $gray-8;
-                border-bottom: 1px solid $gray-8;
-                &:first-child { 
-                    border-left: none;
-                }
-            }
-        }
+    	display: -ms-flexbox;
+    	@include make-flexbox($direction: column, $justify: space-around, $align: stretch);
+    	@include tablet {
+    	    flex-direction: row;
+    	}
+    	> li {
+    		flex-grow: 1;
+    		flex-shrink: 1;
+    		border-top: 1px solid $gray-8;
+    		&:last-child {
+    		    border-bottom: 1px solid $gray-8;
+    		}
+    		transition: background-color 180ms ease-out;
+    		@include active-link {
+    		        background-color: $light-10;
+    		}
+    		> a {
+    		  text-decoration: none;
+    		  width: 100%;
+					height: 100%;
+    		  text-align: left;
+    		  padding: $space-1 $gutter-width/2; 
+					display: flex; 
+    			justify-content: stretch;
+    			align-items: center;
+    		  @include active-link {
+						background-color: $primary;
+						color: $white;
+    		    text-decoration: underline;
+    		  }
+    		  @include tablet {
+    		  	text-align: center;
+    		  	padding: $space-1 $gutter-width/2 $space-2;
+						align-items: center;
+    		  }
+    		}
+    		@include tablet{
+    			border-left: 1px solid $gray-8;
+    			border-bottom: 1px solid $gray-8;
+    			&:first-child { 
+    			    border-left: none;
+    			}
+    		}
+				@include widescreen {
+					&:first-child {
+						@include boxShadow($light-8, insetLeft);
+						border-left: 1px solid $gray-8;
+						border-top-left-radius: 		$size-1;
+						border-bottom-left-radius: $size-1;
+						> a {
+							border-top-left-radius: 		$size-1;
+							border-bottom-left-radius: $size-1;
+						}
+					} 
+					&:last-child {
+						@include boxShadow($light-8, insetRight);
+						border-right: 1px solid $gray-8;
+						border-top-right-radius: 		$size-1;
+						border-bottom-right-radius: $size-1;
+						> a {
+							border-top-right-radius: 		$size-1;
+							border-bottom-right-radius: $size-1;
+						}
+					} 
+				}
+    	}
     }
 }

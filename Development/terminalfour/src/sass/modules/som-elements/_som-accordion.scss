@@ -18,31 +18,41 @@
 }
 //Accordion itself
 .plugin-accordion {
-        .plugin-accordion-heading {
-            background-color: $primary;
-            color: $white;
-            transition: background-color 200ms ease-out;
-            @include active-link {
-                background-color: darken($primary, 5%);
-            }
-            .plugin-accordion-heading-indicator {
-                color: inherit;
-                transition-duration: 400ms;
-            }
-        }
-        .plugin-accordion-body-wrapper {
-            height: 0;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 800ms ease-out, visibility 400ms ease-out;
-        }
-        .plugin-accordion-panel {
-            &.expand {
-                .plugin-accordion-body-wrapper {
-                    height: auto;
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
-        }
+	.plugin-accordion-heading {
+		background-color: $primary;
+		color: $white;
+		transition: background-color 200ms ease-out;
+		@include active-link {
+			background-color: darken($primary, 5%);
+		}
+		.plugin-accordion-heading-indicator {
+			color: inherit;
+			transition-duration: 400ms;
+		}
+	}
+	&.has-secondary-background {
+		color: $black;
+		background-color: $white;
+		.plugin-accordion-heading {
+			background-color: $secondary;
+			@include active-link {
+				background-color: darken($secondary, 5%);
+			}
+		}
+	}
+	.plugin-accordion-body-wrapper {
+		height: 0;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 800ms ease-out, visibility 400ms ease-out;
+	}
+	.plugin-accordion-panel {
+		&.expand {
+			.plugin-accordion-body-wrapper {
+				height: auto;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
 }
