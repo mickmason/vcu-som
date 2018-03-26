@@ -3,7 +3,22 @@
         <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>VCU School of Medicine: Homepage</title>
+            <title>VCU School of Medicine: Homepage</title>
+    <meta name="twitter:title" content="VCU School of Medicine: Page title">
+    <meta property="og:title" content="VCU School of Medicine: Page title" />
+    <meta name="description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center"  />
+    <meta property="og:description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center" />
+    
+    <!-- Open Graph data -->
+    <meta property="og:url" content="https://www.terminalfour.com/blog/posts/4-of-our-all-time-favorite-higher-education-video-campaigns.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="VCU School of Medicine" />
+    <meta name="og:image" content="http://medschool.vcu.edu/style-assets/media/img/egyptian-building-at-night.jpg" />  
+    
+    <!-- Twitter specific data - Requires a Twitter handle -->  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@HANDLE">
+    <meta name="twitter:site" content="@HANDLE" /> 
         <link rel="stylesheet" href="../../style-assets/css/style.css" /> 
         <script>
           (function(d) {
@@ -30,7 +45,7 @@
                    <div class="navbar-menu is-feature-font">
                        <div class="navbar-end">
                                <a class="navbar-item vcu-health-logo" href="https://www.vcuhealth.org/default.aspx">
-                                   <img src="/style-assets/media/img/vcu-health-logo.png" alt="Visit VCU Health website" />
+                                   <img src="../style-assets/media/img/vcu-health-logo.png" alt="Visit VCU Health website" />
                                    <span>VCU Health</span>
                                </a>
                                <a class="navbar-item" href="javascript:void(0)">MyVCU</a>
@@ -488,7 +503,7 @@
                            </div>
                    </div><!-- // .navbar-end.main-navigation__search-toggle -->
                    <div class="site-search-form ">
-                       <form action="" method="get" name="keyword" onsubmit="startSearch();return false">
+                       <form id="som-site-earch-form" action="" method="get" name="keyword">
                           <div class="site-search-form__inputs">
                               <label class="sr-only is-hidden" for="searchquery">Search</label>
                               <input id="searchquery" maxlength="255" name="query" onfocus="" placeholder="Search VCU" type="text">                         
@@ -621,16 +636,8 @@
                            </a> 
                        </div><!-- // .sidebar-nav-toggle -->
                        <ul class="sidebar-nav">
-                           <li class="has-dropdown">
+                           <li class="">
                                 <a href="javascript:void(0)">Applicant resources</a>
-                                <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                    <svg class="show-more-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                    </svg>
-                                    <svg class="show-less-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                    </svg>
-                                </a>
                                 <ul> 
                                     <li>
                                         <a href="javascript:void(0)">Contract and Benefits</a>                  
@@ -638,16 +645,9 @@
                                     <li>
                                         <a href="javascript:void(0)">Application</a>                  
                                     </li>
-                                    <li class="has-dropdown">
+                                    <li class="">
                                         <a href="javascript:void(0)">Residency &amp; Fellowship Programs</a>
-                                        <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                            <svg class="show-more-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                            </svg>
-                                            <svg class="show-less-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                            </svg>
-                                        </a> 
+                                        
                                         <ul>
                                             <li><a href="javascript:void(0)">Program #1</a></li>
                                             <li><a href="javascript:void(0)">Program #2</a></li>
@@ -665,16 +665,9 @@
                            <li>
                                 <a href="javascript:void(0)">Currrent housestaff resources</a>
                            </li>
-                           <li class="has-dropdown">
+                           <li class="">
                                <a href="javascript:void(0)">Educational resources</a>
-                               <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                    <svg class="show-more-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                    </svg>
-                                    <svg class="show-less-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                    </svg>
-                                </a>
+                               
                                 <ul> 
                                     <li>
                                         <a href="javascript:void(0)">Contract and Benefits</a>                   
@@ -702,16 +695,9 @@
                            <li>
                                <a href="javascript:void(0)">Visiting Residents &amp; Fellows</a>
                             </li>
-                           <li class="has-dropdown">
+                           <li class="">
                                 <a href="javascript:void(0)">Contact</a>
-                                <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons">
-                                    <svg class="show-more-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                    </svg>
-                                    <svg class="show-less-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                    </svg>
-                                </a>  
+                                
                                 <ul> 
                                     <li>
                                         <a href="javascript:void(0)">Contract and Benefits</a>                  
@@ -719,16 +705,8 @@
                                     <li>
                                         <a href="javascript:void(0)">Application</a>                  
                                     </li>
-                                    <li class="has-dropdown"> 
+                                    <li class=""> 
                                         <a href="javascript:void(0)">Residency &amp; Fellowship Programs</a>
-                                        <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                            <svg class="show-more-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                            </svg>
-                                            <svg class="show-less-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                            </svg>
-                                        </a> 
                                         <ul>
                                             <li><a href="javascript:void(0)">Program #1</a></li>
                                             <li><a href="javascript:void(0)">Program #2</a></li>
@@ -845,28 +823,27 @@
                            <div class="column">
                                <div class="card--flat heading-only-card">
                                    <div class="card-image">
-                                       <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                           <figure class="image is-2by1">
-                                               <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
-                                           </figure>
-                                            <div class="image-overlay "></div>
-                                       </a>
+                                      <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                       <figure class="image is-2by1">
+                                         <img alt="Placehoder image" src="../../style-assets/media/img/education-img-1.jpg" />
+                                       </figure>
+                                       <div class="image-overlay "></div>
+                                      </a>
                                    </div>
                                    <div class="heading-only-card__content">
                                        <div class="card-content"> 
-                                          <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
-                                           <h2 class="card-heading"><a href="javascript:void(0)">Make an
-                                            appointment now</a></h2>
-                                           </a>
+                                         <a class="card__anchor" href="javascript:void(0)" title="Find out about Education at SoM">
+                                           <h2 class="card-heading">Make an appointment now</h2>
+                                         </a>
                                        </div>
                                        <div class="card__arrow">
-                                            <span class="icon icon--svg"> 
-                                                <span class="heading-only-card__icon-wrap">
-                                                    <svg class="">
-                                                       <use xlink:href="#arrow-dots--right" />
-                                                    </svg>
-                                                </span>
+                                          <span class="icon icon--svg"> 
+                                            <span class="heading-only-card__icon-wrap">
+                                              <svg class="">
+                                                <use xlink:href="#arrow-dots--right" />
+                                              </svg>
                                             </span>
+                                          </span>
                                        </div><!-- // .card__arrow -->
                                    </div><!-- // .heading-only-card -->
                                </div><!-- // .card__flat -->

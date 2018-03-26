@@ -7,110 +7,114 @@ body {
     }
 }
 .som-lightbox {
-    position: absolute;
-    padding-top: 0;
+  position: absolute;
+  padding-top: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 60000;
+  background-color: rgba($black, .82);
+  color: $white;
+  
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+  &.is-visible {
+    visibility: visible;
+    opacity: 1; 
+  }
+    
+  .som-lightbox-container {
+    position: fixed;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: 100%;
-    z-index: 60000;
-    background-color: rgba($black, .82);
-    color: $white;
-    
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 220ms ease-out;
-    &.is-visible {
-        visibility: visible;
-        opacity: 1; 
+    height: 100vh;
+    @include make-flexbox($direction: column, $align: center, $justify: center);
+  }
+  .som-lightbox-column {
+      position: relative;
+      width: 100%;
+      @include tablet { 
+          &.is-lightbox-gallery {
+              width: 100%;
+              .som-lightbox-item {
+                  padding-left:  $gutter-width; 
+                  padding-right: $gutter-width;
+                  width:  38.195%;
+                  transition: opacity 160ms ease-out, transform 400ms ease-out;
+                  &:not(.slick-current) {
+                      opacity: .618;
+                      transform: scale(0.9);
+                      @include active-link {
+                          opacity: .809;
+                      }
+                  }
+              }
+          }
+      }
+      @include desktop {
+          width: 61.8047%;
+          &.is-lightbox-gallery {
+              width: 100%;
+              .som-lightbox-item {
+                  transition: opacity 160ms ease-out, transform 400ms ease-out;
+                  &:not(.slick-current) {
+                      opacity: .618;
+                      transform: scale(0.9);
+                      @include active-link {
+                          opacity: .809;
+                      }
+                  }
+              }
+          }
+      }
+  }
+  .som-lightbox__player {
+    background-color: $black;
+    @include boxShadow($black, fullPaper);
+    padding: $space-2 $space-2;
+  }
+  .som-lightbox__title {
+    h2 {
+        margin-bottom: $space-4;
     }
-    
-    .som-lightbox-container {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        @include make-flexbox($direction: column, $align: center, $justify: center);
+  }
+  .som-lightbox__media {
+    > img {
+      display: block;
+      max-width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
-    .som-lightbox-column {
-        position: relative;
-        width: 100%;
-        @include tablet { 
-            &.is-lightbox-gallery {
-                width: 100%;
-                .som-lightbox-item {
-                    padding-left:  $gutter-width; 
-                    padding-right: $gutter-width;
-                    width:  38.195%;
-                    transition: opacity 160ms ease-out, transform 400ms ease-out;
-                    &:not(.slick-current) {
-                        opacity: .618;
-                        transform: scale(0.9);
-                        @include active-link {
-                            opacity: .809;
-                        }
-                    }
-                }
-            }
-        }
-        @include desktop {
-            width: 61.8047%;
-            &.is-lightbox-gallery {
-                width: 100%;
-                .som-lightbox-item {
-                    transition: opacity 160ms ease-out, transform 400ms ease-out;
-                    &:not(.slick-current) {
-                        opacity: .618;
-                        transform: scale(0.9);
-                        @include active-link {
-                            opacity: .809;
-                        }
-                    }
-                }
-            }
-        }
+  }
+  .som-lightbox__caption {
+    p {
+        margin-top: $space-4;
+        margin-bottom: 0;
     }
-    .som-lightbox__player {
-        background-color: $black;
-        @include boxShadow($black, fullPaper);
-        padding: $space-2 $space-2;
+  }
+  .som-lightbox__close {
+    color: inherit;
+    @include make-flexbox($direction: column, $justify: center, $align: flex-end);
+    @include desktop {
+        background-color: $grey-dark;
+        @include boxShadow($black, insetLeft);
+        padding-top:     $space-11;
+        padding-bottom:  $space-11;
+        -ms-flex-align: center;
+        align-items: center; 
+        width: $gld-6; 
+        position: absolute;
+        top: 0; 
+        right: -$gld-6;
+        
     }
-    .som-lightbox__title {
-        h2 {
-            margin-bottom: $space-4;
-        }
+    .icon-text {
+        color: $light-10;
     }
-    .som-lightbox__media {
-        > img {
-            display: block;
-            max-width: 100%;
-        }
-    }
-    .som-lightbox__caption {
-        p {
-            margin-top: $space-4;
-            margin-bottom: 0;
-        }
-    }
-    .som-lightbox__close {
-        color: inherit;
-        @include make-flexbox($direction: column, $justify: center, $align: flex-end);
-        @include desktop {
-            background-color: $grey-dark;
-            @include boxShadow($black, insetLeft);
-            padding-top:     $space-11;
-            padding-bottom:  $space-11;
-            -ms-flex-align: center;
-            align-items: center; 
-            width: $gld-6; 
-            position: absolute;
-            top: 0; 
-            right: -$gld-6;
-            
-        }
-        .icon-text {
-            color: $light-10;
-        }
-    }
+  }
 }

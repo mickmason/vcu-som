@@ -125,19 +125,19 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         dist: {
-            src: [
-                'development/lib/jquery-match-height/jquery.matchHeight.js',  
-                'development/lib/slick/slick/slick.min.js', 
-                'development/terminalfour/src/js/*.js'
-                ],
-            dest: 'www-root/style-assets/js/t4-scripts.js'
+          src: [
+            'development/lib/jquery-match-height/jquery.matchHeight.js',  
+            'development/lib/slick/slick/slick.min.js', 
+            'development/terminalfour/src/js/*.js'
+          ],
+          dest: 'www-root/style-assets/js/t4-scripts.js'
         }
     },
     postcss: {
       options: {
         map: true,
         processors: [
-            require('autoprefixer')
+          require('autoprefixer')
         ]
       },
       minify: {
@@ -146,11 +146,14 @@ module.exports = function(grunt) {
             processors: [
                 require('cssnano')
             ]
-          }
+        },
+        dist: {
+          src: 'www-root/style-assets/css/style.css'
+        }
       },
       dist: {
         src: 'www-root/style-assets/css/style.css'
-      },
+      }
       
     },
     watch: {

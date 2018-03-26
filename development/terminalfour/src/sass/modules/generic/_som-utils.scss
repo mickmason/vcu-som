@@ -14,52 +14,66 @@
         $color-invert: $black; 
     }
     .has-#{$name}-background {
+      color: $color-invert;
+      background-color: $color;
+      .section__intro, .section__intro--thin  {
+        border-bottom-color: $color-invert;
+      } 
+      .icon {
+        fill: $color-invert;
+        stroke: $color-invert;      
+      }
+      .button:not([class*="is-"]) {
+          @if $name == "som-gold" {
+              color: $black;  
+              border-color: $black; 
+          } @else {
+              color: $color;
+              border-color: $som-gold; 
+          }
+          background-color: $white;
+          @include active-link {
+              @if $name == "som-gold" {
+                  color: $color;  
+                  background-color: $color-invert;
+              } @else {
+                  color: $color;
+                  background-color: $som-gold;
+              }    
+              border-color: $white; 
+          }
+      }
+      a {
         color: $color-invert;
-        background-color: $color;
-        .icon {
-          fill: $color-invert;
-          stroke: $color-invert;      
+        transition: background-color 200ms ease-out;
+        @include active-link {
+          color: $color;
+          background-color: $color-invert;
         }
-        .button:not([class*="is-"]) {
-            @if $name == "som-gold" {
-                color: $black;  
-                border-color: $black; 
-            } @else {
-                color: $color;
-                border-color: $som-gold; 
-            }
-            background-color: $white;
-            @include active-link {
-                @if $name == "som-gold" {
-                    color: $color;  
-                    background-color: $color-invert;
-                } @else {
-                    color: $color;
-                    background-color: $som-gold;
-                }    
-                border-color: $white; 
-            }
-        }
-        &.has-vision-graphic {
-            background-color: transparent;
-            &::before {
-                background-color: $color;
-            }    
-        }
-        &.is-transparent {
-            background-color:   $color; 
-            background-color: rgba($color, $transparency);
-            &.has-vision-graphic {
-                background-color: transparent;
-                &::before {
-                    background-color: rgba($color, $transparency);
-                }    
-            }
-        }
-        .image-overlay {
-            background-color: rgba($color, $transparency); 
-        }   
-    }   
+      }
+      .container {
+        z-index: 20; 
+      }
+      &.has-vision-graphic {
+          background-color: transparent;
+          &::before {
+              background-color: $color;
+          }    
+      }
+      &.is-transparent {
+          background-color:   $color; 
+          background-color: rgba($color, $transparency);
+          &.has-vision-graphic {
+              background-color: transparent;
+              &::before {
+                  background-color: rgba($color, $transparency);
+              }    
+          }
+      }
+      .image-overlay {
+          background-color: rgba($color, $transparency); 
+      }   
+  }//.has-#{$name}-background   
 }
 .has-primary-background--grad, .has-secondary-background--grad {
     color: $white;

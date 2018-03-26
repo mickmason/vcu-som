@@ -2,65 +2,63 @@
 /* General for all cards */
 .cards-columns {
     @include tablet {
-        &.columns {
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;            
-        }
-        > .column {
-            -ms-flex-preferred-size: 50%;
-            flex-basis: 50%;
-            max-width: 50%;
-        }
+    	&.columns {
+    		-ms-flex-wrap: wrap;
+    		flex-wrap: wrap;            
+    	}
+    	> .column {
+    		-ms-flex-preferred-size: 50%;
+    		flex-basis: 50%;
+    		max-width: 50%;
+    	}
     }
     @include desktop {
-        &.columns {
-            justify-content: flex-start;            
-        }
-        
-        > .column {
-            flex-basis: 25%;
-         //       max-width: 25%;
-        }
+    	&.columns {
+    		justify-content: flex-start;            
+    	}
+    	> .column {
+				flex-basis: 25%;
+    	}
     }
 }
 .vcu-health-cards {
-    .cards-columns {
-        @include tablet {
-            > .column {
-                flex-basis: 33%; 
-                max-width: none;
-            }
-        }
-        @include tablet {
-            justify-content: space-around;
-            > .column {
-                flex-basis: 50%;
-                max-width: 50%;
-            }
-        }
-        @include widescreen {
-            > .column {
-                flex-basis: 33%;
-            }
-        }
-    }    
+	.cards-columns {
+		@include tablet {
+			> .column {
+				flex-basis: 33%; 
+				max-width: none;
+			}
+		}
+		@include tablet {
+			justify-content: space-around;
+			> .column {
+				flex-basis: 50%;
+				max-width: 50%;
+			}
+		}
+		@include widescreen {
+			> .column {
+				flex-basis: 33%;
+			}
+		}
+	}    
 }
 /** flat cards - base styling for cards **/
 .card--flat {
   border: 1px solid $light-8;
   overflow: hidden;
   .card-content {
-    .card__anchor {
+		.card__anchor {
       display: block  ;
       color: inherit;
       text-decoration: none;
       &:hover, &:focus, &:active {
-          text-decoration: none;
+    		text-decoration: none;
       }
     }
   }
   .card-header {
-      box-shadow: none ;  
+		box-shadow: none ;  
   }
   .card-heading {
     color: inherit;
@@ -94,7 +92,8 @@
     color: inherit;
     text-decoration: none;
     @include active-link {
-        text-decoration: underline;
+      text-decoration: underline;
+      background-color: transparent;
     }
   }
   img {
@@ -187,86 +186,85 @@
     }
   }
   &:hover, &:focus, &:active {
-      cursor: pointer;           
-      .card-image {
-          img {
-              transform: scale(1.05);
-          }
+    cursor: pointer;           
+    .card-image {
+      img {
+        transform: scale(1.05);
       }
-      .image-overlay {
-          background-color: rgba($black, 0.36);
+    }
+    .image-overlay {
+      background-color: rgba($black, 0.36);
+    }
+    .card-content__text {
+      text-decoration: underline;
+    }
+    .card-content__read-more {
+      font-weight: 700;
+    }
+    .card__arrow {
+      .icon {
+        svg {
+          height: 100%;
+          fill: $primary;
+        }
       }
-      .card-content__text {
-          text-decoration: underline;
-      }
-      .card-content__read-more {
-          font-weight: 700;
-      }
-      .card__arrow {
-          .icon {
-              svg {
-                  height: 100%;
-              }
-          }
-      }
+    }
   }
 }
 /** Card date - inset in card image **/
 .card__date--inset { 
-        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
-        background-color: $light-10;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        width: auto;
-        .card__date__day, .card__date__month {
-            padding-top:     $space-11;
-            padding-bottom:  $space-11;    
-        }
-        .card__date__day {
-            font-weight: 500;
-            font-size: $size-5a;    
-            line-height: 1;
-            color: $white;
-            padding-left:     $gutter-width/2;
-            padding-right:    $gutter-width/2;
-            border-right: 1px solid $black;
-            background-color: $som-grana;
-        }
-        .card__date__month {
-            @include boxShadow($black, insetLeftThin);
-            display: inline-block;
-            width: 100%; 
-            line-height: 1;
-            font-size: $size-7a; 
-            padding-left:     $gutter-width/2;
-            padding-right:    $gutter-width/2;
-        }
-    }
+  @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+  background-color: $light-10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: auto;
+  .card__date__day, .card__date__month {
+    padding-top:     $space-11;
+    padding-bottom:  $space-11;    
+  }
+  .card__date__day {
+    font-weight: 500;
+    font-size: $size-5a;    
+    line-height: 1;
+    color: $white;
+    padding-left:     $gutter-width/2;
+    padding-right:    $gutter-width/2;
+    border-right: 1px solid $black;
+    background-color: $som-grana;
+  }
+  .card__date__month {
+    @include boxShadow($black, insetLeftThin);
+    display: inline-block;
+    width: 100%; 
+    line-height: 1;
+    font-size: $size-7a; 
+    padding-left:     $gutter-width/2;
+    padding-right:    $gutter-width/2;
+  }
+}
 /** Card image - inset in image **/
 .card-label--inset, .card-label--inset--left {
-    top: $gld-6;
-    padding-top:    $space-11*0.75;
-    padding-bottom: $space-11*0.75;
-    padding-left:  $gutter-width/2;
-    padding-right: $gutter-width/2;
-    
-    
+  top: $gld-6;
+  padding-top:    $space-11*0.75;
+  padding-bottom: $space-11*0.75;
+  padding-left:  $gutter-width/2;
+  padding-right: $gutter-width/2;
 }
 .card-label--inset {
-    right: 0;
-    @include vision-angle($bg-color: $white, $pull: right);    
-    position: absolute;
-    @each $name, $pair in $colors { 
-        $color: nth($pair, 1);
-        $color-invert: nth($pair, 2);
-        &.is-#{$name} {
-            color: $color-invert;
-            @include vision-angle($bg-color: $color, $pull: right);    
-            position: absolute;
-        }
+  right: 0;
+  @include vision-angle($bg-color: $white, $pull: right);    
+  position: absolute;
+  @each $name, $pair in $colors { 
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      color: $color-invert;
+      @include vision-angle($bg-color: $color, $pull: right);    
+      position: absolute;
     }
+  }
 }
 .card-label--inset--left {
     left: 0;
@@ -284,37 +282,49 @@
     position: absolute;
 }
 .heading-only-card {
-    border: none;
-    .heading-only-card__content {
-        border-left: 1px solid $light-10;
-        border-bottom: 3px solid $primary;
-        @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
-        .card-heading {
-            margin-bottom: 0;
-        }
-        .card__arrow {
-            max-width: $gl-small;
-            .icon {
-                height: 100%;
-                width: 100%;
-                max-height: none;
-                &::before {
-                    background-color: $primary;
-                }
-            }
-            .heading-only-card__icon-wrap {
-                max-height: $space-5;
-                svg {
-                    height: $space-5;
-                }
-            }
-        }
+  border: none;
+  .heading-only-card__content {
+    border-left: 1px solid $light-10;
+    border-bottom: 3px solid $primary;
+    @include make-flexbox($direction: row, $justify: space-between, $align: stretch);
+    .card-heading {
+      margin-bottom: 0;
     }
-    @include active-link {    
-        .card__anchor {
-            text-decoration: underline;
-        }
+  }
+  .card__arrow {
+    max-width: $gl-small;
+    .icon {
+      height: 100%;
+      width: 100%;
+      max-height: none;
+      &::before {
+        background-color: $primary;
+      }
+      > svg {
+        fill: $white;
+      }
     }
+    .heading-only-card__icon-wrap {
+      max-height: $space-5;
+      svg {
+        height: $space-5;
+      }
+    }
+  }
+  @include active-link {    
+    .card__anchor {
+      text-decoration: underline;
+    }
+    .card__arrow {
+      .heading-only-card__icon-wrap {
+        max-height: $space-5;
+        svg {
+          fill: $white;
+          height: $space-5;
+        }
+      }  
+    }
+  }
 }
 .card--dark {
     color: $white;
@@ -330,8 +340,11 @@
 }
 /** Site gateway cards **/
 .site-gateways {
-    padding-top:     $space-5*1;
-    padding-bottom:  $space-5;
+  padding-top:     $space-5*1;
+  padding-bottom:  $space-6;
+}
+.site-gateways + .site-gateways {
+  padding-top:     0;
 }
 .site-gateway__card, .site-gateway__card--left {
     border: 1px solid $light-10;
@@ -448,7 +461,6 @@
            padding:  ($space-2 / 2) $column-gap*2; 
         }
         &.featured-programs-cards {
-           
             @media screen and (min-width:  540px) {
                 > .columns {
                     -ms-flex-pack: center;
@@ -592,82 +604,91 @@
         }    
 }
 .program-card {
-    position: relative;
-    .card-heading {
-        margin-bottom: $space-2;
-    }
-    .card-content__read-more {
-        margin-top: 0;
-        padding-right:  $gutter-width/4;
-        font-size: 1rem;
-        text-transform: none;
-        @include active-link {
-            font-weight: 400;
-            text-decoration: underline;
-        }
-    }
-    .program-card__intro {
-        margin-bottom: $space-3; 
-    }
+  position: relative;
+  .card-heading {
+    margin-bottom: $space-2;
+  }
+  .card-content__read-more {
+    margin-top: 0;
+    padding-right:  $gutter-width/4;
+    font-size: 1rem;
+    text-transform: none;
     @include active-link {
-         cursor: auto;
-         .card-content__read-more {
-            font-weight: 400;
-        }
+      font-weight: 400;
+      text-decoration: underline;
     }
-    .card__arrow {
-        margin-top: -$space-4;
-        .icon {
-            svg {
-                height: 90%; 
-            }    
-        } 
+  }
+  .program-card__intro {
+    margin-bottom: $space-3; 
+  }
+  @include active-link {
+    cursor: auto;
+    .card-content__read-more {
+      font-weight: 400;
     }
+  }
+  .card__arrow {
+    margin-top: -$space-4;
+    .icon {
+      svg {
+        height: 90%; 
+      }    
+    } 
+  }
 }
 .program-card__ctas {
-    @include make-flexbox($direction: row, $justify: flex-start, $align: center);
-    a, .button {
-        margin-right: $gutter-width/2;
-    }
+  @include make-flexbox($direction: row, $justify: flex-start, $align: center);
+  a, .button {
+    margin-right: $gutter-width/2;
+  }
 }
 .featured-programs-card-alt {
-    border-bottom-width: 3px;
-    border-bottom-color: $primary;
-    .card-content {
-        padding-top: $space-4a;
-        padding-bottom: $space-1;
+  @include active-link {
+    cursor: auto;
+  }
+  border-bottom-width: 3px;
+  border-bottom-color: $primary;
+  .card-content {
+    padding-top: $space-4a;
+    padding-bottom: $space-1;
+  }
+  .image {
+    @include make-image-overlay($black, $z-index: 20, $transp: 0.1618); 
+    &::before {
+      transition: background-color 200ms ease-out;
     }
-    .image {
-        @include make-image-overlay($black, $z-index: 20, $transp: 0.8); 
-        &::before {
-            transition: background-color 200ms ease-out;
-        }
-        > img {
-            z-index: 0;
-        }
+    > img {
+      z-index: 0;
     }
-    .program-card__ctas {
-        margin-top: $space-4;
-        .button {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
+  }
+  .program-card__ctas {
+    margin-top: $space-4;
+    .button {
+      margin-top: 0;
+      margin-bottom: 0;
     }
-    .button:not([class*='is-']) {
-        @include active-link {
-            background-color: $som-gold;
-            border-color: $white;
-        }
-    }
+  }
+  .button:not([class*='is-']) {
     @include active-link {
-        .image {
-            &::before {
-                background-color: rgba($black, 0.22);
-            }
-        }   
+      background-color: $som-gold;
+      border-color: $white;
     }
+  }
+  @include active-link {
+    .image {
+      &::before {
+        background-color: rgba($black, 0.22);
+      }
+    }
+    .card__arrow {
+      .icon {
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
 }
-
 
 /** Video slider - has a caption and play icon **/
 .video-slider-card {
@@ -921,6 +942,9 @@ $cardColours: (
               &::before {
                   background-color: $color;
               }
+              > svg {
+                fill: $color-invert;
+              }
             }
           }
         }
@@ -956,7 +980,7 @@ $cardColours: (
         .heading-only-card {
           border-bottom-color: $color; 
           .heading-only-card__content {
-              border-bottom-color: $color;
+            border-bottom-color: $color;
           }
           .card__arrow {
             max-width: $gl-small;

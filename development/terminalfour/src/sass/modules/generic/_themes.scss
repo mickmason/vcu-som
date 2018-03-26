@@ -40,8 +40,6 @@ $themeColours: (
 );
 /** Department site colour themes **/
 @each $theme-name, $theme-color-pair in $themeColours { 
-  @debug $theme-name;
-  @debug $theme-color-pair;
   $primary-pair:    nth($theme-color-pair, 1);
   $theme-primary:     nth($primary-pair,1);  
   $theme-primary-invert: nth($primary-pair,2);  
@@ -65,12 +63,16 @@ $themeColours: (
     //Utils
     .icon.icon--svg {
       &.has-icon-primary {
+        > svg {
           fill: $theme-primary;
-          stroke: $theme-primary;
+          stroke: $theme-primary;  
+        }
       }
-      &.has-icon-secodary {
+      &.has-icon-secondary {
+        > svg {
           fill:   $theme-secondary;
-          stroke: $theme-secondary;
+          stroke: $theme-secondary;  
+        }
       }  
     }
 		//Buttons
@@ -127,8 +129,8 @@ $themeColours: (
     }
     .main-navigation__item {
       @include desktop {
-        @include active-link {
-          .navbar-link--main {
+        .navbar-link--main {
+          @include active-link {
             background-color: $theme-primary; 
             &::before {
               border-top-color: $theme-primary ;
@@ -149,16 +151,15 @@ $themeColours: (
           @include active-link {
             background-color: $theme-primary;
           }
-            
         }
       }
       .footer__social-icons {
         > a {
           @include active-link { 
-              .icon {
-                  background-color: $theme-primary;
-              }
+            .icon {
+              background-color: $theme-primary;
             }
+          }
         }
       }
     }
@@ -170,15 +171,25 @@ $themeColours: (
             background-color: $theme-primary;
             color: $theme-primary-invert; 
         }
-      }
+      } 
     }
     //.has-{primary|secondary}-background  
     .has-primary-background {
       color: $theme-primary-invert;
       background-color: $theme-primary;
+      .section__intro, .section__intro--thin  {
+        border-bottom-color: $theme-primary-invert;
+      }
       .icon {
         fill: $theme-primary-invert;
         stroke: $theme-primary-invert;      
+      }
+      a {
+        color: $theme-primary-invert;
+        @include active-link {
+          color: $theme-primary;
+          background-color: $theme-primary-invert;
+        }
       }
       .button:not([class*="is-"]) {
         color: $theme-primary;
@@ -211,15 +222,25 @@ $themeColours: (
     .has-secondary-background {
       color: $theme-secondary-invert;
       background-color: $theme-secondary;
+      .section__intro, .section__intro--thin  {
+        border-bottom-color: $theme-secondary-invert;
+      }
       .icon {
         fill: $theme-secondary-invert;
         stroke: $theme-secondary-invert;      
+      }
+      
+      a {
+        color: $theme-secondary-invert;
+        @include active-link {
+          color: $theme-secondary;
+          background-color: $theme-secondary-invert;
+        }
       }
       .button:not([class*="is-"]) {
         color: $theme-secondary;
         background-color: $white;
         @include active-link {
-					
           background-color: $som-gold;
           color: $theme-secondary;
 					@if $theme-name == 'deep-purple-and-orange' {
@@ -267,7 +288,7 @@ $themeColours: (
       }
     }
     .is-vision-angle--right, .has-vision-graphic--right {
-       &.is-transparent {
+      &.is-transparent {
         background-color: rgba($theme-primary, $transparency);
       }
     }
@@ -309,6 +330,18 @@ $themeColours: (
                 }
               }
             }
+            @include active-link {
+              .card__arrow {
+                span {
+                  &::before {
+                    background-color: $theme-primary-invert;
+                  }
+                  > svg {
+                    fill: $theme-primary-invert;
+                  }
+                }
+              }
+            }
           }
           .site-gateway__card {
             .card__arrow {
@@ -321,6 +354,16 @@ $themeColours: (
             @include active-link {
               background-color: $theme-primary;
               color: $theme-primary-invert;
+              .card__arrow {
+                .icon {
+                  &::before {
+                      background-color: $theme-primary-invert;
+                  }
+                  > svg {
+                    fill: $theme-primary;
+                  }
+                }
+              }
             }
             border-bottom-color: $theme-primary;
           }
@@ -329,20 +372,23 @@ $themeColours: (
             .heading-only-card__content {
                 border-bottom-color: $theme-primary;
             }
-						.card__anchor {
-							color: $theme-primary;
-							@include active-link {
-								color: $theme-secondary;
-							}
-						}
             .card__arrow {
               .icon {
                 &::before {
-                    background-color: $theme-primary;
+                  background-color: $theme-primary;
                 }
               }
             }
+            
+            @include active-link {
+              .heading-only-card__icon-wrap {
+                svg {
+                  fill: $theme-primary-invert;
+                }
+              } 
+            }
           }
+        
         &.has-secondary-cards {
           .section__title--featured {   
             .section__title {
@@ -355,7 +401,16 @@ $themeColours: (
             .card__arrow {
               span {
                 &::before {
-                    background-color: $theme-secondary;
+                  background-color: $theme-secondary;
+                }
+              }
+            }
+            @include active-link {
+              .card__arrow {
+                span {
+                  > svg {
+                    fill: $theme-secondary-invert;
+                  }
                 }
               }
             }
@@ -364,45 +419,53 @@ $themeColours: (
             .card__arrow {
               .icon {
                 &::before {
-                    background-color: $theme-secondary;
+                  background-color: $theme-secondary;
                 }
               }
             }
             @include active-link {
               background-color: $theme-secondary;
               color: $theme-secondary-invert;
+              .card__arrow {
+                .icon {
+                  &::before {
+                      background-color: $theme-secondary-invert;
+                  }
+                  > svg {
+                    fill: $theme-secondary;
+                  }
+                }
+              }
             }
             border-bottom-color: $theme-secondary;
           }
           .video-slider-card {
             .card-content__controls {
-                background-color: $theme-secondary;
-                color: $theme-secondary-invert;
-                @include active-link {
-                    background-color: darken($theme-secondary, 5%);
-                }
+              background-color: $theme-secondary;
+              color: $theme-secondary-invert;
+              @include active-link {
+                background-color: darken($theme-secondary, 5%);
+              }
             }
             .video-slider__play {
-                @include active-link {
-                    background-color: darken($theme-secondary, 5%);
-                }
+              @include active-link {
+                background-color: darken($theme-secondary, 5%);
+              }
             }
           }
           .heading-only-card {
             border-bottom-color: $theme-secondary; 
             .heading-only-card__content {
-                border-bottom-color: $theme-secondary;
+              border-bottom-color: $theme-secondary;
             }
-						.card__anchor {
-							color: $theme-secondary;
-							@include active-link {
-								color: $theme-primary;
-							}
-						}
+            
             .card__arrow {
               .icon {
                 &::before {
-                    background-color: $theme-secondary;
+                  background-color: $theme-secondary;
+                }
+                > svg {
+                  fill: $theme-secondary-invert;
                 }
               }
             }
@@ -410,6 +473,12 @@ $themeColours: (
         }//end .has-secondary-cards       
       }
     }//cards .sections
+    .card__date--inset { 
+      .card__date__day {
+        background-color: $theme-secondary;
+        color: $theme-secondary-invert;
+      }
+    }
     .feature-section--vision-graphic {
       .button{
         color: $theme-primary;
@@ -417,7 +486,18 @@ $themeColours: (
           color: $theme-primary;
         }
       }
+      a {
+        color: $theme-primary-invert;
+        @include active-link {
+          color: $theme-primary;
+          background-color: $theme-primary-invert;
+        }
+      } 
+      .section__intro, .section__intro--thin  {
+        border-bottom-color: $theme-primary-invert;
+      }
     }
+    
     .hero-slider__slide, .news-slider__slide {
       &:nth-child(even) {
         .news-slider__story {
@@ -454,7 +534,6 @@ $themeColours: (
           }
         }
       }
-      
     }
     //News & events listing
     .news-events--listing {
@@ -465,6 +544,12 @@ $themeColours: (
             color: $theme-primary;
           }
         }
+      }
+      .read-more-block {
+        background-color: rgba($light-10, 0.72);
+      }
+      .read-more-link {
+        color: $theme-secondary; 
       }
       .event-day {
         background-color: rgba($theme-secondary, 0.84);
@@ -485,17 +570,16 @@ $themeColours: (
         background-color: rgba($theme-primary, 0.84);
       }
     }
-    
     //Discoveries/news sliders
     .discovery-slider {
       .card--flat {
-          border-bottom-color: $theme-primary;
-          @include active-link {
-              .card-content {
-                  background-color: $theme-primary;
-              }
-              border-bottom-color: $som-gold;
+        border-bottom-color: $theme-primary;
+        @include active-link {
+          .card-content {
+            background-color: $theme-primary;
           }
+          border-bottom-color: $som-gold;
+        }
       }
       &.is-secondary {
         .card--flat {
@@ -503,40 +587,39 @@ $themeColours: (
           @include active-link { 
             border-bottom-color: $som-gold;
             .card-content {
-                background-color: $theme-secondary;
+              background-color: $theme-secondary;
             }
             border-bottom-color: $som-gold;
           }
         }
       }
     }
-    
     // Landing page section with heading pulled left, intro text an image to the right
     .feature-section--section-intro { 
       .section-intro__heading {
         &__text {
           &::after {
-              background-color: $theme-primary;
+            background-color: $theme-primary;
           }
         }
       }
       .section-intro__body {
-          &::before {
-              background-color: rgba($theme-primary, $transparency);
-          }
+        &::before {
+          background-color: rgba($theme-primary, $transparency);
+        }
       }
       &.has-secondary-background {
         .section-intro__body {
-            &::before {
-                background-color: rgba($theme-secondary, $transparency);
-            }
+          &::before {
+            background-color: rgba($theme-secondary, $transparency);
+          }
         }
         .section-intro__heading {
-            &__text {
-                &::after {
-                    background-color: $theme-secondary; 
-                }
+          &__text {
+            &::after {
+              background-color: $theme-secondary; 
             }
+          }
         }
     	}
     }
@@ -567,7 +650,7 @@ $themeColours: (
       	background-color: $theme-primary;
       	color: $theme-primary-invert;
       	@include active-link {
-      	    background-color: darken($theme-primary, 5%);
+      	  background-color: darken($theme-primary, 5%);
       	}
 			}
 		}
@@ -584,7 +667,13 @@ $themeColours: (
 				}
 			}
 		}
-		
-    
+		//Hero slider 
+		.hero-slider {
+			.hero-quicklinks {
+        @include touch {
+          background-color: $theme-primary;
+        }
+			}
+		}
   }//a.#{theme-name}
 }//@each $name, $pair in $themeColours

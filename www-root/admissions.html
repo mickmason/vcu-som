@@ -3,7 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VCU School of Medicine: Homepage</title>
+        <title>VCU School of Medicine: Homepage</title>
+    <meta name="twitter:title" content="VCU School of Medicine: Page title">
+    <meta property="og:title" content="VCU School of Medicine: Page title" />
+    <meta name="description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center"  />
+    <meta property="og:description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center" />
+    
+    <!-- Open Graph data -->
+    <meta property="og:url" content="https://www.terminalfour.com/blog/posts/4-of-our-all-time-favorite-higher-education-video-campaigns.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="VCU School of Medicine" />
+    <meta name="og:image" content="http://medschool.vcu.edu/style-assets/media/img/egyptian-building-at-night.jpg" />  
+    
+    <!-- Twitter specific data - Requires a Twitter handle -->  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@HANDLE">
+    <meta name="twitter:site" content="@HANDLE" /> 
     <link rel="stylesheet" href="style-assets/css/style.css" /> 
     
         <script>
@@ -492,12 +507,12 @@
                            </div>
                    </div><!-- // .navbar-end.main-navigation__search-toggle -->
                    <div class="site-search-form ">
-                       <form action="" method="get" name="keyword" onsubmit="startSearch();return false">
+                       <form id="som-site-earch-form" action="" method="get" name="keyword">
                           <div class="site-search-form__inputs">
                               <label class="sr-only is-hidden" for="searchquery">Search</label>
                               <input id="searchquery" maxlength="255" name="query" onfocus="" placeholder="Search VCU" type="text">                         
                               <label class="sr-only is-hidden" for="search_go">Search</label>
-                              <button alt="Go" id="search_go" name="search_go" type="submit">
+                              <button alt="Go" id="search_go" name="search_go" value="Go" type="submit">
                                  <span class="icon icon--svg has-icon-gray-32">
                                      <svg>
                                          <use xlink:href="#search" />
@@ -891,8 +906,8 @@
                         <div class="card--flat video-slider-card som-lb-item"
                         data-lightbox-title="Facilites"
                         data-lightbox-caption="However hard he threw himself onto his right, he always rolled back to where he was."
-                        data-lightbox-media-type="youtube-video" 
-                        data-lightbox-youttubeid="5G99Yl95hUo">
+                        data-lightbox-media-type="vimeo-video" 
+                        data-lightbox-vimeoid="261025185">
                             <div class="card-image">
                                 <figure class="image is-2by1">
                                     <img alt="A day in the life of a Medical Student" src="style-assets/media/img/diversity-1-4by3.jpg" class="">
@@ -907,15 +922,15 @@
                                           </svg>
                                      </span>  
                                     </a>
-                                    <div class="video-slider__caption">A day in the life of a Medical Student</div>
+                                    <div class="video-slider__caption"><code style="display: inline-block">Vimeo video:</code> A day in the life of a Medical Student</div>
                                 </div>
                             </div>
                         </div><!-- // .video-slider-card -->
                         <div class="card--flat video-slider-card som-lb-item"
                         data-lightbox-title="Facilites"
                         data-lightbox-caption="However hard he threw himself onto his right, he always rolled back to where he was."
-                        data-lightbox-media-type="youtube-video" 
-                        data-lightbox-youttubeid="5G99Yl95hUo">
+                        data-lightbox-media-type="img" 
+                        data-lightbox-url="style-assets/media/img/diversity-1-4by3.jpg">
                             <div class="card-image">
                                 <figure class="image is-2by1">
                                     <img alt="A day in the life of a Medical Student" src="style-assets/media/img/diversity-1-4by3.jpg" class="">
@@ -923,14 +938,7 @@
                             </div>
                             <div class="card-content"> 
                                 <div class="card-content__controls">
-                                    <a class="video-slider__play" href="javascript:void(0)">
-                                        <span class="icon icon--svg has-icon-white">
-                                          <svg>
-                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play_icon"></use> 
-                                          </svg>
-                                     </span>  
-                                    </a>
-                                    <div class="video-slider__caption">A day in the life of a Medical Student</div>
+                                    <div class="video-slider__caption"><code style="display: inline">Image:</code> A day in the life of a Medical Student</div>
                                 </div>
                             </div>
                         </div><!-- // .video-slider-card -->
@@ -953,7 +961,7 @@
                                           </svg>
                                      </span>  
                                     </a>
-                                    <div class="video-slider__caption">A day in the life of a Medical Student</div>
+                                    <div class="video-slider__caption"><code style="display: inline-block">Video:</code> A day in the life of a Medical Student</div>
                                 </div>
                             </div>
                         </div><!-- // .video-slider-card -->

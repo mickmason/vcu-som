@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-us">
-        <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>VCU School of Medicine: Homepage</title>
-        <link rel="stylesheet" href="style-assets/css/style.css" /> 
-        <script>
-          (function(d) {
-            var config = {
-              kitId: 'zpz2dox',
-              scriptTimeout: 3000, 
-              async: true
-            },
-            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-          })(document);
-        </script>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  @@include('structure/meta.html') 
+  <link rel="stylesheet" href="style-assets/css/style.css" /> 
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'zpz2dox',
+        scriptTimeout: 3000, 
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
         
-    </head> 
+  </head> 
     <body class=" is-2col ">
        <div class="body-wrap">
        @@include('structure/skip-links.html')
@@ -153,19 +153,21 @@
                         </div><!-- // .general-content -->
 
                         <section class="general-content deans-message">
-                            <h2 class="deans-message__heading">Thoughts from Dean Buckley</h2> 
-                            <div class="deans-image">
-                               <figure class="image">
-                                  <img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" />       
-                               </figure>
-                            </div>
-                            <div class="deans-message__content">
-                                <div class="deans-message__content__message">
-                                    <p>"Peter F. Buckley, M.D., believes life is a journey of service to others. His journey brought him to Virginia Commonwealth University in January to become dean of the School of Medicine and executive vice president for medical affairs at VCU Health, where he oversees the 600 physician-faculty group practice of the academic health sciences center".</p>
+                           <div class="general-content__wrap">
+                              <h2 class="deans-message__heading">Thoughts from Dean Buckley</h2> 
+                              <div class="deans-image">
+                                 <figure class="image">
+                                    <img src="style-assets/media/img/dean-buckley-crop.jpg" alt="Dean Peter Buckley" />       
+                                 </figure>
+                              </div>
+                              <div class="deans-message__content">
+                                  <div class="deans-message__content__message">
+                                      <p>"Peter F. Buckley, M.D., believes life is a journey of service to others. His journey brought him to Virginia Commonwealth University in January to become dean of the School of Medicine and executive vice president for medical affairs at VCU Health, where he oversees the 600 physician-faculty group practice of the academic health sciences center".</p>
 
-                                    <p>"Irish by birth, Buckley received his medical degree from the University College Dublin School of Medicine, where he completed psychiatric residence training followed by a fellowship in schizophrenia research. He also earned a master’s degree by thesis from University College Dublin".</p>
-                                </div>
-                                <a class="button" href="javascript:void(0)">Here is a button</a>    
+                                      <p>"Irish by birth, Buckley received his medical degree from the University College Dublin School of Medicine, where he completed psychiatric residence training followed by a fellowship in schizophrenia research. He also earned a master’s degree by thesis from University College Dublin".</p>
+                                  </div>
+                                  <a class="button" href="javascript:void(0)">Here is a button</a>    
+                              </div>
                             </div>
                         </section>
                         <section class="news-item__related-news">

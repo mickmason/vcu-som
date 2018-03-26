@@ -3,9 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VCU School of Medicine: Homepage</title>
-    <link rel="stylesheet" href="style-assets/css/style.css" /> 
+        <title>VCU School of Medicine: Homepage</title>
+    <meta name="twitter:title" content="VCU School of Medicine: Page title">
+    <meta property="og:title" content="VCU School of Medicine: Page title" />
+    <meta name="description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center"  />
+    <meta property="og:description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center" />
     
+    <!-- Open Graph data -->
+    <meta property="og:url" content="https://www.terminalfour.com/blog/posts/4-of-our-all-time-favorite-higher-education-video-campaigns.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="VCU School of Medicine" />
+    <meta name="og:image" content="http://medschool.vcu.edu/style-assets/media/img/egyptian-building-at-night.jpg" />  
+    
+    <!-- Twitter specific data - Requires a Twitter handle -->  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@HANDLE">
+    <meta name="twitter:site" content="@HANDLE" /> 
+    <link rel="stylesheet" href="style-assets/css/style.css" /> 
         <script>
           (function(d) {
             var config = {
@@ -494,12 +508,12 @@
                            </div>
                    </div><!-- // .navbar-end.main-navigation__search-toggle -->
                    <div class="site-search-form ">
-                       <form action="" method="get" name="keyword" onsubmit="startSearch();return false">
+                       <form id="som-site-earch-form" action="" method="get" name="keyword">
                           <div class="site-search-form__inputs">
                               <label class="sr-only is-hidden" for="searchquery">Search</label>
                               <input id="searchquery" maxlength="255" name="query" onfocus="" placeholder="Search VCU" type="text">                         
                               <label class="sr-only is-hidden" for="search_go">Search</label>
-                              <button alt="Go" id="search_go" name="search_go" type="submit">
+                              <button alt="Go" id="search_go" name="search_go" value="Go" type="submit">
                                  <span class="icon icon--svg has-icon-gray-32">
                                      <svg>
                                          <use xlink:href="#search" />
@@ -1009,7 +1023,7 @@
                    <div class="news-slider__story is-feature-font">
                        <div class="news-slider__story__text">
                            <span class="news-label">Biomedical Sciences</span>
-                           <h2 class="news-slider__story__title">VCU Health experts agree new moms should have depression screenings</h2>
+                           <h2 class="news-slider__story__title">#1 VCU Health experts agree new moms should have depression screenings</h2>
                            <span class="news-date">October 20, 2017</span>
                            <a class="" href="javascript:void(0)">Read more
                                <span class="icon icon--svg is-inline-icon has-icon-white">
@@ -1041,67 +1055,69 @@
                    </div><!-- // .news-slider__story -->
                </div><!-- // .news-slider__slide -->
                <div class="column news-slider__slide">
-                   <figure class="image news-slider__image is-16by9">
-                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
-                   </figure>
-                   <div class="news-slider__story is-feature-font">
-                       <div class="news-slider__story__text">
-                           <span class="news-label">Biomedical Sciences</span>
-                           <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
-                           <span class="news-date">October 22, 2017</span>
-                           <a class="" href="javascript:void(0)">Read about screenings 
-                               <span class="icon icon--svg is-inline-icon has-icon-white">
-                                   <svg>
-                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
-                                   </svg>
-                               </span>
-                           </a>
-                       </div>
-                       
-                   </div><!-- // .news-slider__story -->
-               </div><!-- // .news-slider__slide -->
-             <div class="column news-slider__slide">
-                   <figure class="image news-slider__image is-16by9">
-                       <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
-                   </figure>
-                   <div class="news-slider__story is-feature-font">
-                       <div class="news-slider__story__text">
-                           <span class="news-label">Biomedical Sciences</span>
-                           <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
-                           <span class="news-date">October 22, 2017</span>
-                           <a class="" href="javascript:void(0)">Read about this story
-                               <span class="icon icon--svg is-inline-icon has-icon-white">
-                                   <svg>
-                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
-                                   </svg>
-                               </span>
-                           </a>
-                       </div>
-                       
-                   </div><!-- // .news-slider__story -->
-               </div><!-- // .news-slider__slide -->
+                     <figure class="image news-slider__image is-16by9">
+                         <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                     </figure>
+                     <div class="news-slider__story is-feature-font">
+                         <div class="news-slider__story__text">
+                             <span class="news-label">Biomedical Sciences</span>
+                             <h2 class="news-slider__story__title">#3 VCU Health experts agree new moms should have depression screenings</h2>
+                             <span class="news-date">October 22, 2017</span>
+                             <a class="" href="javascript:void(0)">Read about this story
+                                 <span class="icon icon--svg is-inline-icon has-icon-white">
+                                     <svg>
+                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
+                                     </svg>
+                                 </span>
+                             </a>
+                         </div>
+
+                     </div><!-- // .news-slider__story -->
+                 </div><!-- // .news-slider__slide -->
+               <div class="column news-slider__slide">
+                     <figure class="image news-slider__image is-16by9">
+                         <img alt="News item title" class="" src="style-assets/media/img/pregnant-women-img.jpg" />
+                     </figure>
+                     <div class="news-slider__story is-feature-font">
+                         <div class="news-slider__story__text">
+                             <span class="news-label">Biomedical Sciences</span>
+                             <h2 class="news-slider__story__title">#4 VCU Health experts agree new moms should have depression screenings</h2>
+                             <span class="news-date">October 22, 2017</span>
+                             <a class="" href="javascript:void(0)">Read about this story
+                                 <span class="icon icon--svg is-inline-icon has-icon-white">
+                                     <svg>
+                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use>
+                                     </svg>
+                                 </span>
+                             </a>
+                         </div>
+
+                     </div><!-- // .news-slider__story -->
+                 </div><!-- // .news-slider__slide -->
               </div><!-- // .news-slider__slick -->
               <div class="slider__controls-wrap">
-                   <div class="news-slider__controls slider__controls">
-                      <button class="slider-control slider-control__prev news-slider__control">
-                        <span class="icon icon--svg has-icon-white">
+                  <div class="container">
+                    <div class="news-slider__controls slider__controls">
+                        <button class="slider-control slider-control__prev news-slider__control">
+                          <span class="icon icon--svg has-icon-white">
                             <svg class="svg-icon">
-                                <use xlink:href="#prev_arrow"></use>
-                             </svg>
-                        </span>
-                      </button>
-                      <div class="slick-dots-container">
-                      
-                      </div>
-                      <button class="slider-control slider-control__next news-slider__control">
-                         <span class="icon icon--svg has-icon-white">
-                              <svg class="svg-icon">
-                                  <use xlink:href="#next_arrow"></use> 
-                              </svg>   
-                         </span>
-                       </button>
-                  </div>
-            </div>
+                              <use xlink:href="#prev_arrow"></use>
+                            </svg>
+                          </span>
+                        </button>
+                        <div class="slick-dots-container">
+
+                        </div>
+                        <button class="slider-control slider-control__next news-slider__control">
+                           <span class="icon icon--svg has-icon-white">
+                                <svg class="svg-icon">
+                                    <use xlink:href="#next_arrow"></use> 
+                                </svg>   
+                           </span>
+                         </button>
+                    </div>
+                  </div><!-- // . container -->
+              </div><!-- // .slider__controls-wrap -->
            </div><!-- // .news-main-container.is-fluid -->
        <!-- ** News and media ** -->
        <section class="section news-and-events-feature" aria-labelledby="news-and-events-section-heading">
@@ -1276,7 +1292,7 @@
        <section class="section feature-section feature-section--fixed has-secondary-background" aria-labelledby="diversity-flyout-section-heading" >
            <div class="container">
                <div class="columns is-desktop is-widescreen">
-                   <div class="tab-column tab-column__mobile has-secondary-background column is-active">
+                   <div class="tab-column tab-column__mobile has-secondary-background column">
                       <a href="javascript:void(0)" class="feature-section--fixed__toggle">
                          <h2 class="fixed-feature__heading">Diversity &amp; Inclusion</h2>
                          <span class="icon icon--svg has-icon-white">

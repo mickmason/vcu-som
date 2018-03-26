@@ -3,7 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VCU School of Medicine: Homepage</title>
+        <title>VCU School of Medicine: Homepage</title>
+    <meta name="twitter:title" content="VCU School of Medicine: Page title">
+    <meta property="og:title" content="VCU School of Medicine: Page title" />
+    <meta name="description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center"  />
+    <meta property="og:description" content="Students at the Virginia Commonwealth University School of Medicine will find an unparalleled learning experience inside the classroom and at the VCU Medical Center" />
+    
+    <!-- Open Graph data -->
+    <meta property="og:url" content="https://www.terminalfour.com/blog/posts/4-of-our-all-time-favorite-higher-education-video-campaigns.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="VCU School of Medicine" />
+    <meta name="og:image" content="http://medschool.vcu.edu/style-assets/media/img/egyptian-building-at-night.jpg" />  
+    
+    <!-- Twitter specific data - Requires a Twitter handle -->  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@HANDLE">
+    <meta name="twitter:site" content="@HANDLE" /> 
     <link rel="stylesheet" href="style-assets/css/style.css" /> 
     
         <script>
@@ -489,12 +504,12 @@
                            </div>
                    </div><!-- // .navbar-end.main-navigation__search-toggle -->
                    <div class="site-search-form ">
-                       <form action="" method="get" name="keyword" onsubmit="startSearch();return false">
+                       <form id="som-site-earch-form" action="" method="get" name="keyword">
                           <div class="site-search-form__inputs">
                               <label class="sr-only is-hidden" for="searchquery">Search</label>
                               <input id="searchquery" maxlength="255" name="query" onfocus="" placeholder="Search VCU" type="text">                         
                               <label class="sr-only is-hidden" for="search_go">Search</label>
-                              <button alt="Go" id="search_go" name="search_go" type="submit">
+                              <button alt="Go" id="search_go" name="search_go" value="Go" type="submit">
                                  <span class="icon icon--svg has-icon-gray-32">
                                      <svg>
                                          <use xlink:href="#search" />
@@ -597,16 +612,9 @@
                            </a> 
                        </div><!-- // .sidebar-nav-toggle -->
                        <ul class="sidebar-nav">
-                           <li class="has-dropdown">
+                           <li class="">
                                 <a href="javascript:void(0)">Applicant resources</a>
-                                <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                    <svg class="show-more-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                    </svg>
-                                    <svg class="show-less-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                    </svg>
-                                </a>
+                                
                                 <ul> 
                                     <li>
                                         <a href="javascript:void(0)">Contract and Benefits</a>                  
@@ -614,16 +622,9 @@
                                     <li>
                                         <a href="javascript:void(0)">Application</a>                  
                                     </li>
-                                    <li class="has-dropdown">
+                                    <li class="">
                                         <a href="javascript:void(0)">Residency &amp; Fellowship Programs</a>
-                                        <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                            <svg class="show-more-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                            </svg>
-                                            <svg class="show-less-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                            </svg>
-                                        </a> 
+                                        
                                         <ul>
                                             <li><a href="javascript:void(0)">Program #1</a></li>
                                             <li><a href="javascript:void(0)">Program #2</a></li>
@@ -641,16 +642,9 @@
                            <li>
                                 <a href="javascript:void(0)">Currrent housestaff resources</a>
                            </li>
-                           <li class="has-dropdown">
+                           <li class="">
                                <a href="javascript:void(0)">Educational resources</a>
-                               <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                    <svg class="show-more-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                    </svg>
-                                    <svg class="show-less-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                    </svg>
-                                </a>
+                               
                                 <ul> 
                                     <li>
                                         <a href="javascript:void(0)">Contract and Benefits</a>                   
@@ -680,14 +674,7 @@
                             </li>
                            <li class="has-dropdown">
                                 <a href="javascript:void(0)">Contact</a>
-                                <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                    <svg class="show-more-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                    </svg>
-                                    <svg class="show-less-icon">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                    </svg>
-                                </a>  
+                                 
                                 <ul> 
                                     <li>
                                         <a href="javascript:void(0)">Contract and Benefits</a>                  
@@ -695,16 +682,9 @@
                                     <li>
                                         <a href="javascript:void(0)">Application</a>                  
                                     </li>
-                                    <li class="has-dropdown"> 
+                                    <li class=""> 
                                         <a href="javascript:void(0)">Residency &amp; Fellowship Programs</a>
-                                        <a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links">
-                                            <svg class="show-more-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use>
-                                            </svg>
-                                            <svg class="show-less-icon">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use>
-                                            </svg>
-                                        </a> 
+                                        
                                         <ul>
                                             <li><a href="javascript:void(0)">Program #1</a></li>
                                             <li><a href="javascript:void(0)">Program #2</a></li>

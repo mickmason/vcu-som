@@ -411,35 +411,35 @@
     $ajax.onreadystatechange = loadSVGs;
     $ajax.send();
     function loadSVGs() { 
-        if ($ajax.readyState === 4) {
-            if ($ajax.status === 200) {
-              var responseContentType = $ajax.getResponseHeader("Content-Type"); 
-              if (responseContentType.indexOf('image/svg+xml') !== -1) {
-                  var div = document.createElement("div");
-                  div.setAttribute('class', 'vcu-som-icons-stack');
-                  div.innerHTML = $ajax.responseText;
-                  document.body.insertBefore(div, document.body.childNodes[0]);    
-              } else {
-                  $('body').addClass('no-svg');
-              }
-            } else {
-              console.log('Load SVG HTTP status is: '+$ajax.status);
-            }
+      if ($ajax.readyState === 4) {
+        if ($ajax.status === 200) {
+          var responseContentType = $ajax.getResponseHeader("Content-Type"); 
+          if (responseContentType.indexOf('image/svg+xml') !== -1) {
+            var div = document.createElement("div");
+            div.setAttribute('class', 'vcu-som-icons-stack');
+            div.innerHTML = $ajax.responseText;
+            document.body.insertBefore(div, document.body.childNodes[0]);    
+          } else {
+            $('body').addClass('no-svg');
+          }
+        } else {
+          console.log('Load SVG HTTP status is: '+$ajax.status);
         }
+      }
     }
     /** 
       ** Plugins
     **/
     /** Slick instances **/
     $('.hero-slider__slider').slick({ 
-        mobileFirst: true,
-        slidesToShow: 1,
-        speed: 400,
-        slide: '.hero-slider__slide',
-        prevArrow: '.hero-slider__controls__prev', 
-        nextArrow: '.hero-slider__controls__next', 
-        appendArrows: '.slider__controls',
-        appendDots: '.slick-dots-container' 
+      mobileFirst: true,
+      slidesToShow: 1,
+      speed: 400,
+      slide: '.hero-slider__slide',
+      prevArrow: '.hero-slider__controls__prev', 
+      nextArrow: '.hero-slider__controls__next', 
+      appendArrows: '.slider__controls',
+      appendDots: '.slick-dots-container' 
     });
     $('.news-slider__slick').slick({
         dots: true,
@@ -538,8 +538,8 @@
             slidesToShow: 1,
             slide: '.discovery-slider__slide',
             appendArrows: $this.find('.discovery-slider__controls'),
-            prevArrow: '<button class="slider-control slider-control__prev discovery-slider__control discovery-slider__controls__prev "><span class="icon icon--svg has-icon-white"><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#prev_arrow"></use></svg></span></button>',
-            nextArrow: '<button class="slider-control slider-control__next discovery-slider__control discovery-slider__controls__next " ><span class="icon icon--svg has-icon-white"><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="style-assets/media/svg-icons/som-icons.svg#next_arrow"></use</svg></span></button>',
+            prevArrow: '<button class="slider-control slider-control__prev discovery-slider__control discovery-slider__controls__prev "><span class="icon icon--svg has-icon-white"><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#prev_arrow"></use></svg></span></button>',
+            nextArrow: '<button class="slider-control slider-control__next discovery-slider__control discovery-slider__controls__next " ><span class="icon icon--svg has-icon-white"><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#next_arrow"></use</svg></span></button>',
             responsive: [
                 {
                     breakpoint: 787,
@@ -680,10 +680,22 @@
                     $lightBoxMediaContents.attr('height', '315');
                     $lightBoxMediaContents.attr('width', '560');
                     $lightBoxMediaContents.attr('src', 'https://www.youtube.com/embed/'+$thisItem.data('lightbox-youttubeid')+'?autoplay=1rel=0');
+                } else if (thisMediaType === 'vimeo-video') { 
+                    $lightBoxMediaContents = $('<iframe />');
+                    $lightBoxMediaContents.attr('height', '268');
+                    $lightBoxMediaContents.attr('width', '640');
+                    $lightBoxMediaContents.attr('src', 'https://player.vimeo.com/video/'+$thisItem.data('lightbox-vimeoid')+'?autoplay=1rel=0');
                 }
 
                 var $lightBoxMedia = $('<div class="som-lightbox__media" />');
-                $lightBoxMedia.addClass('video is-16by9');
+                if (thisMediaType === 'img') {
+                  $lightBoxMedia.addClass('image is-16by9');  
+                } else if (thisMediaType === 'youtube-video') {
+                  $lightBoxMedia.addClass('video is-16by9');  
+                } else if (thisMediaType === 'vimeo-video') {
+                  $lightBoxMedia.addClass('video is-2by1');  
+                }
+                
                 $lightBoxMedia.append($lightBoxMediaContents);
                 var $lightBoxItem = $('<div class="som-lightbox-item" />');
                 $lightBoxItem.append($lightBoxTitle).append($lightBoxMedia).append($lightboxCaption);
@@ -821,6 +833,13 @@
             } 
         }
     });
+    $('.sidebar-nav li').each(function(idx, ele) {
+      var $thisLi = $(ele);
+      if ($thisLi.children('ul').length > 0) {
+        $thisLi.addClass('has-dropdown');
+        $thisLi.children('a').after('<a href="javascript:void(0)" class="icon icon--svg sidebar-nav-toggle__icons" title="View next level links"><svg class="show-more-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus_icon"></use></svg><svg class="show-less-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#minus_icon"></use></svg></a> ');
+      }
+    });
      /* Show/hide inner nav in smaller resolutions max-width 991px */
     function toggleSidebarNav() {
         var $thisHeading = $(this).parent('.sidebar-nav-toggle') ;
@@ -848,7 +867,7 @@
             $('.sidebar-nav-toggle > a').on('click', toggleSidebarNav);
         }
     });
-    $('.sidebar-nav li.has-dropdown > .sidebar-nav-toggle__icons').on('click', function(event) {
+    $(document).on('click', '.sidebar-nav li.has-dropdown > .sidebar-nav-toggle__icons', function(event) {
         event.preventDefault();
         $this = $(this);
         $thisLi = $this.parent('li');
@@ -1054,6 +1073,78 @@
         } else {
             console.log('Doesn\'t need wrap');
         }
-        
     });
+  
+  //VCU Scripts imported from old build
+  /* Search related */
+  function checkQuery() {
+     var queryFld = document.keyword.query;
+     if (queryFld.value == "") {
+       alert ("Please enter a term to search");
+       queryFld.focus();
+       return(false);
+       }
+     return(true);
+     }
+
+  function checkName() {
+     var nameFld = document.ccso.NAME;
+     if (nameFld.value == "") {
+       alert ("Please enter a name");
+       nameFld.focus();
+       return(false);
+       }
+     return(true);
+     }
+
+  function convertString( temp ) {
+     var newString = "";
+     var i=0;
+     for( i=0; i < temp.length; i++ ) {
+       if( temp.charAt(i) != " " ) {
+         newString += temp.charAt(i);
+         }
+       else {
+         newString += "+";
+         }
+       }
+     return newString;
+  }
+  $('#som-site-earch-form').on('submit', function(event) {
+    event.preventDefault();
+    console.log('#som-site-earch-form submit');
+    if( document.keyword.searchnav[0].checked ) {
+      if( checkQuery() ) {
+      var header = "http://search.vcu.edu/search?";
+      var options = "&access=p&proxystylesheet=default_frontend";
+      var searchVal = "q=" + convertString(document.keyword.query.value);
+      //eval( "location = " + "\"" + header + searchVal + options + "\"");
+      window.location.href = header + searchVal + options;
+      }
+    }
+
+          //people
+
+    if( document.keyword.searchnav[1].checked ) {
+       if( checkQuery() ) {
+         var header = "http://phonebook.vcu.edu?";
+         options = "TYPE=All";
+         searchVal = "&NAME=" + convertString(document.keyword.query.value);
+         window.location.href = header + options + searchVal;
+      }
+    }
+
+            //Medschool via Google
+
+          if( document.keyword.searchnav[2].checked ) {
+             if( checkQuery() ) {
+               var header = "http://search.vcu.edu/search?";
+               var options = "&access=p&site=somweb&proxystylesheet=default_frontend";
+               var searchVal = "q=" + convertString(document.keyword.query.value);
+               window.location.href = header + searchVal + options;
+               }
+          } 
+    
+  });
+  
 }());/* End of VCU School of Medicine Site Redesign 2017-2018 build scripts T4 */
