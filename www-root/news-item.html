@@ -13,12 +13,12 @@
     <meta property="og:url" content="https://www.terminalfour.com/blog/posts/4-of-our-all-time-favorite-higher-education-video-campaigns.html" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="VCU School of Medicine" />
-    <meta name="og:image" content="http://medschool.vcu.edu/style-assets/media/img/egyptian-building-at-night.jpg" />  
+    <meta name="og:image" content="/style-assets/media/img/vcu-health-3.jpg" />  
     
     <!-- Twitter specific data - Requires a Twitter handle -->  
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="@HANDLE">
-    <meta name="twitter:site" content="@HANDLE" /> 
+    <meta name="twitter:creator" content="@_mickmason">
+    <meta name="twitter:site" content="@_mickmason_" /> 
   <link rel="stylesheet" href="style-assets/css/style.css" /> 
   <script>
     (function(d) {
@@ -572,26 +572,25 @@
                               <div class="hero-text-wrap">
                                   <div class="content-share__label content-label">Share:</div>
                                   <div class="content-share__icons">
-                                      <a href="javascript:void(0)" class="icon icon--svg">
+                                    <!-- @Mark: Addthis share icons --> 
+                                    <div class="addthis_toolbox">
+                                      <a class="addthis_button_facebook icon icon--svg">
                                         <svg class="">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#intagram-logo"></use>
-                                        </svg>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb-logo"></use>
+                                        </svg>  
                                       </a>
-                                      <a href="javascript:void(0)" class="icon icon--svg">
+                                      <a class="addthis_button_twitter icon icon--svg">
                                         <svg class="">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb-logo"></use>
-                                        </svg>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
+                                        </svg>  
                                       </a>
-                                      <a href="javascript:void(0)" class="icon icon--svg">
+                                      <a class="addthis_button_google icon icon--svg">
                                         <svg class="">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
-                                        </svg>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#google-plus-icon"></use>
+                                        </svg>  
                                       </a>
-                                      <a href="javascript:void(0)" class="icon icon--svg">
-                                        <svg class="">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#google-plus-icon"></use>
-                                        </svg>
-                                      </a>
+                                    </div>
+                                    <!-- // @Mark: Addthis share icons --> 
                                   </div>
                               </div><!-- // .hero-text-wrap -->
                           </div><!-- // .hero-content-wrap -->
@@ -709,6 +708,33 @@
                        </ul>
                    </nav>
                    <!-- ** // Inner navigation ** -->
+                       <!-- @Mark: Addthis share icons. Wrap it in the .share-icons-sidebar.sidebar-card--desktop div shown here  --> 
+                       <div class="share-icons-sidebar sidebar-card--desktop ">  
+                         <div class="content-share__label content-label">Share:</div>
+                         <!-- @Mark: Addthis share icons. This has an extra class .content-share__icons--sidebar   --> 
+                         <div class="content-share__icons content-share__icons--sidebar">
+                       
+                            <div class="addthis_toolbox">
+                              <a class="addthis_button_facebook icon icon--svg">
+                                <svg class="">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb-logo"></use>
+                                </svg>  
+                              </a>
+                              <a class="addthis_button_twitter icon icon--svg">
+                                <svg class="">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
+                                </svg>  
+                              </a>
+                              <a class="addthis_button_google icon icon--svg">
+                                <svg class="">
+                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#google-plus-icon"></use>
+                                </svg>  
+                              </a>
+                            </div>
+                            
+                         </div>
+                       </div><!-- // share icons sidebar card -->
+                       <!-- // @Mark: Addthis share icons --> 
                        <div class="card--flat sidebar-card sidebar-card--desktop ">  
                            <h3 class="card-title">Other news</h3>
                            <div class="news-events--listing">
@@ -1052,5 +1078,7 @@
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="style-assets/js/t4-scripts.js"></script>
+    <!-- Addthis -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a4cb697300284d4"></script>
     </body>
 </html>

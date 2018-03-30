@@ -43,8 +43,7 @@
 @import 'modules/generic/themes';
 
 body {
-    background-color: #f0f0f0;
-    
+  background-color: #f0f0f0;
 }
 .site-index-section { 
     a {
@@ -73,10 +72,10 @@ body {
 /** Diversity feature **/
 .feature-section--vision-graphic {
    &.is-narrow {
-       .feature__column {
-           padding-top:     $space-5;
-           padding-bottom:  $space-5;
-       }
+    .feature__column {
+     padding-top:     $space-5;
+     padding-bottom:  $space-5;
+    }
    }
    padding-top: 0;
    padding-bottom: 0;
@@ -104,7 +103,6 @@ body {
 				transform: none;
 			}	
 		}
-		
    }//.feature-column
   .button {
     background-color: $white;
@@ -141,12 +139,12 @@ body {
         -ms-flex-pack: end;
         justify-content: flex-end;
         .feature__column {
-            &:before {
-                width: 200%;
-                left: auto;
-                right: -80%;
-                transform: skewX(-19.5deg); 
-            }
+          &:before {
+            width: 200%;
+            left: auto;
+            right: -80%;
+            transform: skewX(-19.5deg); 
+          }
         }
       }
       margin-bottom: 0;
@@ -1067,4 +1065,70 @@ body {
 			}
 		}
 	}
+}
+
+/* Sharing icons */
+.content-share__label {
+  margin-bottom: $space-1;
+}
+.content-share {
+	background-color: $primary;    
+	color: $white;
+  .content-label {
+      color: $white;
+  }
+}
+.content-share__icons { 
+  @include make-flexbox($direction: row, $align: center, $justify: flex-start);
+  .icon.icon--svg {
+    height: 2.225rem;
+    width:  2.225rem;
+    padding: $space-11*1.25;
+    margin-right: $gutter-width/4;
+    border-radius: 50%;
+    border:        1px solid $white;
+    transition: background-color 200ms ease-out ;
+    svg {
+      fill: $white;
+    }
+    @include active-link {
+      background-color: $white;
+      svg {
+        fill: $som-green;
+      }
+    } 
+    @include desktop {
+      padding: $space-11*1.25;
+    }
+  }
+  &.content-share__icons--sidebar {
+    flex-wrap: wrap;
+    .icon.icon--svg {
+      margin-bottom: $space-2;
+      margin-right: $gutter-width/5;
+      border-color: $black;
+      svg {
+        fill: $black;
+      }
+      
+      @include active-link {
+        background-color: $black;
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  } 
+}
+.share-icons-sidebar {
+  margin-left:   -$gutter-width/2;
+  margin-right:  -$gutter-width/2;
+  padding-left:  $gutter-width/2;
+  padding-right: $gutter-width/2;
+  padding-bottom: $space-11; 
+  margin-bottom: $space-1;
+  @include boxShadow($black, bottomThin);
+  .content-share__label {
+    font-weight: 500; 
+  }
 }

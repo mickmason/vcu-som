@@ -154,13 +154,11 @@ module.exports = function(grunt) {
       dist: {
         src: 'www-root/style-assets/css/style.css'
       }
-      
     },
     watch: {
       options: { livereload: true },
       sass: {
         files: ['development/**/**/**/*.scss', 'development/lib/bulma/sass/**/*.sass'],
-        
         //Uncomment the line below and delete the other tasks line to add csslint into the project
         //tasks: ['sass:dist','csslint:strict']
         tasks: ['sass:dist', 'postcss']
@@ -172,7 +170,6 @@ module.exports = function(grunt) {
         //tasks: ['sass:dist','csslint:strict']
         tasks: ['copy']
       },
-
       scripts: {
         files: ['development/terminalfour/src/js/*.js'],
         //Uncomment the line below and delete the other "tasks:['uglify:build'] to add JSHint into the project"

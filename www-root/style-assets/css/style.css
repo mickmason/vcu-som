@@ -18887,55 +18887,6 @@ a:hover, a:active, a:focus {
 .hero.hero--news-heading .hero-footer .content-author-date__date, .hero.hero--news-heading .hero-footer .content-share__label {
   margin-bottom: 0.307rem;
 }
-.hero.hero--news-heading .hero-footer .content-share__label {
-  margin-bottom: 0.614rem;
-}
-.hero.hero--news-heading .hero-footer .content-share {
-  background-color: #00504d;
-  color: #ffffff;
-}
-.hero.hero--news-heading .hero-footer .content-share .content-label {
-  color: #ffffff;
-}
-.hero.hero--news-heading .hero-footer .content-share__icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.hero.hero--news-heading .hero-footer .content-share__icons .icon {
-  height: 1.563rem;
-  width: 1.563rem;
-  margin-right: 0.4045rem;
-  -webkit-transition: background-color 200ms ease-out;
-  transition: background-color 200ms ease-out;
-}
-.hero.hero--news-heading .hero-footer .content-share__icons .icon:hover, .hero.hero--news-heading .hero-footer .content-share__icons .icon:active, .hero.hero--news-heading .hero-footer .content-share__icons .icon:focus {
-  background-color: #ffffff;
-}
-.hero.hero--news-heading .hero-footer .content-share__icons .icon:hover svg, .hero.hero--news-heading .hero-footer .content-share__icons .icon:active svg, .hero.hero--news-heading .hero-footer .content-share__icons .icon:focus svg {
-  fill: #00504d;
-}
-@media screen and (min-width: 1024px) {
-  .hero.hero--news-heading .hero-footer .content-share__icons .icon {
-    height: 2.225rem;
-    width: 2.225rem;
-    padding: 0.38375rem;
-    border-radius: 50%;
-    border: 1px solid #ffffff;
-  }
-}
 .hero.hero--news-heading .hero-footer .hero-content-wrap {
   -ms-flex-direction: column;
   -webkit-box-orient: vertical;
@@ -18944,9 +18895,6 @@ a:hover, a:active, a:focus {
   -ms-flex-align: start;
   -webkit-box-align: start;
           align-items: flex-start;
-}
-.hero.hero--news-heading .hero-footer .icon.icon--svg svg {
-  fill: #ffffff;
 }
 
 /** Hero slider **/
@@ -23534,6 +23482,93 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* Sharing icons */
+.content-share__label {
+  margin-bottom: 0.614rem;
+}
+
+.content-share {
+  background-color: #00504d;
+  color: #ffffff;
+}
+.content-share .content-label {
+  color: #ffffff;
+}
+
+.content-share__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content-share__icons .icon.icon--svg {
+  height: 2.225rem;
+  width: 2.225rem;
+  padding: 0.38375rem;
+  margin-right: 0.4045rem;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  -webkit-transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
+}
+.content-share__icons .icon.icon--svg svg {
+  fill: #ffffff;
+}
+.content-share__icons .icon.icon--svg:hover, .content-share__icons .icon.icon--svg:active, .content-share__icons .icon.icon--svg:focus {
+  background-color: #ffffff;
+}
+.content-share__icons .icon.icon--svg:hover svg, .content-share__icons .icon.icon--svg:active svg, .content-share__icons .icon.icon--svg:focus svg {
+  fill: #00504d;
+}
+@media screen and (min-width: 1024px) {
+  .content-share__icons .icon.icon--svg {
+    padding: 0.38375rem;
+  }
+}
+.content-share__icons.content-share__icons--sidebar {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.content-share__icons.content-share__icons--sidebar .icon.icon--svg {
+  margin-bottom: 0.96rem;
+  margin-right: 0.3236rem;
+  border-color: #202020;
+}
+.content-share__icons.content-share__icons--sidebar .icon.icon--svg svg {
+  fill: #202020;
+}
+.content-share__icons.content-share__icons--sidebar .icon.icon--svg:hover, .content-share__icons.content-share__icons--sidebar .icon.icon--svg:active, .content-share__icons.content-share__icons--sidebar .icon.icon--svg:focus {
+  background-color: #202020;
+}
+.content-share__icons.content-share__icons--sidebar .icon.icon--svg:hover svg, .content-share__icons.content-share__icons--sidebar .icon.icon--svg:active svg, .content-share__icons.content-share__icons--sidebar .icon.icon--svg:focus svg {
+  fill: #ffffff;
+}
+
+.share-icons-sidebar {
+  margin-left: -0.809rem;
+  margin-right: -0.809rem;
+  padding-left: 0.809rem;
+  padding-right: 0.809rem;
+  padding-bottom: 0.307rem;
+  margin-bottom: 0.614rem;
+  -webkit-box-shadow: 0px 4px 4px -2px rgba(32, 32, 32, 0.36);
+  box-shadow: 0px 4px 4px -2px rgba(32, 32, 32, 0.36);
+}
+.share-icons-sidebar .content-share__label {
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

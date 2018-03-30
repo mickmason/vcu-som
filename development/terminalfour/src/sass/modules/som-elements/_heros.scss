@@ -479,49 +479,11 @@
             .content-author-date__date, .content-share__label {
                 margin-bottom: $space-11;
             }
-            .content-share__label {
-                margin-bottom: $space-1;
-            }
-            .content-share {
-							background-color: $primary;    
-							color: $white;
-              .content-label {
-                  color: $white;
-              }
-            }
-            .content-share__icons {
-                @include make-flexbox($direction: row, $align: center, $justify: flex-start);
-                .icon {
-                    height: $size-4;
-                    width:  $size-4;
-                    margin-right: $gutter-width/4;
-                    transition: background-color 200ms ease-out ;
-                    @include active-link {
-                        background-color: $white;
-                        svg {
-                            fill: $som-green;
-                        }
-                    }
-                    
-                    @include desktop {
-                        height: 2.225rem;
-                        width:  2.225rem;
-                        padding: $space-11*1.25;
-                        border-radius: 50%;
-                        border:        1px solid $white;
-                    }
-                }
-            }
             .hero-content-wrap {
                 -ms-flex-direction: column;
                 flex-direction: column;
                 -ms-flex-align: start;
                 align-items: flex-start;
-            }
-            .icon.icon--svg {
-                svg {
-                    fill: $white;
-                }
             }
         }
     }
