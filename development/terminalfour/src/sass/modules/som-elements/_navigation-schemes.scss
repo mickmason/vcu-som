@@ -831,6 +831,10 @@
                 content: " ";
                 z-index: -10;
             }
+          &.is-active {
+            visibility: visible;
+            opacity: 1;
+          }
        }  
         .main-navigation__item--left {
             .navbar-dropdown {

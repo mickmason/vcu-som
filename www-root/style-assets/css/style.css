@@ -10399,13 +10399,12 @@ a.navbar-link.is-active {
     border-top: 1px solid #a0a0a0;
     -webkit-box-shadow: 0 8px 8px rgba(32, 32, 32, 0.1);
             box-shadow: 0 8px 8px rgba(32, 32, 32, 0.1);
-    display: none;
     font-size: 0.875rem;
     left: 0;
     min-width: 100%;
     position: absolute;
     top: 100%;
-    z-index: 20;
+    z-index: -100;
   }
   .navbar-dropdown .navbar-item {
     padding: 0.375rem 1rem;
@@ -14878,6 +14877,10 @@ a:hover, a:active, a:focus {
     position: absolute;
     content: " ";
     z-index: -10;
+  }
+  .secondary-navigation .navbar-dropdown.is-active, .main-navigation__menu .navbar-dropdown.is-active, .main-navigation__search-toggle .navbar-dropdown.is-active {
+    visibility: visible;
+    opacity: 1;
   }
   .secondary-navigation .main-navigation__item--left .navbar-dropdown, .main-navigation__menu .main-navigation__item--left .navbar-dropdown, .main-navigation__search-toggle .main-navigation__item--left .navbar-dropdown {
     left: 0;

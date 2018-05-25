@@ -393,7 +393,6 @@
 // Add your custom JavaScripts to this file
 !/* Build scripts */
 (function() {
-    var myVar = 'Michael'; 
     /*
      * Detect SVG support
      */
@@ -951,11 +950,9 @@
     $('.hero-foot a.svg-icon-wrap').on('click', function(eve) {
         eve.preventDefault();
         var $this = $(this);
-        console.log($this.attr('href'));
         try {
            
            if ($($this.attr('href')).offset() != undefined || $($this.attr('href')).offset() != null) {
-               console.log($($this.attr('href')).offset().top);
                 var thisTarget = $($this.attr('href')).offset().top; 
                 $('html, body').animate({scrollTop: thisTarget}, 300);    
            } else {
@@ -977,7 +974,6 @@
            event.preventDefault();
            var $this = $(this);
            var target = $this.data('program');
-           console.log(target);
            if ($this.hasClass('is-visible')) {
                $this.removeClass('is-visible');
                $programInfoCardCards.each(function(idx, el) {
@@ -1048,7 +1044,6 @@
                     
                     
                 });
-                console.log(offsetTop);
             } else {
                 var featureRightValue = - ((($fixedFeature.outerWidth() - (featureLeftPadding / 2) - 8) / $('.body-wrap')) * 100) + (($('.body-wrap').offset().left / $(document).outerWidth()) * 100); 
 
@@ -1070,8 +1065,6 @@
         var $this = $(ele);
         if ($this.parents('.fulltext-video').length < 1) {
             $this.wrap('<div class="fulltext-video video is-16by9"></div>');
-        } else {
-            console.log('Doesn\'t need wrap');
         }
     });
   
@@ -1112,7 +1105,6 @@
   }
   $('#som-site-earch-form').on('submit', function(event) {
     event.preventDefault();
-    console.log('#som-site-earch-form submit');
     if( document.keyword.searchnav[0].checked ) {
       if( checkQuery() ) {
       var header = "http://search.vcu.edu/search?";
@@ -1124,7 +1116,6 @@
     }
 
           //people
-
     if( document.keyword.searchnav[1].checked ) {
        if( checkQuery() ) {
          var header = "http://phonebook.vcu.edu?";
@@ -1133,18 +1124,41 @@
          window.location.href = header + options + searchVal;
       }
     }
-
-            //Medschool via Google
-
-          if( document.keyword.searchnav[2].checked ) {
-             if( checkQuery() ) {
-               var header = "http://search.vcu.edu/search?";
-               var options = "&access=p&site=somweb&proxystylesheet=default_frontend";
-               var searchVal = "q=" + convertString(document.keyword.query.value);
-               window.location.href = header + searchVal + options;
-               }
-          } 
+    //Medschool via Google
+    if( document.keyword.searchnav[2].checked ) {
+      if( checkQuery() ) {
+        var header = "http://search.vcu.edu/search?";
+        var options = "&access=p&site=somweb&proxystylesheet=default_frontend";
+        var searchVal = "q=" + convertString(document.keyword.query.value);
+        window.location.href = header + searchVal + options;
+      }
+    } 
+  });
+  $('.secondary-nav__navbar .navbar-item.has-dropdown > a').on('focus', function() {
     
   });
+  //* Main and secondary navigation 
+  $('.secondary-nav__navbar .navbar-item.has-dropdown > a').on('focus', function() {
+    var $dropdown = $(this).next('.navbar-dropdown');
+    console.log($dropdown);
+    var $lastLink = $dropdown.find('a');
+    $dropdown.addClass('is-active');
+    $lastLink = $lastLink.eq($lastLink.length - 1);
+    $lastLink.on('focusout', function() {
+      $dropdown.removeClass('is-active');
+    });
+  })
+  $('.navbar-link.navbar-link--main').on('focus', function() {
+    var $dropdown = $(this).next('.navbar-dropdown');
+    var $lastLink = $dropdown.find('a');
+    $dropdown.addClass('is-active');
+    $lastLink = $lastLink.eq($lastLink.length - 1);
+    $lastLink.on('focusout', function() {
+      $dropdown.removeClass('is-active');
+    });
+    
+    
+  });
+  
   
 }());/* End of VCU School of Medicine Site Redesign 2017-2018 build scripts T4 */
