@@ -70,8 +70,10 @@
     .news-listing__title, .events-listing__title {
         font-size: $size-6;
         margin-bottom: $space-11;
+        max-width: 100%;
         > a {
             color: $secondary;
+            max-width: 100%;
         }
     }
     .events-items {
@@ -84,6 +86,10 @@
     }
     .events-listing__item {
         @include make-flexbox($direction: row, $justify: flex-start);
+    }
+    .event-details {
+      max-width: 100%;
+      flex: 0 1 auto;
     }
     .events-listing__date {
         flex: none;

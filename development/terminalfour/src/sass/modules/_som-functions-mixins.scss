@@ -46,12 +46,7 @@
     font-weight: $weight;
 }
 @mixin make-flexbox($display: flex, $direction: column, $wrap: nowrap, $justify: center, $align: start ) {
-    @if $display == flex {
-        display: flex;     
-    }
-    @if $display == inline-flex {
-        display: inline-flex;     
-    }
+    display:                $display;
     flex-direction:         $direction;
     flex-wrap:              $wrap;
     justify-content:        $justify;

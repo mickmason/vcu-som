@@ -427,17 +427,16 @@
 
     .featured-programs__outer-columns {
         > .column {
+          flex-basis: auto;
             padding-top: 0;
             padding-bottom: 0;
-        }
-             > .column {
-                 &:first-child {
-                     padding-bottom: $space-5;
-                 }
-                 &:last-child {
-                     padding-top: $space-5;     
-                 }
-            }        
+            &:first-child {
+                padding-bottom: $space-5;
+            }
+            &:last-child {
+                padding-top: $space-5;     
+            }
+        }       
         @include tablet { 
             @include make-flexbox($direction:column, $align: normal);
         } 
@@ -560,9 +559,6 @@
         }
         @include desktop {
             bottom: -14rem;
-            .card-heading {
-                @include make-flexbox($direction: column, $justify: flex-end);
-            }
         }
         @include widescreen {
             bottom: -10rem;
@@ -593,6 +589,9 @@
             bottom: 0rem;
             background-color: rgba($som-green, $transparency);   
         }
+      .card-heading, .card-content {
+        height: auto !important;
+      }
     }
 }
 .featured-programs-2 {  
@@ -717,7 +716,8 @@
         }
     }
     .video-slider__caption {
-         @include make-flexbox($direction: column, $justify: center);
+        @include make-flexbox($direction: column, $justify: center, $wrap: wrap);
+        flex: 1 1 auto;
         width: 100%;
         padding-left: $gutter-width/2;
         padding-right: $gutter-width/2;
@@ -765,6 +765,9 @@
     }
     .card-content {
         @include make-flexbox($direction: column, $justify: flex-start, $align: stretch);
+      .card__title {
+        flex: 1 1 auto;
+      }
         &.is-featured {
             background-color: $black;
             color: $white;
@@ -783,8 +786,6 @@
         color: $gray-6
     }
     .card__title {
-        @include make-flexbox($direction: row, $justify: flex-start, $align: center);
-        width: 100%;
         margin-bottom: 0;
         font-size: $size-6;
         font-weight: 500;

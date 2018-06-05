@@ -697,6 +697,9 @@ body {
         @include boxShadow($black, fullPaper);
         color: $white; 
         > .deans-messsage__text {
+            width: 100%;
+          max-width: 100%;
+            flex: 1 1 auto;
             z-index: 10;
         }
         > .image-overlay {

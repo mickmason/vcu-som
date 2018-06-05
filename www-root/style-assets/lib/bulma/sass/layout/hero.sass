@@ -1,13 +1,8 @@
 // Main container
-
 .hero
-  -ms-flex-align: stretch
   align-items: stretch
-  display: -ms-flexbox
   display: flex
-  -ms-flex-direction: column
   flex-direction: column
-  -ms-flex-pack: end
   justify-content: space-between
   .navbar
     background: none
@@ -107,7 +102,6 @@
       align-items: center
       display: flex
       & > .container
-        -ms-flex: 1
         flex-grow: 1
         flex-shrink: 1
   &.is-halfheight
@@ -156,11 +150,10 @@
 
 .hero-head,
 .hero-foot
-  -ms-flex: 1 0 auto
   flex-grow: 0
   flex-shrink: 0
 .hero-body
-  -ms-flex: 2 0 auto
   flex-grow: 1
   flex-shrink: 0
+  flex-basis: 100%
   padding: 3rem 1.5rem

@@ -150,6 +150,7 @@
     padding: $gutter-width $gutter-width /2;
     color: $white;
     .news-slider__story__text {
+      max-width: 100%;
       a {
           color: $white;
           text-decoration: none;
@@ -167,6 +168,7 @@
         margin-bottom: $space-2;
     }
     .news-slider__story__title {
+        max-width: 100%;
         font-size: $size-5;
         margin-bottom: $space-2;
     }
@@ -331,6 +333,11 @@
   .discovery-feature__slider {
     position: relative;
     z-index: 20;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
   }
   .discovery-feature__slide {
     background-color: $black;
@@ -368,6 +375,7 @@
     flex-direction: column;
     .column {
       padding: $gl-xsmall/4 $gl-xsmall/2 $gl-xsmall/4;
+      flex-basis: auto;
     }
   }
   .discovery-feature__slider__controls {
