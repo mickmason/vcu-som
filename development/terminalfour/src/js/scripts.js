@@ -383,7 +383,9 @@
         event.stopImmediatePropagation();
         clearActiveNavs($(this));
         $(this).toggleClass('is-active');
-        $('.main-navigation__menu').toggleClass('is-active');
+        $('.main-navigation__menu').toggleClass('is-active'); 
+        console.log($('.main-navigation__menu.is-active .navbar-link.navbar-link--main').eq(0).focus());
+        $('.main-navigation__menu.is-active .navbar-link.navbar-link--main').eq(0).focus();
     });
     //The secondary nav icon in mobile
     $('.secondary-nav-toggle--mobile > .navbar-link').on('mousedown focus', function(event) {
@@ -400,12 +402,15 @@
         clearActiveNavs($(this));
         $(this).toggleClass('is-active');
         $('.site-search-form').toggleClass('is-active'); 
+        $('.site-search-form #searchquery').focus(); 
     }); 
     $('.main-navigation__search-toggle .navbar-link').on('mousedown focus', function(event) {
         event.preventDefault();
         event.stopImmediatePropagation();
         $(this).toggleClass('is-active');
         $('.site-search-form').toggleClass('is-active'); 
+      console.log($('#searchquery'));
+        $('.site-search-form input[name=query]').focus(); 
     });
     //Secondary nav mobile dropdowns
     $('.secondary-nav--mobile__link.has-dropdown').on('mousedown focus', function(event) {
@@ -414,7 +419,8 @@
         $('.secondary-nav--mobile__menu .navbar-dropdown.is-active').not( $(this).siblings('.navbar-dropdown')).removeClass('is-active');
         $('.secondary-nav--mobile__link.has-dropdown.is-active').not($(this)).removeClass('is-active');
         $(this).toggleClass('is-active');
-        $(this).siblings('.navbar-dropdown').toggleClass('is-active');     
+        $(this).siblings('.navbar-dropdown').toggleClass('is-active'); 
+        $(this).siblings('.navbar-dropdown').children('a').eq(0).focus();
     });
     //Main nav dropdowns mobile handler
     function addMainNavHandlers() {
@@ -431,36 +437,29 @@
                 });
             });
         } else {
-          /* $('.main-navigation__menu .main-navigation__item.has-dropdown').each(function(idx) {
-                 $(this).on('focus', function(event) {
-                     event.preventDefault();
-                     event.stopImmediatePropagation();
-                     $('.main-navigation__menu .navbar-dropdown.is-active').not($(this).find('.navbar-dropdown')).removeClass('is-active');
-                     $('.navbar-link--main.is-active').not($(this).children('.navbar-link')).removeClass('is-active');
-                     ($(this).children('.navbar-link').hasClass('is-active')) ? $(this).children('.navbar-link').removeClass('is-active') : $(this).children('.navbar-link').addClass('is-active');
-                     ($(this).children('.navbar-dropdown').hasClass('is-active')) ? $(this).children('.navbar-dropdown').removeClass('is-active') : $(this).children('.navbar-dropdown').addClass('is-active'); 
-                });
-            });*/
           $('.navbar-link.navbar-link--main').on('focus', function() {
             var $dropdown = $(this).next('.navbar-dropdown');
             var $lastLink = $dropdown.find('a');
             $dropdown.addClass('is-active');
+            $(this).addClass('is-active');
             $lastLink = $lastLink.eq($lastLink.length - 1);
+            var $this = $(this);
             $lastLink.on('focusout', function() {
               $dropdown.removeClass('is-active');
+              $this.removeClass('is-active');
             });
           });
-          $('.navbar-link.navbar-link--main').hover(function() {
-            console.log('hover');
-            var $lastLink = $dropdown.find('a');
+          $('.navbar-item.main-navigation__item').hover(function() {
+            $('.navbar-dropdown.is-active').removeClass('is-active');
+            console.log($('.navbar-dropdown.is-active'));
+            $('.navbar-link.navbar-link--main.is-active').removeClass('is-active');
+            var $dropdown = $(this).children('.navbar-dropdown');
             $dropdown.addClass('is-active');
-            var $dropdown = $(this).next('.navbar-dropdown');
-            $dropdown.addClass('is-active');
+            $(this).children('.navbar-link--main').addClass('is-active');
           }, function() {
-            var $lastLink = $dropdown.find('a');
+            var $dropdown = $(this).children('.navbar-dropdown');
             $dropdown.removeClass('is-active');
-            var $dropdown = $(this).next('.navbar-dropdown');
-            $dropdown.removeClass('is-active');
+            $(this).children('.navbar-link--main').removeClass('is-active');
           });
         }
      } 

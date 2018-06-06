@@ -11974,6 +11974,9 @@ label.panel-block:hover {
   border-radius: 0;
   min-width: 0;
 }
+.navbar-dropdown:focus {
+  outline: none;
+}
 
 .navbar-link {
   padding-right: 0;
@@ -14528,15 +14531,15 @@ a:hover, a:active, a:focus {
   .main-navigation__menu .main-navigation__item {
     position: static;
   }
-  .main-navigation__menu .main-navigation__item .navbar-link--main:hover, .main-navigation__menu .main-navigation__item .navbar-link--main:active, .main-navigation__menu .main-navigation__item .navbar-link--main:focus, .main-navigation__menu .main-navigation__item .navbar-link--main.active {
+  .main-navigation__menu .main-navigation__item .navbar-link--main:hover, .main-navigation__menu .main-navigation__item .navbar-link--main:active, .main-navigation__menu .main-navigation__item .navbar-link--main:focus, .main-navigation__menu .main-navigation__item .navbar-link--main.is-active {
     background-color: #00504d;
     color: #ffffff;
   }
-  .main-navigation__menu .main-navigation__item .navbar-link--main:hover .icon svg, .main-navigation__menu .main-navigation__item .navbar-link--main:active .icon svg, .main-navigation__menu .main-navigation__item .navbar-link--main:focus .icon svg, .main-navigation__menu .main-navigation__item .navbar-link--main.active .icon svg {
+  .main-navigation__menu .main-navigation__item .navbar-link--main:hover .icon svg, .main-navigation__menu .main-navigation__item .navbar-link--main:active .icon svg, .main-navigation__menu .main-navigation__item .navbar-link--main:focus .icon svg, .main-navigation__menu .main-navigation__item .navbar-link--main.is-active .icon svg {
     fill: #ffffff;
     stroke: #ffffff;
   }
-  .main-navigation__menu .main-navigation__item .navbar-link--main:hover::before, .main-navigation__menu .main-navigation__item .navbar-link--main:active::before, .main-navigation__menu .main-navigation__item .navbar-link--main:focus::before, .main-navigation__menu .main-navigation__item .navbar-link--main.active::before {
+  .main-navigation__menu .main-navigation__item .navbar-link--main:hover::before, .main-navigation__menu .main-navigation__item .navbar-link--main:active::before, .main-navigation__menu .main-navigation__item .navbar-link--main:focus::before, .main-navigation__menu .main-navigation__item .navbar-link--main.is-active::before {
     position: absolute;
     bottom: -8px;
     left: 50%;
@@ -14548,6 +14551,10 @@ a:hover, a:active, a:focus {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-top: 8px solid #00504d;
+  }
+  .main-navigation__menu .main-navigation__item .navbar-link--main:hover + .navbar-dropdown::after, .main-navigation__menu .main-navigation__item .navbar-link--main:active + .navbar-dropdown::after, .main-navigation__menu .main-navigation__item .navbar-link--main:focus + .navbar-dropdown::after, .main-navigation__menu .main-navigation__item .navbar-link--main.is-active + .navbar-dropdown::after {
+    top: -5%;
+    height: 105%;
   }
 }
 .main-navigation__menu .navbar-link--main {

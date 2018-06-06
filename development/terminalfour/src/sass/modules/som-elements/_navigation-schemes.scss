@@ -527,7 +527,7 @@
     @include desktop {
       position: static;
       .navbar-link--main {
-        &:hover,&:active,&:focus, &.active {
+        &:hover,&:active,&:focus, &.is-active {
           background-color: $som-green;
           color: $white;
           .icon {
@@ -547,6 +547,12 @@
             border-left:     8px solid transparent;
             border-right:    8px solid transparent; 
             border-top:      8px solid $som-green ;
+          }
+          + .navbar-dropdown {
+            &::after {
+              top: -5%;
+              height: 105%;
+            }
           }
         }
       }

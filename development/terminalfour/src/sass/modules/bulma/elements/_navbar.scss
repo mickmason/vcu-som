@@ -20,6 +20,9 @@
     font-size: 0.8rem;
     border-radius: 0;
     min-width: 0;
+  &:focus {
+    outline: none;
+  }
 }
 .navbar-link {
     padding-right: 0;
